@@ -24,6 +24,7 @@ import { criticalInjuriesFileSchema } from '../../docs/.vitepress/schemas/critic
 import { skillsFileSchema } from '../../docs/.vitepress/schemas/skill'
 import { professionTreesFileSchema } from '../../docs/.vitepress/schemas/professionTree'
 import { professionsFileSchema } from '../../docs/.vitepress/schemas/profession'
+import { bestiaryFileSchema } from '../../docs/.vitepress/schemas/bestiary'
 
 const root = fileURLToPath(new URL('../..', import.meta.url))
 const dataDir = join(root, 'docs', '.vitepress', 'data')
@@ -131,6 +132,65 @@ function validateProfessionLinks() {
 }
 
 validateProfessionLinks()
+
+function validateBestiary() {
+  const raw = JSON.parse(readFileSync(join(dataDir, 'bestiary.json'), 'utf8'))
+  const parsed = bestiaryFileSchema.safeParse(raw)
+
+  if (!parsed.success) {
+    failed = true
+    console.error('bestiary.json не прошёл валидацию:')
+    for (const issue of parsed.error.issues) {
+      console.error(`  ${issue.path.join('.')}: ${issue.message}`)
+    }
+    return
+  }
+
+  const { classes, monsters, animals } = parsed.data
+  const ids = new Set<string>()
+  const names = new Set<string>()
+  const errors: string[] = []
+  const classIds = new Set(classes.map((item) => item.id))
+
+  if (classIds.size !== classes.length) {
+    errors.push('повторяющиеся id классов')
+  }
+
+  for (const entry of [...monsters, ...animals]) {
+    if (ids.has(entry.id)) errors.push(`повторяющийся id: ${entry.id}`)
+    if (names.has(entry.name)) errors.push(`повторяющееся название: ${entry.name}`)
+    if (new Set(entry.variants.map((variant) => variant.name)).size !== entry.variants.length) {
+      errors.push(`повторяющиеся варианты: ${entry.name}`)
+    }
+    if (entry.statPage < 267 || entry.statPage > 313) {
+      errors.push(`statPage вне бестиария: ${entry.name} (${entry.statPage})`)
+    }
+    if (entry.descriptionPage && (entry.descriptionPage < 267 || entry.descriptionPage > 313)) {
+      errors.push(`descriptionPage вне бестиария: ${entry.name} (${entry.descriptionPage})`)
+    }
+    if (entry.descriptionPage && entry.descriptionPage < entry.statPage) {
+      errors.push(`descriptionPage раньше statPage: ${entry.name}`)
+    }
+    if (animals.some((animal) => animal.id === entry.id) && entry.classId !== 'beasts') {
+      errors.push(`животное не класса beasts: ${entry.name}`)
+    }
+    ids.add(entry.id)
+    names.add(entry.name)
+  }
+
+  if (errors.length) {
+    failed = true
+    console.error('Ошибки в bestiary.json:')
+    for (const error of errors) console.error(`  - ${error}`)
+    return
+  }
+
+  console.log(
+    `OK: бестиарий — ${classes.length} классов, ${monsters.length} чудовищ, ${animals.length} животных`
+  )
+}
+
+validateBestiary()
 
 function validateTransport() {
   const raw = JSON.parse(readFileSync(join(dataDir, 'transport.json'), 'utf8'))

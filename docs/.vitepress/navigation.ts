@@ -123,7 +123,9 @@ export const sidebar: DefaultTheme.Sidebar = {
       text: 'Бестиарий',
       items: [
         { text: 'Обзор', link: '/bestiary/' },
-        { text: 'Классы чудовищ', link: '/bestiary/classes' }
+        { text: 'Классы чудовищ', link: '/bestiary/classes' },
+        { text: 'Чудовища', link: '/bestiary/monsters' },
+        { text: 'Животные', link: '/bestiary/animals' }
       ]
     }
   ],

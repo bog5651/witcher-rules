@@ -37,6 +37,8 @@ import SkillTable from './components/SkillTable.vue'
 import ProfessionTree from './components/ProfessionTree.vue'
 import ProfessionCatalog from './components/ProfessionCatalog.vue'
 import ProfessionProfile from './components/ProfessionProfile.vue'
+import BestiaryClasses from './components/BestiaryClasses.vue'
+import BestiaryCatalog from './components/BestiaryCatalog.vue'
 
 export default {
   extends: DefaultTheme,
@@ -61,5 +63,7 @@ export default {
     app.component('ProfessionTree', ProfessionTree)
     app.component('ProfessionCatalog', ProfessionCatalog)
     app.component('ProfessionProfile', ProfessionProfile)
+    app.component('BestiaryClasses', BestiaryClasses)
+    app.component('BestiaryCatalog', BestiaryCatalog)
   }
 } satisfies Theme
