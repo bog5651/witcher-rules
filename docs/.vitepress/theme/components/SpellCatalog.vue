@@ -31,12 +31,23 @@ const levelOrder: Record<SpellLevel, number> = {
   master: 2
 }
 
+const initialLevel = props.level ?? 'all'
+const initialElement = props.element ?? 'all'
+
 const query = ref('')
-const level = ref<'all' | SpellLevel>(props.level ?? 'all')
-const element = ref<'all' | SpellElement>(props.element ?? 'all')
+const level = ref<'all' | SpellLevel>(initialLevel)
+const element = ref<'all' | SpellElement>(initialElement)
 const sort = ref<'name' | 'level' | 'cost'>('level')
 
 const normalized = (value: string) => value.toLocaleLowerCase('ru').replace(/ё/g, 'е')
+
+const baseCount = computed(() => {
+  return spells.filter((spell) => {
+    if (level.value !== 'all' && spell.level !== level.value) return false
+    if (element.value !== 'all' && spell.element !== element.value) return false
+    return true
+  }).length
+})
 
 const visible = computed(() => {
   const q = normalized(query.value.trim())
@@ -61,8 +72,8 @@ const visible = computed(() => {
 
 const reset = () => {
   query.value = ''
-  level.value = 'all'
-  element.value = 'all'
+  level.value = initialLevel
+  element.value = initialElement
   sort.value = 'level'
 }
 
@@ -119,7 +130,7 @@ const costLabel = (spell: Spell) => {
       </div>
 
       <button class="spell-reset" type="button" @click="reset">Сбросить</button>
-      <span class="wr-count">{{ visible.length }} из {{ spells.length }}</span>
+      <span class="wr-count">{{ visible.length }} из {{ baseCount }}</span>
     </div>
 
     <div v-if="visible.length" class="wr-cards">
