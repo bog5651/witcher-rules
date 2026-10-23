@@ -129,24 +129,24 @@ witcher-rules/
 
 ## Деплой
 
-Проект рассчитан на Vercel:
+Проект размещён на Vercel: **https://witcher-rules.vercel.app**
 
 - Build Command: `npm run check` (валидация каталогов + сборка)
 - Output Directory: `docs/.vitepress/dist`
-- Node.js 22
+- Node.js 22+ (текущий билд Vercel — 24.x)
 
-`vercel.json` уже содержит настройки. Для продакшена нужно заменить `hostname` в `sitemap` и `robots.txt` на реальный домен.
+`vercel.json` уже содержит настройки. `sitemap.hostname` и `robots.txt` указывают на `https://witcher-rules.vercel.app`.
 
 ### Vercel CLI
 
 ```bash
-npx vercel login          # авторизация в аккаунте Vercel
-npx vercel link --yes     # привязать каталог к проекту
-npx vercel deploy         # preview-деплой
-npx vercel deploy --prod  # production-деплой
+npx vercel login                     # авторизация в аккаунте Vercel
+npx vercel link --yes                # привязать каталог к проекту
+npx vercel deploy --target=preview   # preview-деплой
+npx vercel deploy --prod             # production-деплой
 ```
 
-`.vercel/` исключён из Git. Для CI можно передать `VERCEL_TOKEN` через переменную окружения.
+Проект уже привязан: `evgeniys-projects-7771b87c/witcher-rules`. `.vercel/` исключён из Git. Для CI можно передать `VERCEL_TOKEN` через переменную окружения.
 
 ## Права
 
