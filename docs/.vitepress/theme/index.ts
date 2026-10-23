@@ -29,6 +29,7 @@ import TransportTable from './components/TransportTable.vue'
 import ToolTable from './components/ToolTable.vue'
 import GearTable from './components/GearTable.vue'
 import ComponentTable from './components/ComponentTable.vue'
+import SubstanceTable from './components/SubstanceTable.vue'
 
 export default {
   extends: DefaultTheme,
@@ -45,5 +46,6 @@ export default {
     app.component('ToolTable', ToolTable)
     app.component('GearTable', GearTable)
     app.component('ComponentTable', ComponentTable)
+    app.component('SubstanceTable', SubstanceTable)
   }
 } satisfies Theme
