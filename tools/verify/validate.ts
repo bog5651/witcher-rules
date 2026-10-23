@@ -1,49 +1,65 @@
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import type { z } from 'zod'
 import { spellsFileSchema } from '../../docs/.vitepress/schemas/spell'
+import {
+  hexesFileSchema,
+  invocationsFileSchema,
+  ritualsFileSchema,
+  signsFileSchema
+} from '../../docs/.vitepress/schemas/magic'
 
 const root = fileURLToPath(new URL('../..', import.meta.url))
-const spellsPath = join(root, 'docs', '.vitepress', 'data', 'spells.json')
+const dataDir = join(root, 'docs', '.vitepress', 'data')
 
-const raw = JSON.parse(readFileSync(spellsPath, 'utf8'))
-const parsed = spellsFileSchema.safeParse(raw)
+type BaseItem = { id: string; name: string; sourcePage: number }
+type FileShape = { items: BaseItem[] }
 
-if (!parsed.success) {
-  console.error('spells.json не прошёл валидацию:')
-  for (const issue of parsed.error.issues) {
-    console.error(`  ${issue.path.join('.')}: ${issue.message}`)
+let failed = false
+
+function validate(name: string, file: string, schema: z.ZodTypeAny) {
+  const raw = JSON.parse(readFileSync(join(dataDir, file), 'utf8'))
+  const parsed = schema.safeParse(raw)
+
+  if (!parsed.success) {
+    failed = true
+    console.error(`${file} не прошёл валидацию:`)
+    for (const issue of parsed.error.issues) {
+      console.error(`  ${issue.path.join('.')}: ${issue.message}`)
+    }
+    return
   }
-  process.exit(1)
-}
 
-const spells = parsed.data.items
-const ids = new Set<string>()
-const names = new Set<string>()
-const errors: string[] = []
+  const data = parsed.data as FileShape
+  const ids = new Set<string>()
+  const names = new Set<string>()
+  const errors: string[] = []
 
-for (const spell of spells) {
-  if (ids.has(spell.id)) errors.push(`повторяющийся id: ${spell.id}`)
-  if (names.has(spell.name)) errors.push(`повторяющееся название: ${spell.name}`)
-  if (spell.sourcePage < 1 || spell.sourcePage > 337) {
-    errors.push(`sourcePage вне книги: ${spell.name} (${spell.sourcePage})`)
+  for (const item of data.items) {
+    if (ids.has(item.id)) errors.push(`повторяющийся id: ${item.id}`)
+    if (names.has(item.name)) errors.push(`повторяющееся название: ${item.name}`)
+    if (item.sourcePage < 1 || item.sourcePage > 337) {
+      errors.push(`sourcePage вне книги: ${item.name} (${item.sourcePage})`)
+    }
+    ids.add(item.id)
+    names.add(item.name)
   }
-  ids.add(spell.id)
-  names.add(spell.name)
+
+  if (errors.length) {
+    failed = true
+    console.error(`Ошибки в ${file}:`)
+    for (const error of errors) console.error(`  - ${error}`)
+    return
+  }
+
+  console.log(`OK: ${name} — ${data.items.length}`)
 }
 
-if (errors.length) {
-  console.error('Ошибки в каталоге заклинаний:')
-  for (const error of errors) console.error(`  - ${error}`)
-  process.exit(1)
-}
+validate('заклинания', 'spells.json', spellsFileSchema)
+validate('знаки', 'signs.json', signsFileSchema)
+validate('инвокации', 'invocations.json', invocationsFileSchema)
+validate('ритуалы', 'rituals.json', ritualsFileSchema)
+validate('порча', 'hexes.json', hexesFileSchema)
 
-const byLevel = spells.reduce<Record<string, number>>((acc, spell) => {
-  acc[spell.level] = (acc[spell.level] ?? 0) + 1
-  return acc
-}, {})
-
-console.log(`OK: ${spells.length} заклинаний`)
-console.log(`  новичок: ${byLevel.novice ?? 0}`)
-console.log(`  подмастерье: ${byLevel.adept ?? 0}`)
-console.log(`  мастер: ${byLevel.master ?? 0}`)
+if (failed) process.exit(1)

@@ -543,6 +543,16 @@ body {
 .wr-badge--water { color: #3f5f8f; border-color: #9fb4d4; background: rgba(63, 95, 143, 0.08); }
 .wr-badge--mixed { color: #6b4f7a; border-color: #bfa8c9; background: rgba(107, 79, 122, 0.08); }
 
+.wr-badge--tradition { color: #5a4a7a; border-color: #b3a3c4; background: rgba(90, 74, 122, 0.08); }
+.wr-badge--deity { color: var(--site-gold); border-color: color-mix(in srgb, var(--site-gold) 40%, transparent); background: var(--site-gold-soft); }
+.wr-badge--base { color: var(--site-green); border-color: color-mix(in srgb, var(--site-green) 30%, transparent); background: color-mix(in srgb, var(--site-green) 10%, transparent); }
+.wr-badge--additional { color: var(--site-blue); border-color: color-mix(in srgb, var(--site-blue) 30%, transparent); background: color-mix(in srgb, var(--site-blue) 10%, transparent); }
+
+.dark .wr-badge--tradition { color: #c4a8d4; border-color: #6e547c; background: rgba(196, 168, 212, 0.08); }
+.dark .wr-badge--deity { color: var(--site-gold); border-color: color-mix(in srgb, var(--site-gold) 35%, transparent); background: var(--site-gold-soft); }
+.dark .wr-badge--base { color: #7aa88a; border-color: #4f7f60; background: rgba(122, 168, 138, 0.08); }
+.dark .wr-badge--additional { color: #7d9fc9; border-color: #4f648a; background: rgba(125, 159, 201, 0.08); }
+
 .dark .wr-badge--earth { color: #c9b87a; border-color: #6e6040; background: rgba(201, 184, 122, 0.08); }
 .dark .wr-badge--air { color: #9fc4d4; border-color: #4f6f7c; background: rgba(159, 196, 212, 0.08); }
 .dark .wr-badge--fire { color: #e0a080; border-color: #8a5a44; background: rgba(224, 160, 128, 0.08); }

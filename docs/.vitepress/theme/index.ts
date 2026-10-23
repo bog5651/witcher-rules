@@ -18,12 +18,14 @@ import '@fontsource/inter/cyrillic-600.css'
 import './custom.css'
 
 import SpellCatalog from './components/SpellCatalog.vue'
+import MagicCatalog from './components/MagicCatalog.vue'
 import SubstanceIcon from './components/SubstanceIcon.vue'
 
 export default {
   extends: DefaultTheme,
   enhanceApp({ app }) {
     app.component('SpellCatalog', SpellCatalog)
+    app.component('MagicCatalog', MagicCatalog)
     app.component('SubstanceIcon', SubstanceIcon)
   }
 } satisfies Theme
