@@ -1,0 +1,877 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "iron-bastard-sword",
+      "name": "Железный полуторный меч",
+      "category": "Мечи",
+      "type": "Р/К",
+      "damageTypes": [
+        "Р",
+        "К"
+      ],
+      "accuracy": 0,
+      "availability": "everywhere",
+      "damage": "2d6 + 2",
+      "reliability": 10,
+      "hands": 2,
+      "range": "Нет",
+      "effects": [],
+      "concealment": "large",
+      "upgradeSlots": 0,
+      "weight": 1.5,
+      "price": 160,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "knight-sword",
+      "name": "Рыцарский меч",
+      "category": "Мечи",
+      "type": "Р/К",
+      "damageTypes": [
+        "Р",
+        "К"
+      ],
+      "accuracy": 0,
+      "availability": "common",
+      "damage": "2d6 + 4",
+      "reliability": 15,
+      "hands": 1,
+      "range": "Нет",
+      "effects": [],
+      "concealment": "large",
+      "upgradeSlots": 0,
+      "weight": 2.5,
+      "price": 270,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "gleddif",
+      "name": "Гледдиф",
+      "category": "Мечи",
+      "type": "Р/К",
+      "damageTypes": [
+        "Р",
+        "К"
+      ],
+      "accuracy": 0,
+      "availability": "common",
+      "damage": "3d6 + 2",
+      "reliability": 5,
+      "hands": 2,
+      "range": "Нет",
+      "effects": [],
+      "concealment": "large",
+      "upgradeSlots": 0,
+      "weight": 3.0,
+      "price": 285,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "hunting-falchion",
+      "name": "Охотничий фальшион",
+      "category": "Мечи",
+      "type": "Р/К",
+      "damageTypes": [
+        "Р",
+        "К"
+      ],
+      "accuracy": 0,
+      "availability": "common",
+      "damage": "3d6",
+      "reliability": 15,
+      "hands": 1,
+      "range": "Нет",
+      "effects": [],
+      "concealment": "large",
+      "upgradeSlots": 0,
+      "weight": 2.0,
+      "price": 325,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "kriegsverd",
+      "name": "Кригсверд",
+      "category": "Мечи",
+      "type": "Р/К",
+      "damageTypes": [
+        "Р",
+        "К"
+      ],
+      "accuracy": 2,
+      "availability": "common",
+      "damage": "4d6 + 4",
+      "reliability": 10,
+      "hands": 1,
+      "range": "Нет",
+      "effects": [],
+      "concealment": "large",
+      "upgradeSlots": 0,
+      "weight": 2.0,
+      "price": 570,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "esboda",
+      "name": "Эсбода",
+      "category": "Мечи",
+      "type": "Р/К",
+      "damageTypes": [
+        "Р",
+        "К"
+      ],
+      "accuracy": 1,
+      "availability": "rare",
+      "damage": "5d6",
+      "reliability": 10,
+      "hands": 1,
+      "range": "Нет",
+      "effects": [],
+      "concealment": "none",
+      "upgradeSlots": 1,
+      "weight": 1.5,
+      "price": 650,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "kord",
+      "name": "Корд",
+      "category": "Мечи",
+      "type": "Р/К",
+      "damageTypes": [
+        "Р",
+        "К"
+      ],
+      "accuracy": 0,
+      "availability": "unique",
+      "damage": "5d6",
+      "reliability": 15,
+      "hands": 1,
+      "range": "Нет",
+      "effects": [
+        "Кровопускающее (25 %)"
+      ],
+      "concealment": "none",
+      "upgradeSlots": 1,
+      "weight": 1.5,
+      "price": 725,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "vicovaro-blade",
+      "name": "Клинок из Виковаро",
+      "category": "Мечи",
+      "type": "Р/К",
+      "damageTypes": [
+        "Р",
+        "К"
+      ],
+      "accuracy": 0,
+      "availability": "unique",
+      "damage": "5d6 + 4",
+      "reliability": 15,
+      "hands": 2,
+      "range": "Нет",
+      "effects": [
+        "Сбалансированное"
+      ],
+      "concealment": "none",
+      "upgradeSlots": 1,
+      "weight": 1.5,
+      "price": 955,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "torrur",
+      "name": "Торрур",
+      "category": "Мечи",
+      "type": "Р/К",
+      "damageTypes": [
+        "Р",
+        "К"
+      ],
+      "accuracy": 0,
+      "availability": "unique",
+      "damage": "6d6",
+      "reliability": 15,
+      "hands": 2,
+      "range": "Нет",
+      "effects": [
+        "Кровопускающее (50 %)"
+      ],
+      "concealment": "none",
+      "upgradeSlots": 2,
+      "weight": 2.0,
+      "price": 1075,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "dagger",
+      "name": "Кинжал",
+      "category": "Лёгкие клинки",
+      "type": "Р/К",
+      "damageTypes": [
+        "Р",
+        "К"
+      ],
+      "accuracy": 0,
+      "availability": "everywhere",
+      "damage": "1d6 + 2",
+      "reliability": 10,
+      "hands": 1,
+      "range": "Нет",
+      "effects": [],
+      "concealment": "small",
+      "upgradeSlots": 0,
+      "weight": 0.5,
+      "price": 50,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "stiletto",
+      "name": "Стилет",
+      "category": "Лёгкие клинки",
+      "type": "Р/К",
+      "damageTypes": [
+        "Р",
+        "К"
+      ],
+      "accuracy": 2,
+      "availability": "common",
+      "damage": "1d6",
+      "reliability": 5,
+      "hands": 1,
+      "range": "Нет",
+      "effects": [
+        "Незаметное"
+      ],
+      "concealment": "tiny",
+      "upgradeSlots": 1,
+      "weight": 0.5,
+      "price": 275,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "short-dagger",
+      "name": "Короткий кинжал",
+      "category": "Лёгкие клинки",
+      "type": "Р/К",
+      "damageTypes": [
+        "Р",
+        "К"
+      ],
+      "accuracy": 1,
+      "availability": "rare",
+      "damage": "2d6 + 2",
+      "reliability": 10,
+      "hands": 1,
+      "range": "Нет",
+      "effects": [
+        "Кровопускающее (25 %)"
+      ],
+      "concealment": "small",
+      "upgradeSlots": 0,
+      "weight": 1.0,
+      "price": 350,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "jambiya",
+      "name": "Джамбия",
+      "category": "Лёгкие клинки",
+      "type": "Р/К",
+      "damageTypes": [
+        "Р",
+        "К"
+      ],
+      "accuracy": 2,
+      "availability": "unique",
+      "damage": "2d6",
+      "reliability": 10,
+      "hands": 1,
+      "range": "Нет",
+      "effects": [
+        "Кровопускающее (25%)",
+        "Пробивающее броню"
+      ],
+      "concealment": "small",
+      "upgradeSlots": 1,
+      "weight": 0.5,
+      "price": 440,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "axe",
+      "name": "Топор",
+      "category": "Топоры",
+      "type": "Р",
+      "damageTypes": [
+        "Р"
+      ],
+      "accuracy": 0,
+      "availability": "everywhere",
+      "damage": "2d6 + 1",
+      "reliability": 10,
+      "hands": 1,
+      "range": "Нет",
+      "effects": [],
+      "concealment": "small",
+      "upgradeSlots": 0,
+      "weight": 1.0,
+      "price": 205,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "battle-axe",
+      "name": "Боевой топор",
+      "category": "Топоры",
+      "type": "Р",
+      "damageTypes": [
+        "Р"
+      ],
+      "accuracy": 0,
+      "availability": "common",
+      "damage": "5d6",
+      "reliability": 15,
+      "hands": 1,
+      "range": "Нет",
+      "effects": [],
+      "concealment": "large",
+      "upgradeSlots": 0,
+      "weight": 2.0,
+      "price": 525,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "berserker-axe",
+      "name": "Топор берсерка",
+      "category": "Топоры",
+      "type": "Р",
+      "damageTypes": [
+        "Р"
+      ],
+      "accuracy": 0,
+      "availability": "rare",
+      "damage": "6d6",
+      "reliability": 15,
+      "hands": 2,
+      "range": "Нет",
+      "effects": [
+        "Кровопускающее (25%)",
+        "Разрушающее"
+      ],
+      "concealment": "none",
+      "upgradeSlots": 1,
+      "weight": 3.0,
+      "price": 960,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "knuckle-duster",
+      "name": "Кастет",
+      "category": "Дробящее",
+      "type": "Д",
+      "damageTypes": [
+        "Д"
+      ],
+      "accuracy": 1,
+      "availability": "everywhere",
+      "damage": "1d6",
+      "reliability": 15,
+      "hands": 1,
+      "range": "Нет",
+      "effects": [
+        "Рукопашное"
+      ],
+      "concealment": "tiny",
+      "upgradeSlots": 1,
+      "weight": 0.5,
+      "price": 50,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "mace",
+      "name": "Булава",
+      "category": "Дробящее",
+      "type": "Д",
+      "damageTypes": [
+        "Д"
+      ],
+      "accuracy": 0,
+      "availability": "common",
+      "damage": "5d6",
+      "reliability": 15,
+      "hands": 1,
+      "range": "Нет",
+      "effects": [],
+      "concealment": "large",
+      "upgradeSlots": 0,
+      "weight": 2.0,
+      "price": 525,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "highlander-hammer",
+      "name": "Молот горца",
+      "category": "Дробящее",
+      "type": "Д",
+      "damageTypes": [
+        "Д"
+      ],
+      "accuracy": 0,
+      "availability": "unique",
+      "damage": "6d6 + 2",
+      "reliability": 20,
+      "hands": 2,
+      "range": "Нет",
+      "effects": [
+        "Дезориентирующее (-2)",
+        "Метеоритное"
+      ],
+      "concealment": "none",
+      "upgradeSlots": 1,
+      "weight": 3.0,
+      "price": 1100,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "spear",
+      "name": "Копьё",
+      "category": "Древковое",
+      "type": "К/Д",
+      "damageTypes": [
+        "К",
+        "Д"
+      ],
+      "accuracy": 0,
+      "availability": "everywhere",
+      "damage": "3d6",
+      "reliability": 10,
+      "hands": 2,
+      "range": "Тел х 2 м",
+      "effects": [
+        "Длинное"
+      ],
+      "concealment": "none",
+      "upgradeSlots": 1,
+      "weight": 3.5,
+      "price": 375,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "bardiche",
+      "name": "Секира",
+      "category": "Древковое",
+      "type": "Р/К/Д",
+      "damageTypes": [
+        "Р",
+        "К",
+        "Д"
+      ],
+      "accuracy": 0,
+      "availability": "rare",
+      "damage": "4d6 + 2",
+      "reliability": 10,
+      "hands": 2,
+      "range": "Нет",
+      "effects": [
+        "Длинное"
+      ],
+      "concealment": "none",
+      "upgradeSlots": 0,
+      "weight": 3.0,
+      "price": 460,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "red-halberd",
+      "name": "Красная алебарда",
+      "category": "Древковое",
+      "type": "Р/К/Д",
+      "damageTypes": [
+        "Р",
+        "К",
+        "Д"
+      ],
+      "accuracy": 0,
+      "availability": "rare",
+      "damage": "6d6 + 3",
+      "reliability": 10,
+      "hands": 2,
+      "range": "Нет",
+      "effects": [
+        "Длинное"
+      ],
+      "concealment": "none",
+      "upgradeSlots": 1,
+      "weight": 4.0,
+      "price": 865,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 73
+    },
+    {
+      "id": "staff",
+      "name": "Посох",
+      "category": "Посохи",
+      "type": "Д",
+      "damageTypes": [
+        "Д"
+      ],
+      "accuracy": 0,
+      "availability": "common",
+      "damage": "1d6 + 2",
+      "reliability": 10,
+      "hands": 2,
+      "range": "Нет",
+      "effects": [
+        "Длинное",
+        "Фокусирующее (1)"
+      ],
+      "concealment": "none",
+      "upgradeSlots": 1,
+      "weight": 3.0,
+      "price": 335,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 74
+    },
+    {
+      "id": "hooked-staff",
+      "name": "Посох с крюком",
+      "category": "Посохи",
+      "type": "К/Д",
+      "damageTypes": [
+        "К",
+        "Д"
+      ],
+      "accuracy": 0,
+      "availability": "rare",
+      "damage": "2d6",
+      "reliability": 10,
+      "hands": 2,
+      "range": "Нет",
+      "effects": [
+        "Длинное",
+        "Фокусирующее (1)",
+        "Захватное"
+      ],
+      "concealment": "none",
+      "upgradeSlots": 1,
+      "weight": 3.5,
+      "price": 550,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 74
+    },
+    {
+      "id": "iron-staff",
+      "name": "Железный посох",
+      "category": "Посохи",
+      "type": "Д",
+      "damageTypes": [
+        "Д"
+      ],
+      "accuracy": 0,
+      "availability": "rare",
+      "damage": "3d6",
+      "reliability": 15,
+      "hands": 2,
+      "range": "Нет",
+      "effects": [
+        "Длинное",
+        "Фокусирующее (2)"
+      ],
+      "concealment": "none",
+      "upgradeSlots": 1,
+      "weight": 4.0,
+      "price": 675,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 74
+    },
+    {
+      "id": "crystal-staff",
+      "name": "Посох с кристаллом",
+      "category": "Посохи",
+      "type": "Д",
+      "damageTypes": [
+        "Д"
+      ],
+      "accuracy": 0,
+      "availability": "unique",
+      "damage": "2d6 + 2",
+      "reliability": 5,
+      "hands": 2,
+      "range": "Нет",
+      "effects": [
+        "Длинное",
+        "Фокусирующее (3)",
+        "Улучшенное фокусирующее"
+      ],
+      "concealment": "none",
+      "upgradeSlots": 2,
+      "weight": 2.5,
+      "price": 835,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 74
+    },
+    {
+      "id": "throwing-knife",
+      "name": "Метательный нож",
+      "category": "Метательное",
+      "type": "К",
+      "damageTypes": [
+        "К"
+      ],
+      "accuracy": 0,
+      "availability": "everywhere",
+      "damage": "1d6",
+      "reliability": 5,
+      "hands": 1,
+      "range": "Тел х 4 м",
+      "effects": [],
+      "concealment": "tiny",
+      "upgradeSlots": 0,
+      "weight": 0.5,
+      "price": 50,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 74
+    },
+    {
+      "id": "throwing-axe",
+      "name": "Метательный топор",
+      "category": "Метательное",
+      "type": "Р",
+      "damageTypes": [
+        "Р"
+      ],
+      "accuracy": 0,
+      "availability": "everywhere",
+      "damage": "2d6",
+      "reliability": 10,
+      "hands": 1,
+      "range": "Тел х 2 м",
+      "effects": [],
+      "concealment": "small",
+      "upgradeSlots": 0,
+      "weight": 1.0,
+      "price": 75,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 74
+    },
+    {
+      "id": "orion",
+      "name": "Орион",
+      "category": "Метательное",
+      "type": "Р",
+      "damageTypes": [
+        "Р"
+      ],
+      "accuracy": 1,
+      "availability": "rare",
+      "damage": "1d6",
+      "reliability": 5,
+      "hands": 1,
+      "range": "Тел х 4 м",
+      "effects": [],
+      "concealment": "tiny",
+      "upgradeSlots": 0,
+      "weight": 0.1,
+      "price": 100,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 74
+    },
+    {
+      "id": "short-bow",
+      "name": "Короткий лук",
+      "category": "Луки",
+      "type": "К",
+      "damageTypes": [
+        "К"
+      ],
+      "accuracy": 0,
+      "availability": "everywhere",
+      "damage": "3d6 + 3",
+      "reliability": 10,
+      "hands": 2,
+      "range": "100 м",
+      "effects": [],
+      "concealment": "large",
+      "upgradeSlots": 0,
+      "weight": 1.0,
+      "price": 290,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 74
+    },
+    {
+      "id": "long-bow",
+      "name": "Длинный лук",
+      "category": "Луки",
+      "type": "К",
+      "damageTypes": [
+        "К"
+      ],
+      "accuracy": 0,
+      "availability": "everywhere",
+      "damage": "4d6",
+      "reliability": 10,
+      "hands": 2,
+      "range": "200 м",
+      "effects": [],
+      "concealment": "none",
+      "upgradeSlots": 1,
+      "weight": 2.0,
+      "price": 475,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 74
+    },
+    {
+      "id": "army-bow",
+      "name": "Армейский лук",
+      "category": "Луки",
+      "type": "К",
+      "damageTypes": [
+        "К"
+      ],
+      "accuracy": 0,
+      "availability": "common",
+      "damage": "6d6",
+      "reliability": 15,
+      "hands": 2,
+      "range": "300 м",
+      "effects": [],
+      "concealment": "none",
+      "upgradeSlots": 1,
+      "weight": 3.0,
+      "price": 835,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 74
+    },
+    {
+      "id": "hand-crossbow",
+      "name": "Ручной арбалет",
+      "category": "Арбалеты",
+      "type": "К",
+      "damageTypes": [
+        "К"
+      ],
+      "accuracy": 1,
+      "availability": "everywhere",
+      "damage": "2d6 + 2",
+      "reliability": 5,
+      "hands": 1,
+      "range": "50 м",
+      "effects": [
+        "Медленно перезаряжающееся"
+      ],
+      "concealment": "large",
+      "upgradeSlots": 1,
+      "weight": 0.5,
+      "price": 285,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 74
+    },
+    {
+      "id": "crossbow",
+      "name": "Арбалет",
+      "category": "Арбалеты",
+      "type": "К",
+      "damageTypes": [
+        "К"
+      ],
+      "accuracy": 1,
+      "availability": "everywhere",
+      "damage": "4d6 + 2",
+      "reliability": 5,
+      "hands": 2,
+      "range": "100 м",
+      "effects": [
+        "Медленно перезаряжающееся"
+      ],
+      "concealment": "none",
+      "upgradeSlots": 1,
+      "weight": 3.0,
+      "price": 455,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 74
+    },
+    {
+      "id": "monster-hunter-crossbow",
+      "name": "Арбалет охотника на чудовищ",
+      "category": "Арбалеты",
+      "type": "К",
+      "damageTypes": [
+        "К"
+      ],
+      "accuracy": 1,
+      "availability": "unique",
+      "damage": "6d6",
+      "reliability": 15,
+      "hands": 2,
+      "range": "200 м",
+      "effects": [
+        "Медленно перезаряжающееся",
+        "Пробивающее броню"
+      ],
+      "concealment": "none",
+      "upgradeSlots": 1,
+      "weight": 4.0,
+      "price": 1125,
+      "elderfolk": false,
+      "witcher": false,
+      "sourcePage": 74
+    }
+  ]
+}

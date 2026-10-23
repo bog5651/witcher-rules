@@ -20,6 +20,9 @@
   - 6 порч.
   - Правила магии, места силы, обучение.
 - Компоненты `SpellCatalog` и `MagicCatalog` с фильтрами и карточками.
+- **Снаряжение (начало):**
+  - 35 позиций оружия (`weapons.json`), таблица с фильтрами и подсчётом веса/цены.
+  - 35 позиций брони и щитов (`armor.json`), таблица с фильтрами.
 - JSON-каталоги + Zod-схемы + `npm run validate`.
 - SVG-иконки 9 субстанций, глоссарий.
 - Pagefind-поиск с русской морфологией.
@@ -164,13 +167,13 @@ npm run docs:build # OK
 
 ### 4.5. Порядок работ
 
-1. `weapons` schema + парсер p.73–77 + `weapons.json`.
-2. `ItemTable` + `/shop/weapons` + визуальная проверка.
-3. `armor` schema + p.79–82 + `/shop/armor`.
-4. Старший Народ p.83–86 + ведьмачье p.246–250.
-5. Алхимические составы p.87–89, усиления p.90.
-6. Транспорт p.91, инструменты p.92, прочее p.93–98.
-7. Валидация, сборка, коммит.
+1. ✅ `weapons` schema + парсер p.73–77 + `weapons.json`.
+2. ✅ `WeaponTable` + `/shop/weapons` + визуальная проверка.
+3. ✅ `armor` schema + p.79–82 + `/shop/armor`.
+4. ⏳ Старший Народ p.83–86 + ведьмачье p.246–250.
+5. ⏳ Алхимические составы p.87–89, усиления p.90.
+6. ⏳ Транспорт p.91, инструменты p.92, прочее p.93–98.
+7. ⏳ Валидация, сборка, коммит.
 
 ## 5. Дальше по фазам
 
@@ -220,12 +223,11 @@ npm run docs:build # OK
 
 1. Прочитать `AGENTS.md`, `README.md`, этот файл.
 2. `npm install` (если нужно), `npm run validate`, `npm run docs:build`.
-3. Открыть `_artifacts/pdf/pages/p073.txt` и `page_73.png`.
-4. Реализовать `tools/pdf/extract_tables.py` для оружия.
-5. Создать `docs/.vitepress/schemas/weapon.ts`, `docs/.vitepress/data/weapons.json`.
-6. Создать `ItemTable.vue`, страницу `/shop/weapons`.
-7. Сверить 5–10 строк с изображением, запустить `npm run check`.
-8. Коммит: `feat(shop): add weapon catalog`.
+3. Оружие и броня уже готовы: `docs/.vitepress/data/weapons.json`, `armor.json`, `WeaponTable.vue`, `ArmorTable.vue`.
+4. Следующее — Старший Народ (p.83–86) и ведьмачье снаряжение (p.246–250). Их можно добавить в те же `weapons.json` / `armor.json` с флагами `elderfolk` / `witcher` и фильтрами.
+5. Затем алхимические составы (p.87–89), усиления брони (p.90), транспорт (p.91), инструменты (p.92), прочее (p.93–98).
+6. Для таблиц использовать `tools/pdf/extract_weapons.py` как основу; проверять 5–10 строк по рендерам.
+7. Запустить `npm run check` и закоммитить: `feat(shop): add elderfolk and witcher gear`.
 
 ## 8. Быстрые ссылки
 

@@ -20,6 +20,8 @@ import './custom.css'
 import SpellCatalog from './components/SpellCatalog.vue'
 import MagicCatalog from './components/MagicCatalog.vue'
 import SubstanceIcon from './components/SubstanceIcon.vue'
+import WeaponTable from './components/WeaponTable.vue'
+import ArmorTable from './components/ArmorTable.vue'
 
 export default {
   extends: DefaultTheme,
@@ -27,5 +29,7 @@ export default {
     app.component('SpellCatalog', SpellCatalog)
     app.component('MagicCatalog', MagicCatalog)
     app.component('SubstanceIcon', SubstanceIcon)
+    app.component('WeaponTable', WeaponTable)
+    app.component('ArmorTable', ArmorTable)
   }
 } satisfies Theme
