@@ -9,12 +9,17 @@ const style = computed(() => {
   if (!active.value) return {}
 
   const gap = 8
-  const maxWidth = 340
+  const compact = !active.value.definition && !active.value.sourcePage
+  const compactWidth = Math.min(
+    160,
+    Math.max(64, active.value.title.length * 7 + 22)
+  )
+  const maxWidth = compact ? compactWidth : 340
   const width = Math.min(maxWidth, window.innerWidth - 16)
   let left = active.value.left + active.value.width / 2 - width / 2
   left = Math.max(8, Math.min(left, window.innerWidth - width - 8))
 
-  const estimatedHeight = 150
+  const estimatedHeight = compact ? 40 : 150
   let top = active.value.top + active.value.height + gap
   if (top + estimatedHeight > window.innerHeight - 8) {
     top = Math.max(8, active.value.top - estimatedHeight - gap)
@@ -26,6 +31,10 @@ const style = computed(() => {
     width: `${width}px`
   }
 })
+
+const isCompact = computed(
+  () => !!active.value && !active.value.definition && !active.value.sourcePage
+)
 
 const onPointerDown = (event: PointerEvent) => {
   const target = event.target
@@ -54,6 +63,7 @@ onBeforeUnmount(() => {
         v-if="active"
         id="term-tooltip"
         class="term-tooltip"
+        :class="{ 'term-tooltip--compact': isCompact }"
         role="tooltip"
         :style="style"
       >
@@ -87,6 +97,18 @@ onBeforeUnmount(() => {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--site-faint);
+}
+
+.term-tooltip--compact {
+  padding: 0.25rem 0.4rem;
+}
+
+.term-tooltip--compact .term-tooltip__term {
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  color: var(--site-ink);
+  white-space: nowrap;
+  text-align: center;
 }
 
 .term-tooltip__definition {

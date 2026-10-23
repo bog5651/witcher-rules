@@ -16,7 +16,8 @@ export const formulaSchema = z.object({
   time: z.string().min(1),
   price: z.number().int().nonnegative(),
   ingredients: z.array(formulaIngredientSchema).min(1),
-  sourcePage: z.number().int().positive()
+  sourcePage: z.number().int().positive(),
+  description: z.string().min(1).optional()
 })
 
 export const formulasFileSchema = z.object({

@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "description": "Справочник правил настольной ролевой игры «Ведьмак»",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",

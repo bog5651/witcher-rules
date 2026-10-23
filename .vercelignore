@@ -1,0 +1,5 @@
+Witcher.pdf
+_artifacts/
+node_modules/
+docs/.vitepress/cache/
+docs/.vitepress/dist/

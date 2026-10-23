@@ -19,6 +19,7 @@ import { gearFileSchema } from '../../docs/.vitepress/schemas/gear'
 import { componentsFileSchema } from '../../docs/.vitepress/schemas/component'
 import { substancesFileSchema } from '../../docs/.vitepress/schemas/substance'
 import { formulasFileSchema } from '../../docs/.vitepress/schemas/formula'
+import { schematicsFileSchema } from '../../docs/.vitepress/schemas/schematic'
 
 const root = fileURLToPath(new URL('../..', import.meta.url))
 const dataDir = join(root, 'docs', '.vitepress', 'data')
@@ -28,7 +29,12 @@ type FileShape = { items: BaseItem[] }
 
 let failed = false
 
-function validate(name: string, file: string, schema: z.ZodTypeAny) {
+function validate(
+  name: string,
+  file: string,
+  schema: z.ZodTypeAny,
+  options: { allowDuplicateNames?: boolean } = {}
+) {
   const raw = JSON.parse(readFileSync(join(dataDir, file), 'utf8'))
   const parsed = schema.safeParse(raw)
 
@@ -48,7 +54,9 @@ function validate(name: string, file: string, schema: z.ZodTypeAny) {
 
   for (const item of data.items) {
     if (ids.has(item.id)) errors.push(`повторяющийся id: ${item.id}`)
-    if (names.has(item.name)) errors.push(`повторяющееся название: ${item.name}`)
+    if (!options.allowDuplicateNames && names.has(item.name)) {
+      errors.push(`повторяющееся название: ${item.name}`)
+    }
     if (item.sourcePage < 1 || item.sourcePage > 337) {
       errors.push(`sourcePage вне книги: ${item.name} (${item.sourcePage})`)
     }
@@ -80,6 +88,7 @@ validate('прочее снаряжение', 'gear.json', gearFileSchema)
 validate('компоненты', 'components.json', componentsFileSchema)
 validate('субстанции', 'substances.json', substancesFileSchema)
 validate('формулы', 'formulas.json', formulasFileSchema)
+validate('чертежи', 'schematics.json', schematicsFileSchema, { allowDuplicateNames: true })
 
 function validateTransport() {
   const raw = JSON.parse(readFileSync(join(dataDir, 'transport.json'), 'utf8'))

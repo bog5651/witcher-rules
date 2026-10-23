@@ -31,6 +31,7 @@ import GearTable from './components/GearTable.vue'
 import ComponentTable from './components/ComponentTable.vue'
 import SubstanceTable from './components/SubstanceTable.vue'
 import FormulaTable from './components/FormulaTable.vue'
+import SchematicTable from './components/SchematicTable.vue'
 
 export default {
   extends: DefaultTheme,
@@ -49,5 +50,6 @@ export default {
     app.component('ComponentTable', ComponentTable)
     app.component('SubstanceTable', SubstanceTable)
     app.component('FormulaTable', FormulaTable)
+    app.component('SchematicTable', SchematicTable)
   }
 } satisfies Theme

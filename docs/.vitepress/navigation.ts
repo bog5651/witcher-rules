@@ -40,6 +40,7 @@ export const sidebar: DefaultTheme.Sidebar = {
       items: [
         { text: 'Обзор', link: '/magic/' },
         { text: 'Правила магии', link: '/magic/rules' },
+        { text: 'Обучение магии', link: '/magic/learning' },
         {
           text: 'Заклинания',
           collapsed: false,
@@ -63,14 +64,13 @@ export const sidebar: DefaultTheme.Sidebar = {
         },
         { text: 'Ритуалы', link: '/magic/rituals' },
         { text: 'Порча', link: '/magic/hexes' },
-        { text: 'Места силы', link: '/magic/places-of-power' },
-        { text: 'Обучение магии', link: '/magic/learning' }
+        { text: 'Места силы', link: '/magic/places-of-power' }
       ]
     }
   ],
   '/shop/': [
     {
-      text: 'Магазин',
+      text: 'Снаряжение',
       items: [
         { text: 'Обзор', link: '/shop/' },
         { text: 'Оружие', link: '/shop/weapons' },

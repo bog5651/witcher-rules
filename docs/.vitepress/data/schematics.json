@@ -1,0 +1,4335 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "comp-double-cloth",
+      "name": "Двойное полотно",
+      "category": "component",
+      "level": "novice",
+      "origin": "common",
+      "dc": 14,
+      "time": "1/2 часа",
+      "components": [
+        {
+          "name": "Полотно",
+          "count": 1
+        },
+        {
+          "name": "нитки",
+          "count": 2
+        }
+      ],
+      "surcharge": 15,
+      "price": 30,
+      "sourcePage": 130
+    },
+    {
+      "id": "comp-reinforced-leather",
+      "name": "Укреплённая кожа",
+      "category": "component",
+      "level": "novice",
+      "origin": "common",
+      "dc": 14,
+      "time": "1/2 часа",
+      "components": [
+        {
+          "name": "Кожа",
+          "count": 1
+        },
+        {
+          "name": "воск",
+          "count": 2
+        }
+      ],
+      "surcharge": 32,
+      "price": 64,
+      "sourcePage": 130
+    },
+    {
+      "id": "comp-reinforced-wood",
+      "name": "Укреплённое дерево",
+      "category": "component",
+      "level": "novice",
+      "origin": "common",
+      "dc": 12,
+      "time": "1/2 часа",
+      "components": [
+        {
+          "name": "Древесина",
+          "count": 2
+        },
+        {
+          "name": "смола",
+          "count": 4
+        }
+      ],
+      "surcharge": 11,
+      "price": 21,
+      "sourcePage": 130
+    },
+    {
+      "id": "comp-leather",
+      "name": "Кожа",
+      "category": "component",
+      "level": "novice",
+      "origin": "common",
+      "dc": 12,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Коровья шкура",
+          "count": 1
+        },
+        {
+          "name": "дубильные травы",
+          "count": 3
+        }
+      ],
+      "surcharge": 19,
+      "price": 38,
+      "sourcePage": 130
+    },
+    {
+      "id": "comp-cloth",
+      "name": "Полотно",
+      "category": "component",
+      "level": "novice",
+      "origin": "common",
+      "dc": 10,
+      "time": "15 мин.",
+      "components": [
+        {
+          "name": "Нитки",
+          "count": 2
+        }
+      ],
+      "surcharge": 6,
+      "price": 12,
+      "sourcePage": 130
+    },
+    {
+      "id": "comp-thread",
+      "name": "Нитки",
+      "category": "component",
+      "level": "novice",
+      "origin": "common",
+      "dc": 10,
+      "time": "15 мин.",
+      "components": [
+        {
+          "name": "Хлопок",
+          "count": 2
+        }
+      ],
+      "surcharge": 2,
+      "price": 4,
+      "sourcePage": 130
+    },
+    {
+      "id": "comp-dark-steel",
+      "name": "Тёмная сталь",
+      "category": "component",
+      "level": "adept",
+      "origin": "common",
+      "dc": 17,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Тёмное железо",
+          "count": 1
+        },
+        {
+          "name": "уголь",
+          "count": 3
+        }
+      ],
+      "surcharge": 55,
+      "price": 110,
+      "sourcePage": 130
+    },
+    {
+      "id": "comp-lirian-leather",
+      "name": "Лирийская кожа",
+      "category": "component",
+      "level": "adept",
+      "origin": "common",
+      "dc": 17,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Кожа",
+          "count": 1
+        },
+        {
+          "name": "огров воск",
+          "count": 1
+        },
+        {
+          "name": "уголь",
+          "count": 2
+        }
+      ],
+      "surcharge": 40,
+      "price": 80,
+      "sourcePage": 130
+    },
+    {
+      "id": "comp-steel",
+      "name": "Сталь",
+      "category": "component",
+      "level": "adept",
+      "origin": "common",
+      "dc": 15,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Железо",
+          "count": 1
+        },
+        {
+          "name": "уголь",
+          "count": 5
+        }
+      ],
+      "surcharge": 35,
+      "price": 70,
+      "sourcePage": 130
+    },
+    {
+      "id": "comp-tretegor-steel",
+      "name": "Третогорская сталь",
+      "category": "component",
+      "level": "adept",
+      "origin": "common",
+      "dc": 16,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Железо",
+          "count": 1
+        },
+        {
+          "name": "уголь",
+          "count": 5
+        },
+        {
+          "name": "перья",
+          "count": 2
+        }
+      ],
+      "surcharge": 43,
+      "price": 86,
+      "sourcePage": 130
+    },
+    {
+      "id": "comp-dimeritium",
+      "name": "Двимерит",
+      "category": "component",
+      "level": "master",
+      "origin": "common",
+      "dc": 20,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Светящаяся руда",
+          "count": 2
+        }
+      ],
+      "surcharge": 160,
+      "price": 320,
+      "sourcePage": 130
+    },
+    {
+      "id": "comp-draconid-leather",
+      "name": "Кожа драконида",
+      "category": "component",
+      "level": "master",
+      "origin": "common",
+      "dc": 18,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Чешуя драконида",
+          "count": 1
+        },
+        {
+          "name": "дубильные травы",
+          "count": 3
+        }
+      ],
+      "surcharge": 39,
+      "price": 78,
+      "sourcePage": 130
+    },
+    {
+      "id": "comp-mahakam-dimeritium",
+      "name": "Махакамский двимерит",
+      "category": "component",
+      "level": "master",
+      "origin": "common",
+      "dc": 24,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Светящаяся руда",
+          "count": 2
+        },
+        {
+          "name": "речная глина",
+          "count": 3
+        },
+        {
+          "name": "пепел",
+          "count": 2
+        },
+        {
+          "name": "кости животных",
+          "count": 3
+        }
+      ],
+      "surcharge": 201,
+      "price": 402,
+      "sourcePage": 130
+    },
+    {
+      "id": "comp-mahakam-steel",
+      "name": "Махакамская сталь",
+      "category": "component",
+      "level": "master",
+      "origin": "common",
+      "dc": 22,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Железо",
+          "count": 1
+        },
+        {
+          "name": "уголь",
+          "count": 5
+        },
+        {
+          "name": "пепел",
+          "count": 2
+        },
+        {
+          "name": "речная глина",
+          "count": 3
+        },
+        {
+          "name": "кости животных",
+          "count": 3
+        }
+      ],
+      "surcharge": 76,
+      "price": 152,
+      "sourcePage": 130
+    },
+    {
+      "id": "weapon-blunt-ammo",
+      "name": "Боеприпасы с затупленным наконечником (x5)",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 12,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Древесина",
+          "count": 1
+        },
+        {
+          "name": "железо",
+          "count": 1
+        },
+        {
+          "name": "перья",
+          "count": 1
+        }
+      ],
+      "surcharge": 37,
+      "price": 74,
+      "sourcePage": 131
+    },
+    {
+      "id": "weapon-standard-ammo",
+      "name": "Боеприпасы стандартные (x30)",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 10,
+      "time": "2 часа",
+      "components": [
+        {
+          "name": "Древесина",
+          "count": 1
+        },
+        {
+          "name": "железо",
+          "count": 1
+        },
+        {
+          "name": "перья",
+          "count": 1
+        }
+      ],
+      "surcharge": 37,
+      "price": 14,
+      "sourcePage": 131
+    },
+    {
+      "id": "weapon-knight-sword",
+      "name": "Рыцарский меч",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 13,
+      "time": "7 часов",
+      "components": [
+        {
+          "name": "Древесина",
+          "count": 2
+        },
+        {
+          "name": "нитки",
+          "count": 1
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "сталь",
+          "count": 2
+        }
+      ],
+      "surcharge": 201,
+      "price": 404,
+      "sourcePage": 131
+    },
+    {
+      "id": "weapon-knuckles",
+      "name": "Кастет",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 10,
+      "time": "2 часа",
+      "components": [
+        {
+          "name": "Сталь",
+          "count": 1
+        },
+        {
+          "name": "укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "смола",
+          "count": 3
+        },
+        {
+          "name": "воск",
+          "count": 1
+        }
+      ],
+      "surcharge": 72,
+      "price": 125,
+      "sourcePage": 131
+    },
+    {
+      "id": "weapon-dagger",
+      "name": "Кинжал",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 8,
+      "time": "2 часа",
+      "components": [
+        {
+          "name": "Древесина",
+          "count": 1
+        },
+        {
+          "name": "железо",
+          "count": 1
+        }
+      ],
+      "surcharge": 33,
+      "price": 74,
+      "sourcePage": 131
+    },
+    {
+      "id": "weapon-gleddyf",
+      "name": "Гледдиф",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 14,
+      "time": "7 часов",
+      "components": [
+        {
+          "name": "Древесина",
+          "count": 1
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "кожа",
+          "count": 1
+        },
+        {
+          "name": "железо",
+          "count": 1
+        },
+        {
+          "name": "сталь",
+          "count": 2
+        },
+        {
+          "name": "масло",
+          "count": 1
+        },
+        {
+          "name": "смола",
+          "count": 1
+        }
+      ],
+      "surcharge": 210,
+      "price": 426,
+      "sourcePage": 131
+    },
+    {
+      "id": "weapon-axe",
+      "name": "Топор",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 10,
+      "time": "3 часа",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "сталь",
+          "count": 1
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "кожа",
+          "count": 1
+        },
+        {
+          "name": "смола",
+          "count": 4
+        }
+      ],
+      "surcharge": 148,
+      "price": 306,
+      "sourcePage": 131
+    },
+    {
+      "id": "weapon-hunting-falchion",
+      "name": "Охотничий фальшион",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 14,
+      "time": "7 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "сталь",
+          "count": 2
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 4
+        }
+      ],
+      "surcharge": 240,
+      "price": 486,
+      "sourcePage": 131
+    },
+    {
+      "id": "weapon-iron-bastard-sword",
+      "name": "Железный полуторный меч",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 10,
+      "time": "5 часов",
+      "components": [
+        {
+          "name": "Древесина",
+          "count": 1
+        },
+        {
+          "name": "железо",
+          "count": 2
+        },
+        {
+          "name": "кожа",
+          "count": 2
+        }
+      ],
+      "surcharge": 119,
+      "price": 240,
+      "sourcePage": 131
+    },
+    {
+      "id": "weapon-orions",
+      "name": "Орионы (x3)",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 12,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Сталь",
+          "count": 1
+        },
+        {
+          "name": "масло",
+          "count": 2
+        },
+        {
+          "name": "речная глина",
+          "count": 1
+        },
+        {
+          "name": "пепел",
+          "count": 3
+        }
+      ],
+      "surcharge": 62,
+      "price": 125,
+      "sourcePage": 131
+    },
+    {
+      "id": "weapon-short-bow",
+      "name": "Короткий лук",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 15,
+      "time": "8 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 5
+        },
+        {
+          "name": "нитки",
+          "count": 4
+        },
+        {
+          "name": "воск",
+          "count": 2
+        },
+        {
+          "name": "смола",
+          "count": 2
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 3
+        },
+        {
+          "name": "железо",
+          "count": 1
+        },
+        {
+          "name": "кожа",
+          "count": 2
+        }
+      ],
+      "surcharge": 210,
+      "price": 434,
+      "sourcePage": 131
+    },
+    {
+      "id": "weapon-spear",
+      "name": "Копьё",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 12,
+      "time": "6 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 5
+        },
+        {
+          "name": "сталь",
+          "count": 2
+        },
+        {
+          "name": "смола",
+          "count": 2
+        },
+        {
+          "name": "кожа",
+          "count": 3
+        },
+        {
+          "name": "нитки",
+          "count": 4
+        }
+      ],
+      "surcharge": 276,
+      "price": 562,
+      "sourcePage": 131
+    },
+    {
+      "id": "weapon-throwing-axes",
+      "name": "Метательные топоры (x3)",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 10,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Древесина",
+          "count": 1
+        },
+        {
+          "name": "сталь",
+          "count": 1
+        }
+      ],
+      "surcharge": 51,
+      "price": 116,
+      "sourcePage": 131
+    },
+    {
+      "id": "weapon-throwing-knives",
+      "name": "Метательные ножи (x3)",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 8,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Сталь",
+          "count": 1
+        }
+      ],
+      "surcharge": 48,
+      "price": 74,
+      "sourcePage": 131
+    },
+    {
+      "id": "weapon-armor-piercing-ammo",
+      "name": "Боеприпасы бронебойные (x10)",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 16,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "сталь",
+          "count": 1
+        },
+        {
+          "name": "перья",
+          "count": 1
+        },
+        {
+          "name": "точильный порошок",
+          "count": 1
+        },
+        {
+          "name": "огров воск",
+          "count": 1
+        }
+      ],
+      "surcharge": 110,
+      "price": 224,
+      "sourcePage": 132
+    },
+    {
+      "id": "weapon-broadhead-ammo",
+      "name": "Боеприпасы с широким наконечником (x10)",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 15,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Древесина",
+          "count": 1
+        },
+        {
+          "name": "железо",
+          "count": 1
+        },
+        {
+          "name": "перья",
+          "count": 1
+        },
+        {
+          "name": "точильный порошок",
+          "count": 1
+        }
+      ],
+      "surcharge": 69,
+      "price": 125,
+      "sourcePage": 132
+    },
+    {
+      "id": "weapon-battle-axe",
+      "name": "Боевой топор",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 17,
+      "time": "9 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 4
+        },
+        {
+          "name": "сталь",
+          "count": 3
+        },
+        {
+          "name": "кожа",
+          "count": 3
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 4
+        },
+        {
+          "name": "огров воск",
+          "count": 4
+        },
+        {
+          "name": "речная глина",
+          "count": 5
+        }
+      ],
+      "surcharge": 389,
+      "price": 786,
+      "sourcePage": 132
+    },
+    {
+      "id": "weapon-crossbow",
+      "name": "Арбалет",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 17,
+      "time": "9 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 4
+        },
+        {
+          "name": "нитки",
+          "count": 5
+        },
+        {
+          "name": "воск",
+          "count": 1
+        },
+        {
+          "name": "смола",
+          "count": 2
+        },
+        {
+          "name": "сталь",
+          "count": 3
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 2
+        },
+        {
+          "name": "огров воск",
+          "count": 2
+        },
+        {
+          "name": "железо",
+          "count": 1
+        }
+      ],
+      "surcharge": 343,
+      "price": 682,
+      "sourcePage": 132
+    },
+    {
+      "id": "weapon-esboda",
+      "name": "Эсбода",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 17,
+      "time": "9 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "сталь",
+          "count": 3
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 2
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 1
+        }
+      ],
+      "surcharge": 481,
+      "price": 974,
+      "sourcePage": 132
+    },
+    {
+      "id": "weapon-hand-crossbow",
+      "name": "Ручной арбалет",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 15,
+      "time": "8 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "нитки",
+          "count": 4
+        },
+        {
+          "name": "воск",
+          "count": 2
+        },
+        {
+          "name": "смола",
+          "count": 2
+        },
+        {
+          "name": "сталь",
+          "count": 1
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 2
+        },
+        {
+          "name": "огров воск",
+          "count": 2
+        },
+        {
+          "name": "железо",
+          "count": 1
+        }
+      ],
+      "surcharge": 214,
+      "price": 426,
+      "sourcePage": 132
+    },
+    {
+      "id": "weapon-hooked-staff",
+      "name": "Посох с крюком",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 18,
+      "time": "9 часов",
+      "components": [
+        {
+          "name": "Древесина",
+          "count": 6
+        },
+        {
+          "name": "сталь",
+          "count": 1
+        },
+        {
+          "name": "пятая эссенция",
+          "count": 2
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 2
+        },
+        {
+          "name": "воск",
+          "count": 3
+        },
+        {
+          "name": "сталь",
+          "count": 2
+        },
+        {
+          "name": "травильная кислота",
+          "count": 2
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "нитки",
+          "count": 4
+        }
+      ],
+      "surcharge": 412,
+      "price": 824,
+      "sourcePage": 132
+    },
+    {
+      "id": "weapon-kriegsverd",
+      "name": "Кригсверд",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 16,
+      "time": "8 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 3
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "смола",
+          "count": 4
+        },
+        {
+          "name": "кости животных",
+          "count": 7
+        },
+        {
+          "name": "сталь",
+          "count": 3
+        },
+        {
+          "name": "пепел",
+          "count": 2
+        }
+      ],
+      "surcharge": 438,
+      "price": 854,
+      "sourcePage": 132
+    },
+    {
+      "id": "weapon-long-bow",
+      "name": "Длинный лук",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 16,
+      "time": "8 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 6
+        },
+        {
+          "name": "нитки",
+          "count": 8
+        },
+        {
+          "name": "воск",
+          "count": 4
+        },
+        {
+          "name": "смола",
+          "count": 2
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 3
+        },
+        {
+          "name": "сталь",
+          "count": 1
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        }
+      ],
+      "surcharge": 252,
+      "price": 712,
+      "sourcePage": 132
+    },
+    {
+      "id": "weapon-mace",
+      "name": "Булава",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 16,
+      "time": "8 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "сталь",
+          "count": 3
+        },
+        {
+          "name": "железо",
+          "count": 2
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "огров воск",
+          "count": 5
+        },
+        {
+          "name": "смола",
+          "count": 1
+        }
+      ],
+      "surcharge": 384,
+      "price": 786,
+      "sourcePage": 132
+    },
+    {
+      "id": "weapon-bardiche",
+      "name": "Секира",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 16,
+      "time": "8 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 5
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 2
+        },
+        {
+          "name": "кожа",
+          "count": 2
+        },
+        {
+          "name": "точильный порошок",
+          "count": 1
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 1
+        },
+        {
+          "name": "полотно",
+          "count": 1
+        }
+      ],
+      "surcharge": 349,
+      "price": 690,
+      "sourcePage": 132
+    },
+    {
+      "id": "weapon-short-dagger",
+      "name": "Короткий кинжал",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 18,
+      "time": "4 часа",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "травильная кислота",
+          "count": 4
+        },
+        {
+          "name": "кости животных",
+          "count": 4
+        }
+      ],
+      "surcharge": 250,
+      "price": 534,
+      "sourcePage": 132
+    },
+    {
+      "id": "weapon-staff",
+      "name": "Посох",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 18,
+      "time": "9 часов",
+      "components": [
+        {
+          "name": "Древесина",
+          "count": 6
+        },
+        {
+          "name": "сталь",
+          "count": 1
+        },
+        {
+          "name": "пятая эссенция",
+          "count": 2
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 2
+        },
+        {
+          "name": "воск",
+          "count": 2
+        }
+      ],
+      "surcharge": 250,
+      "price": 502,
+      "sourcePage": 132
+    },
+    {
+      "id": "weapon-stiletto",
+      "name": "Стилет",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 16,
+      "time": "4 часа",
+      "components": [
+        {
+          "name": "Древесина",
+          "count": 1
+        },
+        {
+          "name": "смола",
+          "count": 1
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "воск",
+          "count": 2
+        },
+        {
+          "name": "чернящее масло",
+          "count": 1
+        },
+        {
+          "name": "точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "уголь",
+          "count": 5
+        }
+      ],
+      "surcharge": 184,
+      "price": 412,
+      "sourcePage": 132
+    },
+    {
+      "id": "weapon-berserker-axe",
+      "name": "Топор берсерка",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 25,
+      "time": "13 часов",
+      "components": [
+        {
+          "name": "Махакамская сталь",
+          "count": 4
+        },
+        {
+          "name": "укреплённое дерево",
+          "count": 5
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "сталь",
+          "count": 2
+        },
+        {
+          "name": "смола",
+          "count": 1
+        },
+        {
+          "name": "точильный порошок",
+          "count": 1
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 1
+        }
+      ],
+      "surcharge": 722,
+      "price": 1440,
+      "sourcePage": 133
+    },
+    {
+      "id": "weapon-crystal-staff",
+      "name": "Посох с кристаллом",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 25,
+      "time": "13 часов",
+      "components": [
+        {
+          "name": "Древесина",
+          "count": 6
+        },
+        {
+          "name": "сталь",
+          "count": 2
+        },
+        {
+          "name": "пятая эссенция",
+          "count": 4
+        },
+        {
+          "name": "самоцвет",
+          "count": 1
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 3
+        },
+        {
+          "name": "воск",
+          "count": 2
+        },
+        {
+          "name": "травильная кислота",
+          "count": 4
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 1
+        }
+      ],
+      "surcharge": 623,
+      "price": 1296,
+      "sourcePage": 133
+    },
+    {
+      "id": "weapon-mountain-hammer",
+      "name": "Молот горца",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 25,
+      "time": "13 часов",
+      "components": [
+        {
+          "name": "Тёмное железо",
+          "count": 5
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "укреплённое дерево",
+          "count": 10
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "травильная кислота",
+          "count": 6
+        },
+        {
+          "name": "кости животных",
+          "count": 10
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 4
+        },
+        {
+          "name": "метеорит",
+          "count": 1
+        }
+      ],
+      "surcharge": 772,
+      "price": 1440,
+      "sourcePage": 133
+    },
+    {
+      "id": "weapon-iron-staff",
+      "name": "Железный посох",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 20,
+      "time": "10 часов",
+      "components": [
+        {
+          "name": "Тёмное железо",
+          "count": 4
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "пятая эссенция",
+          "count": 2
+        },
+        {
+          "name": "кожа",
+          "count": 1
+        },
+        {
+          "name": "травильная кислота",
+          "count": 4
+        },
+        {
+          "name": "укреплённое дерево",
+          "count": 1
+        }
+      ],
+      "surcharge": 506,
+      "price": 1012,
+      "sourcePage": 133
+    },
+    {
+      "id": "weapon-jambiya",
+      "name": "Джамбия",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 20,
+      "time": "5 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "кожа драконида",
+          "count": 1
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "сталь",
+          "count": 2
+        },
+        {
+          "name": "точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "смола",
+          "count": 1
+        },
+        {
+          "name": "чернящее масло",
+          "count": 1
+        }
+      ],
+      "surcharge": 342,
+      "price": 660,
+      "sourcePage": 133
+    },
+    {
+      "id": "weapon-kord",
+      "name": "Корд",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 22,
+      "time": "11 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "шёлк",
+          "count": 1
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 3
+        },
+        {
+          "name": "смола",
+          "count": 4
+        },
+        {
+          "name": "тёмное железо",
+          "count": 1
+        },
+        {
+          "name": "уголь",
+          "count": 1
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "кости животных",
+          "count": 7
+        }
+      ],
+      "surcharge": 525,
+      "price": 1012,
+      "sourcePage": 133
+    },
+    {
+      "id": "weapon-monster-hunter-crossbow",
+      "name": "Арбалет охотника на чудовищ",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 24,
+      "time": "12 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 6
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 4
+        },
+        {
+          "name": "нитки",
+          "count": 6
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 3
+        },
+        {
+          "name": "смола",
+          "count": 4
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 2
+        },
+        {
+          "name": "воск",
+          "count": 3
+        },
+        {
+          "name": "огров воск",
+          "count": 4
+        },
+        {
+          "name": "тёмное железо",
+          "count": 3
+        },
+        {
+          "name": "кости животных",
+          "count": 4
+        }
+      ],
+      "surcharge": 844,
+      "price": 1686,
+      "sourcePage": 133
+    },
+    {
+      "id": "weapon-red-halberd",
+      "name": "Красная алебарда",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 22,
+      "time": "11 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 6
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 3
+        },
+        {
+          "name": "третогорская сталь",
+          "count": 2
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 2
+        }
+      ],
+      "surcharge": 646,
+      "price": 1296,
+      "sourcePage": 133
+    },
+    {
+      "id": "weapon-torrur",
+      "name": "Торрур",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 25,
+      "time": "13 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 3
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 5
+        },
+        {
+          "name": "сталь",
+          "count": 2
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 3
+        },
+        {
+          "name": "смола",
+          "count": 5
+        },
+        {
+          "name": "пепел",
+          "count": 4
+        },
+        {
+          "name": "кости животных",
+          "count": 2
+        },
+        {
+          "name": "точильный порошок",
+          "count": 1
+        }
+      ],
+      "surcharge": 760,
+      "price": 1462,
+      "sourcePage": 133
+    },
+    {
+      "id": "weapon-vikovo-blade",
+      "name": "Клинок из Виковаро",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 24,
+      "time": "12 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 3
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 4
+        },
+        {
+          "name": "тёмное железо",
+          "count": 2
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 3
+        },
+        {
+          "name": "смола",
+          "count": 4
+        },
+        {
+          "name": "пепел",
+          "count": 4
+        },
+        {
+          "name": "кости животных",
+          "count": 3
+        }
+      ],
+      "surcharge": 660,
+      "price": 1282,
+      "sourcePage": 133
+    },
+    {
+      "id": "weapon-army-bow",
+      "name": "Армейский лук",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 22,
+      "time": "11 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 6
+        },
+        {
+          "name": "нитки",
+          "count": 8
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 3
+        },
+        {
+          "name": "воск",
+          "count": 4
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 4
+        },
+        {
+          "name": "смола",
+          "count": 4
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 2
+        }
+      ],
+      "surcharge": 626,
+      "price": 1296,
+      "sourcePage": 133
+    },
+    {
+      "id": "armor-aedirn-gambeson",
+      "name": "Аэдирнский гамбезон",
+      "category": "armor",
+      "level": "novice",
+      "origin": "common",
+      "dc": 12,
+      "time": "6 часов",
+      "components": [
+        {
+          "name": "Полотно",
+          "count": 6
+        },
+        {
+          "name": "нитки",
+          "count": 6
+        },
+        {
+          "name": "кожа",
+          "count": 2
+        },
+        {
+          "name": "масло",
+          "count": 1
+        }
+      ],
+      "surcharge": 131,
+      "price": 362,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-cavalry-pants",
+      "name": "Кавалерийские штаны",
+      "category": "armor",
+      "level": "novice",
+      "origin": "common",
+      "dc": 13,
+      "time": "7 часов",
+      "components": [
+        {
+          "name": "Полотно",
+          "count": 5
+        },
+        {
+          "name": "нитки",
+          "count": 4
+        }
+      ],
+      "surcharge": 57,
+      "price": 112,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-double-gambeson",
+      "name": "Двуслойный гамбезон",
+      "category": "armor",
+      "level": "novice",
+      "origin": "common",
+      "dc": 15,
+      "time": "8 часов",
+      "components": [
+        {
+          "name": "Двойное полотно",
+          "count": 5
+        },
+        {
+          "name": "нитки",
+          "count": 6
+        },
+        {
+          "name": "дубильные травы",
+          "count": 4
+        },
+        {
+          "name": "полотно",
+          "count": 4
+        },
+        {
+          "name": "хлопок",
+          "count": 11
+        }
+      ],
+      "surcharge": 187,
+      "price": 374,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-double-hood",
+      "name": "Двуслойный капюшон",
+      "category": "armor",
+      "level": "novice",
+      "origin": "common",
+      "dc": 13,
+      "time": "4 часа",
+      "components": [
+        {
+          "name": "Двуслойное полотно",
+          "count": 2
+        },
+        {
+          "name": "кожа",
+          "count": 2
+        },
+        {
+          "name": "нитки",
+          "count": 7
+        },
+        {
+          "name": "воск",
+          "count": 4
+        }
+      ],
+      "surcharge": 129,
+      "price": 262,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-double-pants",
+      "name": "Двуслойные штаны",
+      "category": "armor",
+      "level": "novice",
+      "origin": "common",
+      "dc": 15,
+      "time": "8 часов",
+      "components": [
+        {
+          "name": "Двуслойное полотно",
+          "count": 6
+        },
+        {
+          "name": "нитки",
+          "count": 6
+        },
+        {
+          "name": "хлопок",
+          "count": 6
+        },
+        {
+          "name": "полотно",
+          "count": 1
+        }
+      ],
+      "surcharge": 165,
+      "price": 336,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-gambeson",
+      "name": "Гамбезон",
+      "category": "armor",
+      "level": "novice",
+      "origin": "common",
+      "dc": 10,
+      "time": "5 часов",
+      "components": [
+        {
+          "name": "Полотно",
+          "count": 6
+        },
+        {
+          "name": "нитки",
+          "count": 7
+        }
+      ],
+      "surcharge": 75,
+      "price": 150,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-leather-shield",
+      "name": "Кожаный щит",
+      "category": "armor",
+      "level": "novice",
+      "origin": "common",
+      "dc": 12,
+      "time": "3 часа",
+      "components": [
+        {
+          "name": "Кожа",
+          "count": 1
+        },
+        {
+          "name": "древесина",
+          "count": 2
+        },
+        {
+          "name": "дубильные травы",
+          "count": 1
+        }
+      ],
+      "surcharge": 37,
+      "price": 74,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-quilted-pants",
+      "name": "Стёганые штаны",
+      "category": "armor",
+      "level": "novice",
+      "origin": "common",
+      "dc": 14,
+      "time": "7 часов",
+      "components": [
+        {
+          "name": "Полотно",
+          "count": 5
+        },
+        {
+          "name": "нитки",
+          "count": 4
+        },
+        {
+          "name": "хлопок",
+          "count": 9
+        },
+        {
+          "name": "кожа",
+          "count": 1
+        }
+      ],
+      "surcharge": 94,
+      "price": 186,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-frame-helmet",
+      "name": "Каркасный шлем с полумаской",
+      "category": "armor",
+      "level": "novice",
+      "origin": "common",
+      "dc": 15,
+      "time": "4 часа",
+      "components": [
+        {
+          "name": "Сталь",
+          "count": 3
+        },
+        {
+          "name": "кости животных",
+          "count": 1
+        }
+      ],
+      "surcharge": 152,
+      "price": 300,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-steel-buckler",
+      "name": "Стальной баклер",
+      "category": "armor",
+      "level": "novice",
+      "origin": "common",
+      "dc": 15,
+      "time": "4 часа",
+      "components": [
+        {
+          "name": "Сталь",
+          "count": 1
+        },
+        {
+          "name": "укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        }
+      ],
+      "surcharge": 112,
+      "price": 224,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-temerian-shield",
+      "name": "Темерский щит",
+      "category": "armor",
+      "level": "novice",
+      "origin": "common",
+      "dc": 16,
+      "time": "4 часа",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 4
+        },
+        {
+          "name": "железо",
+          "count": 1
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "огров воск",
+          "count": 3
+        }
+      ],
+      "surcharge": 172,
+      "price": 342,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-verdan-hood",
+      "name": "Капюшон вердэнского лучника",
+      "category": "armor",
+      "level": "novice",
+      "origin": "common",
+      "dc": 10,
+      "time": "3 часа",
+      "components": [
+        {
+          "name": "Полотно",
+          "count": 2
+        },
+        {
+          "name": "кожа",
+          "count": 1
+        },
+        {
+          "name": "нитки",
+          "count": 6
+        },
+        {
+          "name": "воск",
+          "count": 3
+        }
+      ],
+      "surcharge": 70,
+      "price": 150,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-reinforced-hood",
+      "name": "Усиленный капюшон",
+      "category": "armor",
+      "level": "adept",
+      "origin": "common",
+      "dc": 17,
+      "time": "5 часов",
+      "components": [
+        {
+          "name": "Кожа",
+          "count": 1
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 3
+        },
+        {
+          "name": "двойное полотно",
+          "count": 3
+        },
+        {
+          "name": "нитки",
+          "count": 4
+        },
+        {
+          "name": "огров воск",
+          "count": 1
+        }
+      ],
+      "surcharge": 260,
+      "price": 524,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-reinforced-pants",
+      "name": "Усиленные штаны",
+      "category": "armor",
+      "level": "adept",
+      "origin": "common",
+      "dc": 16,
+      "time": "8 часов",
+      "components": [
+        {
+          "name": "Укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "сталь",
+          "count": 1
+        },
+        {
+          "name": "кожа",
+          "count": 1
+        },
+        {
+          "name": "нитки",
+          "count": 5
+        }
+      ],
+      "surcharge": 187,
+      "price": 374,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-brigantine",
+      "name": "Бригантина",
+      "category": "armor",
+      "level": "adept",
+      "origin": "common",
+      "dc": 16,
+      "time": "8 часов",
+      "components": [
+        {
+          "name": "Кожа",
+          "count": 3
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 3
+        }
+      ],
+      "surcharge": 228,
+      "price": 450,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-chainmail-hood",
+      "name": "Кольчужный капюшон",
+      "category": "armor",
+      "level": "adept",
+      "origin": "common",
+      "dc": 16,
+      "time": "4 часа",
+      "components": [
+        {
+          "name": "Сталь",
+          "count": 4
+        }
+      ],
+      "surcharge": 192,
+      "price": 374,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-kaedwen-shield",
+      "name": "Каэдвенский щит",
+      "category": "armor",
+      "level": "adept",
+      "origin": "common",
+      "dc": 19,
+      "time": "5 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 5
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "кости животных",
+          "count": 7
+        },
+        {
+          "name": "кожа",
+          "count": 1
+        },
+        {
+          "name": "огров воск",
+          "count": 5
+        },
+        {
+          "name": "воск",
+          "count": 2
+        }
+      ],
+      "surcharge": 300,
+      "price": 600,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-lirian-jacket",
+      "name": "Кожаная куртка из Лирии",
+      "category": "armor",
+      "level": "adept",
+      "origin": "common",
+      "dc": 18,
+      "time": "9 часов",
+      "components": [
+        {
+          "name": "Лирийская кожа",
+          "count": 4
+        },
+        {
+          "name": "нитки",
+          "count": 4
+        },
+        {
+          "name": "кожа",
+          "count": 2
+        },
+        {
+          "name": "полотно",
+          "count": 4
+        },
+        {
+          "name": "сталь",
+          "count": 1
+        }
+      ],
+      "surcharge": 392,
+      "price": 786,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-lirian-pants",
+      "name": "Кожаные штаны из Лирии",
+      "category": "armor",
+      "level": "adept",
+      "origin": "common",
+      "dc": 18,
+      "time": "9 часов",
+      "components": [
+        {
+          "name": "Лирийская кожа",
+          "count": 4
+        },
+        {
+          "name": "нитки",
+          "count": 4
+        },
+        {
+          "name": "кожа",
+          "count": 2
+        },
+        {
+          "name": "полотно",
+          "count": 4
+        },
+        {
+          "name": "сталь",
+          "count": 1
+        }
+      ],
+      "surcharge": 392,
+      "price": 786,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-steel-teardrop-shield",
+      "name": "Стальной каплевидный щит",
+      "category": "armor",
+      "level": "adept",
+      "origin": "common",
+      "dc": 17,
+      "time": "5 часов",
+      "components": [
+        {
+          "name": "Сталь",
+          "count": 4
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "кожа",
+          "count": 1
+        }
+      ],
+      "surcharge": 302,
+      "price": 600,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-temerian-armet",
+      "name": "Темерский армет",
+      "category": "armor",
+      "level": "adept",
+      "origin": "common",
+      "dc": 18,
+      "time": "5 часов",
+      "components": [
+        {
+          "name": "Сталь",
+          "count": 4
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 1
+        },
+        {
+          "name": "кожа",
+          "count": 2
+        }
+      ],
+      "surcharge": 352,
+      "price": 712,
+      "sourcePage": 134
+    },
+    {
+      "id": "armor-redanian-greaves",
+      "name": "Реданские поножи",
+      "category": "armor",
+      "level": "adept",
+      "origin": "common",
+      "dc": 17,
+      "time": "9 часов",
+      "components": [
+        {
+          "name": "Укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "кожа",
+          "count": 1
+        },
+        {
+          "name": "третогорская сталь",
+          "count": 3
+        },
+        {
+          "name": "нитки",
+          "count": 5
+        },
+        {
+          "name": "дубильные травы",
+          "count": 3
+        },
+        {
+          "name": "хлопок",
+          "count": 3
+        }
+      ],
+      "surcharge": 295,
+      "price": 600,
+      "sourcePage": 135
+    },
+    {
+      "id": "armor-redanian-halberdier",
+      "name": "Броня реданского алебардщика",
+      "category": "armor",
+      "level": "adept",
+      "origin": "common",
+      "dc": 17,
+      "time": "9 часов",
+      "components": [
+        {
+          "name": "Нитки",
+          "count": 5
+        },
+        {
+          "name": "кожа",
+          "count": 2
+        },
+        {
+          "name": "сталь",
+          "count": 2
+        },
+        {
+          "name": "третогорская сталь",
+          "count": 2
+        }
+      ],
+      "surcharge": 295,
+      "price": 600,
+      "sourcePage": 135
+    },
+    {
+      "id": "armor-skellige-raider-shield",
+      "name": "Щит налётчика со Скеллиге",
+      "category": "armor",
+      "level": "adept",
+      "origin": "common",
+      "dc": 18,
+      "time": "5 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 5
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "огров воск",
+          "count": 1
+        },
+        {
+          "name": "кости животных",
+          "count": 5
+        },
+        {
+          "name": "кожа",
+          "count": 1
+        }
+      ],
+      "surcharge": 240,
+      "price": 486,
+      "sourcePage": 135
+    },
+    {
+      "id": "armor-topfhelm",
+      "name": "Топфхельм",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 19,
+      "time": "5 часов",
+      "components": [
+        {
+          "name": "Сталь",
+          "count": 5
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 3
+        },
+        {
+          "name": "нитки",
+          "count": 6
+        },
+        {
+          "name": "огров воск",
+          "count": 2
+        },
+        {
+          "name": "полотно",
+          "count": 1
+        }
+      ],
+      "surcharge": 431,
+      "price": 862,
+      "sourcePage": 135
+    },
+    {
+      "id": "armor-hindarsfjall-heavy-armor",
+      "name": "Хиндарсфьяльский тяжёлый доспех",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 22,
+      "time": "11 часов",
+      "components": [
+        {
+          "name": "Нитки",
+          "count": 6
+        },
+        {
+          "name": "кости животных",
+          "count": 5
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 3
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 4
+        }
+      ],
+      "surcharge": 569,
+      "price": 1124,
+      "sourcePage": 135
+    },
+    {
+      "id": "armor-hindarsfjall-heavy-hosen",
+      "name": "Хиндарсфьяльские тяжёлые шоссы",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 22,
+      "time": "11 часов",
+      "components": [
+        {
+          "name": "Нитки",
+          "count": 8
+        },
+        {
+          "name": "кости животных",
+          "count": 5
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "кожа",
+          "count": 1
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 1
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 4
+        }
+      ],
+      "surcharge": 561,
+      "price": 1124,
+      "sourcePage": 135
+    },
+    {
+      "id": "armor-nilfgaard-greaves",
+      "name": "Нильфгаардские поножи",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 24,
+      "time": "12 часов",
+      "components": [
+        {
+          "name": "Тёмная сталь",
+          "count": 5
+        },
+        {
+          "name": "пепел",
+          "count": 10
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "кожа",
+          "count": 1
+        },
+        {
+          "name": "чернящее масло",
+          "count": 1
+        },
+        {
+          "name": "масло",
+          "count": 4
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 2
+        },
+        {
+          "name": "полотно",
+          "count": 1
+        }
+      ],
+      "surcharge": 631,
+      "price": 1274,
+      "sourcePage": 135
+    },
+    {
+      "id": "armor-nilfgaard-helmet",
+      "name": "Нильфгаардский шлем",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 24,
+      "time": "6 часов",
+      "components": [
+        {
+          "name": "Тёмная сталь",
+          "count": 5
+        },
+        {
+          "name": "масло",
+          "count": 5
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "чернящее масло",
+          "count": 1
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 1
+        },
+        {
+          "name": "пепел",
+          "count": 10
+        }
+      ],
+      "surcharge": 537,
+      "price": 1200,
+      "sourcePage": 135
+    },
+    {
+      "id": "armor-nilfgaard-pavise",
+      "name": "Нильфгаардская павеза",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 22,
+      "time": "6 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 10
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 3
+        },
+        {
+          "name": "огров воск",
+          "count": 1
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 2
+        },
+        {
+          "name": "чернящее масло",
+          "count": 1
+        },
+        {
+          "name": "пепел",
+          "count": 10
+        },
+        {
+          "name": "травильная кислота",
+          "count": 2
+        }
+      ],
+      "surcharge": 450,
+      "price": 900,
+      "sourcePage": 135
+    },
+    {
+      "id": "armor-nilfgaard-plate",
+      "name": "Нильфгаардский латный доспех",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 24,
+      "time": "12 часов",
+      "components": [
+        {
+          "name": "Тёмная сталь",
+          "count": 5
+        },
+        {
+          "name": "полотно",
+          "count": 3
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "кожа",
+          "count": 1
+        },
+        {
+          "name": "чернящее масло",
+          "count": 1
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 2
+        },
+        {
+          "name": "пепел",
+          "count": 10
+        }
+      ],
+      "surcharge": 637,
+      "price": 1274,
+      "sourcePage": 135
+    },
+    {
+      "id": "armor-pavise",
+      "name": "Павеза",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 19,
+      "time": "5 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 10
+        },
+        {
+          "name": "сталь",
+          "count": 1
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 3
+        },
+        {
+          "name": "огров воск",
+          "count": 1
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 2
+        }
+      ],
+      "surcharge": 378,
+      "price": 750,
+      "sourcePage": 135
+    },
+    {
+      "id": "armor-plate-greaves",
+      "name": "Латные поножи",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 19,
+      "time": "10 часов",
+      "components": [
+        {
+          "name": "Сталь",
+          "count": 5
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 3
+        },
+        {
+          "name": "нитки",
+          "count": 7
+        },
+        {
+          "name": "травильная кислота",
+          "count": 4
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 1
+        },
+        {
+          "name": "огров воск",
+          "count": 1
+        }
+      ],
+      "surcharge": 468,
+      "price": 798,
+      "sourcePage": 135
+    },
+    {
+      "id": "armor-plate",
+      "name": "Латный доспех",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 19,
+      "time": "10 часов",
+      "components": [
+        {
+          "name": "Сталь",
+          "count": 5
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 3
+        },
+        {
+          "name": "нитки",
+          "count": 7
+        },
+        {
+          "name": "травильная кислота",
+          "count": 4
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 1
+        },
+        {
+          "name": "огров воск",
+          "count": 1
+        }
+      ],
+      "surcharge": 468,
+      "price": 937,
+      "sourcePage": 135
+    },
+    {
+      "id": "armor-skellige-helmet",
+      "name": "Скеллигский шлем",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 22,
+      "time": "6 часов",
+      "components": [
+        {
+          "name": "Тёмная сталь",
+          "count": 4
+        },
+        {
+          "name": "нитки",
+          "count": 6
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "кости животных",
+          "count": 5
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 1
+        }
+      ],
+      "surcharge": 527,
+      "price": 1050,
+      "sourcePage": 135
+    },
+    {
+      "id": "weapon-elder-dwarf-axe",
+      "name": "Краснолюдский топор",
+      "category": "weapon",
+      "level": "master",
+      "origin": "elder",
+      "dc": 24,
+      "time": "12 часов",
+      "components": [
+        {
+          "name": "Махакамская сталь",
+          "count": 3
+        },
+        {
+          "name": "укреплённое дерево",
+          "count": 4
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "травильная кислота",
+          "count": 4
+        },
+        {
+          "name": "точильный порошок",
+          "count": 1
+        },
+        {
+          "name": "речная глина",
+          "count": 2
+        },
+        {
+          "name": "уголь",
+          "count": 3
+        }
+      ],
+      "surcharge": 555,
+      "price": 1110,
+      "sourcePage": 136
+    },
+    {
+      "id": "weapon-elder-dwarf-cleaver",
+      "name": "Краснолюдский секач",
+      "category": "weapon",
+      "level": "master",
+      "origin": "elder",
+      "dc": 19,
+      "time": "10 часов",
+      "components": [
+        {
+          "name": "Махакамская сталь",
+          "count": 2
+        },
+        {
+          "name": "укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "кожа",
+          "count": 1
+        },
+        {
+          "name": "точильный порошок",
+          "count": 1
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 1
+        },
+        {
+          "name": "речная глина",
+          "count": 5
+        }
+      ],
+      "surcharge": 374,
+      "price": 750,
+      "sourcePage": 136
+    },
+    {
+      "id": "weapon-elder-dwarf-crossbow",
+      "name": "Краснолюдский тяжёлый арбалет",
+      "category": "weapon",
+      "level": "master",
+      "origin": "elder",
+      "dc": 24,
+      "time": "12 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 5
+        },
+        {
+          "name": "махакамская сталь",
+          "count": 3
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "нитки",
+          "count": 4
+        },
+        {
+          "name": "огров воск",
+          "count": 5
+        },
+        {
+          "name": "тёмное железо",
+          "count": 1
+        }
+      ],
+      "surcharge": 632,
+      "price": 1274,
+      "sourcePage": 136
+    },
+    {
+      "id": "weapon-elder-glaive",
+      "name": "Эльфская глефа",
+      "category": "weapon",
+      "level": "master",
+      "origin": "elder",
+      "dc": 19,
+      "time": "10 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 6
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 4
+        },
+        {
+          "name": "сталь",
+          "count": 1
+        },
+        {
+          "name": "кожа",
+          "count": 4
+        },
+        {
+          "name": "перья",
+          "count": 3
+        },
+        {
+          "name": "точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 4
+        }
+      ],
+      "surcharge": 692,
+      "price": 1386,
+      "sourcePage": 136
+    },
+    {
+      "id": "weapon-elder-messer",
+      "name": "Эльфский мессер",
+      "category": "weapon",
+      "level": "master",
+      "origin": "elder",
+      "dc": 19,
+      "time": "10 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "кожа",
+          "count": 3
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 3
+        },
+        {
+          "name": "шёлк",
+          "count": 1
+        },
+        {
+          "name": "точильный порошок",
+          "count": 1
+        },
+        {
+          "name": "травильная кислота",
+          "count": 1
+        }
+      ],
+      "surcharge": 446,
+      "price": 892,
+      "sourcePage": 136
+    },
+    {
+      "id": "weapon-elder-travel-bow",
+      "name": "Эльфский походный лук",
+      "category": "weapon",
+      "level": "master",
+      "origin": "elder",
+      "dc": 22,
+      "time": "11 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 4
+        },
+        {
+          "name": "нитки",
+          "count": 4
+        },
+        {
+          "name": "воск",
+          "count": 4
+        },
+        {
+          "name": "пятая эссенция",
+          "count": 1
+        },
+        {
+          "name": "кожа",
+          "count": 1
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 2
+        },
+        {
+          "name": "перья",
+          "count": 3
+        },
+        {
+          "name": "кости животных",
+          "count": 2
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 5
+        },
+        {
+          "name": "травильная кислота",
+          "count": 3
+        }
+      ],
+      "surcharge": 432,
+      "price": 862,
+      "sourcePage": 136
+    },
+    {
+      "id": "weapon-elder-gnome-staff",
+      "name": "Гномий посох",
+      "category": "weapon",
+      "level": "master",
+      "origin": "elder",
+      "dc": 22,
+      "time": "11 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 6
+        },
+        {
+          "name": "пятая эссенция",
+          "count": 5
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "чернящее масло",
+          "count": 3
+        },
+        {
+          "name": "двойное полотно",
+          "count": 1
+        }
+      ],
+      "surcharge": 682,
+      "price": 1364,
+      "sourcePage": 136
+    },
+    {
+      "id": "weapon-elder-rondel",
+      "name": "Низушечий рондель",
+      "category": "weapon",
+      "level": "master",
+      "origin": "elder",
+      "dc": 19,
+      "time": "10 часов",
+      "components": [
+        {
+          "name": "Тёмная сталь",
+          "count": 2
+        },
+        {
+          "name": "укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "точильный порошок",
+          "count": 3
+        },
+        {
+          "name": "чернящее масло",
+          "count": 1
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 2
+        }
+      ],
+      "surcharge": 364,
+      "price": 726,
+      "sourcePage": 136
+    },
+    {
+      "id": "weapon-elder-martel",
+      "name": "Махакамский мартель",
+      "category": "weapon",
+      "level": "master",
+      "origin": "elder",
+      "dc": 22,
+      "time": "11 часов",
+      "components": [
+        {
+          "name": "Махакамская сталь",
+          "count": 3
+        },
+        {
+          "name": "укреплённое дерево",
+          "count": 3
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "волчья шкура",
+          "count": 1
+        },
+        {
+          "name": "точильный порошок",
+          "count": 1
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 3
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 2
+        },
+        {
+          "name": "речная глина",
+          "count": 4
+        },
+        {
+          "name": "полотно",
+          "count": 1
+        }
+      ],
+      "surcharge": 675,
+      "price": 1350,
+      "sourcePage": 136
+    },
+    {
+      "id": "weapon-elder-meteorite-sword",
+      "name": "Меч из метеоритной стали",
+      "category": "weapon",
+      "level": "master",
+      "origin": "elder",
+      "dc": 20,
+      "time": "10 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "кожа",
+          "count": 2
+        },
+        {
+          "name": "точильный порошок",
+          "count": 1
+        },
+        {
+          "name": "травильная кислота",
+          "count": 4
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 4
+        },
+        {
+          "name": "метеорит",
+          "count": 5
+        }
+      ],
+      "surcharge": 650,
+      "price": 1312,
+      "sourcePage": 136
+    },
+    {
+      "id": "weapon-elder-vrihedd-blade",
+      "name": "Клинок бригады «Врихедд»",
+      "category": "weapon",
+      "level": "master",
+      "origin": "elder",
+      "dc": 24,
+      "time": "12 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "шёлк",
+          "count": 1
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 4
+        },
+        {
+          "name": "точильный порошок",
+          "count": 3
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 4
+        },
+        {
+          "name": "речная глина",
+          "count": 4
+        }
+      ],
+      "surcharge": 558,
+      "price": 1117,
+      "sourcePage": 136
+    },
+    {
+      "id": "weapon-elder-war-hammer",
+      "name": "Краснолюдский боевой молот",
+      "category": "weapon",
+      "level": "grandmaster",
+      "origin": "elder",
+      "dc": 25,
+      "time": "13 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 6
+        },
+        {
+          "name": "махакамская сталь",
+          "count": 3
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 3
+        },
+        {
+          "name": "огров воск",
+          "count": 1
+        },
+        {
+          "name": "точильный порошок",
+          "count": 1
+        }
+      ],
+      "surcharge": 624,
+      "price": 1248,
+      "sourcePage": 137
+    },
+    {
+      "id": "weapon-elder-travel-staff",
+      "name": "Эльфский дорожный посох",
+      "category": "weapon",
+      "level": "grandmaster",
+      "origin": "elder",
+      "dc": 25,
+      "time": "13 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 6
+        },
+        {
+          "name": "золото",
+          "count": 1
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 6
+        },
+        {
+          "name": "шёлк",
+          "count": 1
+        },
+        {
+          "name": "волчья шкура",
+          "count": 2
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "пятая эссенция",
+          "count": 3
+        },
+        {
+          "name": "самоцвет",
+          "count": 1
+        }
+      ],
+      "surcharge": 735,
+      "price": 1470,
+      "sourcePage": 137
+    },
+    {
+      "id": "weapon-elder-zefar",
+      "name": "Эльфский зефар",
+      "category": "weapon",
+      "level": "grandmaster",
+      "origin": "elder",
+      "dc": 25,
+      "time": "13 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 8
+        },
+        {
+          "name": "нитки",
+          "count": 8
+        },
+        {
+          "name": "огров воск",
+          "count": 8
+        },
+        {
+          "name": "пятая эссенция",
+          "count": 2
+        },
+        {
+          "name": "кости животных",
+          "count": 4
+        },
+        {
+          "name": "перья",
+          "count": 4
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 3
+        },
+        {
+          "name": "кожа",
+          "count": 2
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 9
+        },
+        {
+          "name": "травильная кислота",
+          "count": 6
+        }
+      ],
+      "surcharge": 830,
+      "price": 1660,
+      "sourcePage": 137
+    },
+    {
+      "id": "weapon-elder-black-axe",
+      "name": "Гномий чёрный топор",
+      "category": "weapon",
+      "level": "grandmaster",
+      "origin": "elder",
+      "dc": 25,
+      "time": "13 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 4
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "двимерит",
+          "count": 1
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 3
+        },
+        {
+          "name": "огров воск",
+          "count": 1
+        },
+        {
+          "name": "точильный порошок",
+          "count": 1
+        }
+      ],
+      "surcharge": 688,
+      "price": 1376,
+      "sourcePage": 137
+    },
+    {
+      "id": "weapon-elder-gwyhyr",
+      "name": "Гномий гвихир",
+      "category": "weapon",
+      "level": "grandmaster",
+      "origin": "elder",
+      "dc": 25,
+      "time": "13 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "двимерит",
+          "count": 2
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 3
+        },
+        {
+          "name": "точильный порошок",
+          "count": 4
+        },
+        {
+          "name": "чернящее масло",
+          "count": 1
+        }
+      ],
+      "surcharge": 818,
+      "price": 1628,
+      "sourcePage": 137
+    },
+    {
+      "id": "weapon-elder-hand-crossbow",
+      "name": "Гномий ручной арбалет",
+      "category": "weapon",
+      "level": "grandmaster",
+      "origin": "elder",
+      "dc": 25,
+      "time": "13 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "нитки",
+          "count": 4
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 2
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 1
+        },
+        {
+          "name": "чернящее масло",
+          "count": 2
+        },
+        {
+          "name": "смола",
+          "count": 2
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 1
+        },
+        {
+          "name": "воск",
+          "count": 2
+        }
+      ],
+      "surcharge": 317,
+      "price": 634,
+      "sourcePage": 137
+    },
+    {
+      "id": "weapon-elder-meteorite-flail",
+      "name": "Кистень из метеоритной стали",
+      "category": "weapon",
+      "level": "grandmaster",
+      "origin": "elder",
+      "dc": 25,
+      "time": "13 часов",
+      "components": [
+        {
+          "name": "Метеорит",
+          "count": 5
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 1
+        },
+        {
+          "name": "укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "точильный порошок",
+          "count": 1
+        }
+      ],
+      "surcharge": 676,
+      "price": 1352,
+      "sourcePage": 137
+    },
+    {
+      "id": "weapon-elder-tir-tochair",
+      "name": "Клинок из Тир Тохаира",
+      "category": "weapon",
+      "level": "grandmaster",
+      "origin": "elder",
+      "dc": 26,
+      "time": "13 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "пепел",
+          "count": 4
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "махакамский двимерит",
+          "count": 2
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 4
+        },
+        {
+          "name": "точильный порошок",
+          "count": 1
+        },
+        {
+          "name": "кожа драконида",
+          "count": 1
+        }
+      ],
+      "surcharge": 888,
+      "price": 1776,
+      "sourcePage": 137
+    },
+    {
+      "id": "weapon-elder-dwarf-piercing",
+      "name": "Краснолюдские пробивные (x5)",
+      "category": "weapon",
+      "level": "master",
+      "origin": "elder",
+      "dc": 20,
+      "time": "1/2 часа",
+      "components": [
+        {
+          "name": "Махакамская сталь",
+          "count": 1
+        },
+        {
+          "name": "укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "перья",
+          "count": 1
+        },
+        {
+          "name": "огров воск",
+          "count": 2
+        },
+        {
+          "name": "железо",
+          "count": 1
+        }
+      ],
+      "surcharge": 184,
+      "price": 100,
+      "sourcePage": 137
+    },
+    {
+      "id": "weapon-elder-elf-screwing",
+      "name": "Эльфские ввинчивающиеся (x5)",
+      "category": "weapon",
+      "level": "master",
+      "origin": "elder",
+      "dc": 20,
+      "time": "1/2 часа",
+      "components": [
+        {
+          "name": "Тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "смола",
+          "count": 1
+        },
+        {
+          "name": "укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "перья",
+          "count": 2
+        },
+        {
+          "name": "точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "огров воск",
+          "count": 1
+        },
+        {
+          "name": "нитки",
+          "count": 1
+        }
+      ],
+      "surcharge": 185,
+      "price": 100,
+      "sourcePage": 137
+    },
+    {
+      "id": "armor-elder-dwarf-cloak",
+      "name": "Краснолюдский плащ",
+      "category": "armor",
+      "level": "master",
+      "origin": "elder",
+      "dc": 18,
+      "time": "9 часов",
+      "components": [
+        {
+          "name": "Укреплённая кожа",
+          "count": 12
+        },
+        {
+          "name": "огров воск",
+          "count": 10
+        },
+        {
+          "name": "смола",
+          "count": 10
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 2
+        },
+        {
+          "name": "кожа",
+          "count": 6
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 7
+        },
+        {
+          "name": "нитки",
+          "count": 10
+        },
+        {
+          "name": "коровья шкура",
+          "count": 1
+        }
+      ],
+      "surcharge": 1050,
+      "price": 2100,
+      "sourcePage": 138
+    },
+    {
+      "id": "armor-elder-elf-shield",
+      "name": "Эльфский щит",
+      "category": "armor",
+      "level": "master",
+      "origin": "elder",
+      "dc": 20,
+      "time": "5 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 5
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 5
+        },
+        {
+          "name": "тёмная сталь",
+          "count": 2
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 2
+        },
+        {
+          "name": "травильная кислота",
+          "count": 4
+        },
+        {
+          "name": "огров воск",
+          "count": 2
+        }
+      ],
+      "surcharge": 528,
+      "price": 1050,
+      "sourcePage": 138
+    },
+    {
+      "id": "armor-elder-gnome-buckler",
+      "name": "Гномий баклер",
+      "category": "armor",
+      "level": "master",
+      "origin": "elder",
+      "dc": 22,
+      "time": "6 часов",
+      "components": [
+        {
+          "name": "Тёмная сталь",
+          "count": 3
+        },
+        {
+          "name": "кожа",
+          "count": 1
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 1
+        },
+        {
+          "name": "травильная кислота",
+          "count": 4
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 1
+        }
+      ],
+      "surcharge": 335,
+      "price": 674,
+      "sourcePage": 138
+    },
+    {
+      "id": "armor-elder-lowlander-doublet",
+      "name": "Низушечий защитный дублет",
+      "category": "armor",
+      "level": "master",
+      "origin": "elder",
+      "dc": 18,
+      "time": "9 часов",
+      "components": [
+        {
+          "name": "Шёлк",
+          "count": 4
+        },
+        {
+          "name": "нитки",
+          "count": 10
+        },
+        {
+          "name": "хлопок",
+          "count": 7
+        },
+        {
+          "name": "двойное полотно",
+          "count": 2
+        }
+      ],
+      "surcharge": 281,
+      "price": 562,
+      "sourcePage": 138
+    },
+    {
+      "id": "armor-elder-scoia-tael",
+      "name": "Броня скоя’таэля",
+      "category": "armor",
+      "level": "master",
+      "origin": "elder",
+      "dc": 20,
+      "time": "20 часов",
+      "components": [
+        {
+          "name": "Тёмная сталь",
+          "count": 12
+        },
+        {
+          "name": "волчья шкура",
+          "count": 3
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 10
+        },
+        {
+          "name": "травильная кислота",
+          "count": 12
+        },
+        {
+          "name": "пепел",
+          "count": 11
+        },
+        {
+          "name": "двойное полотно",
+          "count": 8
+        },
+        {
+          "name": "чернящее масло",
+          "count": 4
+        },
+        {
+          "name": "укреплённое дерево",
+          "count": 13
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 2
+        },
+        {
+          "name": "нитки",
+          "count": 9
+        }
+      ],
+      "surcharge": 1738,
+      "price": 3486,
+      "sourcePage": 138
+    },
+    {
+      "id": "armor-elder-gnome-chainmail",
+      "name": "Кольчуга гномьей работы",
+      "category": "armor",
+      "level": "grandmaster",
+      "origin": "elder",
+      "dc": 24,
+      "time": "24 часа",
+      "components": [
+        {
+          "name": "Тёмная сталь",
+          "count": 8
+        },
+        {
+          "name": "кожа",
+          "count": 2
+        },
+        {
+          "name": "чернящее масло",
+          "count": 1
+        }
+      ],
+      "surcharge": 736,
+      "price": 1462,
+      "sourcePage": 138
+    },
+    {
+      "id": "armor-elder-gnome-dragoon",
+      "name": "Драгунская броня гномьей работы",
+      "category": "armor",
+      "level": "grandmaster",
+      "origin": "elder",
+      "dc": 25,
+      "time": "25 часов",
+      "components": [
+        {
+          "name": "Тёмная сталь",
+          "count": 12
+        },
+        {
+          "name": "метеорит",
+          "count": 1
+        },
+        {
+          "name": "махакамский двимерит",
+          "count": 2
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 10
+        },
+        {
+          "name": "травильная кислота",
+          "count": 14
+        },
+        {
+          "name": "двойное полотно",
+          "count": 5
+        },
+        {
+          "name": "чернящее масло",
+          "count": 4
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 2
+        },
+        {
+          "name": "нитки",
+          "count": 15
+        }
+      ],
+      "surcharge": 2131,
+      "price": 4274,
+      "sourcePage": 138
+    },
+    {
+      "id": "armor-elder-mahakam-pavise",
+      "name": "Махакамская павеза",
+      "category": "armor",
+      "level": "grandmaster",
+      "origin": "elder",
+      "dc": 26,
+      "time": "7 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 10
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 5
+        },
+        {
+          "name": "огров воск",
+          "count": 11
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 2
+        },
+        {
+          "name": "махакамская сталь",
+          "count": 2
+        },
+        {
+          "name": "травильная кислота",
+          "count": 3
+        },
+        {
+          "name": "кожа",
+          "count": 1
+        }
+      ],
+      "surcharge": 788,
+      "price": 1574,
+      "sourcePage": 138
+    },
+    {
+      "id": "armor-elder-mahakam-plate",
+      "name": "Махакамские латы",
+      "category": "armor",
+      "level": "grandmaster",
+      "origin": "elder",
+      "dc": 28,
+      "time": "28 часов",
+      "components": [
+        {
+          "name": "Махакамская сталь",
+          "count": 12
+        },
+        {
+          "name": "махакамский двимерит",
+          "count": 2
+        },
+        {
+          "name": "эфирная смазка",
+          "count": 8
+        },
+        {
+          "name": "травильная кислота",
+          "count": 12
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 5
+        },
+        {
+          "name": "чернящее масло",
+          "count": 2
+        },
+        {
+          "name": "масло из дрейка",
+          "count": 1
+        },
+        {
+          "name": "метеорит",
+          "count": 2
+        },
+        {
+          "name": "огров воск",
+          "count": 3
+        },
+        {
+          "name": "нитки",
+          "count": 10
+        }
+      ],
+      "surcharge": 2645,
+      "price": 5286,
+      "sourcePage": 138
+    },
+    {
+      "id": "upgrade-fabric",
+      "name": "Ткань",
+      "category": "upgrade",
+      "level": "novice",
+      "origin": "common",
+      "dc": 14,
+      "time": "3 часа",
+      "components": [
+        {
+          "name": "Двойное полотно",
+          "count": 1
+        },
+        {
+          "name": "нитки",
+          "count": 2
+        }
+      ],
+      "surcharge": 28,
+      "price": 60,
+      "sourcePage": 139
+    },
+    {
+      "id": "upgrade-studded-leather",
+      "name": "Клёпаная кожа",
+      "category": "upgrade",
+      "level": "novice",
+      "origin": "common",
+      "dc": 14,
+      "time": "3 часа",
+      "components": [
+        {
+          "name": "Кожа",
+          "count": 1
+        },
+        {
+          "name": "железо",
+          "count": 1
+        },
+        {
+          "name": "нитки",
+          "count": 1
+        }
+      ],
+      "surcharge": 61,
+      "price": 120,
+      "sourcePage": 139
+    },
+    {
+      "id": "upgrade-chainmail",
+      "name": "Кольчужное",
+      "category": "upgrade",
+      "level": "adept",
+      "origin": "common",
+      "dc": 17,
+      "time": "5 часов",
+      "components": [
+        {
+          "name": "Сталь",
+          "count": 2
+        }
+      ],
+      "surcharge": 96,
+      "price": 187,
+      "sourcePage": 139
+    },
+    {
+      "id": "upgrade-reinforced-leather",
+      "name": "Укреплённая кожа",
+      "category": "upgrade",
+      "level": "adept",
+      "origin": "common",
+      "dc": 16,
+      "time": "4 часа",
+      "components": [
+        {
+          "name": "Укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "кожа",
+          "count": 1
+        },
+        {
+          "name": "нитки",
+          "count": 5
+        },
+        {
+          "name": "воск",
+          "count": 3
+        }
+      ],
+      "surcharge": 97,
+      "price": 195,
+      "sourcePage": 139
+    },
+    {
+      "id": "upgrade-steel",
+      "name": "Стальное",
+      "category": "upgrade",
+      "level": "adept",
+      "origin": "common",
+      "dc": 18,
+      "time": "5 часов",
+      "components": [
+        {
+          "name": "Сталь",
+          "count": 2
+        },
+        {
+          "name": "нитки",
+          "count": 3
+        },
+        {
+          "name": "травильная кислота",
+          "count": 2
+        }
+      ],
+      "surcharge": 109,
+      "price": 217,
+      "sourcePage": 139
+    },
+    {
+      "id": "upgrade-elven",
+      "name": "Эльфское",
+      "category": "upgrade",
+      "level": "master",
+      "origin": "common",
+      "dc": 24,
+      "time": "6 часов",
+      "components": [
+        {
+          "name": "Тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "нитки",
+          "count": 5
+        },
+        {
+          "name": "укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "перья",
+          "count": 1
+        }
+      ],
+      "surcharge": 149,
+      "price": 300,
+      "sourcePage": 139
+    },
+    {
+      "id": "upgrade-dwarven",
+      "name": "Краснолюдское",
+      "category": "upgrade",
+      "level": "master",
+      "origin": "common",
+      "dc": 24,
+      "time": "6 часов",
+      "components": [
+        {
+          "name": "Махакамская сталь",
+          "count": 1
+        },
+        {
+          "name": "нитки",
+          "count": 5
+        },
+        {
+          "name": "волчья шкура",
+          "count": 1
+        },
+        {
+          "name": "уголь",
+          "count": 1
+        }
+      ],
+      "surcharge": 144,
+      "price": 292,
+      "sourcePage": 139
+    }
+  ]
+}

@@ -76,6 +76,7 @@ const openItem = (item: Formula) => {
   openDrawer({
     title: item.name,
     subtitle: levelLabels[item.level],
+    description: item.description,
     sourcePage: item.sourcePage,
     stats: [
       { label: 'Уровень', value: levelLabels[item.level] },
