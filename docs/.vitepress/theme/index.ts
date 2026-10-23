@@ -24,6 +24,7 @@ import WeaponTable from './components/WeaponTable.vue'
 import ArmorTable from './components/ArmorTable.vue'
 import AlchemicalTable from './components/AlchemicalTable.vue'
 import ArmorUpgradeTable from './components/ArmorUpgradeTable.vue'
+import TransportTable from './components/TransportTable.vue'
 
 export default {
   extends: DefaultTheme,
@@ -35,5 +36,6 @@ export default {
     app.component('ArmorTable', ArmorTable)
     app.component('AlchemicalTable', AlchemicalTable)
     app.component('ArmorUpgradeTable', ArmorUpgradeTable)
+    app.component('TransportTable', TransportTable)
   }
 } satisfies Theme

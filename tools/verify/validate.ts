@@ -13,6 +13,7 @@ import { weaponsFileSchema } from '../../docs/.vitepress/schemas/weapon'
 import { armorFileSchema } from '../../docs/.vitepress/schemas/armor'
 import { alchemicalsFileSchema } from '../../docs/.vitepress/schemas/alchemical'
 import { armorUpgradesFileSchema } from '../../docs/.vitepress/schemas/armorUpgrade'
+import { transportFileSchema } from '../../docs/.vitepress/schemas/transport'
 
 const root = fileURLToPath(new URL('../..', import.meta.url))
 const dataDir = join(root, 'docs', '.vitepress', 'data')
@@ -69,5 +70,45 @@ validate('оружие', 'weapons.json', weaponsFileSchema)
 validate('броня', 'armor.json', armorFileSchema)
 validate('алхимические составы', 'alchemicals.json', alchemicalsFileSchema)
 validate('усиления брони', 'armor-upgrades.json', armorUpgradesFileSchema)
+
+function validateTransport() {
+  const raw = JSON.parse(readFileSync(join(dataDir, 'transport.json'), 'utf8'))
+  const parsed = transportFileSchema.safeParse(raw)
+
+  if (!parsed.success) {
+    failed = true
+    console.error('transport.json не прошёл валидацию:')
+    for (const issue of parsed.error.issues) {
+      console.error(`  ${issue.path.join('.')}: ${issue.message}`)
+    }
+    return
+  }
+
+  const items = [...parsed.data.vehicles, ...parsed.data.tack]
+  const ids = new Set<string>()
+  const names = new Set<string>()
+  const errors: string[] = []
+
+  for (const item of items) {
+    if (ids.has(item.id)) errors.push(`повторяющийся id: ${item.id}`)
+    if (names.has(item.name)) errors.push(`повторяющееся название: ${item.name}`)
+    if (item.sourcePage < 1 || item.sourcePage > 337) {
+      errors.push(`sourcePage вне книги: ${item.name} (${item.sourcePage})`)
+    }
+    ids.add(item.id)
+    names.add(item.name)
+  }
+
+  if (errors.length) {
+    failed = true
+    console.error('Ошибки в transport.json:')
+    for (const error of errors) console.error(`  - ${error}`)
+    return
+  }
+
+  console.log(`OK: транспорт — ${parsed.data.vehicles.length}, упряжь — ${parsed.data.tack.length}`)
+}
+
+validateTransport()
 
 if (failed) process.exit(1)
