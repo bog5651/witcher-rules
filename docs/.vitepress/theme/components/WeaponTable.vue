@@ -176,6 +176,12 @@ const formatWeight = (value: number) => value.toLocaleString('ru-RU')
       </button>
     </div>
 
+    <p class="weapon-legend">
+      <strong>Т</strong> — точность, <strong>Дос</strong> — доступность (П/О/Р/У),
+      <strong>Н</strong> — надёжность, <strong>Х</strong> — хват, <strong>Ус</strong> — усиления,
+      <strong>Скр</strong> — скрытность (М/Н/К/Н/С).
+    </p>
+
     <div v-if="visible.length" class="weapon-table-wrap">
       <table class="weapon-table">
         <thead>
@@ -244,12 +250,6 @@ const formatWeight = (value: number) => value.toLocaleString('ru-RU')
     <div v-else class="wr-empty">
       Ничего не нашлось. Попробуйте изменить запрос или сбросить фильтры.
     </div>
-
-    <p class="weapon-legend">
-      <strong>Т</strong> — точность, <strong>Дос</strong> — доступность (П/О/Р/У),
-      <strong>Н</strong> — надёжность, <strong>Х</strong> — хват, <strong>Ус</strong> — усиления,
-      <strong>Скр</strong> — скрытность (М/Н/К/Н/С).
-    </p>
   </div>
 </template>
 
@@ -307,6 +307,7 @@ const formatWeight = (value: number) => value.toLocaleString('ru-RU')
 .weapon-table {
   width: 100%;
   min-width: 1060px;
+  margin: 0;
   border-collapse: collapse;
   font-family: var(--site-sans);
   font-size: 12px;
@@ -407,7 +408,7 @@ const formatWeight = (value: number) => value.toLocaleString('ru-RU')
 }
 
 .weapon-legend {
-  margin-top: 0.6rem;
+  margin: 0 0 0.6rem;
   font-family: var(--site-sans);
   font-size: 12px;
   line-height: 1.6;

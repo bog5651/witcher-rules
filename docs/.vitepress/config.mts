@@ -11,6 +11,11 @@ export default defineConfig({
     'Структурированный справочник правил настольной ролевой игры «Ведьмак»: персонажи, магия, снаряжение, алхимия, бой и бестиарий.',
   cleanUrls: true,
   lastUpdated: true,
+  markdown: {
+    emoji: {
+      shortcuts: {}
+    }
+  },
   sitemap: {
     hostname: 'https://witcher-rules.vercel.app'
   },

@@ -179,6 +179,12 @@ const protectionValue = (item: Armor) => item.protection ?? item.reliability ?? 
       </button>
     </div>
 
+    <p class="armor-legend">
+      <strong>ПБ</strong> — прочность брони, <strong>Н</strong> — надёжность щита,
+      <strong>Дос</strong> — доступность (П/О/Р/У), <strong>УБ</strong> — усиления брони,
+      <strong>СД</strong> — скованность движений.
+    </p>
+
     <div v-if="visible.length" class="armor-table-wrap">
       <table class="armor-table">
         <thead>
@@ -237,12 +243,6 @@ const protectionValue = (item: Armor) => item.protection ?? item.reliability ?? 
     <div v-else class="wr-empty">
       Ничего не нашлось. Попробуйте изменить запрос или сбросить фильтры.
     </div>
-
-    <p class="armor-legend">
-      <strong>ПБ</strong> — прочность брони, <strong>Н</strong> — надёжность щита,
-      <strong>Дос</strong> — доступность (П/О/Р/У), <strong>УБ</strong> — усиления брони,
-      <strong>СД</strong> — скованность движений.
-    </p>
   </div>
 </template>
 
@@ -260,6 +260,7 @@ const protectionValue = (item: Armor) => item.protection ?? item.reliability ?? 
 .armor-table {
   width: 100%;
   min-width: 900px;
+  margin: 0;
   border-collapse: collapse;
   font-family: var(--site-sans);
   font-size: 12px;
@@ -355,7 +356,7 @@ const protectionValue = (item: Armor) => item.protection ?? item.reliability ?? 
 }
 
 .armor-legend {
-  margin-top: 0.6rem;
+  margin: 0 0 0.6rem;
   font-family: var(--site-sans);
   font-size: 12px;
   line-height: 1.6;
