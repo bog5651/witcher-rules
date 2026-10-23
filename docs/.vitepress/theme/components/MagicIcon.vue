@@ -46,6 +46,15 @@ defineProps<{
       <path d="m4 18 1.7-9 4.1 3.7L12 6l2.2 6.7L18.3 9 20 18H4Z" />
       <path d="M5 21h14" />
     </template>
+    <template v-else-if="type === 'ritual'">
+      <circle cx="12" cy="12" r="7.5" />
+      <path d="m12 5.8 1.7 4.5 4.5 1.7-4.5 1.7-1.7 4.5-1.7-4.5L5.8 12l4.5-1.7L12 5.8Z" />
+    </template>
+    <template v-else-if="type === 'hex'">
+      <path d="M3 12s3.5-5 9-5 9 5 9 5-3.5 5-9 5-9-5-9-5Z" />
+      <circle cx="12" cy="12" r="2.5" />
+      <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2" />
+    </template>
     <template v-else>
       <path d="m12 2.5 1.7 6.3 6.3 1.7-6.3 1.7-1.7 6.3-1.7-6.3L4 10.5l6.3-1.7L12 2.5Z" />
     </template>

@@ -112,6 +112,14 @@ defineEmits<{
   --magic-color: #7a5c8f;
 }
 
+.magic-tile--ritual {
+  --magic-color: #7b5d8e;
+}
+
+.magic-tile--hex {
+  --magic-color: #8a3f3f;
+}
+
 .magic-tile__top {
   display: flex;
   align-items: center;
@@ -172,6 +180,7 @@ defineEmits<{
   font-weight: 600;
   line-height: 1.3;
   color: var(--site-ink);
+  hyphens: auto;
   overflow-wrap: break-word;
 }
 

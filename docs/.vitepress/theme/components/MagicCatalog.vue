@@ -54,7 +54,13 @@ const datasets: Record<Dataset, MagicItem[]> = {
 const { openMagic } = useMagicDrawer()
 
 const items = computed(() => datasets[props.dataset])
-const isTileDataset = computed(() => props.dataset === 'signs' || props.dataset === 'invocations')
+
+const kindLabels: Record<Dataset, string> = {
+  signs: 'Знак',
+  invocations: 'Инвокация',
+  rituals: 'Ритуал',
+  hexes: 'Порча'
+}
 
 const levelLabels: Record<Level, string> = {
   novice: 'Новичок',
@@ -92,6 +98,12 @@ const dangerLabels: Record<Danger, string> = {
   low: 'Низкая',
   medium: 'Средняя',
   high: 'Высокая'
+}
+
+const dangerShortLabels: Record<Danger, string> = {
+  low: 'Низ.',
+  medium: 'Сред.',
+  high: 'Выс.'
 }
 
 const levelOrder: Record<Level, number> = { novice: 0, adept: 1, master: 2 }
@@ -146,6 +158,8 @@ const visible = computed(() => {
           item.duration,
           item.defense,
           item.components,
+          item.ingredients,
+          item.alternateIngredients,
           item.removal,
           item.deity
         ]
@@ -179,57 +193,77 @@ const costLabel = (item: MagicItem) => {
 
 const tileTone = (item: MagicItem) => {
   if (props.dataset === 'signs') return item.element ?? 'mixed'
-  return item.tradition ?? 'druid'
+  if (props.dataset === 'invocations') return item.tradition ?? 'druid'
+  if (props.dataset === 'rituals') return 'ritual'
+  return 'hex'
 }
 
 const tileMeta = (item: MagicItem) => {
   if (props.dataset === 'signs' && item.element) return elementLabels[item.element]
   if (props.dataset === 'invocations' && item.tradition) return traditionShortLabels[item.tradition]
-  return ''
+  if (props.dataset === 'rituals') return 'Ритуал'
+  return 'Порча'
 }
 
 const tileTag = (item: MagicItem) => {
   if (props.dataset === 'signs') return item.base ? 'Баз.' : 'Доп.'
+  if (props.dataset === 'hexes' && item.danger) return dangerShortLabels[item.danger]
   if (item.level) return levelShortLabels[item.level]
   return ''
 }
 
 const openMagicItem = (item: MagicItem) => {
-  const stats = []
+  const stats: { label: string; value: string }[] = []
+  const kindLabel = kindLabels[props.dataset]
+  const subtitleParts: string[] = [kindLabel]
 
-  if (item.element) stats.push({ label: 'Стихия', value: elementLabels[item.element] })
-  if (item.tradition) stats.push({ label: 'Традиция', value: traditionLabels[item.tradition] })
-  if (item.level) stats.push({ label: 'Уровень', value: levelLabels[item.level] })
-  if (item.deity) stats.push({ label: 'Божество', value: item.deity })
-  if (props.dataset === 'signs') {
-    stats.push({ label: 'Вид', value: item.base ? 'Базовый' : 'Дополнительный' })
+  if (props.dataset === 'rituals') {
+    if (item.level) stats.push({ label: 'Уровень', value: levelLabels[item.level] })
+    stats.push({ label: 'Затраты', value: costLabel(item) })
+    if (item.prepTime) stats.push({ label: 'Время подготовки', value: item.prepTime })
+    if (item.checkDC) stats.push({ label: 'СЛ проверки', value: item.checkDC })
+    if (item.duration) stats.push({ label: 'Длительность', value: item.duration })
+    if (item.ingredients) stats.push({ label: 'Ингредиенты', value: item.ingredients })
+    if (item.alternateIngredients) {
+      stats.push({ label: 'На замену', value: item.alternateIngredients })
+    }
+    if (item.level) subtitleParts.push(levelLabels[item.level])
+  } else if (props.dataset === 'hexes') {
+    if (item.danger) {
+      stats.push({ label: 'Опасность', value: dangerLabels[item.danger] })
+      subtitleParts.push(`${dangerLabels[item.danger]} опасность`)
+    }
+    stats.push({ label: 'Затраты', value: costLabel(item) })
+    if (item.removal) stats.push({ label: 'Условия снятия', value: item.removal })
+  } else {
+    if (item.element) stats.push({ label: 'Стихия', value: elementLabels[item.element] })
+    if (item.tradition) stats.push({ label: 'Традиция', value: traditionLabels[item.tradition] })
+    if (item.level) stats.push({ label: 'Уровень', value: levelLabels[item.level] })
+    if (item.deity) stats.push({ label: 'Божество', value: item.deity })
+    if (props.dataset === 'signs') {
+      stats.push({ label: 'Вид', value: item.base ? 'Базовый' : 'Дополнительный' })
+    }
+
+    stats.push({ label: 'Затраты', value: costLabel(item) })
+    if (item.range) stats.push({ label: 'Дистанция', value: item.range })
+    if (item.duration) stats.push({ label: 'Длительность', value: item.duration })
+    if (item.defense) stats.push({ label: 'Защита', value: item.defense })
+
+    if (props.dataset === 'signs') {
+      if (typeof item.base === 'boolean') {
+        subtitleParts.push(item.base ? 'Базовый' : 'Дополнительный')
+      }
+      if (item.element) subtitleParts.push(elementLabels[item.element])
+    } else {
+      if (item.tradition) subtitleParts.push(traditionLabels[item.tradition])
+      if (item.level) subtitleParts.push(levelLabels[item.level])
+      else if (item.deity) subtitleParts.push(item.deity)
+    }
   }
-
-  stats.push({ label: 'Затраты', value: costLabel(item) })
-  if (item.range) stats.push({ label: 'Дистанция', value: item.range })
-  if (item.duration) stats.push({ label: 'Длительность', value: item.duration })
-  if (item.defense) stats.push({ label: 'Защита', value: item.defense })
-  if (item.prepTime) stats.push({ label: 'Время подготовки', value: item.prepTime })
-  if (item.checkDC) stats.push({ label: 'СЛ проверки', value: item.checkDC })
-  if (item.components) stats.push({ label: 'Компоненты', value: item.components })
-  if (item.ingredients) stats.push({ label: 'Ингредиенты', value: item.ingredients })
-  if (item.danger) stats.push({ label: 'Опасность', value: dangerLabels[item.danger] })
-  if (item.removal) stats.push({ label: 'Условия снятия', value: item.removal })
-
-  const subtitleParts = [
-    props.dataset === 'signs' ? 'Знак' : 'Инвокация',
-    props.dataset === 'signs' && typeof item.base === 'boolean'
-      ? item.base
-        ? 'Базовый'
-        : 'Дополнительный'
-      : '',
-    item.tradition ? traditionLabels[item.tradition] : item.element ? elementLabels[item.element] : '',
-    item.level ? levelLabels[item.level] : item.deity || ''
-  ].filter(Boolean)
 
   openMagic({
     title: item.name,
-    subtitle: subtitleParts.join(' · '),
+    subtitle: subtitleParts.filter(Boolean).join(' · '),
     stats,
     effect: item.effect,
     sourcePage: item.sourcePage
@@ -306,17 +340,17 @@ const openMagicItem = (item: MagicItem) => {
       <span class="wr-count">{{ visible.length }} из {{ baseCount }}</span>
     </div>
 
-    <p v-if="isTileDataset && visible.length" class="magic-grid-hint">
+    <p v-if="visible.length" class="magic-grid-hint">
       Нажмите на карточку, чтобы открыть подробности.
     </p>
 
-    <div v-if="isTileDataset && visible.length" class="magic-tile-grid">
+    <div v-if="visible.length" class="magic-tile-grid">
       <MagicTile
         v-for="item in visible"
         :id="`magic-${dataset}-${item.id}`"
         :key="item.id"
         :title="item.name"
-        :kind-label="dataset === 'signs' ? 'Знак' : 'Инвокация'"
+        :kind-label="kindLabels[dataset]"
         :tone="tileTone(item)"
         :meta-label="tileMeta(item)"
         :tag-label="tileTag(item)"
@@ -325,99 +359,14 @@ const openMagicItem = (item: MagicItem) => {
       />
     </div>
 
-    <div v-else-if="visible.length" class="wr-cards">
-      <article
-        v-for="item in visible"
-        :id="`magic-${dataset}-${item.id}`"
-        :key="item.id"
-        class="wr-card magic-card"
-      >
-        <div class="wr-card__top">
-          <h3 class="wr-card__title">
-            <a :href="`#magic-${dataset}-${item.id}`">{{ item.name }}</a>
-          </h3>
-          <span class="magic-cost">{{ costLabel(item) }}</span>
-        </div>
-
-        <div class="wr-badges">
-          <span v-if="item.level" class="wr-badge" :class="`wr-badge--${item.level}`">
-            {{ levelLabels[item.level] }}
-          </span>
-          <span v-if="item.element" class="wr-badge" :class="`wr-badge--${item.element}`">
-            {{ elementLabels[item.element] }}
-          </span>
-          <span v-if="item.tradition" class="wr-badge wr-badge--tradition">
-            {{ traditionLabels[item.tradition] }}
-          </span>
-          <span v-if="item.deity" class="wr-badge wr-badge--deity">{{ item.deity }}</span>
-          <span v-if="item.base === true" class="wr-badge wr-badge--base">Базовый</span>
-          <span v-if="item.base === false" class="wr-badge wr-badge--additional">Дополнительный</span>
-        </div>
-
-        <div class="wr-stat-grid">
-          <div v-if="item.range" class="wr-stat">
-            <span class="wr-stat__label">Дистанция</span>
-            <span class="wr-stat__value">{{ item.range }}</span>
-          </div>
-          <div v-if="item.prepTime" class="wr-stat">
-            <span class="wr-stat__label">Время подготовки</span>
-            <span class="wr-stat__value">{{ item.prepTime }}</span>
-          </div>
-          <div v-if="item.checkDC" class="wr-stat">
-            <span class="wr-stat__label">СЛ проверки</span>
-            <span class="wr-stat__value">{{ item.checkDC }}</span>
-          </div>
-          <div v-if="item.duration" class="wr-stat">
-            <span class="wr-stat__label">Длительность</span>
-            <span class="wr-stat__value">{{ item.duration }}</span>
-          </div>
-          <div v-if="item.defense" class="wr-stat">
-            <span class="wr-stat__label">Защита</span>
-            <span class="wr-stat__value">{{ item.defense }}</span>
-          </div>
-          <div v-if="item.components" class="wr-stat">
-            <span class="wr-stat__label">Компоненты</span>
-            <span class="wr-stat__value">{{ item.components }}</span>
-          </div>
-          <div v-if="item.danger" class="wr-stat">
-            <span class="wr-stat__label">Опасность</span>
-            <span class="wr-stat__value">{{ dangerLabels[item.danger] }}</span>
-          </div>
-          <div v-if="item.costVariable" class="wr-stat">
-            <span class="wr-stat__label">Затраты</span>
-            <span class="wr-stat__value">меняются</span>
-          </div>
-        </div>
-
-        <div class="wr-effect">
-          <p>{{ item.effect }}</p>
-        </div>
-
-        <div v-if="item.ingredients" class="magic-ingredients">
-          <span class="magic-ingredients__label">Ингредиенты</span>
-          <p>{{ item.ingredients }}</p>
-          <p v-if="item.alternateIngredients" class="magic-ingredients__alt">
-            <strong>На замену:</strong> {{ item.alternateIngredients }}
-          </p>
-        </div>
-
-        <div v-if="item.removal" class="magic-removal">
-          <span class="magic-removal__label">Условия снятия</span>
-          <p>{{ item.removal }}</p>
-        </div>
-
-        <div class="wr-source">Источник: стр. {{ item.sourcePage }}</div>
-      </article>
-    </div>
-
     <div v-else class="wr-empty">
       Ничего не нашлось. Попробуйте изменить запрос или сбросить фильтры.
     </div>
 
-    <div v-if="isTileDataset && visible.length" class="magic-search-index" aria-hidden="true">
+    <div v-if="visible.length" class="magic-search-index" aria-hidden="true">
       <p v-for="item in visible" :key="`search-${item.id}`">
         {{ item.name }}. {{ item.effect }} {{ item.range }} {{ item.duration }} {{ item.defense }}
-        {{ item.deity }}
+        {{ item.ingredients }} {{ item.alternateIngredients }} {{ item.removal }} {{ item.deity }}
       </p>
     </div>
   </div>
@@ -449,91 +398,6 @@ const openMagicItem = (item: MagicItem) => {
   white-space: nowrap;
   border: 0;
   clip-path: inset(50%);
-}
-
-.magic-card {
-  scroll-margin-top: calc(var(--vp-nav-height) + 1rem);
-}
-
-.magic-card .wr-card__title a {
-  color: var(--site-ink);
-  text-decoration: none;
-}
-
-.magic-card .wr-card__title a:hover {
-  color: var(--site-blood);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.dark .magic-card .wr-card__title a:hover {
-  color: var(--site-gold);
-}
-
-.magic-cost {
-  flex: 0 0 auto;
-  font-family: var(--site-sans);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--site-muted);
-  white-space: nowrap;
-}
-
-.magic-ingredients {
-  margin-top: 0.9rem;
-  padding: 0.75rem 0.9rem;
-  background: var(--site-surface-2);
-  border: 1px solid var(--site-border);
-  border-radius: 4px;
-}
-
-.magic-ingredients__label {
-  display: block;
-  font-family: var(--site-sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--site-faint);
-  margin-bottom: 0.25rem;
-}
-
-.magic-ingredients p {
-  margin: 0;
-  font-family: var(--site-serif);
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-.magic-ingredients__alt {
-  margin-top: 0.4rem !important;
-  color: var(--site-muted);
-}
-
-.magic-removal {
-  margin-top: 0.9rem;
-  padding: 0.75rem 0.9rem;
-  background: color-mix(in srgb, var(--site-gold) 7%, transparent);
-  border-left: 2px solid var(--site-gold);
-  border-radius: 0 4px 4px 0;
-}
-
-.magic-removal__label {
-  display: block;
-  font-family: var(--site-sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--site-gold);
-  margin-bottom: 0.25rem;
-}
-
-.magic-removal p {
-  margin: 0;
-  font-family: var(--site-serif);
-  font-size: 15px;
-  line-height: 1.7;
 }
 
 .magic-reset {
