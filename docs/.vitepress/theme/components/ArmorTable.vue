@@ -9,7 +9,8 @@ const locationLabels = {
   head: 'Голова',
   torso: 'Торс',
   legs: 'Ноги',
-  shield: 'Щит'
+  shield: 'Щит',
+  body: 'Полный комплект'
 } as const
 
 const classLabels = {
@@ -32,11 +33,12 @@ const availabilityShort = {
   unique: 'У'
 } as const
 
-const locations = ['head', 'torso', 'legs', 'shield'] as const
+const locations = ['head', 'torso', 'legs', 'shield', 'body'] as const
 const classes = ['light', 'medium', 'heavy'] as const
 
 const query = ref('')
 const location = ref<'all' | Armor['location']>('all')
+const origin = ref<'all' | 'common' | 'elderfolk'>('all')
 const weightClass = ref<'all' | Armor['weightClass']>('all')
 const availability = ref('all')
 const sort = ref<'name' | 'price' | 'weight' | 'protection'>('name')
@@ -46,6 +48,8 @@ const normalized = (value: string) => value.toLocaleLowerCase('ru').replace(/ё/
 
 const matchesFilters = (item: Armor) => {
   if (location.value !== 'all' && item.location !== location.value) return false
+  if (origin.value === 'common' && item.elderfolk) return false
+  if (origin.value === 'elderfolk' && !item.elderfolk) return false
   if (weightClass.value !== 'all' && item.weightClass !== weightClass.value) return false
   if (availability.value !== 'all' && item.availability !== availability.value) return false
   return true
@@ -101,6 +105,7 @@ const totalPrice = computed(() => selectedItems.value.reduce((sum, item) => sum 
 const reset = () => {
   query.value = ''
   location.value = 'all'
+  origin.value = 'all'
   weightClass.value = 'all'
   availability.value = 'all'
   sort.value = 'name'
@@ -142,6 +147,15 @@ const protectionValue = (item: Armor) => item.protection ?? item.reliability ?? 
           <option v-for="item in classes" :key="item" :value="item">
             {{ classLabels[item] }}
           </option>
+        </select>
+      </div>
+
+      <div class="wr-field">
+        <label for="armor-origin">Происхождение</label>
+        <select id="armor-origin" v-model="origin" class="wr-select">
+          <option value="all">Все</option>
+          <option value="common">Обычное</option>
+          <option value="elderfolk">Старший Народ</option>
         </select>
       </div>
 
@@ -221,8 +235,9 @@ const protectionValue = (item: Armor) => item.protection ?? item.reliability ?? 
             </td>
             <td class="col-name">
               <a :href="`#armor-${item.id}`">{{ item.name }}</a>
+              <span v-if="item.elderfolk" class="armor-origin">Старший Народ</span>
             </td>
-            <td>{{ locationLabels[item.location] }}</td>
+            <td class="col-coverage">{{ item.coverage ?? locationLabels[item.location] }}</td>
             <td>{{ classLabels[item.weightClass] }}</td>
             <td class="col-num">{{ protectionValue(item) }}</td>
             <td>
@@ -327,6 +342,23 @@ const protectionValue = (item: Armor) => item.protection ?? item.reliability ?? 
 
 .dark .armor-table .col-name a:hover {
   color: var(--site-gold);
+}
+
+.armor-origin {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.1rem 0.3rem;
+  font-family: var(--site-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--site-muted);
+  border: 1px solid var(--site-border);
+  border-radius: 3px;
+  white-space: nowrap;
+  vertical-align: 1px;
 }
 
 .armor-table .col-num {

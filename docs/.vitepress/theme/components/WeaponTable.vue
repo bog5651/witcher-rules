@@ -37,6 +37,7 @@ const categories = [...new Set(weapons.map((weapon) => weapon.category))]
 
 const query = ref('')
 const category = ref('all')
+const origin = ref<'all' | 'common' | 'elderfolk' | 'witcher'>('all')
 const availability = ref('all')
 const damageType = ref('all')
 const sort = ref<'name' | 'price' | 'weight'>('name')
@@ -46,6 +47,9 @@ const normalized = (value: string) => value.toLocaleLowerCase('ru').replace(/ё/
 
 const matchesFilters = (weapon: Weapon) => {
   if (category.value !== 'all' && weapon.category !== category.value) return false
+  if (origin.value === 'common' && (weapon.elderfolk || weapon.witcher)) return false
+  if (origin.value === 'elderfolk' && !weapon.elderfolk) return false
+  if (origin.value === 'witcher' && !weapon.witcher) return false
   if (availability.value !== 'all' && weapon.availability !== availability.value) return false
   if (damageType.value !== 'all' && !weapon.damageTypes.includes(damageType.value)) return false
   return true
@@ -64,7 +68,9 @@ const visible = computed(() => {
       ).includes(q)
     })
     .sort((a, b) => {
-      if (sort.value === 'price') return a.price - b.price
+      if (sort.value === 'price') {
+        return (a.price ?? Number.POSITIVE_INFINITY) - (b.price ?? Number.POSITIVE_INFINITY)
+      }
       if (sort.value === 'weight') return a.weight - b.weight
       return a.name.localeCompare(b.name, 'ru')
     })
@@ -95,11 +101,14 @@ const clearSelection = () => {
 
 const selectedItems = computed(() => weapons.filter((w) => selected.value.includes(w.id)))
 const totalWeight = computed(() => selectedItems.value.reduce((sum, w) => sum + w.weight, 0))
-const totalPrice = computed(() => selectedItems.value.reduce((sum, w) => sum + w.price, 0))
+const pricedItems = computed(() => selectedItems.value.filter((w) => w.price !== null))
+const totalPrice = computed(() => pricedItems.value.reduce((sum, w) => sum + (w.price ?? 0), 0))
+const unpricedCount = computed(() => selectedItems.value.length - pricedItems.value.length)
 
 const reset = () => {
   query.value = ''
   category.value = 'all'
+  origin.value = 'all'
   availability.value = 'all'
   damageType.value = 'all'
   sort.value = 'name'
@@ -129,6 +138,16 @@ const formatWeight = (value: number) => value.toLocaleString('ru-RU')
         <select id="weapon-category" v-model="category" class="wr-select">
           <option value="all">Все</option>
           <option v-for="item in categories" :key="item" :value="item">{{ item }}</option>
+        </select>
+      </div>
+
+      <div class="wr-field">
+        <label for="weapon-origin">Происхождение</label>
+        <select id="weapon-origin" v-model="origin" class="wr-select">
+          <option value="all">Все</option>
+          <option value="common">Обычное</option>
+          <option value="elderfolk">Старший Народ</option>
+          <option value="witcher">Ведьмачье</option>
         </select>
       </div>
 
@@ -170,7 +189,12 @@ const formatWeight = (value: number) => value.toLocaleString('ru-RU')
     <div class="wr-summary">
       <span>Выбрано: <strong>{{ selected.length }}</strong></span>
       <span>Вес: <strong>{{ formatWeight(totalWeight) }} кг</strong></span>
-      <span>Цена: <strong>{{ formatWeight(totalPrice) }} кр.</strong></span>
+      <span>
+        Цена:
+        <strong v-if="!unpricedCount">{{ formatWeight(totalPrice) }} кр.</strong>
+        <strong v-else-if="!pricedItems.length">по чертежу</strong>
+        <strong v-else>{{ formatWeight(totalPrice) }} кр. + {{ unpricedCount }} по чертежу</strong>
+      </span>
       <button v-if="selected.length" class="weapon-reset" type="button" @click="clearSelection">
         Сбросить выбор
       </button>
@@ -221,6 +245,10 @@ const formatWeight = (value: number) => value.toLocaleString('ru-RU')
             </td>
             <td class="col-name">
               <a :href="`#weapon-${weapon.id}`">{{ weapon.name }}</a>
+              <span v-if="weapon.elderfolk" class="weapon-origin">Старший Народ</span>
+              <span v-else-if="weapon.witcher" class="weapon-origin weapon-origin--witcher">
+                Ведьмачье
+              </span>
             </td>
             <td>{{ weapon.type }}</td>
             <td class="col-num">{{ signed(weapon.accuracy) }}</td>
@@ -241,7 +269,12 @@ const formatWeight = (value: number) => value.toLocaleString('ru-RU')
             </td>
             <td class="col-num">{{ weapon.upgradeSlots }}</td>
             <td class="col-num">{{ formatWeight(weapon.weight) }}</td>
-            <td class="col-num">{{ formatWeight(weapon.price) }}</td>
+            <td
+              class="col-num"
+              :title="weapon.price === null ? 'Цена не указана: предмет изготавливается по чертежу' : undefined"
+            >
+              {{ weapon.price === null ? '—' : formatWeight(weapon.price) }}
+            </td>
           </tr>
         </tbody>
       </table>
@@ -374,6 +407,29 @@ const formatWeight = (value: number) => value.toLocaleString('ru-RU')
 
 .dark .weapon-table .col-name a:hover {
   color: var(--site-gold);
+}
+
+.weapon-origin {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.1rem 0.3rem;
+  font-family: var(--site-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--site-muted);
+  border: 1px solid var(--site-border);
+  border-radius: 3px;
+  white-space: nowrap;
+  vertical-align: 1px;
+}
+
+.weapon-origin--witcher {
+  color: var(--site-blue);
+  border-color: color-mix(in srgb, var(--site-blue) 35%, transparent);
+  background: color-mix(in srgb, var(--site-blue) 8%, transparent);
 }
 
 .weapon-table .col-num {

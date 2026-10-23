@@ -1,13 +1,14 @@
 import { z } from 'zod'
 import { availabilitySchema } from './weapon'
 
-export const armorLocationSchema = z.enum(['head', 'torso', 'legs', 'shield'])
+export const armorLocationSchema = z.enum(['head', 'torso', 'legs', 'shield', 'body'])
 export const armorWeightClassSchema = z.enum(['light', 'medium', 'heavy'])
 
 export const armorSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1),
   location: armorLocationSchema,
+  coverage: z.string().min(1).optional(),
   weightClass: armorWeightClassSchema,
   protection: z.number().int().nonnegative().nullable(),
   reliability: z.number().int().nonnegative().nullable(),

@@ -19,7 +19,7 @@ export const weaponSchema = z.object({
   concealment: concealmentSchema,
   upgradeSlots: z.number().int().nonnegative(),
   weight: z.number().nonnegative(),
-  price: z.number().int().nonnegative(),
+  price: z.number().int().nonnegative().nullable(),
   elderfolk: z.boolean(),
   witcher: z.boolean(),
   sourcePage: z.number().int().positive()
