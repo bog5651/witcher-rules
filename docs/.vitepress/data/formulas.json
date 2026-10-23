@@ -1,0 +1,539 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "adda-grave",
+      "name": "Могила Адды",
+      "level": "novice",
+      "dc": 13,
+      "time": "5 раундов",
+      "price": 27,
+      "ingredients": [
+        {
+          "substance": "aether",
+          "count": 2
+        },
+        {
+          "substance": "hydragenum",
+          "count": 1
+        },
+        {
+          "substance": "vermilion",
+          "count": 1
+        }
+      ],
+      "sourcePage": 146
+    },
+    {
+      "id": "alkaline-powder",
+      "name": "Щелочной порошок",
+      "level": "novice",
+      "dc": 12,
+      "time": "5 раундов",
+      "price": 27,
+      "ingredients": [
+        {
+          "substance": "vermilion",
+          "count": 1
+        },
+        {
+          "substance": "quebrith",
+          "count": 1
+        }
+      ],
+      "sourcePage": 146
+    },
+    {
+      "id": "clotting-powder",
+      "name": "Кровосвёртывающий порошок",
+      "level": "novice",
+      "dc": 12,
+      "time": "5 раундов",
+      "price": 30,
+      "ingredients": [
+        {
+          "substance": "aether",
+          "count": 1
+        },
+        {
+          "substance": "rebis",
+          "count": 1
+        }
+      ],
+      "sourcePage": 146
+    },
+    {
+      "id": "hallucinogen",
+      "name": "Галлюциноген",
+      "level": "novice",
+      "dc": 12,
+      "time": "5 раундов",
+      "price": 47,
+      "ingredients": [
+        {
+          "substance": "vitriol",
+          "count": 1
+        },
+        {
+          "substance": "rebis",
+          "count": 1
+        }
+      ],
+      "sourcePage": 146
+    },
+    {
+      "id": "invisible-ink",
+      "name": "Невидимые чернила",
+      "level": "novice",
+      "dc": 11,
+      "time": "5 раундов",
+      "price": 22,
+      "ingredients": [
+        {
+          "substance": "quebrith",
+          "count": 1
+        },
+        {
+          "substance": "aether",
+          "count": 1
+        }
+      ],
+      "sourcePage": 146
+    },
+    {
+      "id": "painkilling-herbs",
+      "name": "Обезболивающие травы",
+      "level": "novice",
+      "dc": 12,
+      "time": "5 раундов",
+      "price": 18,
+      "ingredients": [
+        {
+          "substance": "quebrith",
+          "count": 1
+        },
+        {
+          "substance": "vermilion",
+          "count": 1
+        }
+      ],
+      "sourcePage": 146
+    },
+    {
+      "id": "poisoners-friend",
+      "name": "Друг отравителя",
+      "level": "novice",
+      "dc": 14,
+      "time": "10 минут",
+      "price": 24,
+      "ingredients": [
+        {
+          "substance": "vermilion",
+          "count": 2
+        },
+        {
+          "substance": "vitriol",
+          "count": 1
+        },
+        {
+          "substance": "caelum",
+          "count": 1
+        }
+      ],
+      "sourcePage": 146
+    },
+    {
+      "id": "smelling-salts",
+      "name": "Нюхательная соль",
+      "level": "novice",
+      "dc": 14,
+      "time": "10 минут",
+      "price": 37,
+      "ingredients": [
+        {
+          "substance": "quebrith",
+          "count": 1
+        },
+        {
+          "substance": "rebis",
+          "count": 1
+        },
+        {
+          "substance": "caelum",
+          "count": 2
+        }
+      ],
+      "sourcePage": 146
+    },
+    {
+      "id": "disinfectant",
+      "name": "Обеззараживающая жидкость",
+      "level": "novice",
+      "dc": 12,
+      "time": "5 раундов",
+      "price": 33,
+      "ingredients": [
+        {
+          "substance": "quebrith",
+          "count": 1
+        },
+        {
+          "substance": "caelum",
+          "count": 1
+        }
+      ],
+      "sourcePage": 146
+    },
+    {
+      "id": "succubus-breath",
+      "name": "Дыхание суккуба",
+      "level": "novice",
+      "dc": 14,
+      "time": "10 минут",
+      "price": 30,
+      "ingredients": [
+        {
+          "substance": "sol",
+          "count": 1
+        },
+        {
+          "substance": "aether",
+          "count": 2
+        },
+        {
+          "substance": "caelum",
+          "count": 1
+        }
+      ],
+      "sourcePage": 146
+    },
+    {
+      "id": "wives-tears",
+      "name": "Слёзы жён",
+      "level": "novice",
+      "dc": 14,
+      "time": "10 минут",
+      "price": 28,
+      "ingredients": [
+        {
+          "substance": "hydragenum",
+          "count": 1
+        },
+        {
+          "substance": "aether",
+          "count": 2
+        },
+        {
+          "substance": "vitriol",
+          "count": 1
+        }
+      ],
+      "sourcePage": 146
+    },
+    {
+      "id": "acid-solution",
+      "name": "Кислотный раствор",
+      "level": "adept",
+      "dc": 16,
+      "time": "15 минут",
+      "price": 84,
+      "ingredients": [
+        {
+          "substance": "aether",
+          "count": 1
+        },
+        {
+          "substance": "quebrith",
+          "count": 1
+        },
+        {
+          "substance": "vermilion",
+          "count": 1
+        },
+        {
+          "substance": "vitriol",
+          "count": 3
+        }
+      ],
+      "sourcePage": 146
+    },
+    {
+      "id": "alchemical-glue",
+      "name": "Алхимический клей",
+      "level": "adept",
+      "dc": 15,
+      "time": "10 минут",
+      "price": 52,
+      "ingredients": [
+        {
+          "substance": "quebrith",
+          "count": 1
+        },
+        {
+          "substance": "hydragenum",
+          "count": 1
+        },
+        {
+          "substance": "caelum",
+          "count": 2
+        },
+        {
+          "substance": "vitriol",
+          "count": 1
+        }
+      ],
+      "sourcePage": 146
+    },
+    {
+      "id": "black-poison",
+      "name": "Чёрный яд",
+      "level": "adept",
+      "dc": 15,
+      "time": "10 минут",
+      "price": 67,
+      "ingredients": [
+        {
+          "substance": "quebrith",
+          "count": 2
+        },
+        {
+          "substance": "aether",
+          "count": 2
+        },
+        {
+          "substance": "rebis",
+          "count": 1
+        }
+      ],
+      "sourcePage": 146
+    },
+    {
+      "id": "chloroform",
+      "name": "Хлороформ",
+      "level": "adept",
+      "dc": 16,
+      "time": "15 минут",
+      "price": 54,
+      "ingredients": [
+        {
+          "substance": "quebrith",
+          "count": 2
+        },
+        {
+          "substance": "vermilion",
+          "count": 2
+        },
+        {
+          "substance": "aether",
+          "count": 1
+        },
+        {
+          "substance": "vitriol",
+          "count": 1
+        }
+      ],
+      "sourcePage": 146
+    },
+    {
+      "id": "quick-fire",
+      "name": "Быстрый огонь",
+      "level": "adept",
+      "dc": 16,
+      "time": "15 минут",
+      "price": 67,
+      "ingredients": [
+        {
+          "substance": "quebrith",
+          "count": 1
+        },
+        {
+          "substance": "rebis",
+          "count": 2
+        },
+        {
+          "substance": "caelum",
+          "count": 1
+        },
+        {
+          "substance": "vitriol",
+          "count": 1
+        },
+        {
+          "substance": "vermilion",
+          "count": 1
+        }
+      ],
+      "sourcePage": 146
+    },
+    {
+      "id": "bredan-fury",
+      "name": "Ярость Бредана",
+      "level": "master",
+      "dc": 22,
+      "time": "1/2 часа",
+      "price": 142,
+      "ingredients": [
+        {
+          "substance": "sol",
+          "count": 3
+        },
+        {
+          "substance": "fulgur",
+          "count": 3
+        },
+        {
+          "substance": "caelum",
+          "count": 1
+        },
+        {
+          "substance": "vermilion",
+          "count": 1
+        }
+      ],
+      "sourcePage": 147
+    },
+    {
+      "id": "fisstech",
+      "name": "Фисштех",
+      "level": "master",
+      "dc": 18,
+      "time": "1/2 часа",
+      "price": 120,
+      "ingredients": [
+        {
+          "substance": "rebis",
+          "count": 3
+        },
+        {
+          "substance": "hydragenum",
+          "count": 2
+        },
+        {
+          "substance": "vitriol",
+          "count": 2
+        },
+        {
+          "substance": "vermilion",
+          "count": 1
+        }
+      ],
+      "sourcePage": 147
+    },
+    {
+      "id": "pantagram-elixir",
+      "name": "Эликсир Пантаграна",
+      "level": "master",
+      "dc": 17,
+      "time": "15 минут",
+      "price": 100,
+      "ingredients": [
+        {
+          "substance": "vermilion",
+          "count": 2
+        },
+        {
+          "substance": "aether",
+          "count": 2
+        },
+        {
+          "substance": "caelum",
+          "count": 1
+        },
+        {
+          "substance": "sol",
+          "count": 1
+        },
+        {
+          "substance": "fulgur",
+          "count": 1
+        }
+      ],
+      "sourcePage": 147
+    },
+    {
+      "id": "fragrant-potion",
+      "name": "Ароматное зелье",
+      "level": "master",
+      "dc": 18,
+      "time": "1/2 часа",
+      "price": 114,
+      "ingredients": [
+        {
+          "substance": "quebrith",
+          "count": 2
+        },
+        {
+          "substance": "aether",
+          "count": 1
+        },
+        {
+          "substance": "vitriol",
+          "count": 2
+        },
+        {
+          "substance": "vermilion",
+          "count": 1
+        },
+        {
+          "substance": "hydragenum",
+          "count": 2
+        }
+      ],
+      "sourcePage": 147
+    },
+    {
+      "id": "talgar-tears",
+      "name": "Слёзы Тальгара",
+      "level": "master",
+      "dc": 20,
+      "time": "1/2 часа",
+      "price": 118,
+      "ingredients": [
+        {
+          "substance": "hydragenum",
+          "count": 3
+        },
+        {
+          "substance": "aether",
+          "count": 2
+        },
+        {
+          "substance": "vermilion",
+          "count": 1
+        },
+        {
+          "substance": "vitriol",
+          "count": 2
+        }
+      ],
+      "sourcePage": 147
+    },
+    {
+      "id": "zerrikanian-fire",
+      "name": "Зерриканский огонь",
+      "level": "master",
+      "dc": 17,
+      "time": "15 минут",
+      "price": 97,
+      "ingredients": [
+        {
+          "substance": "quebrith",
+          "count": 2
+        },
+        {
+          "substance": "rebis",
+          "count": 4
+        },
+        {
+          "substance": "fulgur",
+          "count": 1
+        },
+        {
+          "substance": "vitriol",
+          "count": 1
+        }
+      ],
+      "sourcePage": 147
+    }
+  ]
+}

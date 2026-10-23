@@ -18,6 +18,7 @@ import { toolsFileSchema } from '../../docs/.vitepress/schemas/tool'
 import { gearFileSchema } from '../../docs/.vitepress/schemas/gear'
 import { componentsFileSchema } from '../../docs/.vitepress/schemas/component'
 import { substancesFileSchema } from '../../docs/.vitepress/schemas/substance'
+import { formulasFileSchema } from '../../docs/.vitepress/schemas/formula'
 
 const root = fileURLToPath(new URL('../..', import.meta.url))
 const dataDir = join(root, 'docs', '.vitepress', 'data')
@@ -78,6 +79,7 @@ validate('инструменты', 'tools.json', toolsFileSchema)
 validate('прочее снаряжение', 'gear.json', gearFileSchema)
 validate('компоненты', 'components.json', componentsFileSchema)
 validate('субстанции', 'substances.json', substancesFileSchema)
+validate('формулы', 'formulas.json', formulasFileSchema)
 
 function validateTransport() {
   const raw = JSON.parse(readFileSync(join(dataDir, 'transport.json'), 'utf8'))
