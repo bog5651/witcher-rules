@@ -2,6 +2,7 @@
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vitepress'
 import { useItemDrawer } from '../composables/useItemDrawer'
+import EffectText from './EffectText.vue'
 
 const { item, isOpen, close } = useItemDrawer()
 const route = useRoute()
@@ -107,7 +108,10 @@ onBeforeUnmount(() => {
           <dl class="item-drawer__stats">
             <div v-for="stat in item.stats" :key="stat.label" class="item-drawer__stat">
               <dt>{{ stat.label }}</dt>
-              <dd>{{ stat.value || '—' }}</dd>
+              <dd>
+                <EffectText v-if="stat.label === 'Эффект'" :text="stat.value" />
+                <template v-else>{{ stat.value || '—' }}</template>
+              </dd>
             </div>
           </dl>
 

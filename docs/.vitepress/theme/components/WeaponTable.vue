@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 import data from '../../data/weapons.json'
 import type { Weapon } from '../../schemas/weapon'
 import { useItemDrawer } from '../composables/useItemDrawer'
+import EffectText from './EffectText.vue'
 
 const weapons = data.items as Weapon[]
 const { open: openDrawer } = useItemDrawer()
@@ -122,6 +123,22 @@ const formatWeight = (value: number) => value.toLocaleString('ru-RU')
 const originLabel = (weapon: Weapon) =>
   weapon.elderfolk ? 'Старший Народ' : weapon.witcher ? 'Ведьмачье' : 'Обычное'
 
+const damageTypeLabels: Record<string, string> = {
+  Р: 'Режущий',
+  К: 'Колющий',
+  Д: 'Дробящий',
+  С: 'Стихийный'
+}
+
+const damageTypeText = (weapon: Weapon) =>
+  weapon.damageTypes.map((type) => damageTypeLabels[type] ?? type).join(', ')
+
+const handsLabel = (hands: number) => {
+  if (hands === 1) return 'Одна рука'
+  if (hands === 2) return 'Две руки'
+  return `${hands} руки`
+}
+
 const openItem = (weapon: Weapon) => {
   openDrawer({
     title: weapon.name,
@@ -129,11 +146,11 @@ const openItem = (weapon: Weapon) => {
     description: weapon.description,
     sourcePage: weapon.sourcePage,
     stats: [
-      { label: 'Тип', value: weapon.type },
+      { label: 'Тип урона', value: damageTypeText(weapon) },
       { label: 'Точность', value: signed(weapon.accuracy) },
       { label: 'Урон', value: weapon.damage },
       { label: 'Надёжность', value: String(weapon.reliability) },
-      { label: 'Хват', value: String(weapon.hands) },
+      { label: 'Хват', value: handsLabel(weapon.hands) },
       { label: 'Дистанция', value: weapon.range },
       { label: 'Эффект', value: weapon.effects.join('; ') || '—' },
       { label: 'Доступность', value: availabilityLabels[weapon.availability] },
@@ -295,7 +312,9 @@ const openItem = (weapon: Weapon) => {
             <td class="col-num">{{ weapon.reliability }}</td>
             <td class="col-num">{{ weapon.hands }}</td>
             <td>{{ weapon.range }}</td>
-            <td class="col-effects">{{ weapon.effects.join('; ') }}</td>
+            <td class="col-effects">
+              <EffectText :text="weapon.effects.join('; ') || '—'" />
+            </td>
             <td>
               <span class="wr-abbr" :title="concealmentLabels[weapon.concealment]">
                 {{ concealmentShort[weapon.concealment] }}

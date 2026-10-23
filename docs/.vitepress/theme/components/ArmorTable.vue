@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 import data from '../../data/armor.json'
 import type { Armor } from '../../schemas/armor'
 import { useItemDrawer } from '../composables/useItemDrawer'
+import EffectText from './EffectText.vue'
 
 const armor = data.items as Armor[]
 const { open: openDrawer } = useItemDrawer()
@@ -115,6 +116,8 @@ const reset = () => {
 
 const formatWeight = (value: number) => value.toLocaleString('ru-RU')
 const protectionValue = (item: Armor) => item.protection ?? item.reliability ?? 0
+const protectionLabel = (item: Armor) =>
+  item.location === 'shield' ? 'Надёжность щита' : 'Прочность брони'
 
 const openItem = (item: Armor) => {
   openDrawer({
@@ -125,7 +128,7 @@ const openItem = (item: Armor) => {
     stats: [
       { label: 'Часть', value: item.coverage ?? locationLabels[item.location] },
       { label: 'Класс', value: classLabels[item.weightClass] },
-      { label: 'ПБ/Н', value: String(protectionValue(item)) },
+      { label: protectionLabel(item), value: String(protectionValue(item)) },
       { label: 'Доступность', value: availabilityLabels[item.availability] },
       { label: 'Усиления брони', value: String(item.upgradeSlots) },
       { label: 'Эффект', value: item.effect || '—' },
@@ -269,7 +272,9 @@ const openItem = (item: Armor) => {
               </span>
             </td>
             <td class="col-num">{{ item.upgradeSlots }}</td>
-            <td class="col-effects">{{ item.effect }}</td>
+            <td class="col-effects">
+              <EffectText :text="item.effect || '—'" />
+            </td>
             <td class="col-num">{{ item.encumbrance }}</td>
             <td class="col-num">{{ formatWeight(item.weight) }}</td>
             <td class="col-num">{{ formatWeight(item.price) }}</td>

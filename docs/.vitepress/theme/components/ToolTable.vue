@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 import data from '../../data/tools.json'
 import type { Tool } from '../../schemas/tool'
 import { useItemDrawer } from '../composables/useItemDrawer'
+import EffectText from './EffectText.vue'
 
 const items = data.items as Tool[]
 const { open: openDrawer } = useItemDrawer()
@@ -218,7 +219,9 @@ const openItem = (item: Tool) => {
                 {{ concealmentShort[item.concealment] }}
               </span>
             </td>
-            <td class="col-effects">{{ item.effect }}</td>
+            <td class="col-effects">
+              <EffectText :text="item.effect" />
+            </td>
             <td class="col-num">{{ formatNumber(item.weight) }}</td>
             <td class="col-num">{{ formatNumber(item.price) }}</td>
           </tr>

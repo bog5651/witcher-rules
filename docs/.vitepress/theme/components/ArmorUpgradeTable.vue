@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 import data from '../../data/armor-upgrades.json'
 import type { ArmorUpgrade } from '../../schemas/armorUpgrade'
 import { useItemDrawer } from '../composables/useItemDrawer'
+import EffectText from './EffectText.vue'
 
 const items = data.items as ArmorUpgrade[]
 const { open: openDrawer } = useItemDrawer()
@@ -185,7 +186,9 @@ const openItem = (item: ArmorUpgrade) => {
             <td class="col-name">
               <button type="button" class="wr-item-link" @click="openItem(item)">{{ item.name }}</button>
             </td>
-            <td class="col-effects">{{ item.effect }}</td>
+            <td class="col-effects">
+              <EffectText :text="item.effect || '—'" />
+            </td>
             <td class="col-num">+{{ item.protectionBonus }}</td>
             <td class="col-mark">{{ item.resistances.includes('Д') ? '×' : '' }}</td>
             <td class="col-mark">{{ item.resistances.includes('Р') ? '×' : '' }}</td>

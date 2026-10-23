@@ -16,6 +16,7 @@ import { armorUpgradesFileSchema } from '../../docs/.vitepress/schemas/armorUpgr
 import { transportFileSchema } from '../../docs/.vitepress/schemas/transport'
 import { toolsFileSchema } from '../../docs/.vitepress/schemas/tool'
 import { gearFileSchema } from '../../docs/.vitepress/schemas/gear'
+import { componentsFileSchema } from '../../docs/.vitepress/schemas/component'
 
 const root = fileURLToPath(new URL('../..', import.meta.url))
 const dataDir = join(root, 'docs', '.vitepress', 'data')
@@ -74,6 +75,7 @@ validate('алхимические составы', 'alchemicals.json', alchemic
 validate('усиления брони', 'armor-upgrades.json', armorUpgradesFileSchema)
 validate('инструменты', 'tools.json', toolsFileSchema)
 validate('прочее снаряжение', 'gear.json', gearFileSchema)
+validate('компоненты', 'components.json', componentsFileSchema)
 
 function validateTransport() {
   const raw = JSON.parse(readFileSync(join(dataDir, 'transport.json'), 'utf8'))

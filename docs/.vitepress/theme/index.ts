@@ -28,6 +28,7 @@ import ArmorUpgradeTable from './components/ArmorUpgradeTable.vue'
 import TransportTable from './components/TransportTable.vue'
 import ToolTable from './components/ToolTable.vue'
 import GearTable from './components/GearTable.vue'
+import ComponentTable from './components/ComponentTable.vue'
 
 export default {
   extends: DefaultTheme,
@@ -43,5 +44,6 @@ export default {
     app.component('TransportTable', TransportTable)
     app.component('ToolTable', ToolTable)
     app.component('GearTable', GearTable)
+    app.component('ComponentTable', ComponentTable)
   }
 } satisfies Theme

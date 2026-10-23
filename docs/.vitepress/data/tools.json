@@ -9,7 +9,8 @@
       "concealment": "large",
       "weight": 3,
       "price": 80,
-      "sourcePage": 92
+      "sourcePage": 92,
+      "description": "Набор инструментов для создания алхимических составов. В наборе алхимика 10 сосудов для зелий."
     },
     {
       "id": "gem-amulet",
@@ -19,7 +20,8 @@
       "concealment": "tiny",
       "weight": 0.1,
       "price": 500,
-      "sourcePage": 92
+      "sourcePage": 92,
+      "description": "Фокусирующий магический предмет. Многие маги предпочитают носить амулеты вместо посохов."
     },
     {
       "id": "simple-amulet",
@@ -29,7 +31,8 @@
       "concealment": "tiny",
       "weight": 0.1,
       "price": 250,
-      "sourcePage": 92
+      "sourcePage": 92,
+      "description": "Фокусирующий магический предмет. Многие маги предпочитают носить амулеты вместо посохов."
     },
     {
       "id": "cooking-utensils",
@@ -39,7 +42,8 @@
       "concealment": "large",
       "weight": 3,
       "price": 15,
-      "sourcePage": 92
+      "sourcePage": 92,
+      "description": "Принадлежности для приготовления еды."
     },
     {
       "id": "craftsman-tools",
@@ -49,7 +53,8 @@
       "concealment": "large",
       "weight": 5,
       "price": 83,
-      "sourcePage": 92
+      "sourcePage": 92,
+      "description": "Инструменты для создания оружия и брони."
     },
     {
       "id": "disguise-kit",
@@ -59,7 +64,8 @@
       "concealment": "small",
       "weight": 1,
       "price": 58,
-      "sourcePage": 92
+      "sourcePage": 92,
+      "description": "Набор для маскировки. Даёт +2 к Маскировке."
     },
     {
       "id": "art-tools",
@@ -69,7 +75,8 @@
       "concealment": "small",
       "weight": 2,
       "price": 55,
-      "sourcePage": 92
+      "sourcePage": 92,
+      "description": "Инструменты для создания произведений искусства: картин, украшений, скульптур и тому подобного."
     },
     {
       "id": "fishing-tackle",
@@ -79,7 +86,8 @@
       "concealment": "tiny",
       "weight": 0.5,
       "price": 27,
-      "sourcePage": 92
+      "sourcePage": 92,
+      "description": "Снасти для ловли рыбы. Дают +2 к Выживанию в дикой природе при ловле рыбы."
     },
     {
       "id": "forgery-tools",
@@ -89,7 +97,8 @@
       "concealment": "small",
       "weight": 0.5,
       "price": 58,
-      "sourcePage": 92
+      "sourcePage": 92,
+      "description": "Инструменты для создания поддельных монет и документов."
     },
     {
       "id": "makeup-kit",
@@ -99,7 +108,8 @@
       "concealment": "tiny",
       "weight": 0.5,
       "price": 35,
-      "sourcePage": 92
+      "sourcePage": 92,
+      "description": "Набор для макияжа. Даёт +2 к Соблазнению и Харизме."
     },
     {
       "id": "merchant-tools",
@@ -109,7 +119,8 @@
       "concealment": "small",
       "weight": 1.5,
       "price": 60,
-      "sourcePage": 92
+      "sourcePage": 92,
+      "description": "Инструменты торговца. Дают +2 к Торговле при оценке товара."
     },
     {
       "id": "surgical-tools",
@@ -119,7 +130,8 @@
       "concealment": "small",
       "weight": 1,
       "price": 83,
-      "sourcePage": 92
+      "sourcePage": 92,
+      "description": "Инструменты для проведения хирургических операций."
     },
     {
       "id": "telecommunicator",
@@ -129,7 +141,8 @@
       "concealment": "large",
       "weight": 4,
       "price": 1000,
-      "sourcePage": 92
+      "sourcePage": 92,
+      "description": "Позволяет общаться при помощи ритуала Телекоммуникация."
     },
     {
       "id": "thieves-tools",
@@ -139,7 +152,8 @@
       "concealment": "tiny",
       "weight": 1,
       "price": 80,
-      "sourcePage": 92
+      "sourcePage": 92,
+      "description": "Инструменты для вскрытия замков."
     },
     {
       "id": "portable-forge",
@@ -149,7 +163,8 @@
       "concealment": "large",
       "weight": 5,
       "price": 111,
-      "sourcePage": 92
+      "sourcePage": 92,
+      "description": "Походная кузница позволяет ковать оружие и броню в любом месте. Для создания металлического оружия и брони требуются горн и другое кузнечное оборудование; если поблизости нет обычной кузницы, подойдёт походная."
     },
     {
       "id": "writing-supplies",
@@ -159,7 +174,8 @@
       "concealment": "small",
       "weight": 1,
       "price": 25,
-      "sourcePage": 92
+      "sourcePage": 92,
+      "description": "Письменные принадлежности для писем, записок и тому подобного."
     }
   ]
 }
