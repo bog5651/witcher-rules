@@ -1,0 +1,678 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "rope-20m",
+      "name": "Верёвка (20 метров)",
+      "category": "standard",
+      "weight": 1.5,
+      "price": 20,
+      "sourcePage": 93
+    },
+    {
+      "id": "dice-poker-board",
+      "name": "Доска для покера на костях",
+      "category": "standard",
+      "weight": 0.5,
+      "price": 25,
+      "sourcePage": 93
+    },
+    {
+      "id": "travel-bed",
+      "name": "Походная постель",
+      "category": "standard",
+      "weight": 1.5,
+      "price": 16,
+      "sourcePage": 93
+    },
+    {
+      "id": "candles-5",
+      "name": "Свечи (х5)",
+      "category": "standard",
+      "weight": 0.5,
+      "price": 5,
+      "sourcePage": 93
+    },
+    {
+      "id": "chalk",
+      "name": "Мелок",
+      "category": "standard",
+      "weight": 0.1,
+      "price": 2,
+      "sourcePage": 93
+    },
+    {
+      "id": "flint-and-steel",
+      "name": "Огниво",
+      "category": "standard",
+      "weight": 0.1,
+      "price": 6,
+      "sourcePage": 93
+    },
+    {
+      "id": "grappling-hook",
+      "name": "Крюк-кошка",
+      "category": "standard",
+      "weight": 0.5,
+      "price": 13,
+      "sourcePage": 93
+    },
+    {
+      "id": "gwent-deck",
+      "name": "Колода для гвинта",
+      "category": "standard",
+      "weight": 0.1,
+      "price": 5,
+      "sourcePage": 93
+    },
+    {
+      "id": "hand-mirror",
+      "name": "Ручное зеркальце",
+      "category": "standard",
+      "weight": 0.5,
+      "price": 27,
+      "sourcePage": 93
+    },
+    {
+      "id": "holy-symbol",
+      "name": "Священный символ",
+      "category": "standard",
+      "weight": 0.1,
+      "price": 14,
+      "sourcePage": 93
+    },
+    {
+      "id": "hourglass-hour",
+      "name": "Песочные часы (час)",
+      "category": "standard",
+      "weight": 1,
+      "price": 38,
+      "sourcePage": 93
+    },
+    {
+      "id": "hourglass-minute",
+      "name": "Песочные часы (минута)",
+      "category": "standard",
+      "weight": 0.1,
+      "price": 18,
+      "sourcePage": 93
+    },
+    {
+      "id": "musical-instrument",
+      "name": "Музыкальный инструмент",
+      "category": "standard",
+      "weight": 1,
+      "price": 38,
+      "sourcePage": 93
+    },
+    {
+      "id": "journal-ledger",
+      "name": "Дневник/гроссбух",
+      "category": "standard",
+      "weight": 0.5,
+      "price": 8,
+      "sourcePage": 93
+    },
+    {
+      "id": "lantern",
+      "name": "Фонарь",
+      "category": "standard",
+      "weight": 1,
+      "price": 33,
+      "sourcePage": 93
+    },
+    {
+      "id": "bullseye-lantern",
+      "name": "Фонарь «бычий глаз»",
+      "category": "standard",
+      "weight": 1,
+      "price": 39,
+      "sourcePage": 93
+    },
+    {
+      "id": "loaded-dice",
+      "name": "Шулерские кости",
+      "category": "standard",
+      "weight": 0.1,
+      "price": 12,
+      "sourcePage": 93
+    },
+    {
+      "id": "lock",
+      "name": "Замок",
+      "category": "standard",
+      "weight": 0.1,
+      "price": 34,
+      "sourcePage": 93
+    },
+    {
+      "id": "sturdy-lock",
+      "name": "Надёжный замок",
+      "category": "standard",
+      "weight": 0.1,
+      "price": 68,
+      "sourcePage": 93
+    },
+    {
+      "id": "handcuffs",
+      "name": "Наручники",
+      "category": "standard",
+      "weight": 0.5,
+      "price": 30,
+      "sourcePage": 93
+    },
+    {
+      "id": "continent-map",
+      "name": "Карта Континента",
+      "category": "standard",
+      "weight": 0.1,
+      "price": 18,
+      "sourcePage": 93
+    },
+    {
+      "id": "perfume",
+      "name": "Духи/одеколон",
+      "category": "standard",
+      "weight": 0.1,
+      "price": 22,
+      "sourcePage": 93
+    },
+    {
+      "id": "pipe",
+      "name": "Трубка",
+      "category": "standard",
+      "weight": 0.1,
+      "price": 19,
+      "sourcePage": 93
+    },
+    {
+      "id": "pitons-5",
+      "name": "Колышки (х5)",
+      "category": "standard",
+      "weight": 0.5,
+      "price": 10,
+      "sourcePage": 93
+    },
+    {
+      "id": "simple-prosthesis",
+      "name": "Простой протез",
+      "category": "standard",
+      "weight": 1,
+      "price": 50,
+      "sourcePage": 93
+    },
+    {
+      "id": "quality-prosthesis",
+      "name": "Качественный протез",
+      "category": "standard",
+      "weight": 1.5,
+      "price": 100,
+      "sourcePage": 93
+    },
+    {
+      "id": "shackles",
+      "name": "Кандалы",
+      "category": "standard",
+      "weight": 2,
+      "price": 50,
+      "sourcePage": 93
+    },
+    {
+      "id": "soap",
+      "name": "Мыло",
+      "category": "standard",
+      "weight": 0.1,
+      "price": 4,
+      "sourcePage": 93
+    },
+    {
+      "id": "canvas",
+      "name": "Брезент",
+      "category": "standard",
+      "weight": 1.5,
+      "price": 10,
+      "sourcePage": 93
+    },
+    {
+      "id": "tent",
+      "name": "Палатка",
+      "category": "standard",
+      "weight": 4,
+      "price": 19,
+      "sourcePage": 93
+    },
+    {
+      "id": "large-tent",
+      "name": "Большая палатка",
+      "category": "standard",
+      "weight": 8,
+      "price": 36,
+      "sourcePage": 93
+    },
+    {
+      "id": "tobacco",
+      "name": "Табак",
+      "category": "standard",
+      "weight": 0.1,
+      "price": 4,
+      "sourcePage": 93
+    },
+    {
+      "id": "torch",
+      "name": "Факел",
+      "category": "standard",
+      "weight": 0.1,
+      "price": 1,
+      "sourcePage": 93
+    },
+    {
+      "id": "waterskin",
+      "name": "Бурдюк",
+      "category": "standard",
+      "weight": 1,
+      "price": 8,
+      "sourcePage": 93
+    },
+    {
+      "id": "bandolier",
+      "name": "Бандольера",
+      "category": "containers",
+      "weight": 1,
+      "price": 19,
+      "sourcePage": 93
+    },
+    {
+      "id": "basket",
+      "name": "Корзина",
+      "category": "containers",
+      "weight": 0.5,
+      "price": 10,
+      "sourcePage": 93
+    },
+    {
+      "id": "belt-pouch",
+      "name": "Поясная сумка",
+      "category": "containers",
+      "weight": 0.1,
+      "price": 7,
+      "sourcePage": 93
+    },
+    {
+      "id": "sack",
+      "name": "Мешок",
+      "category": "containers",
+      "weight": 0.1,
+      "price": 3,
+      "sourcePage": 93
+    },
+    {
+      "id": "shoulder-bag",
+      "name": "Наплечная сумка",
+      "category": "containers",
+      "weight": 1,
+      "price": 14,
+      "sourcePage": 93
+    },
+    {
+      "id": "hidden-pocket",
+      "name": "Потайной карман",
+      "category": "containers",
+      "weight": 0.1,
+      "price": 11,
+      "sourcePage": 93
+    },
+    {
+      "id": "bow-case",
+      "name": "Чехол для лука",
+      "category": "containers",
+      "weight": 1.5,
+      "price": 24,
+      "sourcePage": 93
+    },
+    {
+      "id": "hip-sheath",
+      "name": "Набедренные ножны",
+      "category": "containers",
+      "weight": 0.1,
+      "price": 11,
+      "sourcePage": 93
+    },
+    {
+      "id": "wrist-sheath",
+      "name": "Наручные ножны",
+      "category": "containers",
+      "weight": 0.1,
+      "price": 13,
+      "sourcePage": 93
+    },
+    {
+      "id": "wooden-chest",
+      "name": "Деревянный сундук",
+      "category": "containers",
+      "weight": 1,
+      "price": 18,
+      "sourcePage": 93
+    },
+    {
+      "id": "large-wooden-chest",
+      "name": "Большой деревянный сундук",
+      "category": "containers",
+      "weight": 10,
+      "price": 30,
+      "sourcePage": 93
+    },
+    {
+      "id": "simple-meal",
+      "name": "Простой обед",
+      "category": "food",
+      "weight": 1,
+      "price": 10,
+      "sourcePage": 93
+    },
+    {
+      "id": "good-meal",
+      "name": "Хороший обед",
+      "category": "food",
+      "weight": 2.5,
+      "price": 30,
+      "sourcePage": 93
+    },
+    {
+      "id": "feast",
+      "name": "Пир",
+      "category": "food",
+      "weight": 5,
+      "price": 100,
+      "sourcePage": 93
+    },
+    {
+      "id": "raw-meat",
+      "name": "Сырое мясо",
+      "category": "food",
+      "weight": 1,
+      "price": 8,
+      "sourcePage": 93
+    },
+    {
+      "id": "sweets",
+      "name": "Сладости",
+      "category": "food",
+      "weight": 1,
+      "price": 5,
+      "sourcePage": 93
+    },
+    {
+      "id": "dry-rations",
+      "name": "Сухой паёк (на 1 день)",
+      "category": "food",
+      "weight": 1,
+      "price": 5,
+      "sourcePage": 93
+    },
+    {
+      "id": "alkahest",
+      "name": "Алкагест",
+      "category": "food",
+      "weight": 1,
+      "price": 8,
+      "sourcePage": 93
+    },
+    {
+      "id": "beer",
+      "name": "Пиво",
+      "category": "food",
+      "weight": 1,
+      "price": 5,
+      "sourcePage": 93
+    },
+    {
+      "id": "strong-alcohol",
+      "name": "Крепкий алкоголь",
+      "category": "food",
+      "weight": 1,
+      "price": 10,
+      "sourcePage": 93
+    },
+    {
+      "id": "wine",
+      "name": "Вино",
+      "category": "food",
+      "weight": 1,
+      "price": 8,
+      "sourcePage": 93
+    },
+    {
+      "id": "simple-clothes",
+      "name": "Простая одежда",
+      "category": "clothing",
+      "weight": 2,
+      "price": 10,
+      "sourcePage": 93
+    },
+    {
+      "id": "warm-clothes",
+      "name": "Тёплая одежда",
+      "category": "clothing",
+      "weight": 3,
+      "price": 45,
+      "sourcePage": 93
+    },
+    {
+      "id": "fashionable-clothes",
+      "name": "Модная одежда",
+      "category": "clothing",
+      "weight": 2,
+      "price": 70,
+      "sourcePage": 93
+    },
+    {
+      "id": "jewelry",
+      "name": "Украшения",
+      "category": "clothing",
+      "weight": 0.5,
+      "price": 50,
+      "sourcePage": 93
+    },
+    {
+      "id": "dark-clothes",
+      "name": "Тёмная одежда",
+      "category": "clothing",
+      "weight": 1.5,
+      "price": 50,
+      "sourcePage": 93
+    },
+    {
+      "id": "cold-bath",
+      "name": "Ванна с холодной водой",
+      "category": "services",
+      "weight": null,
+      "price": 8,
+      "sourcePage": 93
+    },
+    {
+      "id": "hot-bath",
+      "name": "Ванна с горячей водой",
+      "category": "services",
+      "weight": null,
+      "price": 16,
+      "sourcePage": 93
+    },
+    {
+      "id": "carriage-ride",
+      "name": "Поездка в карете",
+      "category": "services",
+      "weight": null,
+      "price": 85,
+      "sourcePage": 93
+    },
+    {
+      "id": "scribe-services",
+      "name": "Услуги летописца",
+      "category": "services",
+      "weight": null,
+      "price": 25,
+      "sourcePage": 93
+    },
+    {
+      "id": "craftsman-services",
+      "name": "Услуги ремесленника (за предмет)",
+      "category": "services",
+      "weight": null,
+      "price": 35,
+      "sourcePage": 93
+    },
+    {
+      "id": "medic-services",
+      "name": "Услуги медика (за пациента)",
+      "category": "services",
+      "weight": null,
+      "price": 50,
+      "sourcePage": 93
+    },
+    {
+      "id": "entertainment",
+      "name": "Развлечения (за час)",
+      "category": "services",
+      "weight": null,
+      "price": 10,
+      "sourcePage": 93
+    },
+    {
+      "id": "fence-services",
+      "name": "Услуги скупщика краденого",
+      "category": "services",
+      "weight": null,
+      "price": null,
+      "priceNote": "1/4 от выручки",
+      "sourcePage": 93
+    },
+    {
+      "id": "hired-worker",
+      "name": "Наёмный работник (за день)",
+      "category": "services",
+      "weight": null,
+      "price": 15,
+      "sourcePage": 93
+    },
+    {
+      "id": "investigator-services",
+      "name": "Услуги следователя",
+      "category": "services",
+      "weight": null,
+      "price": 45,
+      "sourcePage": 93
+    },
+    {
+      "id": "laundress-services",
+      "name": "Услуги прачки",
+      "category": "services",
+      "weight": null,
+      "price": 8,
+      "sourcePage": 93
+    },
+    {
+      "id": "lawyer-services",
+      "name": "Услуги законника",
+      "category": "services",
+      "weight": null,
+      "price": 50,
+      "sourcePage": 93
+    },
+    {
+      "id": "courier-services",
+      "name": "Услуги посыльного",
+      "category": "services",
+      "weight": null,
+      "price": 10,
+      "sourcePage": 93
+    },
+    {
+      "id": "prostitute-services",
+      "name": "Услуги проститутки (за час)",
+      "category": "services",
+      "weight": null,
+      "price": 12,
+      "sourcePage": 93
+    },
+    {
+      "id": "horse-rental",
+      "name": "Аренда лошади (за день)",
+      "category": "services",
+      "weight": null,
+      "price": 50,
+      "sourcePage": 93
+    },
+    {
+      "id": "sea-travel",
+      "name": "Морское путешествие",
+      "category": "services",
+      "weight": null,
+      "price": 85,
+      "sourcePage": 93
+    },
+    {
+      "id": "checkpoint-fee",
+      "name": "Плата на заставе",
+      "category": "services",
+      "weight": null,
+      "price": 10,
+      "sourcePage": 93
+    },
+    {
+      "id": "straw-floor",
+      "name": "На полу на соломе (за ночь)",
+      "category": "lodging",
+      "weight": null,
+      "price": 2,
+      "sourcePage": 93
+    },
+    {
+      "id": "suspicious-room",
+      "name": "Подозрительная комната в таверне (за ночь)",
+      "category": "lodging",
+      "weight": null,
+      "price": 4,
+      "sourcePage": 93
+    },
+    {
+      "id": "cheap-room",
+      "name": "Дешёвая комната в таверне (за ночь)",
+      "category": "lodging",
+      "weight": null,
+      "price": 8,
+      "sourcePage": 93
+    },
+    {
+      "id": "standard-room",
+      "name": "Обычная комната в таверне (за ночь)",
+      "category": "lodging",
+      "weight": null,
+      "price": 16,
+      "sourcePage": 93
+    },
+    {
+      "id": "good-room",
+      "name": "Хорошая комната в таверне (за ночь)",
+      "category": "lodging",
+      "weight": null,
+      "price": 36,
+      "sourcePage": 93
+    },
+    {
+      "id": "excellent-room",
+      "name": "Отличная комната в таверне (за ночь)",
+      "category": "lodging",
+      "weight": null,
+      "price": 72,
+      "sourcePage": 93
+    },
+    {
+      "id": "stable",
+      "name": "Стойло в конюшне (за ночь)",
+      "category": "lodging",
+      "weight": null,
+      "price": 2,
+      "sourcePage": 93
+    }
+  ]
+}

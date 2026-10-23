@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "alchemist-tools",
+      "name": "Инструменты алхимика",
+      "effect": "Позволяют создавать алхимические составы",
+      "availability": "rare",
+      "concealment": "large",
+      "weight": 3,
+      "price": 80,
+      "sourcePage": 92
+    },
+    {
+      "id": "gem-amulet",
+      "name": "Амулет с самоцветом",
+      "effect": "Фокусирующее (3)",
+      "availability": "unique",
+      "concealment": "tiny",
+      "weight": 0.1,
+      "price": 500,
+      "sourcePage": 92
+    },
+    {
+      "id": "simple-amulet",
+      "name": "Простой амулет",
+      "effect": "Фокусирующее (1)",
+      "availability": "unique",
+      "concealment": "tiny",
+      "weight": 0.1,
+      "price": 250,
+      "sourcePage": 92
+    },
+    {
+      "id": "cooking-utensils",
+      "name": "Принадлежности для готовки",
+      "effect": "Позволяют готовить еду",
+      "availability": "everywhere",
+      "concealment": "large",
+      "weight": 3,
+      "price": 15,
+      "sourcePage": 92
+    },
+    {
+      "id": "craftsman-tools",
+      "name": "Инструменты ремесленника",
+      "effect": "Позволяют создавать оружие и броню",
+      "availability": "common",
+      "concealment": "large",
+      "weight": 5,
+      "price": 83,
+      "sourcePage": 92
+    },
+    {
+      "id": "disguise-kit",
+      "name": "Набор для маскировки",
+      "effect": "+2 к Маскировке",
+      "availability": "rare",
+      "concealment": "small",
+      "weight": 1,
+      "price": 58,
+      "sourcePage": 92
+    },
+    {
+      "id": "art-tools",
+      "name": "Инструменты для творчества",
+      "effect": "Позволяют создавать произведения искусства (картины, украшения, скульптуры и т. д.)",
+      "availability": "common",
+      "concealment": "small",
+      "weight": 2,
+      "price": 55,
+      "sourcePage": 92
+    },
+    {
+      "id": "fishing-tackle",
+      "name": "Рыболовные снасти",
+      "effect": "+2 к Выживанию в дикой природе при ловле рыбы",
+      "availability": "everywhere",
+      "concealment": "tiny",
+      "weight": 0.5,
+      "price": 27,
+      "sourcePage": 92
+    },
+    {
+      "id": "forgery-tools",
+      "name": "Инструменты для подделки",
+      "effect": "Позволяют создавать поддельные монеты и документы",
+      "availability": "rare",
+      "concealment": "small",
+      "weight": 0.5,
+      "price": 58,
+      "sourcePage": 92
+    },
+    {
+      "id": "makeup-kit",
+      "name": "Набор для макияжа",
+      "effect": "+2 к Соблазнению и Харизме",
+      "availability": "everywhere",
+      "concealment": "tiny",
+      "weight": 0.5,
+      "price": 35,
+      "sourcePage": 92
+    },
+    {
+      "id": "merchant-tools",
+      "name": "Инструменты торговца",
+      "effect": "+2 к Торговле при оценке товара",
+      "availability": "common",
+      "concealment": "small",
+      "weight": 1.5,
+      "price": 60,
+      "sourcePage": 92
+    },
+    {
+      "id": "surgical-tools",
+      "name": "Хирургические инструменты",
+      "effect": "Позволяют проводить хирургические операции",
+      "availability": "common",
+      "concealment": "small",
+      "weight": 1,
+      "price": 83,
+      "sourcePage": 92
+    },
+    {
+      "id": "telecommunicator",
+      "name": "Телекоммуникатор",
+      "effect": "Позволяет общаться при помощи ритуала Телекоммуникация",
+      "availability": "unique",
+      "concealment": "large",
+      "weight": 4,
+      "price": 1000,
+      "sourcePage": 92
+    },
+    {
+      "id": "thieves-tools",
+      "name": "Воровские инструменты",
+      "effect": "Позволяют вскрывать замки",
+      "availability": "rare",
+      "concealment": "tiny",
+      "weight": 1,
+      "price": 80,
+      "sourcePage": 92
+    },
+    {
+      "id": "portable-forge",
+      "name": "Походная кузница",
+      "effect": "Позволяет ковать оружие и броню в любом месте",
+      "availability": "rare",
+      "concealment": "large",
+      "weight": 5,
+      "price": 111,
+      "sourcePage": 92
+    },
+    {
+      "id": "writing-supplies",
+      "name": "Письменные принадлежности",
+      "effect": "Позволяют писать письма, записки и т.п.",
+      "availability": "everywhere",
+      "concealment": "small",
+      "weight": 1,
+      "price": 25,
+      "sourcePage": 92
+    }
+  ]
+}
