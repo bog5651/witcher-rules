@@ -1,8 +1,12 @@
 import { ref } from 'vue'
-import type { EffectGlossaryEntry } from '../effectGlossary'
 
-export interface TermTooltipState {
-  entry: EffectGlossaryEntry
+export interface TooltipContent {
+  title: string
+  definition?: string
+  sourcePage?: number
+}
+
+export interface TermTooltipState extends TooltipContent {
   top: number
   left: number
   width: number
@@ -12,13 +16,13 @@ export interface TermTooltipState {
 const active = ref<TermTooltipState | null>(null)
 
 export function useTermTooltip() {
-  const show = (event: Event, entry: EffectGlossaryEntry) => {
+  const show = (event: Event, content: TooltipContent) => {
     const target = event.currentTarget
     if (!(target instanceof HTMLElement)) return
 
     const rect = target.getBoundingClientRect()
     active.value = {
-      entry,
+      ...content,
       top: rect.top,
       left: rect.left,
       width: rect.width,

@@ -56,6 +56,14 @@ const segments = computed<Segment[]>(() => {
 
   return result
 })
+
+const showTerm = (event: Event, entry: EffectGlossaryEntry) => {
+  show(event, {
+    title: entry.term,
+    definition: entry.definition,
+    sourcePage: entry.sourcePage
+  })
+}
 </script>
 
 <template>
@@ -66,11 +74,11 @@ const segments = computed<Segment[]>(() => {
         v-else
         type="button"
         class="wr-term"
-        @mouseenter="show($event, segment.entry)"
+        @mouseenter="showTerm($event, segment.entry)"
         @mouseleave="hide"
-        @focus="show($event, segment.entry)"
+        @focus="showTerm($event, segment.entry)"
         @blur="hide"
-        @click.stop="show($event, segment.entry)"
+        @click.stop="showTerm($event, segment.entry)"
       >
         {{ segment.value }}
       </button>

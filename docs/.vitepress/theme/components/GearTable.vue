@@ -99,7 +99,10 @@ const openItem = (item: Gear) => {
 
     <template v-for="section in sections" :key="section.key">
       <h3>{{ section.label }}</h3>
-      <div class="gear-table-wrap">
+      <div
+        class="gear-table-wrap"
+        :class="{ 'gear-table-wrap--narrow': !section.hasWeight }"
+      >
         <table class="gear-table" :class="{ 'gear-table--no-weight': !section.hasWeight }">
           <thead>
             <tr>
@@ -167,6 +170,11 @@ const openItem = (item: Gear) => {
   border-radius: 4px;
 }
 
+.gear-table-wrap--narrow {
+  width: fit-content;
+  max-width: 100%;
+}
+
 .gear-table {
   width: 100%;
   min-width: 620px;
@@ -178,6 +186,7 @@ const openItem = (item: Gear) => {
 }
 
 .gear-table--no-weight {
+  width: auto;
   min-width: 420px;
   max-width: 680px;
 }

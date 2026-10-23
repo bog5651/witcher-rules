@@ -177,11 +177,8 @@ const openItem = (item: SubstanceIngredient) => {
                 {{ item.name }}
               </button>
             </td>
-            <td>
-              <span class="substance-cell">
-                <SubstanceIcon :name="item.substance" :size="16" />
-                {{ substanceLabels[item.substance] }}
-              </span>
+            <td class="col-substance">
+              <SubstanceIcon :name="item.substance" :size="20" />
             </td>
             <td>
               <span class="wr-abbr" :title="availabilityLabels[item.availability]">
@@ -305,11 +302,9 @@ const openItem = (item: SubstanceIngredient) => {
   white-space: nowrap;
 }
 
-.substance-cell {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  white-space: nowrap;
+.substance-table .col-substance {
+  width: 70px;
+  text-align: center;
 }
 
 .substance-table .wr-abbr {

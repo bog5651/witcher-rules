@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useTermTooltip } from '../composables/useTermTooltip'
 import vitriol from '../assets/substances/vitriol.svg?raw'
 import rebis from '../assets/substances/rebis.svg?raw'
 import aether from '../assets/substances/aether.svg?raw'
@@ -44,15 +45,21 @@ const props = withDefaults(
 
 const svg = computed(() => icons[props.name])
 const label = computed(() => labels[props.name])
+const { show, hide } = useTermTooltip()
 </script>
 
 <template>
   <span
     class="substance-icon"
     :style="{ width: `${size}px`, height: `${size}px` }"
-    :title="label"
     :aria-label="label"
     role="img"
+    tabindex="0"
+    @mouseenter="show($event, { title: label })"
+    @mouseleave="hide"
+    @focus="show($event, { title: label })"
+    @blur="hide"
+    @click.stop="show($event, { title: label })"
     v-html="svg"
   />
 </template>
