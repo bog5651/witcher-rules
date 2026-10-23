@@ -20,6 +20,7 @@ import { componentsFileSchema } from '../../docs/.vitepress/schemas/component'
 import { substancesFileSchema } from '../../docs/.vitepress/schemas/substance'
 import { formulasFileSchema } from '../../docs/.vitepress/schemas/formula'
 import { schematicsFileSchema } from '../../docs/.vitepress/schemas/schematic'
+import { criticalInjuriesFileSchema } from '../../docs/.vitepress/schemas/criticalInjury'
 
 const root = fileURLToPath(new URL('../..', import.meta.url))
 const dataDir = join(root, 'docs', '.vitepress', 'data')
@@ -89,6 +90,7 @@ validate('компоненты', 'components.json', componentsFileSchema)
 validate('субстанции', 'substances.json', substancesFileSchema)
 validate('формулы', 'formulas.json', formulasFileSchema)
 validate('чертежи', 'schematics.json', schematicsFileSchema, { allowDuplicateNames: true })
+validate('критические ранения', 'critical-injuries.json', criticalInjuriesFileSchema)
 
 function validateTransport() {
   const raw = JSON.parse(readFileSync(join(dataDir, 'transport.json'), 'utf8'))
