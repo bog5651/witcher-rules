@@ -16,7 +16,20 @@ const severityOrder = ['light', 'medium', 'heavy', 'deadly'] as const
 
 const severity = ref<CriticalInjury['severity']>('light')
 
-const visible = computed(() => items.filter((item) => item.severity === severity.value))
+const rollRank: Record<string, number> = {
+  '2-3': 0,
+  '4-5': 1,
+  '6-8': 2,
+  '9-10': 3,
+  '11': 4,
+  '12': 5
+}
+
+const visible = computed(() =>
+  items
+    .filter((item) => item.severity === severity.value)
+    .sort((a, b) => (rollRank[a.roll] ?? 99) - (rollRank[b.roll] ?? 99))
+)
 
 const countFor = (key: CriticalInjury['severity']) =>
   items.filter((item) => item.severity === key).length
@@ -39,6 +52,11 @@ const countFor = (key: CriticalInjury['severity']) =>
         <span class="injury-tab__count">{{ countFor(key) }}</span>
       </button>
     </div>
+
+    <p class="injury-note">
+      Если при броске выпало <strong>1</strong>, критическое ранение не наносится — применяется
+      только дополнительный урон за уровень критического ранения.
+    </p>
 
     <div class="injury-list">
       <article v-for="injury in visible" :key="injury.id" class="injury-card">
@@ -119,6 +137,14 @@ const countFor = (key: CriticalInjury['severity']) =>
   font-size: 10px;
   font-variant-numeric: tabular-nums;
   opacity: 0.75;
+}
+
+.injury-note {
+  margin: 0 0 0.85rem;
+  font-family: var(--site-sans);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--site-faint);
 }
 
 .injury-list {

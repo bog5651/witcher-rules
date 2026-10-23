@@ -1,0 +1,405 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "attention",
+      "name": "Внимание",
+      "attribute": "int",
+      "complex": false,
+      "summary": "Позволяет замечать разные вещи и явления.",
+      "sourcePage": 50
+    },
+    {
+      "id": "survival",
+      "name": "Выживание в дикой природе",
+      "attribute": "int",
+      "complex": false,
+      "summary": "Насколько хорошо ваш персонаж выживает в дикой местности и выслеживает добычу.",
+      "sourcePage": 50
+    },
+    {
+      "id": "deduction",
+      "name": "Дедукция",
+      "attribute": "int",
+      "complex": false,
+      "summary": "Позволяет сделать умозаключение на основании фактов.",
+      "sourcePage": 50
+    },
+    {
+      "id": "monsterology",
+      "name": "Монстрология",
+      "attribute": "int",
+      "complex": true,
+      "summary": "Насколько хорошо ваш персонаж разбирается в чудовищах.",
+      "sourcePage": 50
+    },
+    {
+      "id": "education",
+      "name": "Образование",
+      "attribute": "int",
+      "complex": false,
+      "summary": "Насколько образован ваш персонаж.",
+      "sourcePage": 50
+    },
+    {
+      "id": "city-orientation",
+      "name": "Ориентирование в городе",
+      "attribute": "int",
+      "complex": false,
+      "summary": "Насколько хорошо ваш персонаж ориентируется на городских улицах.",
+      "sourcePage": 50
+    },
+    {
+      "id": "teaching",
+      "name": "Передача знаний",
+      "attribute": "int",
+      "complex": false,
+      "summary": "Насколько хорошо ваш персонаж объясняет другим, как использовать те или иные навыки.",
+      "sourcePage": 50
+    },
+    {
+      "id": "tactics",
+      "name": "Тактика",
+      "attribute": "int",
+      "complex": true,
+      "summary": "Насколько хорошо персонаж предугадывает действия противника и строит планы.",
+      "sourcePage": 51
+    },
+    {
+      "id": "trade",
+      "name": "Торговля",
+      "attribute": "int",
+      "complex": false,
+      "summary": "Позволяет начать собственное дело и вести торговлю.",
+      "sourcePage": 51
+    },
+    {
+      "id": "etiquette",
+      "name": "Этикет",
+      "attribute": "int",
+      "complex": false,
+      "summary": "Насколько ваш персонаж способен влиться в общество и не выставить себя дураком в приличной компании.",
+      "sourcePage": 51
+    },
+    {
+      "id": "language",
+      "name": "Язык",
+      "attribute": "int",
+      "complex": true,
+      "summary": "Насколько хорошо ваш персонаж говорит на определённом языке.",
+      "sourcePage": 51
+    },
+    {
+      "id": "melee",
+      "name": "Ближний бой",
+      "attribute": "ref",
+      "complex": false,
+      "summary": "Насколько искусно ваш персонаж владеет оружием вроде хлыста, булавы или топора.",
+      "sourcePage": 51
+    },
+    {
+      "id": "brawling",
+      "name": "Борьба",
+      "attribute": "ref",
+      "complex": false,
+      "summary": "Насколько хорошо ваш персонаж дерётся без оружия.",
+      "sourcePage": 51
+    },
+    {
+      "id": "riding",
+      "name": "Верховая езда",
+      "attribute": "ref",
+      "complex": false,
+      "summary": "Насколько хорошо персонаж держится в седле и управляет ездовыми животными (и даже ездовыми чудовищами).",
+      "sourcePage": 51
+    },
+    {
+      "id": "polearms",
+      "name": "Владение древковым оружием",
+      "attribute": "ref",
+      "complex": false,
+      "summary": "Насколько хорошо персонаж владеет оружием вроде посоха, секиры или копья.",
+      "sourcePage": 52
+    },
+    {
+      "id": "light-blades",
+      "name": "Владение лёгкими клинками",
+      "attribute": "ref",
+      "complex": false,
+      "summary": "Насколько хорошо персонаж владеет оружием вроде кинжалов и мясницких ножей.",
+      "sourcePage": 52
+    },
+    {
+      "id": "swords",
+      "name": "Владение мечом",
+      "attribute": "ref",
+      "complex": false,
+      "summary": "Насколько хорошо персонаж владеет мечом.",
+      "sourcePage": 52
+    },
+    {
+      "id": "seamanship",
+      "name": "Мореходство",
+      "attribute": "ref",
+      "complex": false,
+      "summary": "Насколько хорошо персонаж управляет судном.",
+      "sourcePage": 52
+    },
+    {
+      "id": "dodge",
+      "name": "Уклонение/Изворотливость",
+      "attribute": "ref",
+      "complex": false,
+      "summary": "Насколько хорошо персонаж уклоняется от атак и выстрелов и выворачивается из захвата.",
+      "sourcePage": 52
+    },
+    {
+      "id": "athletics",
+      "name": "Атлетика",
+      "attribute": "dex",
+      "complex": false,
+      "summary": "Насколько хорошо персонаж лазает, держит равновесие и обращается с метательным оружием.",
+      "sourcePage": 52
+    },
+    {
+      "id": "sleight-of-hand",
+      "name": "Ловкость рук",
+      "attribute": "dex",
+      "complex": false,
+      "summary": "Насколько умело персонаж исполняет фокусы, заставляя небольшие вещицы исчезать или появляться, совершает карманные кражи или, наоборот, подбрасывает другим в карман предметы.",
+      "sourcePage": 52
+    },
+    {
+      "id": "stealth",
+      "name": "Скрытность",
+      "attribute": "dex",
+      "complex": false,
+      "summary": "Насколько незаметно персонаж может двигаться и действовать.",
+      "sourcePage": 52
+    },
+    {
+      "id": "crossbow",
+      "name": "Стрельба из арбалета",
+      "attribute": "dex",
+      "complex": false,
+      "summary": "Насколько метко персонаж стреляет из арбалета.",
+      "sourcePage": 53
+    },
+    {
+      "id": "bow",
+      "name": "Стрельба из лука",
+      "attribute": "dex",
+      "complex": false,
+      "summary": "Насколько метко персонаж стреляет из лука.",
+      "sourcePage": 53
+    },
+    {
+      "id": "strength",
+      "name": "Сила",
+      "attribute": "body",
+      "complex": false,
+      "summary": "Насколько легко персонаж поднимает, рвёт и разгибает тяжёлые и твёрдые предметы.",
+      "sourcePage": 53
+    },
+    {
+      "id": "endurance",
+      "name": "Стойкость",
+      "attribute": "body",
+      "complex": false,
+      "summary": "Насколько хорошо персонаж переносит усталость, боль от пыток и действие наркотических веществ.",
+      "sourcePage": 53
+    },
+    {
+      "id": "gambling",
+      "name": "Азартные игры",
+      "attribute": "emp",
+      "complex": false,
+      "summary": "Способность персонажа просчитывать вероятности и риски и зарабатывать деньги азартной игрой.",
+      "sourcePage": 53
+    },
+    {
+      "id": "appearance",
+      "name": "Внешний вид",
+      "attribute": "emp",
+      "complex": false,
+      "summary": "Насколько хорошо ваш персонаж за собой ухаживает и умеет ли он подбирать одежду так, чтобы произвести впечатление.",
+      "sourcePage": 53
+    },
+    {
+      "id": "performance",
+      "name": "Выступление",
+      "attribute": "emp",
+      "complex": false,
+      "summary": "Показывает, насколько искусно персонаж играет на музыкальных инструментах, поёт и выступает на сцене.",
+      "sourcePage": 53
+    },
+    {
+      "id": "art",
+      "name": "Искусство",
+      "attribute": "emp",
+      "complex": false,
+      "summary": "Показывает, насколько умело персонаж создаёт произведения искусства — картины, песни, изделия из стекла и т. д.",
+      "sourcePage": 54
+    },
+    {
+      "id": "leadership",
+      "name": "Лидерство",
+      "attribute": "emp",
+      "complex": false,
+      "summary": "Способность персонажа вести других за собой или просто взять руководство на себя и заставить выполнять приказы.",
+      "sourcePage": 54
+    },
+    {
+      "id": "deception",
+      "name": "Обман",
+      "attribute": "emp",
+      "complex": false,
+      "summary": "Насколько персонаж умеет лгать.",
+      "sourcePage": 54
+    },
+    {
+      "id": "people-reading",
+      "name": "Понимание людей",
+      "attribute": "emp",
+      "complex": false,
+      "summary": "Насколько легко персонаж понимает эмоции других.",
+      "sourcePage": 54
+    },
+    {
+      "id": "seduction",
+      "name": "Соблазнение",
+      "attribute": "emp",
+      "complex": false,
+      "summary": "Насколько успешно персонаж способен кого-то соблазнить и насколько он хорош в постели.",
+      "sourcePage": 54
+    },
+    {
+      "id": "persuasion",
+      "name": "Убеждение",
+      "attribute": "emp",
+      "complex": false,
+      "summary": "Способность персонажа заставить других что-то сделать или убедить их в своей правоте.",
+      "sourcePage": 54
+    },
+    {
+      "id": "charisma",
+      "name": "Харизма",
+      "attribute": "emp",
+      "complex": false,
+      "summary": "Насколько хорошо персонаж находит общий язык с другими.",
+      "sourcePage": 54
+    },
+    {
+      "id": "alchemy",
+      "name": "Алхимия",
+      "attribute": "craft",
+      "complex": true,
+      "summary": "Навык в создании зелий, масел, отваров и прочих алхимических составов.",
+      "sourcePage": 55
+    },
+    {
+      "id": "lockpicking",
+      "name": "Взлом замков",
+      "attribute": "craft",
+      "complex": false,
+      "summary": "Насколько хорошо персонаж открывает замки без ключа.",
+      "sourcePage": 55
+    },
+    {
+      "id": "trap-knowledge",
+      "name": "Знание ловушек",
+      "attribute": "craft",
+      "complex": true,
+      "summary": "Умение делать и обезвреживать ловушки.",
+      "sourcePage": 55
+    },
+    {
+      "id": "crafting",
+      "name": "Изготовление",
+      "attribute": "craft",
+      "complex": true,
+      "summary": "Насколько хорошо персонаж изготавливает и чинит оружие или броню.",
+      "sourcePage": 55
+    },
+    {
+      "id": "disguise",
+      "name": "Маскировка",
+      "attribute": "craft",
+      "complex": false,
+      "summary": "Насколько хорошо персонаж умеет изменять свою или чужую внешность и притворяться кем-то другим.",
+      "sourcePage": 55
+    },
+    {
+      "id": "first-aid",
+      "name": "Первая помощь",
+      "attribute": "craft",
+      "complex": false,
+      "summary": "Насколько успешно персонаж останавливает кровотечение, вправляет сломанную кость или оказывает первую помощь при отравлении.",
+      "sourcePage": 55
+    },
+    {
+      "id": "forgery",
+      "name": "Подделывание",
+      "attribute": "craft",
+      "complex": false,
+      "summary": "Умение подделывать различные документы и деньги.",
+      "sourcePage": 55
+    },
+    {
+      "id": "intimidation",
+      "name": "Запугивание",
+      "attribute": "will",
+      "complex": false,
+      "summary": "Насколько хорошо вы запугиваете другого, чтобы прогнать его или заставить что-то сделать.",
+      "sourcePage": 56
+    },
+    {
+      "id": "hexing",
+      "name": "Наведение порчи",
+      "attribute": "will",
+      "complex": true,
+      "summary": "Мастерство в наведении порчи на людей или места.",
+      "sourcePage": 56
+    },
+    {
+      "id": "rituals",
+      "name": "Проведение ритуалов",
+      "attribute": "will",
+      "complex": true,
+      "summary": "Навык в сотворении ритуальной магии.",
+      "sourcePage": 56
+    },
+    {
+      "id": "magic-resistance",
+      "name": "Сопротивление магии",
+      "attribute": "will",
+      "complex": true,
+      "summary": "Устойчивость к действию магии.",
+      "sourcePage": 56
+    },
+    {
+      "id": "persuasion-resistance",
+      "name": "Сопротивление убеждению",
+      "attribute": "will",
+      "complex": false,
+      "summary": "Насколько трудно персонажа убедить, соблазнить или иначе изменить его мнение без насилия.",
+      "sourcePage": 56
+    },
+    {
+      "id": "spellcasting",
+      "name": "Сотворение заклинаний",
+      "attribute": "will",
+      "complex": true,
+      "summary": "Насколько искусно персонаж творит магию при помощи заклинаний и их более простых аналогов — знаков.",
+      "sourcePage": 56
+    },
+    {
+      "id": "courage",
+      "name": "Храбрость",
+      "attribute": "will",
+      "complex": false,
+      "summary": "Насколько ваш персонаж умеет справляться со страхом.",
+      "sourcePage": 56
+    }
+  ]
+}
