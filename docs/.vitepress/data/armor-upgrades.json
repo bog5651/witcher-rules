@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "chainmail-upgrade",
+      "name": "Кольчужное",
+      "effect": "",
+      "protectionBonus": 3,
+      "resistances": ["Д", "Р"],
+      "availability": "rare",
+      "weight": 3,
+      "price": 125,
+      "sourcePage": 90
+    },
+    {
+      "id": "dwarven-upgrade",
+      "name": "Краснолюдское",
+      "effect": "",
+      "protectionBonus": 5,
+      "resistances": ["Р", "К"],
+      "availability": "unique",
+      "weight": 3.5,
+      "price": 195,
+      "sourcePage": 90
+    },
+    {
+      "id": "elven-upgrade",
+      "name": "Эльфское",
+      "effect": "+1 к Скрытности",
+      "protectionBonus": 3,
+      "resistances": ["Д", "К"],
+      "availability": "unique",
+      "weight": 0.5,
+      "price": 200,
+      "sourcePage": 90
+    },
+    {
+      "id": "cloth-upgrade",
+      "name": "Ткань",
+      "effect": "Сопротивление кровотечению",
+      "protectionBonus": 1,
+      "resistances": [],
+      "availability": "everywhere",
+      "weight": 0.5,
+      "price": 40,
+      "sourcePage": 90
+    },
+    {
+      "id": "reinforced-leather-upgrade",
+      "name": "Укреплённая кожа",
+      "effect": "Сопротивление огню",
+      "protectionBonus": 2,
+      "resistances": ["Д", "Р"],
+      "availability": "common",
+      "weight": 1.5,
+      "price": 130,
+      "sourcePage": 90
+    },
+    {
+      "id": "steel-upgrade",
+      "name": "Стальное",
+      "effect": "",
+      "protectionBonus": 4,
+      "resistances": ["Р", "К"],
+      "availability": "rare",
+      "weight": 3.5,
+      "price": 145,
+      "sourcePage": 90
+    },
+    {
+      "id": "riveted-leather-upgrade",
+      "name": "Клёпаная кожа",
+      "effect": "",
+      "protectionBonus": 2,
+      "resistances": ["Р"],
+      "availability": "common",
+      "weight": 1,
+      "price": 80,
+      "sourcePage": 90
+    }
+  ]
+}

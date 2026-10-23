@@ -22,6 +22,8 @@ import MagicCatalog from './components/MagicCatalog.vue'
 import SubstanceIcon from './components/SubstanceIcon.vue'
 import WeaponTable from './components/WeaponTable.vue'
 import ArmorTable from './components/ArmorTable.vue'
+import AlchemicalTable from './components/AlchemicalTable.vue'
+import ArmorUpgradeTable from './components/ArmorUpgradeTable.vue'
 
 export default {
   extends: DefaultTheme,
@@ -31,5 +33,7 @@ export default {
     app.component('SubstanceIcon', SubstanceIcon)
     app.component('WeaponTable', WeaponTable)
     app.component('ArmorTable', ArmorTable)
+    app.component('AlchemicalTable', AlchemicalTable)
+    app.component('ArmorUpgradeTable', ArmorUpgradeTable)
   }
 } satisfies Theme

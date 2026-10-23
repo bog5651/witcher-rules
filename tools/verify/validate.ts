@@ -11,6 +11,8 @@ import {
 } from '../../docs/.vitepress/schemas/magic'
 import { weaponsFileSchema } from '../../docs/.vitepress/schemas/weapon'
 import { armorFileSchema } from '../../docs/.vitepress/schemas/armor'
+import { alchemicalsFileSchema } from '../../docs/.vitepress/schemas/alchemical'
+import { armorUpgradesFileSchema } from '../../docs/.vitepress/schemas/armorUpgrade'
 
 const root = fileURLToPath(new URL('../..', import.meta.url))
 const dataDir = join(root, 'docs', '.vitepress', 'data')
@@ -65,5 +67,7 @@ validate('ритуалы', 'rituals.json', ritualsFileSchema)
 validate('порча', 'hexes.json', hexesFileSchema)
 validate('оружие', 'weapons.json', weaponsFileSchema)
 validate('броня', 'armor.json', armorFileSchema)
+validate('алхимические составы', 'alchemicals.json', alchemicalsFileSchema)
+validate('усиления брони', 'armor-upgrades.json', armorUpgradesFileSchema)
 
 if (failed) process.exit(1)
