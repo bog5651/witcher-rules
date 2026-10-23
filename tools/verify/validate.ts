@@ -23,6 +23,7 @@ import { schematicsFileSchema } from '../../docs/.vitepress/schemas/schematic'
 import { criticalInjuriesFileSchema } from '../../docs/.vitepress/schemas/criticalInjury'
 import { skillsFileSchema } from '../../docs/.vitepress/schemas/skill'
 import { professionTreesFileSchema } from '../../docs/.vitepress/schemas/professionTree'
+import { professionsFileSchema } from '../../docs/.vitepress/schemas/profession'
 
 const root = fileURLToPath(new URL('../..', import.meta.url))
 const dataDir = join(root, 'docs', '.vitepress', 'data')
@@ -95,7 +96,41 @@ validate('формулы', 'formulas.json', formulasFileSchema)
 validate('чертежи', 'schematics.json', schematicsFileSchema, { allowDuplicateNames: true })
 validate('критические ранения', 'critical-injuries.json', criticalInjuriesFileSchema)
 validate('навыки', 'skills.json', skillsFileSchema)
+validate('профессии', 'professions.json', professionsFileSchema)
 validate('древа профессий', 'profession-trees.json', professionTreesFileSchema)
+
+function validateProfessionLinks() {
+  const professions = JSON.parse(
+    readFileSync(join(dataDir, 'professions.json'), 'utf8')
+  ).items as BaseItem[]
+  const trees = JSON.parse(
+    readFileSync(join(dataDir, 'profession-trees.json'), 'utf8')
+  ).professions as BaseItem[]
+
+  const professionIds = new Set(professions.map((item) => item.id))
+  const treeIds = new Set(trees.map((item) => item.id))
+  const missingTrees = professions.filter((item) => !treeIds.has(item.id))
+  const extraTrees = trees.filter((item) => !professionIds.has(item.id))
+
+  if (missingTrees.length || extraTrees.length) {
+    failed = true
+    if (missingTrees.length) {
+      console.error(
+        `У профессий нет древ: ${missingTrees.map((item) => item.name).join(', ')}`
+      )
+    }
+    if (extraTrees.length) {
+      console.error(
+        `У древ нет профессий: ${extraTrees.map((item) => item.name).join(', ')}`
+      )
+    }
+    return
+  }
+
+  console.log(`OK: связи профессий и древ — ${professions.length}`)
+}
+
+validateProfessionLinks()
 
 function validateTransport() {
   const raw = JSON.parse(readFileSync(join(dataDir, 'transport.json'), 'utf8'))

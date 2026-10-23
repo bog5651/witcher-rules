@@ -1,25 +1,75 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import data from '../../data/profession-trees.json'
 import type { ProfessionTree } from '../../schemas/professionTree'
 
 const professions = data.professions as ProfessionTree[]
 const active = ref(professions[0]?.id ?? '')
 const branchColors = ['blue', 'green', 'red'] as const
+
+const selectTab = (id: string) => {
+  active.value = id
+
+  if (typeof window !== 'undefined') {
+    const url = new URL(window.location.href)
+    url.searchParams.set('profession', id)
+    window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
+  }
+}
+
+const syncFromUrl = () => {
+  const requested = new URLSearchParams(window.location.search).get('profession')
+  if (requested && professions.some((profession) => profession.id === requested)) {
+    active.value = requested
+  }
+}
+
+const focusTab = (index: number) => {
+  const profession = professions[index]
+  if (!profession) return
+  selectTab(profession.id)
+  document.getElementById(`pt-tab-${profession.id}`)?.focus()
+}
+
+const onTabKeydown = (event: KeyboardEvent, index: number) => {
+  let next = index
+
+  if (event.key === 'ArrowRight') next = (index + 1) % professions.length
+  else if (event.key === 'ArrowLeft') next = (index - 1 + professions.length) % professions.length
+  else if (event.key === 'Home') next = 0
+  else if (event.key === 'End') next = professions.length - 1
+  else return
+
+  event.preventDefault()
+  focusTab(next)
+}
+
+onMounted(() => {
+  syncFromUrl()
+  window.addEventListener('popstate', syncFromUrl)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('popstate', syncFromUrl)
+})
 </script>
 
 <template>
   <div class="profession-tree">
     <div class="pt-tabs" role="tablist" aria-label="Профессии">
       <button
-        v-for="profession in professions"
+        v-for="(profession, index) in professions"
+        :id="`pt-tab-${profession.id}`"
         :key="profession.id"
         type="button"
         role="tab"
         class="pt-tab"
         :class="{ 'pt-tab--active': active === profession.id }"
         :aria-selected="active === profession.id"
-        @click="active = profession.id"
+        :aria-controls="`pt-panel-${profession.id}`"
+        :tabindex="active === profession.id ? 0 : -1"
+        @click="selectTab(profession.id)"
+        @keydown="onTabKeydown($event, index)"
       >
         {{ profession.name }}
       </button>
@@ -28,9 +78,12 @@ const branchColors = ['blue', 'green', 'red'] as const
     <section
       v-for="profession in professions"
       v-show="active === profession.id"
+      :id="`pt-panel-${profession.id}`"
       :key="profession.id"
       class="pt-panel"
       role="tabpanel"
+      :aria-labelledby="`pt-tab-${profession.id}`"
+      tabindex="0"
     >
       <header class="pt-header">
         <div>
@@ -136,7 +189,7 @@ const branchColors = ['blue', 'green', 'red'] as const
 }
 
 .dark .pt-tab--active {
-  color: var(--site-ink);
+  color: var(--site-bg);
   background: var(--site-gold);
   border-color: var(--site-gold);
 }
@@ -158,7 +211,7 @@ const branchColors = ['blue', 'green', 'red'] as const
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--site-faint);
+  color: var(--site-muted);
 }
 
 .pt-header h2 {
@@ -170,7 +223,7 @@ const branchColors = ['blue', 'green', 'red'] as const
 .pt-source {
   font-family: var(--site-sans);
   font-size: 11px;
-  color: var(--site-faint);
+  color: var(--site-muted);
   white-space: nowrap;
 }
 
@@ -187,7 +240,7 @@ const branchColors = ['blue', 'green', 'red'] as const
   font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--site-faint);
+  color: var(--site-muted);
 }
 
 .pt-root h3 {
@@ -264,7 +317,7 @@ const branchColors = ['blue', 'green', 'red'] as const
 }
 
 .dark .pt-rank {
-  color: var(--site-ink);
+  color: var(--site-bg);
   background: var(--site-gold);
 }
 
@@ -279,7 +332,7 @@ const branchColors = ['blue', 'green', 'red'] as const
   font-family: var(--site-sans);
   font-size: 10px;
   font-weight: 400;
-  color: var(--site-faint);
+  color: var(--site-muted);
 }
 
 .pt-ability p {
