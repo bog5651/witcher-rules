@@ -6,6 +6,7 @@ export const alchemicalSchema = z.object({
   name: z.string().min(1),
   availability: availabilitySchema,
   effect: z.string().min(1),
+  description: z.string().optional(),
   weight: z.number().nonnegative(),
   price: z.number().int().nonnegative(),
   sourcePage: z.number().int().positive()

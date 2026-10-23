@@ -2,8 +2,10 @@
 import { computed, ref } from 'vue'
 import data from '../../data/weapons.json'
 import type { Weapon } from '../../schemas/weapon'
+import { useItemDrawer } from '../composables/useItemDrawer'
 
 const weapons = data.items as Weapon[]
+const { open: openDrawer } = useItemDrawer()
 
 const availabilityLabels = {
   everywhere: 'Повсеместная',
@@ -116,6 +118,36 @@ const reset = () => {
 
 const signed = (value: number) => (value > 0 ? `+${value}` : String(value))
 const formatWeight = (value: number) => value.toLocaleString('ru-RU')
+
+const originLabel = (weapon: Weapon) =>
+  weapon.elderfolk ? 'Старший Народ' : weapon.witcher ? 'Ведьмачье' : 'Обычное'
+
+const openItem = (weapon: Weapon) => {
+  openDrawer({
+    title: weapon.name,
+    subtitle: weapon.category,
+    description: weapon.description,
+    sourcePage: weapon.sourcePage,
+    stats: [
+      { label: 'Тип', value: weapon.type },
+      { label: 'Точность', value: signed(weapon.accuracy) },
+      { label: 'Урон', value: weapon.damage },
+      { label: 'Надёжность', value: String(weapon.reliability) },
+      { label: 'Хват', value: String(weapon.hands) },
+      { label: 'Дистанция', value: weapon.range },
+      { label: 'Эффект', value: weapon.effects.join('; ') || '—' },
+      { label: 'Доступность', value: availabilityLabels[weapon.availability] },
+      { label: 'Скрытность', value: concealmentLabels[weapon.concealment] },
+      { label: 'Усиления', value: String(weapon.upgradeSlots) },
+      { label: 'Вес', value: `${formatWeight(weapon.weight)} кг` },
+      {
+        label: 'Цена',
+        value: weapon.price === null ? 'По чертежу' : `${formatWeight(weapon.price)} кр.`
+      },
+      { label: 'Происхождение', value: originLabel(weapon) }
+    ]
+  })
+}
 </script>
 
 <template>
@@ -244,7 +276,9 @@ const formatWeight = (value: number) => value.toLocaleString('ru-RU')
               />
             </td>
             <td class="col-name">
-              <a :href="`#weapon-${weapon.id}`">{{ weapon.name }}</a>
+              <button type="button" class="wr-item-link" @click="openItem(weapon)">
+                {{ weapon.name }}
+              </button>
               <span v-if="weapon.elderfolk" class="weapon-origin">Старший Народ</span>
               <span v-else-if="weapon.witcher" class="weapon-origin weapon-origin--witcher">
                 Ведьмачье

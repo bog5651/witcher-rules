@@ -10,6 +10,7 @@ export const vehicleSchema = z.object({
   hp: z.number().int().nonnegative(),
   weight: z.number().nonnegative(),
   price: z.number().int().nonnegative(),
+  description: z.string().optional(),
   sourcePage: z.number().int().positive()
 })
 
@@ -21,6 +22,7 @@ export const tackSchema = z.object({
   category: tackCategorySchema,
   availability: availabilitySchema,
   effect: z.string(),
+  description: z.string().optional(),
   weight: z.number().nonnegative(),
   price: z.number().int().nonnegative(),
   sourcePage: z.number().int().positive()

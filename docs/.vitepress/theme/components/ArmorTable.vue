@@ -2,8 +2,10 @@
 import { computed, ref } from 'vue'
 import data from '../../data/armor.json'
 import type { Armor } from '../../schemas/armor'
+import { useItemDrawer } from '../composables/useItemDrawer'
 
 const armor = data.items as Armor[]
+const { open: openDrawer } = useItemDrawer()
 
 const locationLabels = {
   head: 'Голова',
@@ -113,6 +115,27 @@ const reset = () => {
 
 const formatWeight = (value: number) => value.toLocaleString('ru-RU')
 const protectionValue = (item: Armor) => item.protection ?? item.reliability ?? 0
+
+const openItem = (item: Armor) => {
+  openDrawer({
+    title: item.name,
+    subtitle: 'Броня и щиты',
+    description: item.description,
+    sourcePage: item.sourcePage,
+    stats: [
+      { label: 'Часть', value: item.coverage ?? locationLabels[item.location] },
+      { label: 'Класс', value: classLabels[item.weightClass] },
+      { label: 'ПБ/Н', value: String(protectionValue(item)) },
+      { label: 'Доступность', value: availabilityLabels[item.availability] },
+      { label: 'Усиления брони', value: String(item.upgradeSlots) },
+      { label: 'Эффект', value: item.effect || '—' },
+      { label: 'Сков. движений', value: String(item.encumbrance) },
+      { label: 'Вес', value: `${formatWeight(item.weight)} кг` },
+      { label: 'Цена', value: `${formatWeight(item.price)} кр.` },
+      { label: 'Происхождение', value: item.elderfolk ? 'Старший Народ' : 'Обычное' }
+    ]
+  })
+}
 </script>
 
 <template>
@@ -234,7 +257,7 @@ const protectionValue = (item: Armor) => item.protection ?? item.reliability ?? 
               />
             </td>
             <td class="col-name">
-              <a :href="`#armor-${item.id}`">{{ item.name }}</a>
+              <button type="button" class="wr-item-link" @click="openItem(item)">{{ item.name }}</button>
               <span v-if="item.elderfolk" class="armor-origin">Старший Народ</span>
             </td>
             <td class="col-coverage">{{ item.coverage ?? locationLabels[item.location] }}</td>

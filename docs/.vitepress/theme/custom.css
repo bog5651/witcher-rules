@@ -460,6 +460,37 @@ body {
   letter-spacing: 0.02em;
 }
 
+/* --- item drawer links -------------------------------------------- */
+
+.wr-item-link {
+  display: inline;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.wr-item-link:hover {
+  color: var(--site-blood);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.wr-item-link:focus-visible {
+  color: var(--site-blood);
+  outline: 2px solid var(--site-gold);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.dark .wr-item-link:hover,
+.dark .wr-item-link:focus-visible {
+  color: var(--site-gold);
+}
+
 /* --- cards / badges (shared components) --------------------------- */
 
 .wr-card {

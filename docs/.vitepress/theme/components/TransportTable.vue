@@ -2,9 +2,11 @@
 import { computed, ref } from 'vue'
 import data from '../../data/transport.json'
 import type { Tack, Vehicle } from '../../schemas/transport'
+import { useItemDrawer } from '../composables/useItemDrawer'
 
 const vehicles = data.vehicles as Vehicle[]
 const tack = data.tack as Tack[]
+const { open: openDrawer } = useItemDrawer()
 
 const availabilityLabels = {
   everywhere: 'Повсеместная',
@@ -64,6 +66,39 @@ const reset = () => {
 }
 
 const formatNumber = (value: number) => value.toLocaleString('ru-RU')
+
+const openVehicle = (item: Vehicle) => {
+  openDrawer({
+    title: item.name,
+    subtitle: 'Скакуны и транспорт',
+    description: item.description,
+    sourcePage: item.sourcePage,
+    stats: [
+      { label: 'Атлетика + Лов', value: item.athletics },
+      { label: 'Модификатор управления', value: item.controlModifier },
+      { label: 'Скорость', value: item.speed },
+      { label: 'ПЗ', value: String(item.hp) },
+      { label: 'Вес', value: `${formatNumber(item.weight)} кг` },
+      { label: 'Цена', value: `${formatNumber(item.price)} кр.` }
+    ]
+  })
+}
+
+const openTack = (item: Tack) => {
+  openDrawer({
+    title: item.name,
+    subtitle: `Упряжь · ${categoryLabels[item.category]}`,
+    description: item.description,
+    sourcePage: item.sourcePage,
+    stats: [
+      { label: 'Категория', value: categoryLabels[item.category] },
+      { label: 'Доступность', value: availabilityLabels[item.availability] },
+      { label: 'Эффект', value: item.effect },
+      { label: 'Вес', value: `${formatNumber(item.weight)} кг` },
+      { label: 'Цена', value: `${formatNumber(item.price)} кр.` }
+    ]
+  })
+}
 </script>
 
 <template>
@@ -112,7 +147,9 @@ const formatNumber = (value: number) => value.toLocaleString('ru-RU')
           <tbody>
             <tr v-for="item in visibleVehicles" :id="`vehicle-${item.id}`" :key="item.id">
               <td class="col-name">
-                <a :href="`#vehicle-${item.id}`">{{ item.name }}</a>
+                <button type="button" class="wr-item-link" @click="openVehicle(item)">
+                  {{ item.name }}
+                </button>
               </td>
               <td class="col-center">{{ item.athletics }}</td>
               <td class="col-center">{{ item.controlModifier }}</td>
@@ -149,7 +186,9 @@ const formatNumber = (value: number) => value.toLocaleString('ru-RU')
               </tr>
               <tr v-for="item in group.items" :id="`tack-${item.id}`" :key="item.id">
                 <td class="col-name">
-                  <a :href="`#tack-${item.id}`">{{ item.name }}</a>
+                  <button type="button" class="wr-item-link" @click="openTack(item)">
+                    {{ item.name }}
+                  </button>
                 </td>
                 <td>
                   <span class="wr-abbr" :title="availabilityLabels[item.availability]">

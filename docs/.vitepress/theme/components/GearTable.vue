@@ -2,8 +2,10 @@
 import { computed, ref } from 'vue'
 import data from '../../data/gear.json'
 import type { Gear } from '../../schemas/gear'
+import { useItemDrawer } from '../composables/useItemDrawer'
 
 const items = data.items as Gear[]
+const { open: openDrawer } = useItemDrawer()
 
 const categoryLabels = {
   standard: 'Стандартное снаряжение',
@@ -50,6 +52,20 @@ const formatNumber = (value: number) => value.toLocaleString('ru-RU')
 const formatWeight = (item: Gear) => (item.weight === null ? '—' : formatNumber(item.weight))
 const formatPrice = (item: Gear) =>
   item.price === null ? (item.priceNote ?? '—') : formatNumber(item.price)
+
+const openItem = (item: Gear) => {
+  openDrawer({
+    title: item.name,
+    subtitle: categoryLabels[item.category],
+    description: item.description,
+    sourcePage: item.sourcePage,
+    stats: [
+      { label: 'Категория', value: categoryLabels[item.category] },
+      { label: 'Вес', value: item.weight === null ? '—' : `${formatWeight(item)} кг` },
+      { label: 'Цена', value: item.price === null ? (item.priceNote ?? '—') : `${formatPrice(item)} кр.` }
+    ]
+  })
+}
 </script>
 
 <template>
@@ -95,7 +111,9 @@ const formatPrice = (item: Gear) =>
           <tbody>
             <tr v-for="item in section.items" :id="`gear-${item.id}`" :key="item.id">
               <td class="col-name">
-                <a :href="`#gear-${item.id}`">{{ item.name }}</a>
+                <button type="button" class="wr-item-link" @click="openItem(item)">
+                  {{ item.name }}
+                </button>
               </td>
               <td v-if="section.hasWeight" class="col-num">{{ formatWeight(item) }}</td>
               <td class="col-num">{{ formatPrice(item) }}</td>

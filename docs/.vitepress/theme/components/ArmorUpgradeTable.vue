@@ -2,8 +2,10 @@
 import { computed, ref } from 'vue'
 import data from '../../data/armor-upgrades.json'
 import type { ArmorUpgrade } from '../../schemas/armorUpgrade'
+import { useItemDrawer } from '../composables/useItemDrawer'
 
 const items = data.items as ArmorUpgrade[]
+const { open: openDrawer } = useItemDrawer()
 
 const availabilityLabels = {
   everywhere: 'Повсеместная',
@@ -75,6 +77,23 @@ const reset = () => {
 }
 
 const formatNumber = (value: number) => value.toLocaleString('ru-RU')
+
+const openItem = (item: ArmorUpgrade) => {
+  openDrawer({
+    title: item.name,
+    subtitle: 'Усиление брони',
+    description: item.description,
+    sourcePage: item.sourcePage,
+    stats: [
+      { label: 'Эффект', value: item.effect || '—' },
+      { label: 'Бонус к прочности', value: `+${item.protectionBonus}` },
+      { label: 'Сопротивления', value: item.resistances.join(', ') || '—' },
+      { label: 'Доступность', value: availabilityLabels[item.availability] },
+      { label: 'Вес', value: `${formatNumber(item.weight)} кг` },
+      { label: 'Цена', value: `${formatNumber(item.price)} кр.` }
+    ]
+  })
+}
 </script>
 
 <template>
@@ -164,7 +183,7 @@ const formatNumber = (value: number) => value.toLocaleString('ru-RU')
               />
             </td>
             <td class="col-name">
-              <a :href="`#upgrade-${item.id}`">{{ item.name }}</a>
+              <button type="button" class="wr-item-link" @click="openItem(item)">{{ item.name }}</button>
             </td>
             <td class="col-effects">{{ item.effect }}</td>
             <td class="col-num">+{{ item.protectionBonus }}</td>

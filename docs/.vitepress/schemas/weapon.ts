@@ -16,6 +16,7 @@ export const weaponSchema = z.object({
   hands: z.number().int().positive(),
   range: z.string().min(1),
   effects: z.array(z.string()),
+  description: z.string().optional(),
   concealment: concealmentSchema,
   upgradeSlots: z.number().int().nonnegative(),
   weight: z.number().nonnegative(),

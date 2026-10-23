@@ -1,5 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import type { Theme } from 'vitepress'
+import Layout from './Layout.vue'
 
 import '@fontsource/literata/latin-400.css'
 import '@fontsource/literata/latin-600.css'
@@ -30,6 +31,7 @@ import GearTable from './components/GearTable.vue'
 
 export default {
   extends: DefaultTheme,
+  Layout,
   enhanceApp({ app }) {
     app.component('SpellCatalog', SpellCatalog)
     app.component('MagicCatalog', MagicCatalog)

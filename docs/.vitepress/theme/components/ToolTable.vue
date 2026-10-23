@@ -2,8 +2,10 @@
 import { computed, ref } from 'vue'
 import data from '../../data/tools.json'
 import type { Tool } from '../../schemas/tool'
+import { useItemDrawer } from '../composables/useItemDrawer'
 
 const items = data.items as Tool[]
+const { open: openDrawer } = useItemDrawer()
 
 const availabilityLabels = {
   everywhere: 'Повсеместная',
@@ -92,6 +94,22 @@ const reset = () => {
 }
 
 const formatNumber = (value: number) => value.toLocaleString('ru-RU')
+
+const openItem = (item: Tool) => {
+  openDrawer({
+    title: item.name,
+    subtitle: 'Набор инструментов',
+    description: item.description,
+    sourcePage: item.sourcePage,
+    stats: [
+      { label: 'Доступность', value: availabilityLabels[item.availability] },
+      { label: 'Скрытность', value: concealmentLabels[item.concealment] },
+      { label: 'Эффект', value: item.effect },
+      { label: 'Вес', value: `${formatNumber(item.weight)} кг` },
+      { label: 'Цена', value: `${formatNumber(item.price)} кр.` }
+    ]
+  })
+}
 </script>
 
 <template>
@@ -188,7 +206,7 @@ const formatNumber = (value: number) => value.toLocaleString('ru-RU')
               />
             </td>
             <td class="col-name">
-              <a :href="`#tool-${item.id}`">{{ item.name }}</a>
+              <button type="button" class="wr-item-link" @click="openItem(item)">{{ item.name }}</button>
             </td>
             <td>
               <span class="wr-abbr" :title="availabilityLabels[item.availability]">

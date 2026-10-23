@@ -16,6 +16,7 @@ export const gearSchema = z.object({
   weight: z.number().nonnegative().nullable(),
   price: z.number().int().nonnegative().nullable(),
   priceNote: z.string().min(1).optional(),
+  description: z.string().optional(),
   sourcePage: z.number().int().positive()
 })
 

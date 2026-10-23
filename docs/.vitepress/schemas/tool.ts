@@ -5,6 +5,7 @@ export const toolSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1),
   effect: z.string().min(1),
+  description: z.string().optional(),
   availability: availabilitySchema,
   concealment: concealmentSchema,
   weight: z.number().nonnegative(),
