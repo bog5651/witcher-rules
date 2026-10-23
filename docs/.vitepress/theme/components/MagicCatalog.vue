@@ -4,6 +4,8 @@ import signsData from '../../data/signs.json'
 import invocationsData from '../../data/invocations.json'
 import ritualsData from '../../data/rituals.json'
 import hexesData from '../../data/hexes.json'
+import MagicTile from './MagicTile.vue'
+import { useMagicDrawer } from '../composables/useMagicDrawer'
 
 type Level = 'novice' | 'adept' | 'master'
 type Element = 'mixed' | 'earth' | 'air' | 'fire' | 'water'
@@ -49,12 +51,21 @@ const datasets: Record<Dataset, MagicItem[]> = {
   hexes: hexesData.items as MagicItem[]
 }
 
+const { openMagic } = useMagicDrawer()
+
 const items = computed(() => datasets[props.dataset])
+const isTileDataset = computed(() => props.dataset === 'signs' || props.dataset === 'invocations')
 
 const levelLabels: Record<Level, string> = {
   novice: 'Новичок',
   adept: 'Подмастерье',
   master: 'Мастер'
+}
+
+const levelShortLabels: Record<Level, string> = {
+  novice: 'Нов.',
+  adept: 'Подм.',
+  master: 'Маст.'
 }
 
 const elementLabels: Record<Element, string> = {
@@ -69,6 +80,12 @@ const traditionLabels: Record<Tradition, string> = {
   druid: 'Друид',
   preacher: 'Проповедник',
   archpriest: 'Верховный жрец'
+}
+
+const traditionShortLabels: Record<Tradition, string> = {
+  druid: 'Друид',
+  preacher: 'Пропов.',
+  archpriest: 'Архижрец'
 }
 
 const dangerLabels: Record<Danger, string> = {
@@ -140,8 +157,8 @@ const visible = computed(() => {
     .sort((a, b) => {
       if (sort.value === 'name') return a.name.localeCompare(b.name, 'ru')
       if (sort.value === 'cost') return a.cost - b.cost || a.name.localeCompare(b.name, 'ru')
-      const al = a.level ? levelOrder[a.level] : 0
-      const bl = b.level ? levelOrder[b.level] : 0
+      const al = a.level ? levelOrder[a.level] : 3
+      const bl = b.level ? levelOrder[b.level] : 3
       return al - bl || a.name.localeCompare(b.name, 'ru')
     })
 })
@@ -156,8 +173,67 @@ const reset = () => {
 }
 
 const costLabel = (item: MagicItem) => {
-  if (item.costVariable) return 'меняется'
+  if (item.costVariable) return 'Вын: меняется'
   return `${item.cost} Вын`
+}
+
+const tileTone = (item: MagicItem) => {
+  if (props.dataset === 'signs') return item.element ?? 'mixed'
+  return item.tradition ?? 'druid'
+}
+
+const tileMeta = (item: MagicItem) => {
+  if (props.dataset === 'signs' && item.element) return elementLabels[item.element]
+  if (props.dataset === 'invocations' && item.tradition) return traditionShortLabels[item.tradition]
+  return ''
+}
+
+const tileTag = (item: MagicItem) => {
+  if (props.dataset === 'signs') return item.base ? 'Баз.' : 'Доп.'
+  if (item.level) return levelShortLabels[item.level]
+  return ''
+}
+
+const openMagicItem = (item: MagicItem) => {
+  const stats = []
+
+  if (item.element) stats.push({ label: 'Стихия', value: elementLabels[item.element] })
+  if (item.tradition) stats.push({ label: 'Традиция', value: traditionLabels[item.tradition] })
+  if (item.level) stats.push({ label: 'Уровень', value: levelLabels[item.level] })
+  if (item.deity) stats.push({ label: 'Божество', value: item.deity })
+  if (props.dataset === 'signs') {
+    stats.push({ label: 'Вид', value: item.base ? 'Базовый' : 'Дополнительный' })
+  }
+
+  stats.push({ label: 'Затраты', value: costLabel(item) })
+  if (item.range) stats.push({ label: 'Дистанция', value: item.range })
+  if (item.duration) stats.push({ label: 'Длительность', value: item.duration })
+  if (item.defense) stats.push({ label: 'Защита', value: item.defense })
+  if (item.prepTime) stats.push({ label: 'Время подготовки', value: item.prepTime })
+  if (item.checkDC) stats.push({ label: 'СЛ проверки', value: item.checkDC })
+  if (item.components) stats.push({ label: 'Компоненты', value: item.components })
+  if (item.ingredients) stats.push({ label: 'Ингредиенты', value: item.ingredients })
+  if (item.danger) stats.push({ label: 'Опасность', value: dangerLabels[item.danger] })
+  if (item.removal) stats.push({ label: 'Условия снятия', value: item.removal })
+
+  const subtitleParts = [
+    props.dataset === 'signs' ? 'Знак' : 'Инвокация',
+    props.dataset === 'signs' && typeof item.base === 'boolean'
+      ? item.base
+        ? 'Базовый'
+        : 'Дополнительный'
+      : '',
+    item.tradition ? traditionLabels[item.tradition] : item.element ? elementLabels[item.element] : '',
+    item.level ? levelLabels[item.level] : item.deity || ''
+  ].filter(Boolean)
+
+  openMagic({
+    title: item.name,
+    subtitle: subtitleParts.join(' · '),
+    stats,
+    effect: item.effect,
+    sourcePage: item.sourcePage
+  })
 }
 </script>
 
@@ -230,7 +306,26 @@ const costLabel = (item: MagicItem) => {
       <span class="wr-count">{{ visible.length }} из {{ baseCount }}</span>
     </div>
 
-    <div v-if="visible.length" class="wr-cards">
+    <p v-if="isTileDataset && visible.length" class="magic-grid-hint">
+      Нажмите на карточку, чтобы открыть подробности.
+    </p>
+
+    <div v-if="isTileDataset && visible.length" class="magic-tile-grid">
+      <MagicTile
+        v-for="item in visible"
+        :id="`magic-${dataset}-${item.id}`"
+        :key="item.id"
+        :title="item.name"
+        :kind-label="dataset === 'signs' ? 'Знак' : 'Инвокация'"
+        :tone="tileTone(item)"
+        :meta-label="tileMeta(item)"
+        :tag-label="tileTag(item)"
+        :cost-label="costLabel(item)"
+        @open="openMagicItem(item)"
+      />
+    </div>
+
+    <div v-else-if="visible.length" class="wr-cards">
       <article
         v-for="item in visible"
         :id="`magic-${dataset}-${item.id}`"
@@ -318,10 +413,44 @@ const costLabel = (item: MagicItem) => {
     <div v-else class="wr-empty">
       Ничего не нашлось. Попробуйте изменить запрос или сбросить фильтры.
     </div>
+
+    <div v-if="isTileDataset && visible.length" class="magic-search-index" aria-hidden="true">
+      <p v-for="item in visible" :key="`search-${item.id}`">
+        {{ item.name }}. {{ item.effect }} {{ item.range }} {{ item.duration }} {{ item.defense }}
+        {{ item.deity }}
+      </p>
+    </div>
   </div>
 </template>
 
 <style scoped>
+.magic-tile-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.magic-grid-hint {
+  margin: 0.8rem 0 0;
+  font-family: var(--site-sans);
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--site-faint);
+}
+
+.magic-search-index {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip-path: inset(50%);
+}
+
 .magic-card {
   scroll-margin-top: calc(var(--vp-nav-height) + 1rem);
 }
@@ -429,7 +558,23 @@ const costLabel = (item: MagicItem) => {
   border-color: var(--site-gold);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1100px) {
+  .magic-tile-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .magic-tile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .magic-tile-grid {
+    grid-template-columns: 1fr;
+  }
+
   .magic-reset {
     width: 100%;
   }

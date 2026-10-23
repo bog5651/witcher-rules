@@ -10,6 +10,7 @@ export interface DrawerItem {
   subtitle?: string
   stats: DrawerStat[]
   description?: string
+  descriptionTitle?: string
   sourcePage?: number
 }
 

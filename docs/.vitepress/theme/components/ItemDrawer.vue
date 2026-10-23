@@ -116,7 +116,7 @@ onBeforeUnmount(() => {
           </dl>
 
           <section v-if="descriptionParagraphs.length" class="item-drawer__description">
-            <h3>Описание</h3>
+            <h3>{{ item.descriptionTitle || 'Описание' }}</h3>
             <p v-for="paragraph in descriptionParagraphs" :key="paragraph">{{ paragraph }}</p>
           </section>
 

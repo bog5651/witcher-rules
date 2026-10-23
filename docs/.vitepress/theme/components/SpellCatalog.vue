@@ -2,6 +2,8 @@
 import { computed, ref } from 'vue'
 import data from '../../data/spells.json'
 import type { Spell, SpellElement, SpellLevel } from '../../schemas/spell'
+import MagicTile from './MagicTile.vue'
+import { useMagicDrawer } from '../composables/useMagicDrawer'
 
 const props = defineProps<{
   level?: SpellLevel
@@ -10,11 +12,18 @@ const props = defineProps<{
 }>()
 
 const spells = data.items as Spell[]
+const { openMagic } = useMagicDrawer()
 
 const levelLabels: Record<SpellLevel, string> = {
   novice: 'Новичок',
   adept: 'Подмастерье',
   master: 'Мастер'
+}
+
+const levelShortLabels: Record<SpellLevel, string> = {
+  novice: 'Нов.',
+  adept: 'Подм.',
+  master: 'Маст.'
 }
 
 const elementLabels: Record<SpellElement, string> = {
@@ -78,8 +87,25 @@ const reset = () => {
 }
 
 const costLabel = (spell: Spell) => {
-  if (spell.costVariable) return 'меняется'
+  if (spell.costVariable) return 'Вын: меняется'
   return `${spell.cost} Вын`
+}
+
+const openSpell = (spell: Spell) => {
+  openMagic({
+    title: spell.name,
+    subtitle: `Заклинание · ${levelLabels[spell.level]} · ${elementLabels[spell.element]}`,
+    stats: [
+      { label: 'Стихия', value: elementLabels[spell.element] },
+      { label: 'Уровень', value: levelLabels[spell.level] },
+      { label: 'Затраты', value: costLabel(spell) },
+      { label: 'Дистанция', value: spell.range },
+      { label: 'Длительность', value: spell.duration },
+      { label: 'Защита', value: spell.defense }
+    ],
+    effect: spell.effect,
+    sourcePage: spell.sourcePage
+  })
 }
 </script>
 
@@ -133,89 +159,63 @@ const costLabel = (spell: Spell) => {
       <span class="wr-count">{{ visible.length }} из {{ baseCount }}</span>
     </div>
 
-    <div v-if="visible.length" class="wr-cards">
-      <article
+    <p v-if="visible.length" class="magic-grid-hint">
+      Нажмите на карточку, чтобы открыть подробности.
+    </p>
+
+    <div v-if="visible.length" class="magic-tile-grid">
+      <MagicTile
         v-for="spell in visible"
         :id="`spell-${spell.id}`"
         :key="spell.id"
-        class="wr-card spell-card"
-      >
-        <div class="wr-card__top">
-          <h3 class="wr-card__title">
-            <a :href="`#spell-${spell.id}`">{{ spell.name }}</a>
-          </h3>
-          <span class="spell-cost">{{ costLabel(spell) }}</span>
-        </div>
-
-        <div class="wr-badges">
-          <span class="wr-badge" :class="`wr-badge--${spell.level}`">
-            {{ levelLabels[spell.level] }}
-          </span>
-          <span class="wr-badge" :class="`wr-badge--${spell.element}`">
-            {{ elementLabels[spell.element] }}
-          </span>
-        </div>
-
-        <div class="wr-stat-grid">
-          <div class="wr-stat">
-            <span class="wr-stat__label">Дистанция</span>
-            <span class="wr-stat__value">{{ spell.range }}</span>
-          </div>
-          <div class="wr-stat">
-            <span class="wr-stat__label">Длительность</span>
-            <span class="wr-stat__value">{{ spell.duration }}</span>
-          </div>
-          <div class="wr-stat">
-            <span class="wr-stat__label">Защита</span>
-            <span class="wr-stat__value">{{ spell.defense }}</span>
-          </div>
-          <div class="wr-stat">
-            <span class="wr-stat__label">Затраты</span>
-            <span class="wr-stat__value">{{ costLabel(spell) }}</span>
-          </div>
-        </div>
-
-        <div class="wr-effect">
-          <p>{{ spell.effect }}</p>
-        </div>
-
-        <div class="wr-source">Источник: стр. {{ spell.sourcePage }}</div>
-      </article>
+        :title="spell.name"
+        kind-label="Заклинание"
+        :tone="spell.element"
+        :meta-label="elementLabels[spell.element]"
+        :tag-label="levelShortLabels[spell.level]"
+        :cost-label="costLabel(spell)"
+        @open="openSpell(spell)"
+      />
     </div>
 
     <div v-else class="wr-empty">
       Ничего не нашлось. Попробуйте изменить запрос или сбросить фильтры.
     </div>
+
+    <div v-if="visible.length" class="magic-search-index" aria-hidden="true">
+      <p v-for="spell in visible" :key="`search-${spell.id}`">
+        {{ spell.name }}. {{ spell.effect }} {{ spell.range }} {{ spell.duration }} {{ spell.defense }}
+      </p>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.spell-card {
-  scroll-margin-top: calc(var(--vp-nav-height) + 1rem);
+.magic-tile-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 1rem;
 }
 
-.spell-card .wr-card__title a {
-  color: var(--site-ink);
-  text-decoration: none;
-}
-
-.spell-card .wr-card__title a:hover {
-  color: var(--site-blood);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.dark .spell-card .wr-card__title a:hover {
-  color: var(--site-gold);
-}
-
-.spell-cost {
-  flex: 0 0 auto;
+.magic-grid-hint {
+  margin: 0.8rem 0 0;
   font-family: var(--site-sans);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--site-muted);
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--site-faint);
+}
+
+.magic-search-index {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
   white-space: nowrap;
+  border: 0;
+  clip-path: inset(50%);
 }
 
 .spell-reset {
@@ -240,7 +240,23 @@ const costLabel = (spell: Spell) => {
   border-color: var(--site-gold);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1100px) {
+  .magic-tile-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .magic-tile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .magic-tile-grid {
+    grid-template-columns: 1fr;
+  }
+
   .spell-reset {
     width: 100%;
   }
