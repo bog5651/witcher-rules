@@ -83,6 +83,7 @@ const openItem = (item: Formula) => {
       { label: 'СЛ Алхимии', value: String(item.dc) },
       { label: 'Время', value: item.time },
       { label: 'Ингредиенты', value: ingredientText(item) },
+      { label: 'Эффект', value: item.effect ?? '' },
       { label: 'Цена', value: `${formatNumber(item.price)} кр.` }
     ]
   })
