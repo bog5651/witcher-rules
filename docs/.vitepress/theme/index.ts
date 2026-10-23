@@ -34,6 +34,7 @@ import FormulaTable from './components/FormulaTable.vue'
 import SchematicTable from './components/SchematicTable.vue'
 import CriticalInjuryCatalog from './components/CriticalInjuryCatalog.vue'
 import SkillTable from './components/SkillTable.vue'
+import ProfessionTree from './components/ProfessionTree.vue'
 
 export default {
   extends: DefaultTheme,
@@ -55,5 +56,6 @@ export default {
     app.component('SchematicTable', SchematicTable)
     app.component('CriticalInjuryCatalog', CriticalInjuryCatalog)
     app.component('SkillTable', SkillTable)
+    app.component('ProfessionTree', ProfessionTree)
   }
 } satisfies Theme

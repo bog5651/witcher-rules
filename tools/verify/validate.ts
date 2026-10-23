@@ -22,12 +22,13 @@ import { formulasFileSchema } from '../../docs/.vitepress/schemas/formula'
 import { schematicsFileSchema } from '../../docs/.vitepress/schemas/schematic'
 import { criticalInjuriesFileSchema } from '../../docs/.vitepress/schemas/criticalInjury'
 import { skillsFileSchema } from '../../docs/.vitepress/schemas/skill'
+import { professionTreesFileSchema } from '../../docs/.vitepress/schemas/professionTree'
 
 const root = fileURLToPath(new URL('../..', import.meta.url))
 const dataDir = join(root, 'docs', '.vitepress', 'data')
 
 type BaseItem = { id: string; name: string; sourcePage: number }
-type FileShape = { items: BaseItem[] }
+type FileShape = { items?: BaseItem[]; professions?: BaseItem[] }
 
 let failed = false
 
@@ -50,11 +51,12 @@ function validate(
   }
 
   const data = parsed.data as FileShape
+  const items = data.items ?? data.professions ?? []
   const ids = new Set<string>()
   const names = new Set<string>()
   const errors: string[] = []
 
-  for (const item of data.items) {
+  for (const item of items) {
     if (ids.has(item.id)) errors.push(`повторяющийся id: ${item.id}`)
     if (!options.allowDuplicateNames && names.has(item.name)) {
       errors.push(`повторяющееся название: ${item.name}`)
@@ -73,7 +75,7 @@ function validate(
     return
   }
 
-  console.log(`OK: ${name} — ${data.items.length}`)
+  console.log(`OK: ${name} — ${items.length}`)
 }
 
 validate('заклинания', 'spells.json', spellsFileSchema)
@@ -93,6 +95,7 @@ validate('формулы', 'formulas.json', formulasFileSchema)
 validate('чертежи', 'schematics.json', schematicsFileSchema, { allowDuplicateNames: true })
 validate('критические ранения', 'critical-injuries.json', criticalInjuriesFileSchema)
 validate('навыки', 'skills.json', skillsFileSchema)
+validate('древа профессий', 'profession-trees.json', professionTreesFileSchema)
 
 function validateTransport() {
   const raw = JSON.parse(readFileSync(join(dataDir, 'transport.json'), 'utf8'))

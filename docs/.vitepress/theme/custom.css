@@ -432,6 +432,22 @@ body {
   background: color-mix(in srgb, var(--site-surface-2) 45%, transparent);
 }
 
+.table-fit {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.table-fit table {
+  width: auto;
+  min-width: 340px;
+}
+
+.lifepath-page .vp-doc th:first-child,
+.lifepath-page .vp-doc td:first-child {
+  width: 1%;
+  white-space: nowrap;
+}
+
 /* --- custom containers -------------------------------------------- */
 
 .custom-block {
