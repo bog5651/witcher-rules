@@ -1,0 +1,167 @@
+import type { DefaultTheme } from 'vitepress'
+
+export const sidebar: DefaultTheme.Sidebar = {
+  '/character/': [
+    {
+      text: 'Создание персонажа',
+      items: [
+        { text: 'Обзор', link: '/character/' },
+        { text: 'Расы', link: '/character/races' },
+        { text: 'Жизненный путь', link: '/character/lifepath' },
+        { text: 'Параметры', link: '/character/stats' },
+        { text: 'Навыки', link: '/character/skills' },
+        { text: 'Проверки навыков', link: '/character/checks' },
+        { text: 'Развитие', link: '/character/development' },
+        { text: 'Репутация', link: '/character/reputation' },
+        { text: 'Древо навыков', link: '/character/trees' }
+      ]
+    }
+  ],
+  '/professions/': [
+    {
+      text: 'Профессии',
+      items: [
+        { text: 'Обзор', link: '/professions/' },
+        { text: 'Бард', link: '/professions/bard' },
+        { text: 'Ведьмак', link: '/professions/witcher' },
+        { text: 'Воин', link: '/professions/warrior' },
+        { text: 'Жрец', link: '/professions/priest' },
+        { text: 'Маг', link: '/professions/mage' },
+        { text: 'Медик', link: '/professions/medic' },
+        { text: 'Преступник', link: '/professions/criminal' },
+        { text: 'Ремесленник', link: '/professions/craftsman' },
+        { text: 'Торговец', link: '/professions/merchant' }
+      ]
+    }
+  ],
+  '/magic/': [
+    {
+      text: 'Магия',
+      items: [
+        { text: 'Обзор', link: '/magic/' },
+        { text: 'Правила магии', link: '/magic/rules' },
+        {
+          text: 'Заклинания',
+          collapsed: false,
+          items: [
+            { text: 'Все заклинания', link: '/magic/spells/' },
+            { text: 'Новичка', link: '/magic/spells/novice' },
+            { text: 'Подмастерья', link: '/magic/spells/adept' },
+            { text: 'Мастера', link: '/magic/spells/master' }
+          ]
+        },
+        { text: 'Знаки', link: '/magic/signs' },
+        {
+          text: 'Инвокации',
+          collapsed: false,
+          items: [
+            { text: 'Все инвокации', link: '/magic/invocations/' },
+            { text: 'Друида', link: '/magic/invocations/druid' },
+            { text: 'Проповедника', link: '/magic/invocations/preacher' },
+            { text: 'Верховного жреца', link: '/magic/invocations/archpriest' }
+          ]
+        },
+        { text: 'Ритуалы', link: '/magic/rituals' },
+        { text: 'Порча', link: '/magic/hexes' },
+        { text: 'Места силы', link: '/magic/places-of-power' },
+        { text: 'Обучение магии', link: '/magic/learning' }
+      ]
+    }
+  ],
+  '/shop/': [
+    {
+      text: 'Магазин',
+      items: [
+        { text: 'Обзор', link: '/shop/' },
+        { text: 'Оружие', link: '/shop/weapons' },
+        { text: 'Броня', link: '/shop/armor' },
+        { text: 'Алхимические составы', link: '/shop/alchemy' },
+        { text: 'Вещи', link: '/shop/items' },
+        { text: 'Компоненты', link: '/shop/components' },
+        { text: 'Транспорт', link: '/shop/transport' }
+      ]
+    }
+  ],
+  '/alchemy/': [
+    {
+      text: 'Алхимия',
+      items: [
+        { text: 'Обзор', link: '/alchemy/' },
+        { text: 'Правила', link: '/alchemy/rules' },
+        { text: 'Формулы', link: '/alchemy/formulas' },
+        { text: 'Субстанции', link: '/alchemy/substances' }
+      ]
+    }
+  ],
+  '/crafting/': [
+    {
+      text: 'Ремесло',
+      items: [
+        { text: 'Обзор', link: '/crafting/' },
+        { text: 'Правила', link: '/crafting/rules' },
+        { text: 'Чертежи', link: '/crafting/schematics' }
+      ]
+    }
+  ],
+  '/combat/': [
+    {
+      text: 'Бой',
+      items: [
+        { text: 'Обзор', link: '/combat/' },
+        { text: 'Правила', link: '/combat/rules' },
+        { text: 'Критические ранения', link: '/combat/injuries' },
+        { text: 'Эффекты', link: '/combat/effects' },
+        { text: 'Магия в бою', link: '/combat/magic' },
+        { text: 'Верхом и транспорт', link: '/combat/mounted' },
+        { text: 'Лечение', link: '/combat/healing' },
+        { text: 'Дополнительные правила', link: '/combat/extra' }
+      ]
+    }
+  ],
+  '/bestiary/': [
+    {
+      text: 'Бестиарий',
+      items: [
+        { text: 'Обзор', link: '/bestiary/' },
+        { text: 'Классы чудовищ', link: '/bestiary/classes' }
+      ]
+    }
+  ],
+  '/witchers/': [
+    {
+      text: 'Ведьмаки',
+      items: [
+        { text: 'Обзор', link: '/witchers/' },
+        { text: 'Жизненный путь', link: '/witchers/lifepath' },
+        { text: 'Снаряжение', link: '/witchers/gear' },
+        { text: 'Мутагены', link: '/witchers/mutations' },
+        { text: 'Руны и реликвии', link: '/witchers/runes' }
+      ]
+    }
+  ],
+  '/gm/': [
+    {
+      text: 'Ведущему',
+      items: [
+        { text: 'Обзор', link: '/gm/' },
+        { text: 'Проклятия', link: '/gm/curses' },
+        { text: 'Награды', link: '/gm/rewards' },
+        { text: 'Ведение кампании', link: '/gm/campaign' },
+        { text: 'Персонажи ведущего', link: '/gm/npcs' }
+      ]
+    }
+  ],
+  '/world/': [
+    {
+      text: 'Мир',
+      items: [
+        { text: 'Обзор', link: '/world/' },
+        { text: 'Королевства Севера', link: '/world/north' },
+        { text: 'Нильфгаард', link: '/world/nilfgaard' },
+        { text: 'Земли Старшего Народа', link: '/world/elder-folk' },
+        { text: 'Религии', link: '/world/religions' },
+        { text: 'Союзы', link: '/world/factions' }
+      ]
+    }
+  ]
+}

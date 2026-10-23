@@ -1,0 +1,22 @@
+node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+docs/.vitepress/.temp/
+.vercel/
+
+# PDF и тяжёлые производные файлы
+Witcher.pdf
+_artifacts/pdf/pages/
+_artifacts/pdf/witcher_text.txt
+_artifacts/pdf/witcher_layout.txt
+_artifacts/pdf/toc_pages_2_4_layout.txt
+_artifacts/pdf/samples*.txt
+_artifacts/pdf/spells_pages_*.txt
+_artifacts/pdf/tables.txt
+_artifacts/pdf/words73.txt
+_artifacts/samples/
+_artifacts/web/assets/images/
+
+*.log
+.DS_Store
+Thumbs.db

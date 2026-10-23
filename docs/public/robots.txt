@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://witcher-rules.vercel.app/sitemap.xml
