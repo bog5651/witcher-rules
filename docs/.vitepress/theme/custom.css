@@ -442,6 +442,15 @@ body {
   min-width: 340px;
 }
 
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.table-scroll table {
+  min-width: 760px;
+}
+
 .lifepath-page .vp-doc th:first-child,
 .lifepath-page .vp-doc td:first-child {
   width: 1%;
