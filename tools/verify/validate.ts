@@ -25,6 +25,7 @@ import { skillsFileSchema } from '../../docs/.vitepress/schemas/skill'
 import { professionTreesFileSchema } from '../../docs/.vitepress/schemas/professionTree'
 import { professionsFileSchema } from '../../docs/.vitepress/schemas/profession'
 import { bestiaryFileSchema } from '../../docs/.vitepress/schemas/bestiary'
+import { relicsFileSchema } from '../../docs/.vitepress/schemas/relic'
 
 const root = fileURLToPath(new URL('../..', import.meta.url))
 const dataDir = join(root, 'docs', '.vitepress', 'data')
@@ -191,6 +192,45 @@ function validateBestiary() {
 }
 
 validateBestiary()
+
+function validateRelics() {
+  const raw = JSON.parse(readFileSync(join(dataDir, 'relics.json'), 'utf8'))
+  const parsed = relicsFileSchema.safeParse(raw)
+
+  if (!parsed.success) {
+    failed = true
+    console.error('relics.json не прошёл валидацию:')
+    for (const issue of parsed.error.issues) {
+      console.error(`  ${issue.path.join('.')}: ${issue.message}`)
+    }
+    return
+  }
+
+  const ids = new Set<string>()
+  const names = new Set<string>()
+  const errors: string[] = []
+
+  for (const relic of parsed.data.items) {
+    if (ids.has(relic.id)) errors.push(`повторяющийся id: ${relic.id}`)
+    if (names.has(relic.name)) errors.push(`повторяющееся название: ${relic.name}`)
+    if (relic.sourcePage < 257 || relic.sourcePage > 265) {
+      errors.push(`sourcePage вне раздела реликвий: ${relic.name} (${relic.sourcePage})`)
+    }
+    ids.add(relic.id)
+    names.add(relic.name)
+  }
+
+  if (errors.length) {
+    failed = true
+    console.error('Ошибки в relics.json:')
+    for (const error of errors) console.error(`  - ${error}`)
+    return
+  }
+
+  console.log(`OK: реликвии — ${parsed.data.items.length}`)
+}
+
+validateRelics()
 
 function validateTransport() {
   const raw = JSON.parse(readFileSync(join(dataDir, 'transport.json'), 'utf8'))

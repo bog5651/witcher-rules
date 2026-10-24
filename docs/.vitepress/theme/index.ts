@@ -39,6 +39,7 @@ import ProfessionCatalog from './components/ProfessionCatalog.vue'
 import ProfessionProfile from './components/ProfessionProfile.vue'
 import BestiaryClasses from './components/BestiaryClasses.vue'
 import BestiaryCatalog from './components/BestiaryCatalog.vue'
+import RelicCatalog from './components/RelicCatalog.vue'
 
 export default {
   extends: DefaultTheme,
@@ -65,5 +66,6 @@ export default {
     app.component('ProfessionProfile', ProfessionProfile)
     app.component('BestiaryClasses', BestiaryClasses)
     app.component('BestiaryCatalog', BestiaryCatalog)
+    app.component('RelicCatalog', RelicCatalog)
   }
 } satisfies Theme
