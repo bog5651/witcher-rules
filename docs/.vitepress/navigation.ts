@@ -154,6 +154,7 @@ export const sidebar: DefaultTheme.Sidebar = {
         { text: 'Религии', link: '/world/religions' },
         { text: 'Магия на Континенте', link: '/world/magic' },
         { text: 'Лей-линии', link: '/world/ley-lines' },
+        { text: 'Магические традиции', link: '/world/traditions' },
         { text: 'Тактические погони', link: '/world/tactical-pursuits' },
         { text: 'Союзы', link: '/world/factions' }
       ]
