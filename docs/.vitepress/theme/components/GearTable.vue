@@ -20,6 +20,7 @@ type Category = keyof typeof categoryLabels
 
 const category = ref<'all' | Category>('all')
 const query = ref('')
+const selected = ref<string[]>([])
 
 const normalized = (value: string) => value.toLocaleLowerCase('ru').replace(/ё/g, 'е')
 
@@ -42,6 +43,38 @@ const sections = computed(() =>
     }))
     .filter((section) => section.items.length)
 )
+
+const toggle = (id: string) => {
+  selected.value = selected.value.includes(id)
+    ? selected.value.filter((item) => item !== id)
+    : [...selected.value, id]
+}
+
+const allVisibleSelected = computed(
+  () => visible.value.length > 0 && visible.value.every((item) => selected.value.includes(item.id))
+)
+
+const toggleAllVisible = () => {
+  if (allVisibleSelected.value) {
+    const ids = new Set(visible.value.map((item) => item.id))
+    selected.value = selected.value.filter((id) => !ids.has(id))
+  } else {
+    selected.value = [...new Set([...selected.value, ...visible.value.map((item) => item.id)])]
+  }
+}
+
+const clearSelection = () => {
+  selected.value = []
+}
+
+const selectedItems = computed(() => items.filter((item) => selected.value.includes(item.id)))
+const totalWeight = computed(() =>
+  selectedItems.value.reduce((sum, item) => sum + (item.weight ?? 0), 0)
+)
+const totalPrice = computed(() =>
+  selectedItems.value.reduce((sum, item) => sum + (item.price ?? 0), 0)
+)
+const hasUnknownPrice = computed(() => selectedItems.value.some((item) => item.price === null))
 
 const reset = () => {
   query.value = ''
@@ -98,6 +131,24 @@ const openItem = (item: Gear) => {
       <span class="wr-count">{{ visible.length }} из {{ items.length }}</span>
     </div>
 
+    <div class="wr-summary">
+      <span>Выбрано: <strong>{{ selected.length }}</strong></span>
+      <span>Вес: <strong>{{ formatNumber(totalWeight) }} кг</strong></span>
+      <span>
+        Цена: <strong>{{ formatNumber(totalPrice) }} кр.{{ hasUnknownPrice ? '*' : '' }}</strong>
+      </span>
+      <button v-if="visible.length" class="gear-reset" type="button" @click="toggleAllVisible">
+        {{ allVisibleSelected ? 'Снять выбор' : 'Выбрать всё' }}
+      </button>
+      <button v-if="selected.length" class="gear-reset" type="button" @click="clearSelection">
+        Сбросить выбор
+      </button>
+    </div>
+
+    <p v-if="hasUnknownPrice" class="gear-summary-note">
+      * Для предметов с ценой по договорённости стоимость не суммируется.
+    </p>
+
     <template v-for="section in sections" :key="section.key">
       <h3>{{ section.label }}</h3>
       <div
@@ -107,6 +158,14 @@ const openItem = (item: Gear) => {
         <table class="gear-table" :class="{ 'gear-table--no-weight': !section.hasWeight }">
           <thead>
             <tr>
+              <th class="col-check">
+                <input
+                  type="checkbox"
+                  :checked="allVisibleSelected"
+                  aria-label="Выбрать все видимые"
+                  @change="toggleAllVisible"
+                />
+              </th>
               <th>Название</th>
               <th v-if="section.hasWeight">Вес, кг</th>
               <th>Цена</th>
@@ -114,6 +173,14 @@ const openItem = (item: Gear) => {
           </thead>
           <tbody>
             <tr v-for="item in section.items" :id="`gear-${item.id}`" :key="item.id">
+              <td class="col-check">
+                <input
+                  type="checkbox"
+                  :checked="selected.includes(item.id)"
+                  :aria-label="`Выбрать: ${item.name}`"
+                  @change="toggle(item.id)"
+                />
+              </td>
               <td class="col-name">
                 <button type="button" class="wr-item-link" @click="openItem(item)">
                   {{ item.name }}
@@ -224,6 +291,20 @@ const openItem = (item: Gear) => {
 
 .gear-table tbody tr:last-child td {
   border-bottom: 0;
+}
+
+.gear-table .col-check {
+  width: 28px;
+  text-align: center;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.gear-summary-note {
+  margin: 0.35rem 0 0;
+  font-family: var(--site-sans);
+  font-size: 11px;
+  color: var(--site-muted);
 }
 
 .gear-table .col-name {

@@ -15,6 +15,7 @@ const base = {
   healthCost: z.string().optional(),
   language: z.enum(['ru', 'en']).optional(),
   effect: z.string().min(1),
+  note: z.string().min(1).optional(),
   sourcePage: z.number().int().positive(),
   sourceBook: sourceBookSchema
 }

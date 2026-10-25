@@ -5,6 +5,9 @@
       "id": "verden-archer-hood",
       "name": "Капюшон вердонского лучника",
       "location": "head",
+      "covers": [
+        "head"
+      ],
       "weightClass": "light",
       "protection": 3,
       "reliability": null,
@@ -22,6 +25,9 @@
       "id": "double-hood",
       "name": "Двуслойный капюшон",
       "location": "head",
+      "covers": [
+        "head"
+      ],
       "weightClass": "light",
       "protection": 5,
       "reliability": null,
@@ -39,6 +45,9 @@
       "id": "framed-halfmask-helmet",
       "name": "Каркасный шлем с полумаской",
       "location": "head",
+      "covers": [
+        "head"
+      ],
       "weightClass": "light",
       "protection": 8,
       "reliability": null,
@@ -56,6 +65,9 @@
       "id": "mail-hood",
       "name": "Кольчужный капюшон",
       "location": "head",
+      "covers": [
+        "head"
+      ],
       "weightClass": "medium",
       "protection": 12,
       "reliability": null,
@@ -73,6 +85,9 @@
       "id": "reinforced-hood",
       "name": "Усиленный капюшон",
       "location": "head",
+      "covers": [
+        "head"
+      ],
       "weightClass": "medium",
       "protection": 14,
       "reliability": null,
@@ -90,6 +105,9 @@
       "id": "temerian-armet",
       "name": "Темерский армет",
       "location": "head",
+      "covers": [
+        "head"
+      ],
       "weightClass": "medium",
       "protection": 16,
       "reliability": null,
@@ -107,6 +125,9 @@
       "id": "topfhelm",
       "name": "Топфхельм",
       "location": "head",
+      "covers": [
+        "head"
+      ],
       "weightClass": "heavy",
       "protection": 20,
       "reliability": null,
@@ -124,6 +145,9 @@
       "id": "skellige-helmet",
       "name": "Скеллигский шлем",
       "location": "head",
+      "covers": [
+        "head"
+      ],
       "weightClass": "heavy",
       "protection": 25,
       "reliability": null,
@@ -141,6 +165,9 @@
       "id": "nilfgaardian-helmet",
       "name": "Нильфгаардский шлем",
       "location": "head",
+      "covers": [
+        "head"
+      ],
       "weightClass": "heavy",
       "protection": 30,
       "reliability": null,
@@ -158,6 +185,10 @@
       "id": "gambeson",
       "name": "Гамбезон",
       "location": "torso",
+      "covers": [
+        "torso",
+        "arms"
+      ],
       "weightClass": "light",
       "protection": 3,
       "reliability": null,
@@ -175,6 +206,10 @@
       "id": "aedirnian-gambeson",
       "name": "Аэдирнский гамбезон",
       "location": "torso",
+      "covers": [
+        "torso",
+        "arms"
+      ],
       "weightClass": "light",
       "protection": 5,
       "reliability": null,
@@ -192,6 +227,10 @@
       "id": "double-gambeson",
       "name": "Двуслойный гамбезон",
       "location": "torso",
+      "covers": [
+        "torso",
+        "arms"
+      ],
       "weightClass": "light",
       "protection": 8,
       "reliability": null,
@@ -209,6 +248,10 @@
       "id": "brigandine",
       "name": "Бригантина",
       "location": "torso",
+      "covers": [
+        "torso",
+        "arms"
+      ],
       "weightClass": "medium",
       "protection": 12,
       "reliability": null,
@@ -226,6 +269,10 @@
       "id": "redanian-halberdier-armor",
       "name": "Броня реданского алебардщика",
       "location": "torso",
+      "covers": [
+        "torso",
+        "arms"
+      ],
       "weightClass": "medium",
       "protection": 14,
       "reliability": null,
@@ -243,6 +290,10 @@
       "id": "lyrian-leather-jacket",
       "name": "Кожаная куртка из Лирии",
       "location": "torso",
+      "covers": [
+        "torso",
+        "arms"
+      ],
       "weightClass": "medium",
       "protection": 16,
       "reliability": null,
@@ -260,6 +311,10 @@
       "id": "plate-armor",
       "name": "Латный доспех",
       "location": "torso",
+      "covers": [
+        "torso",
+        "arms"
+      ],
       "weightClass": "heavy",
       "protection": 20,
       "reliability": null,
@@ -277,6 +332,10 @@
       "id": "hindarsfjall-heavy-armor",
       "name": "Хиндарсфьяльский тяжёлый доспех",
       "location": "torso",
+      "covers": [
+        "torso",
+        "arms"
+      ],
       "weightClass": "heavy",
       "protection": 25,
       "reliability": null,
@@ -294,6 +353,10 @@
       "id": "nilfgaardian-plate-armor",
       "name": "Нильфгаардский латный доспех",
       "location": "torso",
+      "covers": [
+        "torso",
+        "arms"
+      ],
       "weightClass": "heavy",
       "protection": 30,
       "reliability": null,
@@ -311,6 +374,9 @@
       "id": "cavalry-trousers",
       "name": "Кавалерийские штаны",
       "location": "legs",
+      "covers": [
+        "legs"
+      ],
       "weightClass": "light",
       "protection": 3,
       "reliability": null,
@@ -328,6 +394,9 @@
       "id": "quilted-trousers",
       "name": "Стёганые штаны",
       "location": "legs",
+      "covers": [
+        "legs"
+      ],
       "weightClass": "light",
       "protection": 5,
       "reliability": null,
@@ -345,6 +414,9 @@
       "id": "double-trousers",
       "name": "Двуслойные штаны",
       "location": "legs",
+      "covers": [
+        "legs"
+      ],
       "weightClass": "light",
       "protection": 8,
       "reliability": null,
@@ -362,6 +434,9 @@
       "id": "reinforced-trousers",
       "name": "Усиленные штаны",
       "location": "legs",
+      "covers": [
+        "legs"
+      ],
       "weightClass": "medium",
       "protection": 12,
       "reliability": null,
@@ -379,6 +454,9 @@
       "id": "redanian-greaves",
       "name": "Реданские поножи",
       "location": "legs",
+      "covers": [
+        "legs"
+      ],
       "weightClass": "medium",
       "protection": 14,
       "reliability": null,
@@ -396,6 +474,9 @@
       "id": "lyrian-leather-trousers",
       "name": "Кожаные штаны из Лирии",
       "location": "legs",
+      "covers": [
+        "legs"
+      ],
       "weightClass": "medium",
       "protection": 16,
       "reliability": null,
@@ -413,6 +494,9 @@
       "id": "plate-greaves",
       "name": "Латные поножи",
       "location": "legs",
+      "covers": [
+        "legs"
+      ],
       "weightClass": "heavy",
       "protection": 20,
       "reliability": null,
@@ -430,6 +514,9 @@
       "id": "hindarsfjall-heavy-hose",
       "name": "Хиндарсфьяльские тяжёлые шоссы",
       "location": "legs",
+      "covers": [
+        "legs"
+      ],
       "weightClass": "heavy",
       "protection": 25,
       "reliability": null,
@@ -447,6 +534,9 @@
       "id": "nilfgaardian-greaves",
       "name": "Нильфгаардские поножи",
       "location": "legs",
+      "covers": [
+        "legs"
+      ],
       "weightClass": "heavy",
       "protection": 30,
       "reliability": null,
@@ -464,6 +554,7 @@
       "id": "leather-shield",
       "name": "Кожаный щит",
       "location": "shield",
+      "covers": [],
       "weightClass": "light",
       "protection": null,
       "reliability": 4,
@@ -481,6 +572,7 @@
       "id": "steel-buckler",
       "name": "Стальной баклер",
       "location": "shield",
+      "covers": [],
       "weightClass": "light",
       "protection": null,
       "reliability": 6,
@@ -498,6 +590,7 @@
       "id": "temerian-shield",
       "name": "Темерский щит",
       "location": "shield",
+      "covers": [],
       "weightClass": "light",
       "protection": null,
       "reliability": 8,
@@ -515,6 +608,7 @@
       "id": "skellige-raider-shield",
       "name": "Щит налётчика со Скеллиге",
       "location": "shield",
+      "covers": [],
       "weightClass": "medium",
       "protection": null,
       "reliability": 10,
@@ -532,6 +626,7 @@
       "id": "kaedweni-shield",
       "name": "Каэдвенский щит",
       "location": "shield",
+      "covers": [],
       "weightClass": "medium",
       "protection": null,
       "reliability": 14,
@@ -549,6 +644,7 @@
       "id": "steel-kite-shield",
       "name": "Стальной каплевидный щит",
       "location": "shield",
+      "covers": [],
       "weightClass": "medium",
       "protection": null,
       "reliability": 16,
@@ -566,6 +662,7 @@
       "id": "pavise",
       "name": "Павеза",
       "location": "shield",
+      "covers": [],
       "weightClass": "heavy",
       "protection": null,
       "reliability": 20,
@@ -583,6 +680,7 @@
       "id": "nilfgaardian-pavise",
       "name": "Нильфгаардская павеза",
       "location": "shield",
+      "covers": [],
       "weightClass": "heavy",
       "protection": null,
       "reliability": 25,
@@ -604,7 +702,10 @@
       "id": "halfling-defensive-doublet",
       "name": "Низушечий защитный дублет",
       "location": "body",
-      "coverage": "Туловище и руки",
+      "covers": [
+        "torso",
+        "arms"
+      ],
       "weightClass": "light",
       "protection": 8,
       "upgradeSlots": 1,
@@ -623,7 +724,12 @@
       "id": "dwarven-mail",
       "name": "Кольчуга гномьей работы",
       "location": "body",
-      "coverage": "Голова, туловище, руки и ноги",
+      "covers": [
+        "head",
+        "torso",
+        "arms",
+        "legs"
+      ],
       "weightClass": "light",
       "protection": 10,
       "upgradeSlots": 1,
@@ -641,7 +747,12 @@
       "id": "dwarven-cloak",
       "name": "Краснолюдский плащ",
       "location": "body",
-      "coverage": "Голова, туловище, руки и ноги",
+      "covers": [
+        "head",
+        "torso",
+        "arms",
+        "legs"
+      ],
       "weightClass": "medium",
       "protection": 16,
       "upgradeSlots": 1,
@@ -659,7 +770,12 @@
       "id": "scoia-tael-armor",
       "name": "Броня скоя’таэля",
       "location": "body",
-      "coverage": "Голова, туловище, руки и ноги",
+      "covers": [
+        "head",
+        "torso",
+        "arms",
+        "legs"
+      ],
       "weightClass": "medium",
       "protection": 20,
       "upgradeSlots": 2,
@@ -678,7 +794,12 @@
       "id": "dragoon-armor",
       "name": "Драгунская броня гномьей работы",
       "location": "body",
-      "coverage": "Голова, туловище, руки и ноги",
+      "covers": [
+        "head",
+        "torso",
+        "arms",
+        "legs"
+      ],
       "weightClass": "heavy",
       "protection": 25,
       "upgradeSlots": 2,
@@ -697,7 +818,12 @@
       "id": "mahakaman-plate",
       "name": "Махакамские латы",
       "location": "body",
-      "coverage": "Голова, туловище, руки и ноги",
+      "covers": [
+        "head",
+        "torso",
+        "arms",
+        "legs"
+      ],
       "weightClass": "heavy",
       "protection": 30,
       "upgradeSlots": 3,
@@ -715,6 +841,7 @@
       "id": "dwarven-buckler",
       "name": "Гномий баклер",
       "location": "shield",
+      "covers": [],
       "weightClass": "light",
       "protection": null,
       "upgradeSlots": 2,
@@ -732,6 +859,7 @@
       "id": "elven-shield",
       "name": "Эльфский щит",
       "location": "shield",
+      "covers": [],
       "weightClass": "medium",
       "protection": null,
       "upgradeSlots": 2,
@@ -749,6 +877,7 @@
       "id": "mahakaman-pavise",
       "name": "Махакамская павеза",
       "location": "shield",
+      "covers": [],
       "weightClass": "heavy",
       "protection": null,
       "upgradeSlots": 2,
@@ -764,13 +893,16 @@
       "id": "kapellina",
       "name": "Капеллина",
       "location": "head",
+      "covers": [
+        "head"
+      ],
       "weightClass": "medium",
       "protection": 10,
       "availability": "everywhere",
       "upgradeSlots": 0,
       "effect": "",
       "encumbrance": 0,
-      "weight": 1.0,
+      "weight": 1,
       "price": 230,
       "elderfolk": false,
       "sourcePage": 3,
@@ -781,6 +913,10 @@
       "id": "gambezon-verdenskogo-luchnika",
       "name": "Гамбезон верденского лучника",
       "location": "torso",
+      "covers": [
+        "torso",
+        "arms"
+      ],
       "weightClass": "light",
       "protection": 10,
       "availability": "rare",
@@ -798,13 +934,17 @@
       "id": "dospekh-charodeya-iz-ban-arda",
       "name": "Доспех чародея из Бан Арда",
       "location": "torso",
+      "covers": [
+        "torso",
+        "arms"
+      ],
       "weightClass": "light",
       "protection": 5,
       "availability": "unique",
       "upgradeSlots": 1,
       "effect": "+2 к Сотворению заклинаний",
       "encumbrance": 0,
-      "weight": 3.0,
+      "weight": 3,
       "price": 930,
       "elderfolk": false,
       "sourcePage": 4,
@@ -815,6 +955,10 @@
       "id": "kaedvenskaya-kirasa",
       "name": "Каэдвенская кираса",
       "location": "torso",
+      "covers": [
+        "torso",
+        "arms"
+      ],
       "weightClass": "medium",
       "protection": 13,
       "availability": "common",
@@ -832,13 +976,17 @@
       "id": "dospekh-okhotnikov-za-koldunyami",
       "name": "Доспех Охотников за колдуньями",
       "location": "torso",
+      "covers": [
+        "torso",
+        "arms"
+      ],
       "weightClass": "medium",
       "protection": 15,
       "availability": "rare",
       "upgradeSlots": 1,
       "effect": "Если доспех надет на адепта магии, то его СД равно 5",
       "encumbrance": 1,
-      "weight": 6.0,
+      "weight": 6,
       "price": 500,
       "elderfolk": false,
       "sourcePage": 4,
@@ -849,13 +997,17 @@
       "id": "dospekh-boevogo-charodeya",
       "name": "Доспех боевого чародея",
       "location": "torso",
+      "covers": [
+        "torso",
+        "arms"
+      ],
       "weightClass": "medium",
       "protection": 16,
       "availability": "unique",
       "upgradeSlots": 1,
       "effect": "+2 к Сотворению заклинаний, сопротивление кровотечению и отравлению",
       "encumbrance": 1,
-      "weight": 6.0,
+      "weight": 6,
       "price": 2200,
       "elderfolk": false,
       "sourcePage": 4,
@@ -866,13 +1018,17 @@
       "id": "dospekhi-s-undvika",
       "name": "Доспехи с Ундвика",
       "location": "torso",
+      "covers": [
+        "torso",
+        "arms"
+      ],
       "weightClass": "heavy",
       "protection": 28,
       "availability": "unique",
       "upgradeSlots": 3,
       "effect": "",
       "encumbrance": 2,
-      "weight": 15.0,
+      "weight": 15,
       "price": 815,
       "elderfolk": false,
       "sourcePage": 5,
@@ -883,13 +1039,16 @@
       "id": "shtany-temerskogo-pekhotintsa",
       "name": "Штаны темерского пехотинца",
       "location": "legs",
+      "covers": [
+        "legs"
+      ],
       "weightClass": "light",
       "protection": 10,
       "availability": "rare",
       "upgradeSlots": 1,
       "effect": "",
       "encumbrance": 0,
-      "weight": 2.0,
+      "weight": 2,
       "price": 255,
       "elderfolk": false,
       "sourcePage": 6,
@@ -900,6 +1059,7 @@
       "id": "shchit-iz-cheshui-viverny",
       "name": "Щит из чешуи виверны",
       "location": "shield",
+      "covers": [],
       "weightClass": "medium",
       "reliability": 18,
       "availability": "unique",
@@ -917,13 +1077,14 @@
       "id": "shchit-shkoly-mantikory",
       "name": "Щит школы Мантикоры",
       "location": "shield",
+      "covers": [],
       "weightClass": "medium",
       "reliability": 20,
       "availability": "unique",
       "upgradeSlots": 1,
       "effect": "Метеоритное, серебряное (3d6)",
       "encumbrance": 0,
-      "weight": 2.0,
+      "weight": 2,
       "price": 0,
       "priceNote": "Не продаётся",
       "elderfolk": false,
@@ -935,14 +1096,18 @@
       "id": "bronya-shkoly-kota",
       "name": "Броня школы Кота",
       "location": "body",
-      "coverage": "Туловище, руки и ноги",
+      "covers": [
+        "torso",
+        "arms",
+        "legs"
+      ],
       "weightClass": "light",
       "protection": 6,
       "availability": "common",
       "upgradeSlots": 2,
-      "effect": "Критический натиск: всякий раз, когда вы наносите критическое ранение с помощью ведьмачьего оружия, вы можете сразу пройти проверку Разоружения или Подсечки без дополнительных штрафов и без дополнительной траты выносливости",
+      "effect": "Критический натиск",
       "encumbrance": 0,
-      "weight": 3.0,
+      "weight": 3,
       "price": 0,
       "priceNote": "Не продаётся",
       "elderfolk": false,
@@ -954,14 +1119,18 @@
       "id": "bronya-shkoly-zmei",
       "name": "Броня школы Змеи",
       "location": "body",
-      "coverage": "Туловище, руки и ноги",
+      "covers": [
+        "torso",
+        "arms",
+        "legs"
+      ],
       "weightClass": "light",
       "protection": 8,
       "availability": "common",
       "upgradeSlots": 2,
-      "effect": "Критическое парирование: всякий раз, когда ваш результат проверки Парирования ведьмачьим оружием больше, чем результат атаки противника, более чем на 4, вы можете сразу совершить один удар взятым оружием без дополнительных штрафов и без дополнительной траты выносливости",
+      "effect": "Критическое парирование",
       "encumbrance": 0,
-      "weight": 5.0,
+      "weight": 5,
       "price": 0,
       "priceNote": "Не продаётся",
       "elderfolk": false,
@@ -973,14 +1142,18 @@
       "id": "bronya-shkoly-mantikory",
       "name": "Броня школы Мантикоры",
       "location": "body",
-      "coverage": "Туловище, руки и ноги",
+      "covers": [
+        "torso",
+        "arms",
+        "legs"
+      ],
       "weightClass": "medium",
       "protection": 12,
       "availability": "common",
       "upgradeSlots": 2,
-      "effect": "Критическое блокирование: всякий раз, когда ваш результат проверки Блокирования или Парирования щитом школы Мантикоры больше, чем результат атаки противника, более чем на 4, вы можете сразу выполнить Атаку щитом без дополнительных штрафов и без дополнительной траты выносливости, которая отбрасывает атакующего на 4 м и сбивает его с ног",
+      "effect": "Критическое блокирование",
       "encumbrance": 1,
-      "weight": 10.0,
+      "weight": 10,
       "price": 0,
       "priceNote": "Не продаётся",
       "elderfolk": false,
@@ -992,14 +1165,18 @@
       "id": "bronya-shkoly-volka",
       "name": "Броня школы Волка",
       "location": "body",
-      "coverage": "Туловище, руки и ноги",
+      "covers": [
+        "torso",
+        "arms",
+        "legs"
+      ],
       "weightClass": "medium",
       "protection": 14,
       "availability": "common",
       "upgradeSlots": 2,
-      "effect": "Критическое ускорение: всякий раз, когда вы наносите критическое ранение с помощью ведьмачьего оружия, вы можете сразу совершить один удар взятым оружием без дополнительных штрафов и без дополнительной траты выносливости",
+      "effect": "Критическое ускорение",
       "encumbrance": 1,
-      "weight": 14.0,
+      "weight": 14,
       "price": 0,
       "priceNote": "Не продаётся",
       "elderfolk": false,
@@ -1011,14 +1188,18 @@
       "id": "bronya-shkoly-grifona",
       "name": "Броня школы Грифона",
       "location": "body",
-      "coverage": "Туловище, руки и ноги",
+      "covers": [
+        "torso",
+        "arms",
+        "legs"
+      ],
       "weightClass": "medium",
       "protection": 16,
       "availability": "common",
       "upgradeSlots": 2,
-      "effect": "Критическая магия: всякий раз, когда вы наносите критическое ранение с помощью ведьмачьего оружия, вы можете сразу пройти проверку Сотворения заклинаний, чтобы сотворить Знак. При этом вы не получаете дополнительных штрафов или затрат Выносливости, кроме тех затрат, которые требуются для сотворения знака",
+      "effect": "Критическая магия",
       "encumbrance": 1,
-      "weight": 18.0,
+      "weight": 18,
       "price": 0,
       "priceNote": "Не продаётся",
       "elderfolk": false,
@@ -1030,14 +1211,18 @@
       "id": "bronya-shkoly-medvedya",
       "name": "Броня школы Медведя",
       "location": "body",
-      "coverage": "Туловище, руки и ноги",
+      "covers": [
+        "torso",
+        "arms",
+        "legs"
+      ],
       "weightClass": "heavy",
       "protection": 20,
       "availability": "common",
       "upgradeSlots": 2,
-      "effect": "Критическая казнь: всякий раз, когда вы наносите критическое ранение с помощью ведьмачьего оружия, это ранение повышается на один уровень (например, лёгкое критическое ранение становится средним)",
+      "effect": "Критическая казнь",
       "encumbrance": 3,
-      "weight": 24.0,
+      "weight": 24,
       "price": 0,
       "priceNote": "Не продаётся",
       "elderfolk": false,

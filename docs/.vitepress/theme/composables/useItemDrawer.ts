@@ -11,6 +11,8 @@ export interface DrawerItem {
   stats: DrawerStat[]
   description?: string
   descriptionTitle?: string
+  note?: string
+  noteTitle?: string
   sourcePage?: number
   sourceBook?: string
 }

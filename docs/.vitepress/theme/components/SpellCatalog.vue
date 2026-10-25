@@ -76,7 +76,7 @@ const visible = computed(() => {
     if (!q) return true
 
     const haystack = normalized(
-      [spell.name, spell.effect, spell.range, spell.duration, spell.defense].join(' ')
+      [spell.name, spell.effect, spell.note ?? '', spell.range, spell.duration, spell.defense].join(' ')
     )
     return haystack.includes(q)
   })
@@ -117,6 +117,7 @@ const openSpell = (spell: Spell) => {
       ...(spell.language === 'en' ? [{ label: 'Язык', value: 'Английский (оригинал)' }] : [])
     ],
     effect: spell.effect,
+    note: spell.note,
     sourcePage: spell.sourcePage,
     sourceBook: spell.sourceBook
   })
@@ -214,7 +215,7 @@ const openSpell = (spell: Spell) => {
       <p v-for="spell in visible" :key="`search-${spell.id}`">
         <RulesText
           :text="
-            [spell.name, spell.effect, spell.range, spell.duration, spell.defense]
+            [spell.name, spell.effect, spell.note ?? '', spell.range, spell.duration, spell.defense]
               .filter(Boolean)
               .join(' ')
           "

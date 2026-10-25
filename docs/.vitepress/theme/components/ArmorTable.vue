@@ -10,13 +10,15 @@ import NoteHint from './NoteHint.vue'
 const armor = data.items as Armor[]
 const { open: openDrawer } = useItemDrawer()
 
-const locationLabels = {
+const partLabels = {
   head: 'Голова',
-  torso: 'Торс',
+  torso: 'Туловище',
+  arms: 'Руки',
   legs: 'Ноги',
-  shield: 'Щит',
-  body: 'Полный комплект'
+  shield: 'Щит'
 } as const
+
+const partOrder = ['head', 'torso', 'arms', 'legs'] as const
 
 const classLabels = {
   light: 'Лёгкая',
@@ -38,11 +40,11 @@ const availabilityShort = {
   unique: 'У'
 } as const
 
-const locations = ['head', 'torso', 'legs', 'shield', 'body'] as const
+const parts = ['head', 'torso', 'arms', 'legs', 'shield'] as const
 const classes = ['light', 'medium', 'heavy'] as const
 
 const query = ref('')
-const location = ref<'all' | Armor['location']>('all')
+const part = ref<'all' | (typeof parts)[number]>('all')
 const origin = ref<'all' | 'common' | 'elderfolk'>('all')
 const book = ref<'all' | string>('all')
 const weightClass = ref<'all' | Armor['weightClass']>('all')
@@ -52,8 +54,26 @@ const selected = ref<string[]>([])
 
 const normalized = (value: string) => value.toLocaleLowerCase('ru').replace(/ё/g, 'е')
 
+const capitalize = (value: string) => value.charAt(0).toLocaleUpperCase('ru') + value.slice(1)
+
+const coverageLabel = (item: Armor) => {
+  if (item.location === 'shield') return 'Щит'
+  const labels = partOrder
+    .filter((key) => item.covers.includes(key))
+    .map((key) => partLabels[key].toLocaleLowerCase('ru'))
+  if (!labels.length) return '—'
+  if (labels.length === 1) return capitalize(labels[0])
+  return `${capitalize(labels.slice(0, -1).join(', '))} и ${labels[labels.length - 1]}`
+}
+
 const matchesFilters = (item: Armor) => {
-  if (location.value !== 'all' && item.location !== location.value) return false
+  if (part.value !== 'all') {
+    if (part.value === 'shield') {
+      if (item.location !== 'shield') return false
+    } else if (!item.covers.includes(part.value)) {
+      return false
+    }
+  }
   if (origin.value === 'common' && item.elderfolk) return false
   if (origin.value === 'elderfolk' && !item.elderfolk) return false
   if (book.value !== 'all' && getBook(item.sourceBook).id !== book.value) return false
@@ -74,7 +94,7 @@ const visible = computed(() => {
     .filter((item) => {
       if (!matchesFilters(item)) return false
       if (!q) return true
-      return normalized([item.name, item.effect, item.note ?? ''].join(' ')).includes(q)
+      return normalized([item.name, item.effect, item.note ?? '', coverageLabel(item)].join(' ')).includes(q)
     })
     .sort((a, b) => {
       if (sort.value === 'price') return a.price - b.price
@@ -115,7 +135,7 @@ const totalPrice = computed(() => selectedItems.value.reduce((sum, item) => sum 
 
 const reset = () => {
   query.value = ''
-  location.value = 'all'
+  part.value = 'all'
   origin.value = 'all'
   book.value = 'all'
   weightClass.value = 'all'
@@ -136,7 +156,7 @@ const openItem = (item: Armor) => {
     sourcePage: item.sourcePage,
     sourceBook: item.sourceBook,
     stats: [
-      { label: 'Часть', value: item.coverage ?? locationLabels[item.location] },
+      { label: 'Часть', value: coverageLabel(item) },
       { label: 'Класс', value: classLabels[item.weightClass] },
       { label: protectionLabel(item), value: String(protectionValue(item)) },
       { label: 'Доступность', value: availabilityLabels[item.availability] },
@@ -168,11 +188,11 @@ const openItem = (item: Armor) => {
       </div>
 
       <div class="wr-field">
-        <label for="armor-location">Часть тела</label>
-        <select id="armor-location" v-model="location" class="wr-select">
+        <label for="armor-part">Часть тела</label>
+        <select id="armor-part" v-model="part" class="wr-select">
           <option value="all">Все</option>
-          <option v-for="item in locations" :key="item" :value="item">
-            {{ locationLabels[item] }}
+          <option v-for="item in parts" :key="item" :value="item">
+            {{ partLabels[item] }}
           </option>
         </select>
       </div>
@@ -286,7 +306,7 @@ const openItem = (item: Armor) => {
               <span v-if="item.elderfolk" class="armor-origin">Старший Народ</span>
               <SourceBadge :book="item.sourceBook" :page="item.sourcePage" />
             </td>
-            <td class="col-coverage">{{ item.coverage ?? locationLabels[item.location] }}</td>
+            <td class="col-coverage">{{ coverageLabel(item) }}</td>
             <td>{{ classLabels[item.weightClass] }}</td>
             <td class="col-num">{{ protectionValue(item) }}</td>
             <td>

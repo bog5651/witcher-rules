@@ -18,6 +18,10 @@ const descriptionParagraphs = computed(() => {
   return item.value?.description?.split(/\n{2,}/).map((part) => part.trim()).filter(Boolean) ?? []
 })
 
+const noteParagraphs = computed(() => {
+  return item.value?.note?.split(/\n{2,}/).map((part) => part.trim()).filter(Boolean) ?? []
+})
+
 const sourceLine = computed(() => {
   if (!item.value?.sourcePage) return ''
   return `Источник: стр. ${item.value.sourcePage} · ${getBook(item.value.sourceBook).title}`
@@ -127,6 +131,13 @@ onBeforeUnmount(() => {
             <p v-for="paragraph in descriptionParagraphs" :key="paragraph">
               <EffectText v-if="item.descriptionTitle === 'Эффект'" :text="paragraph" />
               <RulesText v-else :text="paragraph" />
+            </p>
+          </section>
+
+          <section v-if="noteParagraphs.length" class="item-drawer__note">
+            <h3>{{ item.noteTitle || 'Примечание' }}</h3>
+            <p v-for="paragraph in noteParagraphs" :key="paragraph">
+              <EffectText :text="paragraph" />
             </p>
           </section>
 
@@ -280,6 +291,32 @@ onBeforeUnmount(() => {
   font-family: var(--site-serif);
   font-size: 15px;
   line-height: 1.75;
+  color: var(--site-ink);
+}
+
+.item-drawer__note {
+  margin-top: 1.1rem;
+  padding: 0.85rem 0.95rem;
+  background: var(--site-surface-2);
+  border-left: 3px solid var(--site-gold);
+  border-radius: 4px;
+}
+
+.item-drawer__note h3 {
+  margin: 0;
+  font-family: var(--site-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--site-faint);
+}
+
+.item-drawer__note p {
+  margin: 0.55rem 0 0;
+  font-family: var(--site-serif);
+  font-size: 14px;
+  line-height: 1.7;
   color: var(--site-ink);
 }
 

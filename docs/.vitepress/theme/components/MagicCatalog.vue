@@ -26,6 +26,7 @@ interface MagicItem {
   healthCost?: string
   language?: 'ru' | 'en'
   effect: string
+  note?: string
   range?: string
   duration?: string
   defense?: string
@@ -181,6 +182,7 @@ const visible = computed(() => {
         [
           item.name,
           item.effect,
+          item.note,
           item.range,
           item.duration,
           item.defense,
@@ -297,6 +299,7 @@ const openMagicItem = (item: MagicItem) => {
     subtitle: subtitleParts.filter(Boolean).join(' · '),
     stats,
     effect: item.effect,
+    note: item.note,
     sourcePage: item.sourcePage,
     sourceBook: item.sourceBook
   })
@@ -414,7 +417,7 @@ const openMagicItem = (item: MagicItem) => {
       <p v-for="item in visible" :key="`search-${item.id}`">
         <RulesText
           :text="
-            [item.name, item.effect, item.range, item.duration, item.defense, item.ingredients, item.alternateIngredients, item.removal, item.deity]
+            [item.name, item.effect, item.note ?? '', item.range, item.duration, item.defense, item.ingredients, item.alternateIngredients, item.removal, item.deity]
               .filter(Boolean)
               .join(' ')
           "

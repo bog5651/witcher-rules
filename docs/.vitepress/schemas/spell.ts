@@ -18,6 +18,7 @@ export const spellSchema = z.object({
   range: z.string().min(1),
   duration: z.string().min(1),
   defense: z.string().min(1),
+  note: z.string().min(1).optional(),
   sourcePage: z.number().int().positive(),
   sourceBook: sourceBookSchema
 })

@@ -3,13 +3,14 @@ import { availabilitySchema } from './weapon'
 import { sourceBookSchema } from './source'
 
 export const armorLocationSchema = z.enum(['head', 'torso', 'legs', 'shield', 'body'])
+export const armorCoverSchema = z.enum(['head', 'torso', 'arms', 'legs'])
 export const armorWeightClassSchema = z.enum(['light', 'medium', 'heavy'])
 
 export const armorSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1),
   location: armorLocationSchema,
-  coverage: z.string().min(1).optional(),
+  covers: z.array(armorCoverSchema),
   weightClass: armorWeightClassSchema,
   protection: z.number().int().nonnegative().nullable(),
   reliability: z.number().int().nonnegative().nullable(),
