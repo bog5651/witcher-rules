@@ -2,9 +2,9 @@
 import { computed } from 'vue'
 import { splitRulesText } from '../../rulesText'
 
-const props = defineProps<{ text?: string | null }>()
+const props = defineProps<{ text?: string | number | null }>()
 
-const segments = computed(() => splitRulesText(props.text ?? ''))
+const segments = computed(() => splitRulesText(String(props.text ?? '')))
 </script>
 
 <template>
