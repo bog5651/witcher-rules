@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import signsData from '../../data/signs.json'
 import invocationsData from '../../data/invocations.json'
 import ritualsData from '../../data/rituals.json'
@@ -10,7 +10,7 @@ import { useMagicDrawer } from '../composables/useMagicDrawer'
 
 type Level = 'novice' | 'adept' | 'master'
 type Element = 'mixed' | 'earth' | 'air' | 'fire' | 'water' | 'necromancy'
-type Tradition = 'druid' | 'preacher' | 'archpriest'
+type Tradition = 'druid' | 'archdruid' | 'preacher' | 'archpriest'
 type Danger = 'low' | 'medium' | 'high'
 
 interface MagicItem {
@@ -90,12 +90,14 @@ const elementLabels: Record<Element, string> = {
 
 const traditionLabels: Record<Tradition, string> = {
   druid: 'Друид',
+  archdruid: 'Архидруид',
   preacher: 'Проповедник',
   archpriest: 'Верховный жрец'
 }
 
 const traditionShortLabels: Record<Tradition, string> = {
   druid: 'Друид',
+  archdruid: 'Архидруид',
   preacher: 'Пропов.',
   archpriest: 'Архижрец'
 }
@@ -149,8 +151,20 @@ const baseCount = computed(() => {
 })
 
 const booksInData = computed(() =>
-  bookList.filter((item) => items.value.some((entry) => getBook(entry.sourceBook).id === item.id))
+  bookList.filter((item) =>
+    items.value.some(
+      (entry) =>
+        getBook(entry.sourceBook).id === item.id &&
+        (tradition.value === 'all' || entry.tradition === tradition.value)
+    )
+  )
 )
+
+watch(booksInData, (list) => {
+  if (book.value !== 'all' && !list.some((item) => item.id === book.value)) {
+    book.value = 'all'
+  }
+})
 
 const visible = computed(() => {
   const q = normalized(query.value.trim())
@@ -342,6 +356,7 @@ const openMagicItem = (item: MagicItem) => {
         <select :id="`magic-tradition-${dataset}`" v-model="tradition" class="wr-select">
           <option value="all">Все</option>
           <option value="druid">Друид</option>
+          <option value="archdruid">Архидруид</option>
           <option value="preacher">Проповедник</option>
           <option value="archpriest">Верховный жрец</option>
         </select>

@@ -25,6 +25,8 @@ import SubstanceIcon from './components/SubstanceIcon.vue'
 import WeaponTable from './components/WeaponTable.vue'
 import ArmorTable from './components/ArmorTable.vue'
 import ArtifactCatalog from './components/ArtifactCatalog.vue'
+import ExplosivesCatalog from './components/ExplosivesCatalog.vue'
+import WeaponAccessoryCatalog from './components/WeaponAccessoryCatalog.vue'
 import AlchemicalTable from './components/AlchemicalTable.vue'
 import ArmorUpgradeTable from './components/ArmorUpgradeTable.vue'
 import TransportTable from './components/TransportTable.vue'
@@ -58,6 +60,8 @@ export default {
     app.component('WeaponTable', WeaponTable)
     app.component('ArmorTable', ArmorTable)
     app.component('ArtifactCatalog', ArtifactCatalog)
+    app.component('ExplosivesCatalog', ExplosivesCatalog)
+    app.component('WeaponAccessoryCatalog', WeaponAccessoryCatalog)
     app.component('AlchemicalTable', AlchemicalTable)
     app.component('ArmorUpgradeTable', ArmorUpgradeTable)
     app.component('TransportTable', TransportTable)

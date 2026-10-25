@@ -66,7 +66,8 @@ const showTerm = (event: Event, entry: EffectGlossaryEntry) => {
   show(event, {
     title: entry.term,
     definition: entry.definition,
-    sourcePage: entry.sourcePage
+    sourcePage: entry.sourcePage,
+    sourceBook: entry.sourceBook
   })
 }
 </script>

@@ -16,7 +16,9 @@ const hasMagic = computed(() => (profile.value?.magicAbilities.length ?? 0) > 0)
 <template>
   <article v-if="profile" class="profession-profile">
     <header class="pp-quote">
-      <span class="pp-source">Стр. {{ profile.sourcePage }}</span>
+      <span class="pp-source">
+        <SourceBadge :book="profile.sourceBook" :page="profile.sourcePage" />
+      </span>
       <blockquote>«{{ profile.quote }}»</blockquote>
       <cite>{{ profile.quoteAuthor }}</cite>
     </header>

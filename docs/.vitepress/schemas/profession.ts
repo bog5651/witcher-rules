@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { sourceBookSchema } from './source'
 
 const professionEquipmentSchema = z.object({
   choose: z.number().int().positive(),
@@ -27,6 +28,7 @@ export const professionSchema = z
     id: z.string().min(1),
     name: z.string().min(1),
     sourcePage: z.number().int().positive(),
+    sourceBook: sourceBookSchema,
     quote: z.string().min(1),
     quoteAuthor: z.string().min(1),
     definingSkill: professionDefiningSkillSchema,
@@ -49,7 +51,7 @@ export const professionSchema = z
 
 export const professionsFileSchema = z.object({
   schemaVersion: z.literal(1),
-  items: z.array(professionSchema).length(9)
+  items: z.array(professionSchema).min(9)
 })
 
 export type Profession = z.infer<typeof professionSchema>

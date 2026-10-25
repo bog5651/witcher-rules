@@ -11,6 +11,7 @@ const categoryLabels = {
   component: 'Компоненты',
   weapon: 'Оружие',
   armor: 'Броня',
+  enchantment: 'Зачарования',
   upgrade: 'Усиления брони'
 } as const
 
@@ -30,7 +31,7 @@ type Category = keyof typeof categoryLabels
 type Level = keyof typeof levelLabels
 type Origin = keyof typeof originLabels
 
-const categoryOrder: Category[] = ['component', 'weapon', 'armor', 'upgrade']
+const categoryOrder: Category[] = ['component', 'weapon', 'armor', 'enchantment', 'upgrade']
 const levelOrder: Level[] = ['novice', 'adept', 'master', 'grandmaster']
 
 const query = ref('')
@@ -124,7 +125,7 @@ const openItem = (item: Schematic) => {
       { label: 'Время', value: item.time },
       { label: 'Компоненты', value: componentsText(item) },
       { label: 'Доплата', value: `${formatNumber(item.surcharge)} кр.` },
-      { label: 'Цена', value: `${formatNumber(item.price)} кр.` }
+      { label: 'Цена', value: item.priceNote ?? `${formatNumber(item.price)} кр.` }
     ]
   })
 }
@@ -152,6 +153,7 @@ const openItem = (item: Schematic) => {
           <option value="component">Компоненты</option>
           <option value="weapon">Оружие</option>
           <option value="armor">Броня</option>
+          <option value="enchantment">Зачарования</option>
           <option value="upgrade">Усиления брони</option>
         </select>
       </div>
@@ -222,7 +224,7 @@ const openItem = (item: Schematic) => {
               <td class="col-time">{{ item.time }}</td>
               <td class="col-components">{{ componentsText(item) }}</td>
               <td class="col-num">{{ formatNumber(item.surcharge) }}</td>
-              <td class="col-num">{{ formatNumber(item.price) }}</td>
+              <td class="col-num">{{ item.priceNote ?? formatNumber(item.price) }}</td>
             </tr>
           </tbody>
         </table>

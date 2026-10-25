@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "skelligskoe-stremya",
+      "name": "Скеллигское стремя",
+      "availability": "common",
+      "effect": "Повышает надёжность арбалета на +5 и позволяет использовать его в качестве дробящего оружия ближнего боя с уроном, равным урону от выстрела, но со штрафом к точности -1",
+      "weight": 0.5,
+      "price": 375,
+      "sourcePage": 14,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "stabiliziruyushchee-stremya",
+      "name": "Стабилизирующее стремя",
+      "availability": "common",
+      "effect": "Дает арбалету эффект Сбалансированное.",
+      "weight": 0.5,
+      "price": 395,
+      "sourcePage": 14,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "nilfgaardskiy-pritsel",
+      "name": "Нильфгаардский прицел",
+      "availability": "rare",
+      "effect": "Добавляет +1 к Точности арбалета.",
+      "weight": 0.1,
+      "price": 275,
+      "sourcePage": 14,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "usilennaya-tetiva",
+      "name": "Усиленная тетива",
+      "availability": "rare",
+      "effect": "Повышает урон от выстрела из арбалета на +1d6.",
+      "weight": 0.1,
+      "price": 425,
+      "sourcePage": 14,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "uluchshennyy-vorot",
+      "name": "Улучшенный ворот",
+      "availability": "unique",
+      "effect": "Позволяет перезаряжать арбалет за счёт действия, либо за счёт действия перемещения в каждом раунде.",
+      "weight": 0.5,
+      "price": 440,
+      "sourcePage": 14,
+      "sourceBook": "catalog-weapons-v2"
+    }
+  ]
+}

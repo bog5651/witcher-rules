@@ -3,7 +3,7 @@ import { sourceBookSchema } from './source'
 
 export const levelSchema = z.enum(['novice', 'adept', 'master'])
 export const elementSchema = z.enum(['mixed', 'earth', 'air', 'fire', 'water', 'necromancy'])
-export const traditionSchema = z.enum(['druid', 'preacher', 'archpriest'])
+export const traditionSchema = z.enum(['druid', 'archdruid', 'preacher', 'archpriest'])
 export const dangerSchema = z.enum(['low', 'medium', 'high'])
 
 const base = {

@@ -91,7 +91,9 @@ onBeforeUnmount(() => {
           <p class="pt-kicker">Древо навыков</p>
           <h2>{{ profession.name }}</h2>
         </div>
-        <span class="pt-source">Стр. {{ profession.sourcePage }}</span>
+        <span class="pt-source">
+          <SourceBadge :book="profession.sourceBook" :page="profession.sourcePage" />
+        </span>
       </header>
 
       <div class="pt-root">

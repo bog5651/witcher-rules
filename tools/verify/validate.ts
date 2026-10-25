@@ -28,6 +28,8 @@ import { bestiaryFileSchema } from '../../docs/.vitepress/schemas/bestiary'
 import { relicsFileSchema } from '../../docs/.vitepress/schemas/relic'
 import { magicGiftsFileSchema } from '../../docs/.vitepress/schemas/magicGift'
 import { artifactsFileSchema } from '../../docs/.vitepress/schemas/artifact'
+import { bombsFileSchema, trapsFileSchema } from '../../docs/.vitepress/schemas/explosive'
+import { ammoFileSchema, weaponUpgradesFileSchema } from '../../docs/.vitepress/schemas/ammo'
 import { getBook } from '../../docs/.vitepress/data/books'
 
 const root = fileURLToPath(new URL('../..', import.meta.url))
@@ -87,7 +89,7 @@ function validate(
   console.log(`OK: ${name} — ${items.length}`)
 }
 
-validate('заклинания', 'spells.json', spellsFileSchema)
+validate('заклинания', 'spells.json', spellsFileSchema, { allowDuplicateNames: true })
 validate('знаки', 'signs.json', signsFileSchema)
 validate('инвокации', 'invocations.json', invocationsFileSchema)
 validate('ритуалы', 'rituals.json', ritualsFileSchema)
@@ -382,5 +384,10 @@ function validateArtifacts() {
 }
 
 validateArtifacts()
+
+validate('бомбы', 'bombs.json', bombsFileSchema)
+validate('ловушки', 'traps.json', trapsFileSchema)
+validate('боеприпасы', 'ammo.json', ammoFileSchema)
+validate('улучшения арбалета', 'weapon-upgrades.json', weaponUpgradesFileSchema)
 
 if (failed) process.exit(1)

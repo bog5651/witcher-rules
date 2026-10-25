@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { sourceBookSchema } from './source'
 
 export const professionTreeAbilitySchema = z.object({
   rank: z.string().min(1),
@@ -27,6 +28,7 @@ export const professionTreeSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1),
   sourcePage: z.number().int().positive(),
+  sourceBook: sourceBookSchema,
   definingSkill: z.object({
     name: z.string().min(1),
     attribute: z.string().nullable(),
@@ -39,7 +41,7 @@ export const professionTreeSchema = z.object({
 
 export const professionTreesFileSchema = z.object({
   schemaVersion: z.literal(1),
-  professions: z.array(professionTreeSchema).length(9)
+  professions: z.array(professionTreeSchema).min(9)
 })
 
 export type ProfessionTree = z.infer<typeof professionTreeSchema>

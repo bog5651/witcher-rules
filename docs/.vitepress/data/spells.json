@@ -2540,6 +2540,22 @@
       "sourcePage": 20,
       "sourceBook": "alzur-tome-of-magic",
       "healthCost": "3d10"
+    },
+    {
+      "id": "zaraznoe-prikosnovenie-smeshannoe",
+      "name": "Заразное прикосновение",
+      "level": "novice",
+      "element": "mixed",
+      "cost": 5,
+      "costVariable": false,
+      "costText": "5 Вын",
+      "healthCost": "2d10",
+      "effect": "Заразное прикосновение воздействует на существо, к которому вы прикасаетесь, вызывая у него симптомы болезни. (Используйте хоумрул «Осложнения, Недуги и Лекарства»).",
+      "range": "На существо, к которому прикасается заклинатель",
+      "duration": "2d6 дней",
+      "defense": "Сопротивление магии",
+      "sourcePage": 10,
+      "sourceBook": "alzur-tome-of-magic"
     }
   ]
 }

@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "meshochek-s-sharikami",
+      "name": "Мешочек с шариками",
+      "type": "—",
+      "radius": "2 м",
+      "damage": "—",
+      "effect": "Любой, кто проходит через область ловушки, должен пройти проверку Атлетики, СЛ 14, иначе будет сбит с ног. Для четвероногих существ СЛ проверки равна 12, а существа без ног невосприимчивы к этому эффекту.",
+      "availability": "everywhere",
+      "weight": 0.1,
+      "price": 18,
+      "sourcePage": 17,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "metka",
+      "name": "«Метка»",
+      "type": "С",
+      "radius": "8 м",
+      "damage": "—",
+      "effect": "Покрывает попавших в зону взрыва яркой краской с мощным запахом, который чувствуется за милю. Краска держится 1 полный день и даёт +5 к выслеживанию цели. Водой можно смыть краску. На это потребуется 3 полных раунда – в результате бонус к выслеживанию снизится до +2. Запах нельзя смыть, но нанесение духов/одеколона или же валяние в грязи снизит бонус к выслеживанию до +2.",
+      "availability": "rare",
+      "weight": 2,
+      "price": 57,
+      "sourcePage": 17,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "kapkan",
+      "name": "Капкан",
+      "type": "Д",
+      "radius": "1 м",
+      "damage": "3d6",
+      "effect": "Первый, кто проходит через область ловушки, получает её урон и, если у него нет брони на ногах, то он получает среднее критическое ранение «Перелом ноги».",
+      "availability": "common",
+      "weight": 2,
+      "price": 72,
+      "sourcePage": 17,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "kogtezub",
+      "name": "«Когтезуб»",
+      "type": "Р",
+      "radius": "4 м",
+      "damage": "5d6",
+      "effect": "Все в зоне взрыва получают урон, от которого с вероятностью 60 % остаётся кровоточащая рана.",
+      "availability": "rare",
+      "weight": 2,
+      "price": 111,
+      "sourcePage": 17,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "beshenstvo",
+      "name": "«Бешенство»",
+      "type": "С",
+      "radius": "8 м",
+      "damage": "—",
+      "effect": "Любой, попавший в зону взрыва, должен пройти проверку Стойкости, СЛ 18. При провале он начинает сражаться с ближайшим к нему существом, пока не совершит успешную проверку.",
+      "availability": "rare",
+      "weight": 2,
+      "price": 114,
+      "sourcePage": 17,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "pozharishche",
+      "name": "«Пожарище»",
+      "type": "С",
+      "radius": "4 м",
+      "damage": "5d6",
+      "effect": "Горение (75 %)",
+      "availability": "rare",
+      "weight": 2,
+      "price": 121,
+      "sourcePage": 17,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "talgarskaya-zima",
+      "name": "«Талгарская зима»",
+      "type": "С",
+      "radius": "4 м",
+      "damage": "—",
+      "effect": "Любой, попавший в зону взрыва, замораживается на месте на 8 раундов или до тех пор, пока не совершит проверку Силы, СЛ 18, либо пока по нему не нанесут удар. Атака по замороженной цели наносит ей дополнительно 2d6 урона.",
+      "availability": "rare",
+      "weight": 2,
+      "price": 126,
+      "sourcePage": 17,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "kusach",
+      "name": "«Кусач»",
+      "type": "К",
+      "radius": "4 м",
+      "damage": "7d6",
+      "effect": "—",
+      "availability": "rare",
+      "weight": 2,
+      "price": 144,
+      "sourcePage": 17,
+      "sourceBook": "catalog-weapons-v2"
+    }
+  ]
+}

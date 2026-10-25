@@ -8,5 +8,5 @@ description: "Инвокации проповедников: новичок, п�
 <MagicCatalog dataset="invocations" tradition="preacher" lock-tradition />
 
 ::: info Источник
-Стр. 111–112 книги.
+Основная книга: стр. 111–112. Новые инвокации проповедника: стр. 24–25 книги «Alzur's Tome of Magic», версия 1.1.
 :::

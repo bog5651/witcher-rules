@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import { sourceBookSchema } from './source'
 
-export const schematicCategorySchema = z.enum(['component', 'weapon', 'armor', 'upgrade'])
+export const schematicCategorySchema = z.enum(['component', 'weapon', 'armor', 'upgrade', 'enchantment'])
 export const schematicLevelSchema = z.enum(['novice', 'adept', 'master', 'grandmaster'])
 export const schematicOriginSchema = z.enum(['common', 'elder'])
 
@@ -21,6 +21,7 @@ export const schematicSchema = z.object({
   components: z.array(schematicComponentSchema).min(1),
   surcharge: z.number().int().nonnegative(),
   price: z.number().int().nonnegative(),
+  priceNote: z.string().min(1).optional(),
   sourcePage: z.number().int().positive(),
   sourceBook: sourceBookSchema
 })

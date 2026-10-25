@@ -42,6 +42,7 @@ export const sidebar: DefaultTheme.Sidebar = {
           items: [
             { text: 'Все инвокации', link: '/magic/invocations/' },
             { text: 'Друида', link: '/magic/invocations/druid' },
+            { text: 'Архидруида', link: '/magic/invocations/archdruid' },
             { text: 'Проповедника', link: '/magic/invocations/preacher' },
             { text: 'Верховного жреца', link: '/magic/invocations/archpriest' }
           ]
@@ -59,6 +60,7 @@ export const sidebar: DefaultTheme.Sidebar = {
       items: [
         { text: 'Обзор', link: '/shop/' },
         { text: 'Оружие', link: '/shop/weapons' },
+        { text: 'Бомбы и ловушки', link: '/shop/explosives' },
         { text: 'Броня', link: '/shop/armor' },
         { text: 'Магические артефакты', link: '/shop/artifacts' },
         { text: 'Алхимические составы', link: '/shop/alchemy' },

@@ -4330,6 +4330,1240 @@
       "surcharge": 144,
       "price": 292,
       "sourcePage": 139
+    },
+    {
+      "id": "derevyannyy-mech",
+      "name": "Деревянный меч",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 6,
+      "time": "2 часа",
+      "components": [
+        {
+          "name": "Древесина",
+          "count": 2
+        },
+        {
+          "name": "Нитки",
+          "count": 1
+        },
+        {
+          "name": "Полотно",
+          "count": 1
+        },
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        }
+      ],
+      "surcharge": 50,
+      "price": 98,
+      "sourcePage": 21,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "dubinka",
+      "name": "Дубинка",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 10,
+      "time": "30 минут",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "Кожа",
+          "count": 1
+        },
+        {
+          "name": "Полотно",
+          "count": 1
+        }
+      ],
+      "surcharge": 53,
+      "price": 105,
+      "sourcePage": 21,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "kapkan",
+      "name": "Капкан",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 12,
+      "time": "30 минут",
+      "components": [
+        {
+          "name": "Железо",
+          "count": 1
+        },
+        {
+          "name": "Полотно",
+          "count": 1
+        },
+        {
+          "name": "Камень",
+          "count": 1
+        },
+        {
+          "name": "Древесина",
+          "count": 2
+        },
+        {
+          "name": "Нитки",
+          "count": 2
+        }
+      ],
+      "surcharge": 55,
+      "price": 110,
+      "sourcePage": 21,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "nagayka",
+      "name": "Нагайка",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 10,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Воск",
+          "count": 1
+        },
+        {
+          "name": "Кожа",
+          "count": 2
+        },
+        {
+          "name": "Железо",
+          "count": 1
+        }
+      ],
+      "surcharge": 88,
+      "price": 176,
+      "sourcePage": 21,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "zheleznyy-mech",
+      "name": "Железный меч",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 12,
+      "time": "6 часов",
+      "components": [
+        {
+          "name": "Древесина",
+          "count": 2
+        },
+        {
+          "name": "Нитки",
+          "count": 1
+        },
+        {
+          "name": "Кожа",
+          "count": 2
+        },
+        {
+          "name": "Железо",
+          "count": 2
+        }
+      ],
+      "surcharge": 125,
+      "price": 256,
+      "sourcePage": 21,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "falsharda",
+      "name": "Фальшарда",
+      "category": "weapon",
+      "level": "novice",
+      "origin": "common",
+      "dc": 13,
+      "time": "8 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 4
+        },
+        {
+          "name": "Сталь",
+          "count": 3
+        },
+        {
+          "name": "Смола",
+          "count": 2
+        },
+        {
+          "name": "Кожа",
+          "count": 3
+        },
+        {
+          "name": "Нитки",
+          "count": 4
+        }
+      ],
+      "surcharge": 308,
+      "price": 604,
+      "sourcePage": 21,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "boepripasy-serebryanye-10",
+      "name": "Боеприпасы серебряные (×10)",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 16,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Древесина",
+          "count": 1
+        },
+        {
+          "name": "Серебро",
+          "count": 1
+        },
+        {
+          "name": "Перья",
+          "count": 1
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 1
+        }
+      ],
+      "surcharge": 111,
+      "price": 212,
+      "sourcePage": 21,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "alebarda-sekach",
+      "name": "Алебарда-секач",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 18,
+      "time": "10 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 4
+        },
+        {
+          "name": "Железо",
+          "count": 4
+        },
+        {
+          "name": "Сталь",
+          "count": 3
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "Кожа",
+          "count": 1
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 2
+        }
+      ],
+      "surcharge": 424,
+      "price": 850,
+      "sourcePage": 21,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "boepripasy-gavenkarskie-razbryzgivayushchie-5",
+      "name": "Боеприпасы гавенкарские разбрызгивающие (×5)",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 18,
+      "time": "2 часа",
+      "components": [
+        {
+          "name": "Тёмная сталь",
+          "count": 3
+        },
+        {
+          "name": "Смола",
+          "count": 1
+        },
+        {
+          "name": "Перья",
+          "count": 2
+        },
+        {
+          "name": "Укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "Огров воск",
+          "count": 1
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 6
+        },
+        {
+          "name": "Нитки",
+          "count": 3
+        }
+      ],
+      "surcharge": 483,
+      "price": 374,
+      "sourcePage": 21,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "schetovod",
+      "name": "Счетовод",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 20,
+      "time": "11 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "Кожа",
+          "count": 1
+        },
+        {
+          "name": "Махакамская сталь",
+          "count": 1
+        },
+        {
+          "name": "Тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 3
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 2
+        },
+        {
+          "name": "Чернящее масло",
+          "count": 1
+        }
+      ],
+      "surcharge": 364,
+      "price": 770,
+      "sourcePage": 21,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "mech-okhotnikov-za-koldunyami",
+      "name": "Меч Охотников за колдуньями",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 21,
+      "time": "12 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 3
+        },
+        {
+          "name": "Речная глина",
+          "count": 2
+        },
+        {
+          "name": "Третогорская сталь",
+          "count": 3
+        },
+        {
+          "name": "Тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "Укреплённая кожа",
+          "count": 3
+        },
+        {
+          "name": "Воск",
+          "count": 4
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 3
+        }
+      ],
+      "surcharge": 508,
+      "price": 1008,
+      "sourcePage": 21,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "elfskiy-sdvoennyy-luk",
+      "name": "Эльфский сдвоенный лук",
+      "category": "weapon",
+      "level": "master",
+      "origin": "elder",
+      "dc": 22,
+      "time": "12 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 6
+        },
+        {
+          "name": "Перья",
+          "count": 5
+        },
+        {
+          "name": "Пятая эссенция",
+          "count": 2
+        },
+        {
+          "name": "Нитки",
+          "count": 5
+        },
+        {
+          "name": "Воск",
+          "count": 7
+        },
+        {
+          "name": "Кости животных",
+          "count": 3
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 6
+        },
+        {
+          "name": "Кожа",
+          "count": 2
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 5
+        },
+        {
+          "name": "Тёмная сталь",
+          "count": 2
+        }
+      ],
+      "surcharge": 611,
+      "price": 1242,
+      "sourcePage": 21,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "kovirskiy-laminirovannyy-luk",
+      "name": "Ковирский ламинированный лук",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 25,
+      "time": "13 часов",
+      "components": [
+        {
+          "name": "Кости лешего",
+          "count": 3
+        },
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "Нитки",
+          "count": 4
+        },
+        {
+          "name": "Шёлк",
+          "count": 4
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 3
+        },
+        {
+          "name": "Огров воск",
+          "count": 4
+        },
+        {
+          "name": "Третогорская сталь",
+          "count": 4
+        },
+        {
+          "name": "Масло",
+          "count": 4
+        },
+        {
+          "name": "Укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "Масло из дрейка",
+          "count": 2
+        }
+      ],
+      "surcharge": 1022,
+      "price": 2044,
+      "sourcePage": 21,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "serebryanyy-zmeinyy-klyk",
+      "name": "Серебряный Змеиный клык",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 17,
+      "time": "5 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "Серебро",
+          "count": 1
+        },
+        {
+          "name": "Шкура тролля",
+          "count": 1
+        },
+        {
+          "name": "Коготь гуля",
+          "count": 1
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 1
+        }
+      ],
+      "surcharge": 327,
+      "price": 0,
+      "sourcePage": 21,
+      "sourceBook": "catalog-weapons-v2",
+      "priceNote": "Не продаётся"
+    },
+    {
+      "id": "makhakamskiy-sigill",
+      "name": "Махакамский сигилль",
+      "category": "weapon",
+      "level": "grandmaster",
+      "origin": "elder",
+      "dc": 23,
+      "time": "12 часов",
+      "components": [
+        {
+          "name": "Махакамская сталь",
+          "count": 3
+        },
+        {
+          "name": "Тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "Масло из дрейка",
+          "count": 1
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 3
+        },
+        {
+          "name": "Укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "Нитки",
+          "count": 1
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 3
+        }
+      ],
+      "surcharge": 688,
+      "price": 1376,
+      "sourcePage": 21,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "kapellina",
+      "name": "Капеллина",
+      "category": "armor",
+      "level": "novice",
+      "origin": "common",
+      "dc": 16,
+      "time": "5 часов",
+      "components": [
+        {
+          "name": "Сталь",
+          "count": 3
+        },
+        {
+          "name": "Железо",
+          "count": 1
+        }
+      ],
+      "surcharge": 174,
+      "price": 348,
+      "sourcePage": 9,
+      "sourceBook": "catalog-armor-v2"
+    },
+    {
+      "id": "shtany-temerskogo-pekhotintsa",
+      "name": "Штаны темерского пехотинца",
+      "category": "armor",
+      "level": "novice",
+      "origin": "common",
+      "dc": 16,
+      "time": "9 часов",
+      "components": [
+        {
+          "name": "Двойное полотно",
+          "count": 4
+        },
+        {
+          "name": "Нитки",
+          "count": 6
+        },
+        {
+          "name": "Железо",
+          "count": 2
+        },
+        {
+          "name": "Полотно",
+          "count": 2
+        },
+        {
+          "name": "Хлопок",
+          "count": 6
+        }
+      ],
+      "surcharge": 190,
+      "price": 380,
+      "sourcePage": 9,
+      "sourceBook": "catalog-armor-v2"
+    },
+    {
+      "id": "gambezon-verdenskogo-luchnika",
+      "name": "Гамбезон верденского лучника",
+      "category": "armor",
+      "level": "novice",
+      "origin": "common",
+      "dc": 16,
+      "time": "10 часов",
+      "components": [
+        {
+          "name": "Двойное полотно",
+          "count": 5
+        },
+        {
+          "name": "Нитки",
+          "count": 6
+        },
+        {
+          "name": "Кожа",
+          "count": 2
+        },
+        {
+          "name": "Полотно",
+          "count": 3
+        },
+        {
+          "name": "Хлопок",
+          "count": 15
+        }
+      ],
+      "surcharge": 226,
+      "price": 450,
+      "sourcePage": 9,
+      "sourceBook": "catalog-armor-v2"
+    },
+    {
+      "id": "kaedvenskaya-kirasa",
+      "name": "Каэдвенская кираса",
+      "category": "armor",
+      "level": "adept",
+      "origin": "common",
+      "dc": 16,
+      "time": "12 часов",
+      "components": [
+        {
+          "name": "Укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "Кожа",
+          "count": 3
+        },
+        {
+          "name": "Железо",
+          "count": 3
+        }
+      ],
+      "surcharge": 270,
+      "price": 530,
+      "sourcePage": 9,
+      "sourceBook": "catalog-armor-v2"
+    },
+    {
+      "id": "dospekh-okhotnikov-za-koldunyami",
+      "name": "Доспех Охотников за колдуньями",
+      "category": "armor",
+      "level": "adept",
+      "origin": "common",
+      "dc": 18,
+      "time": "12 часов",
+      "components": [
+        {
+          "name": "Нитки",
+          "count": 5
+        },
+        {
+          "name": "Укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 2
+        },
+        {
+          "name": "Ртутный раствор",
+          "count": 1
+        },
+        {
+          "name": "Третогорская сталь",
+          "count": 2
+        },
+        {
+          "name": "Сера",
+          "count": 3
+        }
+      ],
+      "surcharge": 374,
+      "price": 750,
+      "sourcePage": 9,
+      "sourceBook": "catalog-armor-v2"
+    },
+    {
+      "id": "dospekhi-s-undvika",
+      "name": "Доспехи с Ундвика",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 24,
+      "time": "12 часов",
+      "components": [
+        {
+          "name": "Нитки",
+          "count": 6
+        },
+        {
+          "name": "Укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "Масло из дрейка",
+          "count": 3
+        },
+        {
+          "name": "Кости животных",
+          "count": 3
+        },
+        {
+          "name": "Двойное полотно",
+          "count": 4
+        },
+        {
+          "name": "Тёмная сталь",
+          "count": 3
+        }
+      ],
+      "surcharge": 607,
+      "price": 1214,
+      "sourcePage": 9,
+      "sourceBook": "catalog-armor-v2"
+    },
+    {
+      "id": "dospekh-charodeya-iz-ban-arda",
+      "name": "Доспех чародея из Бан Арда",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 20,
+      "time": "16 часов",
+      "components": [
+        {
+          "name": "Тёмная сталь",
+          "count": 5
+        },
+        {
+          "name": "Двойное полотно",
+          "count": 5
+        },
+        {
+          "name": "Нитки",
+          "count": 4
+        },
+        {
+          "name": "Пятая эссенция",
+          "count": 2
+        }
+      ],
+      "surcharge": 696,
+      "price": 1403,
+      "sourcePage": 9,
+      "sourceBook": "catalog-armor-v2"
+    },
+    {
+      "id": "dospekh-boevogo-charodeya",
+      "name": "Доспех боевого чародея",
+      "category": "armor",
+      "level": "grandmaster",
+      "origin": "common",
+      "dc": 24,
+      "time": "24 часа",
+      "components": [
+        {
+          "name": "Тёмная сталь",
+          "count": 8
+        },
+        {
+          "name": "Двойное полотно",
+          "count": 6
+        },
+        {
+          "name": "Шкура тролля",
+          "count": 2
+        },
+        {
+          "name": "Волокна хана",
+          "count": 4
+        },
+        {
+          "name": "Нитки",
+          "count": 6
+        },
+        {
+          "name": "Пятая эссенция",
+          "count": 2
+        },
+        {
+          "name": "Ртутный раствор",
+          "count": 4
+        }
+      ],
+      "surcharge": 1640,
+      "price": 2300,
+      "sourcePage": 9,
+      "sourceBook": "catalog-armor-v2"
+    },
+    {
+      "id": "runnoe-slovo-prodlenie",
+      "name": "Рунное слово: Продление",
+      "category": "enchantment",
+      "level": "adept",
+      "origin": "common",
+      "dc": 15,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Перун",
+          "count": 1
+        },
+        {
+          "name": "Сварог",
+          "count": 1
+        }
+      ],
+      "surcharge": 1175,
+      "price": 2150,
+      "sourcePage": 20,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "runnoe-slovo-pylanie",
+      "name": "Рунное слово: Пылание",
+      "category": "enchantment",
+      "level": "adept",
+      "origin": "common",
+      "dc": 15,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Чернобог",
+          "count": 1
+        },
+        {
+          "name": "Даждьбог",
+          "count": 1
+        }
+      ],
+      "surcharge": 1175,
+      "price": 2150,
+      "sourcePage": 20,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "runnoe-slovo-spokoystvie",
+      "name": "Рунное слово: Спокойствие",
+      "category": "enchantment",
+      "level": "adept",
+      "origin": "common",
+      "dc": 15,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Марена",
+          "count": 1
+        },
+        {
+          "name": "Стрибог",
+          "count": 1
+        }
+      ],
+      "surcharge": 1075,
+      "price": 2150,
+      "sourcePage": 20,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "runnoe-slovo-zakreplenie",
+      "name": "Рунное слово: Закрепление",
+      "category": "enchantment",
+      "level": "adept",
+      "origin": "common",
+      "dc": 15,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Девана",
+          "count": 1
+        },
+        {
+          "name": "Марена",
+          "count": 1
+        }
+      ],
+      "surcharge": 1150,
+      "price": 2300,
+      "sourcePage": 20,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "runnoe-slovo-rassechenie",
+      "name": "Рунное слово: Рассечение",
+      "category": "enchantment",
+      "level": "adept",
+      "origin": "common",
+      "dc": 15,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Велес",
+          "count": 1
+        },
+        {
+          "name": "Зоря",
+          "count": 1
+        }
+      ],
+      "surcharge": 1150,
+      "price": 2300,
+      "sourcePage": 20,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "runnoe-slovo-otrazhenie",
+      "name": "Рунное слово: Отражение",
+      "category": "enchantment",
+      "level": "master",
+      "origin": "common",
+      "dc": 21,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Чернобог",
+          "count": 1
+        },
+        {
+          "name": "Перун",
+          "count": 1
+        },
+        {
+          "name": "Стрибог",
+          "count": 1
+        }
+      ],
+      "surcharge": 1650,
+      "price": 3300,
+      "sourcePage": 20,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "runnoe-slovo-istoshchenie",
+      "name": "Рунное слово: Истощение",
+      "category": "enchantment",
+      "level": "master",
+      "origin": "common",
+      "dc": 21,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Стрибог",
+          "count": 1
+        },
+        {
+          "name": "Триглав",
+          "count": 1
+        },
+        {
+          "name": "Велес",
+          "count": 1
+        }
+      ],
+      "surcharge": 1675,
+      "price": 3350,
+      "sourcePage": 20,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "runnoe-slovo-obnovlenie",
+      "name": "Рунное слово: Обновление",
+      "category": "enchantment",
+      "level": "master",
+      "origin": "common",
+      "dc": 21,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Перун",
+          "count": 1
+        },
+        {
+          "name": "Сварог",
+          "count": 1
+        },
+        {
+          "name": "Триглав",
+          "count": 1
+        }
+      ],
+      "surcharge": 1750,
+      "price": 3500,
+      "sourcePage": 20,
+      "sourceBook": "catalog-weapons-v2"
+    },
+    {
+      "id": "glificheskoe-slovo-koltso",
+      "name": "Глифическое слово: Кольцо",
+      "category": "enchantment",
+      "level": "adept",
+      "origin": "common",
+      "dc": 15,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Глиф связывания",
+          "count": 1
+        },
+        {
+          "name": "Глиф улучшения",
+          "count": 1
+        }
+      ],
+      "surcharge": 300,
+      "price": 600,
+      "sourcePage": 11,
+      "sourceBook": "catalog-armor-v2"
+    },
+    {
+      "id": "glificheskoe-slovo-balans",
+      "name": "Глифическое слово: Баланс",
+      "category": "enchantment",
+      "level": "adept",
+      "origin": "common",
+      "dc": 15,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Глиф выздоровления",
+          "count": 1
+        },
+        {
+          "name": "Глиф улучшения",
+          "count": 1
+        }
+      ],
+      "surcharge": 550,
+      "price": 1100,
+      "sourcePage": 11,
+      "sourceBook": "catalog-armor-v2"
+    },
+    {
+      "id": "glificheskoe-slovo-tyazhest",
+      "name": "Глифическое слово: Тяжесть",
+      "category": "enchantment",
+      "level": "adept",
+      "origin": "common",
+      "dc": 15,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Глиф выздоровления",
+          "count": 1
+        },
+        {
+          "name": "Глиф улучшения",
+          "count": 1
+        }
+      ],
+      "surcharge": 550,
+      "price": 1100,
+      "sourcePage": 11,
+      "sourceBook": "catalog-armor-v2"
+    },
+    {
+      "id": "glificheskoe-slovo-siyanie",
+      "name": "Глифическое слово: Сияние",
+      "category": "enchantment",
+      "level": "adept",
+      "origin": "common",
+      "dc": 15,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Глиф воздуха",
+          "count": 1
+        },
+        {
+          "name": "Глиф обороны",
+          "count": 1
+        }
+      ],
+      "surcharge": 875,
+      "price": 1750,
+      "sourcePage": 11,
+      "sourceBook": "catalog-armor-v2"
+    },
+    {
+      "id": "glificheskoe-slovo-ocharovanie",
+      "name": "Глифическое слово: Очарование",
+      "category": "enchantment",
+      "level": "adept",
+      "origin": "common",
+      "dc": 15,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Глиф огня",
+          "count": 1
+        },
+        {
+          "name": "Глиф воды",
+          "count": 1
+        }
+      ],
+      "surcharge": 1150,
+      "price": 2300,
+      "sourcePage": 11,
+      "sourceBook": "catalog-armor-v2"
+    },
+    {
+      "id": "glificheskoe-slovo-vozdayanie",
+      "name": "Глифическое слово: Воздаяние",
+      "category": "enchantment",
+      "level": "master",
+      "origin": "common",
+      "dc": 21,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Глиф земли",
+          "count": 1
+        },
+        {
+          "name": "Глиф огня",
+          "count": 1
+        },
+        {
+          "name": "Глиф улучшения",
+          "count": 1
+        }
+      ],
+      "surcharge": 1250,
+      "price": 2500,
+      "sourcePage": 11,
+      "sourceBook": "catalog-armor-v2"
+    },
+    {
+      "id": "glificheskoe-slovo-shchit",
+      "name": "Глифическое слово: Щит",
+      "category": "enchantment",
+      "level": "master",
+      "origin": "common",
+      "dc": 21,
+      "time": "1 час",
+      "components": [
+        {
+          "name": "Глиф земли",
+          "count": 1
+        },
+        {
+          "name": "Глиф магии",
+          "count": 1
+        },
+        {
+          "name": "Глиф обороны",
+          "count": 1
+        }
+      ],
+      "surcharge": 1450,
+      "price": 2900,
+      "sourcePage": 11,
+      "sourceBook": "catalog-armor-v2"
+    },
+    {
+      "id": "yacheyka-usileniya",
+      "name": "Ячейка усиления",
+      "category": "upgrade",
+      "level": "master",
+      "origin": "common",
+      "dc": 25,
+      "time": "4 часа",
+      "components": [
+        {
+          "name": "Метеорит",
+          "count": 4
+        },
+        {
+          "name": "Дымная пыль",
+          "count": 2
+        }
+      ],
+      "surcharge": 684,
+      "price": 1368,
+      "sourcePage": 11,
+      "sourceBook": "catalog-armor-v2"
     }
   ]
 }
