@@ -184,7 +184,13 @@ const openSpell = (spell: Spell) => {
 
     <div v-if="visible.length" class="magic-search-index" aria-hidden="true">
       <p v-for="spell in visible" :key="`search-${spell.id}`">
-        {{ spell.name }}. {{ spell.effect }} {{ spell.range }} {{ spell.duration }} {{ spell.defense }}
+        <RulesText
+          :text="
+            [spell.name, spell.effect, spell.range, spell.duration, spell.defense]
+              .filter(Boolean)
+              .join(' ')
+          "
+        />
       </p>
     </div>
   </div>

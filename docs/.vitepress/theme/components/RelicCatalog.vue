@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 import data from '../../data/relics.json'
 import type { Relic } from '../../schemas/relic'
 import { useItemDrawer } from '../composables/useItemDrawer'
+import EffectText from './EffectText.vue'
 
 const relics = data.items as Relic[]
 const { open } = useItemDrawer()
@@ -185,8 +186,8 @@ const openRelic = (relic: Relic, event?: MouseEvent) => {
               </button>
             </td>
             <td>{{ category(relic) }}</td>
-            <td>{{ damageOrArmor(relic) }}</td>
-            <td>{{ effectSummary(relic) }}</td>
+            <td><RulesText :text="damageOrArmor(relic)" /></td>
+            <td><EffectText :text="effectSummary(relic)" /></td>
             <td>{{ weight(relic) }}</td>
             <td>{{ relic.sourcePage }}</td>
           </tr>
@@ -200,7 +201,7 @@ const openRelic = (relic: Relic, event?: MouseEvent) => {
 
     <div v-if="visible.length" class="relic-search-index" aria-hidden="true">
       <p v-for="relic in visible" :key="`search-${relic.id}`">
-        {{ relic.name }}. {{ searchText(relic) }}
+        <RulesText :text="[relic.name, searchText(relic)].filter(Boolean).join('. ')" />
       </p>
     </div>
   </div>

@@ -99,7 +99,7 @@ onBeforeUnmount(() => {
           {{ profession.definingSkill.name }}
           <span v-if="profession.definingSkill.attribute">({{ profession.definingSkill.attribute }})</span>
         </h3>
-        <p>{{ profession.definingSkill.description }}</p>
+        <p><RulesText :text="profession.definingSkill.description" /></p>
       </div>
 
       <div class="pt-branches">
@@ -118,7 +118,7 @@ onBeforeUnmount(() => {
                 <span v-if="ability.attribute">({{ ability.attribute }})</span>
               </h4>
             </div>
-            <p>{{ ability.description }}</p>
+            <p><RulesText :text="ability.description" /></p>
           </article>
         </section>
       </div>
@@ -135,7 +135,7 @@ onBeforeUnmount(() => {
               </thead>
               <tbody>
                 <tr v-for="(row, rowIndex) in extra.rows" :key="rowIndex">
-                  <td v-for="(cell, cellIndex) in row" :key="cellIndex">{{ cell }}</td>
+                  <td v-for="(cell, cellIndex) in row" :key="cellIndex"><RulesText :text="cell" /></td>
                 </tr>
               </tbody>
             </table>
@@ -145,7 +145,7 @@ onBeforeUnmount(() => {
         <section v-if="profession.notes.length" class="pt-notes">
           <h4>На полях</h4>
           <p v-for="note in profession.notes" :key="note.title">
-            <strong>{{ note.title }}.</strong> {{ note.text }}
+            <strong>{{ note.title }}.</strong> <RulesText :text="note.text" />
           </p>
         </section>
       </div>

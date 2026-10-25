@@ -3,6 +3,23 @@
   "buildCommand": "npm run check",
   "outputDirectory": "docs/.vitepress/dist",
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/witchers/runes",
+      "destination": "/crafting/runes",
+      "permanent": true
+    },
+    {
+      "source": "/professions",
+      "destination": "/character/professions",
+      "permanent": true
+    },
+    {
+      "source": "/professions/(.*)",
+      "destination": "/character/professions",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",

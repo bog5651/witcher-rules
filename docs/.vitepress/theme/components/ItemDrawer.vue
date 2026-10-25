@@ -3,6 +3,7 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vitepress'
 import { useItemDrawer } from '../composables/useItemDrawer'
 import EffectText from './EffectText.vue'
+import RulesText from './RulesText.vue'
 
 const { item, isOpen, close } = useItemDrawer()
 const route = useRoute()
@@ -110,14 +111,16 @@ onBeforeUnmount(() => {
               <dt>{{ stat.label }}</dt>
               <dd>
                 <EffectText v-if="stat.label === 'Эффект'" :text="stat.value" />
-                <template v-else>{{ stat.value || '—' }}</template>
+                <RulesText v-else :text="stat.value || '—'" />
               </dd>
             </div>
           </dl>
 
           <section v-if="descriptionParagraphs.length" class="item-drawer__description">
             <h3>{{ item.descriptionTitle || 'Описание' }}</h3>
-            <p v-for="paragraph in descriptionParagraphs" :key="paragraph">{{ paragraph }}</p>
+            <p v-for="paragraph in descriptionParagraphs" :key="paragraph">
+              <RulesText :text="paragraph" />
+            </p>
           </section>
 
           <p v-if="item.sourcePage" class="item-drawer__source">

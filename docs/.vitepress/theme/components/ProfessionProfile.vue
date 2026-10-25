@@ -50,7 +50,7 @@ const hasMagic = computed(() => (profile.value?.magicAbilities.length ?? 0) > 0)
 
         <div v-if="profile.skillNote" class="pp-note">
           <h3>{{ profile.skillNote.title }}</h3>
-          <p>{{ profile.skillNote.text }}</p>
+          <p><RulesText :text="profile.skillNote.text" /></p>
           <ul class="pp-note-list">
             <li v-for="item in profile.skillNote.items" :key="item">{{ item }}</li>
           </ul>
@@ -81,7 +81,7 @@ const hasMagic = computed(() => (profile.value?.magicAbilities.length ?? 0) > 0)
         {{ profile.definingSkill.name }}
         <span>({{ profile.definingSkill.attribute }})</span>
       </h2>
-      <p>{{ profile.definingSkill.description }}</p>
+      <p><RulesText :text="profile.definingSkill.description" /></p>
     </section>
 
     <a class="pp-tree" :href="treeHref" :aria-label="`Древо навыков: ${profile.name}`">

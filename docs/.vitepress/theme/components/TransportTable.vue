@@ -195,7 +195,7 @@ const openTack = (item: Tack) => {
                     {{ availabilityShort[item.availability] }}
                   </span>
                 </td>
-                <td class="col-effects">{{ item.effect }}</td>
+                <td class="col-effects"><RulesText :text="item.effect" /></td>
                 <td class="col-num">{{ formatNumber(item.weight) }}</td>
                 <td class="col-num">{{ formatNumber(item.price) }}</td>
               </tr>

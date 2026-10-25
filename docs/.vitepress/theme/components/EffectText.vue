@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { effectGlossary, type EffectGlossaryEntry } from '../effectGlossary'
 import { useTermTooltip } from '../composables/useTermTooltip'
+import RulesText from './RulesText.vue'
 
 const props = defineProps<{ text: string }>()
 const { show, hide } = useTermTooltip()
@@ -21,8 +22,10 @@ type Segment = TextSegment | TermSegment
 
 const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
-const sortedTerms = [...effectGlossary].sort((a, b) => b.term.length - a.term.length)
-const pattern = new RegExp(sortedTerms.map((entry) => escapeRegExp(entry.term)).join('|'), 'g')
+const sortedTerms = effectGlossary
+  .flatMap((entry) => [entry.term, ...(entry.aliases ?? [])].map((value) => ({ value, entry })))
+  .sort((a, b) => b.value.length - a.value.length)
+const pattern = new RegExp(sortedTerms.map((item) => escapeRegExp(item.value)).join('|'), 'gi')
 
 const segments = computed<Segment[]>(() => {
   const text = props.text ?? ''
@@ -34,7 +37,9 @@ const segments = computed<Segment[]>(() => {
   for (const match of text.matchAll(pattern)) {
     const index = match.index ?? 0
     const matched = match[0]
-    const entry = sortedTerms.find((item) => item.term === matched)
+    const entry = sortedTerms.find(
+      (item) => item.value.toLocaleLowerCase('ru') === matched.toLocaleLowerCase('ru')
+    )?.entry
     if (!entry) continue
 
     let end = index + matched.length
@@ -69,7 +74,7 @@ const showTerm = (event: Event, entry: EffectGlossaryEntry) => {
 <template>
   <span class="wr-effect-text">
     <template v-for="(segment, index) in segments" :key="index">
-      <span v-if="segment.type === 'text'">{{ segment.value }}</span>
+      <RulesText v-if="segment.type === 'text'" :text="segment.value" />
       <button
         v-else
         type="button"
@@ -80,7 +85,7 @@ const showTerm = (event: Event, entry: EffectGlossaryEntry) => {
         @blur="hide"
         @click.stop="showTerm($event, segment.entry)"
       >
-        {{ segment.value }}
+        <RulesText :text="segment.value" />
       </button>
     </template>
   </span>

@@ -220,7 +220,7 @@ const openItem = (item: ComponentItem) => {
               </span>
             </td>
             <td class="col-where">{{ item.where }}</td>
-            <td>{{ item.quantity }}</td>
+            <td><RulesText :text="item.quantity" /></td>
             <td class="col-num">{{ formatDC(item) }}</td>
             <td class="col-num">{{ formatNumber(item.weight) }}</td>
             <td class="col-num">{{ formatNumber(item.price) }}</td>

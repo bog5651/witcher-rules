@@ -68,7 +68,9 @@ onBeforeUnmount(() => {
         :style="style"
       >
         <p class="term-tooltip__term">{{ active.title }}</p>
-        <p v-if="active.definition" class="term-tooltip__definition">{{ active.definition }}</p>
+        <p v-if="active.definition" class="term-tooltip__definition">
+          <RulesText :text="active.definition" />
+        </p>
         <p v-if="active.sourcePage" class="term-tooltip__source">
           Стр. {{ active.sourcePage }} книги.
         </p>

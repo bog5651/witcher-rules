@@ -61,20 +61,20 @@ const countFor = (key: CriticalInjury['severity']) =>
     <div class="injury-list">
       <article v-for="injury in visible" :key="injury.id" class="injury-card">
         <header class="injury-card__header">
-          <span class="injury-card__roll">2d6: {{ injury.roll }}</span>
+          <span class="injury-card__roll"><RulesText text="2d6" />: {{ injury.roll }}</span>
           <h3>{{ injury.name }}</h3>
         </header>
 
-        <p class="injury-card__effect">{{ injury.effect }}</p>
+        <p class="injury-card__effect"><RulesText :text="injury.effect" /></p>
 
         <div class="injury-card__after">
           <div>
             <h4>После стабилизации</h4>
-            <p>{{ injury.stabilized }}</p>
+            <p><RulesText :text="injury.stabilized" /></p>
           </div>
           <div>
             <h4>После лечения</h4>
-            <p>{{ injury.healed }}</p>
+            <p><RulesText :text="injury.healed" /></p>
           </div>
         </div>
       </article>

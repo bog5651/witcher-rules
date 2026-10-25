@@ -200,7 +200,7 @@ onBeforeUnmount(() => {
           <div class="bestiary-derived">
             <div v-for="[key, label] in derivedLabels" :key="key" class="bestiary-derived__item">
               <span>{{ label }}</span>
-              <strong>{{ variant.derived[key] ?? '—' }}</strong>
+              <strong><RulesText :text="variant.derived[key] ?? '—'" /></strong>
             </div>
           </div>
           <div class="bestiary-combat">
@@ -214,7 +214,7 @@ onBeforeUnmount(() => {
           <dl class="bestiary-size">
             <div v-for="[label, value] in sizeRows" :key="label">
               <dt>{{ label }}</dt>
-              <dd>{{ value }}</dd>
+              <dd><RulesText :text="value" /></dd>
             </div>
           </dl>
         </section>
@@ -233,7 +233,7 @@ onBeforeUnmount(() => {
           <h3>Способности</h3>
           <article v-for="ability in variant.abilities" :key="ability.name" class="bestiary-ability">
             <h4>{{ ability.name }}</h4>
-            <p>{{ ability.description }}</p>
+            <p><RulesText :text="ability.description" /></p>
           </article>
         </section>
 
@@ -252,8 +252,8 @@ onBeforeUnmount(() => {
               <tbody>
                 <tr v-for="weapon in variant.weapons" :key="weapon.name">
                   <td>{{ weapon.name }}</td>
-                  <td>{{ weapon.damage }}</td>
-                  <td>{{ weapon.effect }}</td>
+                  <td><RulesText :text="weapon.damage" /></td>
+                  <td><RulesText :text="weapon.effect" /></td>
                   <td>{{ weapon.attackCost }}</td>
                 </tr>
               </tbody>
@@ -266,7 +266,7 @@ onBeforeUnmount(() => {
             <h3>Добыча</h3>
             <ul class="bestiary-list">
               <li v-for="loot in variant.loot" :key="loot.name">
-                {{ loot.name }}<span v-if="loot.formula"> ({{ loot.formula }})</span>
+                {{ loot.name }}<span v-if="loot.formula"> (<RulesText :text="loot.formula" />)</span>
               </li>
             </ul>
           </section>
@@ -276,7 +276,7 @@ onBeforeUnmount(() => {
             <ul class="bestiary-list">
               <li v-for="vulnerability in variant.vulnerabilities" :key="vulnerability.name">
                 <strong>{{ vulnerability.name }}</strong>
-                <span v-if="vulnerability.description"> — {{ vulnerability.description }}</span>
+                <span v-if="vulnerability.description"> — <RulesText :text="vulnerability.description" /></span>
               </li>
             </ul>
           </section>
@@ -284,18 +284,18 @@ onBeforeUnmount(() => {
 
         <section v-if="entry.flavor" class="bestiary-section bestiary-flavor">
           <h3>Описание</h3>
-          <p class="bestiary-check">{{ entry.flavor.check }}</p>
+          <p class="bestiary-check"><RulesText :text="entry.flavor.check" /></p>
           <blockquote>
             «{{ entry.flavor.quote }}»
             <cite>{{ entry.flavor.author }}</cite>
           </blockquote>
-          <p class="bestiary-check">{{ entry.flavor.knowledgeCheck }}</p>
-          <p v-for="paragraph in entry.flavor.text" :key="paragraph">{{ paragraph }}</p>
+          <p class="bestiary-check"><RulesText :text="entry.flavor.knowledgeCheck" /></p>
+          <p v-for="paragraph in entry.flavor.text" :key="paragraph"><RulesText :text="paragraph" /></p>
         </section>
 
         <section v-for="note in entry.notes" :key="note.title" class="bestiary-section bestiary-note">
           <h3>{{ note.title }}</h3>
-          <p>{{ note.text }}</p>
+          <p><RulesText :text="note.text" /></p>
         </section>
 
         <section v-for="table in entry.extraTables" :key="table.title" class="bestiary-section">
@@ -309,7 +309,7 @@ onBeforeUnmount(() => {
               </thead>
               <tbody>
                 <tr v-for="(row, rowIndex) in table.rows" :key="rowIndex">
-                  <td v-for="(cell, cellIndex) in row" :key="cellIndex">{{ cell }}</td>
+                  <td v-for="(cell, cellIndex) in row" :key="cellIndex"><RulesText :text="cell" /></td>
                 </tr>
               </tbody>
             </table>

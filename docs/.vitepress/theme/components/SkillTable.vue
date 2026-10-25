@@ -110,7 +110,7 @@ const reset = () => {
                   {{ item.complex ? 'Сложный (2)' : 'Обычный' }}
                 </span>
               </td>
-              <td class="col-summary">{{ item.summary }}</td>
+              <td class="col-summary"><RulesText :text="item.summary" /></td>
             </tr>
           </tbody>
         </table>

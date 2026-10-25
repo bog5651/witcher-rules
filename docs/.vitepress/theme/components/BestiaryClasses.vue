@@ -21,7 +21,7 @@ const classHref = (id: string) => withBase(`/bestiary/monsters?class=${id}`)
         <span class="bc-hex" aria-hidden="true" />
       </div>
       <h3>{{ item.name }}</h3>
-      <p>{{ item.description }}</p>
+      <p><RulesText :text="item.description" /></p>
       <span class="bc-link">Смотреть чудовищ →</span>
     </a>
   </div>

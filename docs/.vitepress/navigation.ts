@@ -8,29 +8,13 @@ export const sidebar: DefaultTheme.Sidebar = {
         { text: 'Обзор', link: '/character/' },
         { text: 'Расы', link: '/character/races' },
         { text: 'Жизненный путь', link: '/character/lifepath' },
+        { text: 'Профессии', link: '/character/professions' },
         { text: 'Параметры', link: '/character/stats' },
         { text: 'Навыки', link: '/character/skills' },
         { text: 'Проверки навыков', link: '/character/checks' },
         { text: 'Развитие', link: '/character/development' },
         { text: 'Репутация', link: '/character/reputation' },
         { text: 'Древо навыков', link: '/character/trees' }
-      ]
-    }
-  ],
-  '/professions/': [
-    {
-      text: 'Профессии',
-      items: [
-        { text: 'Обзор', link: '/professions/' },
-        { text: 'Бард', link: '/professions/bard' },
-        { text: 'Ведьмак', link: '/professions/witcher' },
-        { text: 'Воин', link: '/professions/warrior' },
-        { text: 'Жрец', link: '/professions/priest' },
-        { text: 'Маг', link: '/professions/mage' },
-        { text: 'Медик', link: '/professions/medic' },
-        { text: 'Преступник', link: '/professions/criminal' },
-        { text: 'Ремесленник', link: '/professions/craftsman' },
-        { text: 'Торговец', link: '/professions/merchant' }
       ]
     }
   ],
@@ -99,7 +83,8 @@ export const sidebar: DefaultTheme.Sidebar = {
       items: [
         { text: 'Обзор', link: '/crafting/' },
         { text: 'Правила', link: '/crafting/rules' },
-        { text: 'Чертежи', link: '/crafting/schematics' }
+        { text: 'Чертежи', link: '/crafting/schematics' },
+        { text: 'Руны и реликвии', link: '/crafting/runes' }
       ]
     }
   ],
@@ -136,8 +121,7 @@ export const sidebar: DefaultTheme.Sidebar = {
         { text: 'Обзор', link: '/witchers/' },
         { text: 'Жизненный путь', link: '/witchers/lifepath' },
         { text: 'Снаряжение', link: '/witchers/gear' },
-        { text: 'Мутагены', link: '/witchers/mutations' },
-        { text: 'Руны и реликвии', link: '/witchers/runes' }
+        { text: 'Мутагены', link: '/witchers/mutations' }
       ]
     }
   ],

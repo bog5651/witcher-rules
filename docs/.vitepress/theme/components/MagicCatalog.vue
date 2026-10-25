@@ -365,8 +365,13 @@ const openMagicItem = (item: MagicItem) => {
 
     <div v-if="visible.length" class="magic-search-index" aria-hidden="true">
       <p v-for="item in visible" :key="`search-${item.id}`">
-        {{ item.name }}. {{ item.effect }} {{ item.range }} {{ item.duration }} {{ item.defense }}
-        {{ item.ingredients }} {{ item.alternateIngredients }} {{ item.removal }} {{ item.deity }}
+        <RulesText
+          :text="
+            [item.name, item.effect, item.range, item.duration, item.defense, item.ingredients, item.alternateIngredients, item.removal, item.deity]
+              .filter(Boolean)
+              .join(' ')
+          "
+        />
       </p>
     </div>
   </div>

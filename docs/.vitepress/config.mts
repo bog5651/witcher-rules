@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 import llmstxt from 'vitepress-plugin-llms'
 import { sidebar } from './navigation'
+import { diceRollsPlugin } from './markdown/dice'
 
 export default defineConfig({
   lang: 'ru-RU',
@@ -12,6 +13,9 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   markdown: {
+    config: (md) => {
+      diceRollsPlugin(md)
+    },
     emoji: {
       shortcuts: {}
     }
@@ -44,7 +48,7 @@ export default defineConfig({
       {
         text: 'Ещё',
         items: [
-          { text: 'Профессии', link: '/professions/' },
+          { text: 'Профессии', link: '/character/professions' },
           { text: 'Ремесло', link: '/crafting/' },
           { text: 'Ведьмаки', link: '/witchers/' },
           { text: 'Ведущему', link: '/gm/' },

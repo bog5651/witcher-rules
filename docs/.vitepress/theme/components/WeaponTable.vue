@@ -308,7 +308,7 @@ const openItem = (weapon: Weapon) => {
                 {{ availabilityShort[weapon.availability] }}
               </span>
             </td>
-            <td class="col-damage">{{ weapon.damage }}</td>
+            <td class="col-damage"><RulesText :text="weapon.damage" /></td>
             <td class="col-num">{{ weapon.reliability }}</td>
             <td class="col-num">{{ weapon.hands }}</td>
             <td>{{ weapon.range }}</td>

@@ -274,7 +274,7 @@ onBeforeUnmount(() => {
 
     <div v-if="visible.length" class="bestiary-search-index" aria-hidden="true">
       <p v-for="row in visible" :key="`search-${row.entry.id}-${row.variant.name}`">
-        {{ row.entry.name }}. {{ row.variant.name }}. {{ searchText(row) }}
+        <RulesText :text="[row.entry.name, row.variant.name, searchText(row)].filter(Boolean).join('. ')" />
       </p>
     </div>
 
