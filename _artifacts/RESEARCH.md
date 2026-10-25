@@ -129,8 +129,13 @@ _artifacts/
       assets/                     # экспериментальные иконки
     catalog-weapons-v2/
     catalog-armor-v2/
+    catalog-alchemy-v2/
     alzur-tome-of-magic/
     magic-gifts-excerpt/
+    unofficial-bestiary/
+    professional-tools/
+    witcher-gear/
+    tome-of-chaos/
   site/                           # скриншоты сайта
   web/
     fandom_main_page.json

@@ -9,10 +9,15 @@ PDF-файлы лежат в этой папке и **не коммитятся*
 | `witcher-core` | `witcher-core.pdf` | «Ведьмак: Настольная ролевая игра» | ru | 337 | Официальная основная книга | Интегрирована |
 | `catalog-weapons-v2` | `catalog-weapons-v2.pdf` | «Ведьмак. Каталог оружия, версия 2» | ru | 24 | Фанатская компиляция | Оружие, бомбы, ловушки, боеприпасы, руны и чертежи перенесены |
 | `catalog-armor-v2` | `catalog-armor-v2.pdf` | «Ведьмак. Каталог брони, версия 2» | ru | 12 | Фанатская компиляция | Броня, щиты, глифы, глифические слова и чертежи перенесены |
+| `catalog-alchemy-v2` | `catalog-alchemy-v2.pdf` | «Ведьмак. Алхимический каталог, версия 2» | ru | 20 | Фанатская компиляция, версия 2.0 от 18.07.2022 | Каталогизирована; в сайт не интегрирована |
 | `alzur-tome-of-magic` | `alzur-tome-of-magic.pdf` | «Alzur's Tome of Magic», версия 1.1 | ru | 83 | Фанатское дополнение, перевод «Героев Метагейминга» | Все содержательные разделы перенесены, включая некротический урон |
 | `magic-gifts-excerpt` | `magic-gifts-excerpt.pdf` | «Магические дары / Тактические погони», стр. 72–77 | ru | 6 | Фрагмент без выходных данных | Магические дары и рассказ «Тактические погони» перенесены |
+| `unofficial-bestiary` | `unofficial-bestiary.pdf` | «Монстрятник. Неофициальный бестиарий для „Ведьмак НРИ“» | ru | 119 | Неофициальный бестиарий, перевод | Каталогизирован; в сайт не интегрирован |
+| `professional-tools` | `professional-tools.pdf` | «Ведьмак. Фургончик Родольфа. Инструменты мастеров» | ru | 9 | Официальное дополнение R. Talsorian Games, 2022 | Каталогизировано; в сайт не интегрировано |
+| `witcher-gear` | `witcher-gear.pdf` | «Ведьмак. Снаряжение Ведьмака» | ru | 7 | Официальное дополнение R. Talsorian Games, 2022 | Каталогизировано; в сайт не интегрировано |
+| `tome-of-chaos` | `tome-of-chaos.pdf` | «The Witcher: A Tome of Chaos» / «Том Хаоса» | ru | 218 | Официальное дополнение R. Talsorian Games, русский перевод | Каталогизировано; в сайт не интегрировано |
 
-Исходные имена: `Witcher.pdf` → `witcher-core.pdf`, `Katalog_oruzhia_ver_2.pdf` → `catalog-weapons-v2.pdf`, `Katalog_broni_ver_2.pdf` → `catalog-armor-v2.pdf`, `Tom_magii_Alzura.pdf` → `alzur-tome-of-magic.pdf`, `Magicheskie_dary.pdf` → `magic-gifts-excerpt.pdf`.
+Исходные имена: `Witcher.pdf` → `witcher-core.pdf`, `Katalog_oruzhia_ver_2.pdf` → `catalog-weapons-v2.pdf`, `Katalog_broni_ver_2.pdf` → `catalog-armor-v2.pdf`, `Tom_magii_Alzura.pdf` → `alzur-tome-of-magic.pdf`, `Magicheskie_dary.pdf` → `magic-gifts-excerpt.pdf`, `Katalog_alkhimii_ver_2.pdf` → `catalog-alchemy-v2.pdf`, `Monstryatnik.pdf` → `unofficial-bestiary.pdf`, `Prof-e_instrumenty.pdf` → `professional-tools.pdf`, `Snaryazhenie_vedmakov.pdf` → `witcher-gear.pdf`, `Tom_khaosa.pdf` → `tome-of-chaos.pdf`.
 
 ## Артефакты
 
@@ -30,8 +35,13 @@ _artifacts/books/<book-id>/
 - `_artifacts/books/witcher-core/` — основная книга; также содержит `drafts/`, `layout/` и `assets/`.
 - `_artifacts/books/catalog-weapons-v2/`
 - `_artifacts/books/catalog-armor-v2/`
+- `_artifacts/books/catalog-alchemy-v2/`
 - `_artifacts/books/alzur-tome-of-magic/`
 - `_artifacts/books/magic-gifts-excerpt/`
+- `_artifacts/books/unofficial-bestiary/`
+- `_artifacts/books/professional-tools/`
+- `_artifacts/books/witcher-gear/`
+- `_artifacts/books/tome-of-chaos/`
 
 Общие скриншоты сайта лежат в `_artifacts/site/`, а не в папках книг.
 
@@ -52,6 +62,26 @@ _artifacts/books/<book-id>/
 ### `magic-gifts-excerpt`
 
 Фрагмент русского издания: «Магическая посредственность» (стр. 72–73), «Магические дары» (стр. 74–75) и «Тактические погони» (стр. 76–77). Выходные данные отсутствуют, поэтому книгу не атрибутируем без отдельной проверки.
+
+### `catalog-alchemy-v2`
+
+Алхимические составы, формулы, слабые и ведьмачьи эликсиры, масла, отвары, ингредиенты и субстанции. По описанию автора — 87+ предметов, 87+ формул и 130+ ингредиентов; часть материалов пересекается с основной книгой и уже перенесёнными каталогами.
+
+### `unofficial-bestiary`
+
+Неофициальный бестиарий: чудовища, огры, моровые девы, драконы, элементали, вампиры, а также люди, нелюди и «не чудовища» с блоками характеристик, способностями, уязвимостями и добычей. Перевод включает 119 страниц.
+
+### `professional-tools`
+
+«Фургончик Родольфа. Инструменты мастеров»: новые алхимические составы, инструменты и снаряжение, оружие, болты для скорпио, щиты, формулы и чертежи.
+
+### `witcher-gear`
+
+«Снаряжение Ведьмака»: альтернативные правила стартового снаряжения, комплекты школ Медведя, Кота, Грифона, Мантикоры, Змеи и Волка, а также чертежи ведьмачьего снаряжения.
+
+### `tome-of-chaos`
+
+«A Tome of Chaos»: девять глав о магии и Хаосе — лей-линии, маги, жрецы, новые заклинания, ритуалы, проклятия, магические школы, монстры и альтернативные правила. Русский перевод с английским оглавлением.
 
 ## Правила пополнения
 

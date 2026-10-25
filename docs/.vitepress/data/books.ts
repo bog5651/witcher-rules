@@ -32,6 +32,14 @@ export const books = {
     pageStart: 1,
     pageEnd: 12
   },
+  'catalog-alchemy-v2': {
+    id: 'catalog-alchemy-v2',
+    short: 'КА',
+    title: '«Ведьмак. Алхимический каталог, версия 2»',
+    note: 'Каталог алхимии',
+    pageStart: 1,
+    pageEnd: 20
+  },
   'alzur-tome-of-magic': {
     id: 'alzur-tome-of-magic',
     short: 'ТМ',
@@ -47,6 +55,38 @@ export const books = {
     note: 'Фрагмент, стр. 72–77',
     pageStart: 72,
     pageEnd: 77
+  },
+  'unofficial-bestiary': {
+    id: 'unofficial-bestiary',
+    short: 'МН',
+    title: '«Монстрятник. Неофициальный бестиарий для „Ведьмак НРИ“»',
+    note: 'Неофициальный бестиарий',
+    pageStart: 1,
+    pageEnd: 119
+  },
+  'professional-tools': {
+    id: 'professional-tools',
+    short: 'ПИ',
+    title: '«Ведьмак. Фургончик Родольфа. Инструменты мастеров»',
+    note: 'Инструменты мастеров',
+    pageStart: 1,
+    pageEnd: 9
+  },
+  'witcher-gear': {
+    id: 'witcher-gear',
+    short: 'СВ',
+    title: '«Ведьмак. Снаряжение Ведьмака»',
+    note: 'Снаряжение Ведьмака',
+    pageStart: 1,
+    pageEnd: 7
+  },
+  'tome-of-chaos': {
+    id: 'tome-of-chaos',
+    short: 'ТХ',
+    title: '«The Witcher: A Tome of Chaos» / «Том Хаоса»',
+    note: 'Том Хаоса',
+    pageStart: 1,
+    pageEnd: 217
   }
 } as const satisfies Record<string, BookMeta>
 
