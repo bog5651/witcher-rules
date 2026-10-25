@@ -153,6 +153,7 @@ export const sidebar: DefaultTheme.Sidebar = {
         { text: 'Земли Старшего Народа', link: '/world/elder-folk' },
         { text: 'Религии', link: '/world/religions' },
         { text: 'Магия на Континенте', link: '/world/magic' },
+        { text: 'Лей-линии', link: '/world/ley-lines' },
         { text: 'Тактические погони', link: '/world/tactical-pursuits' },
         { text: 'Союзы', link: '/world/factions' }
       ]
