@@ -392,7 +392,7 @@ const openItem = (weapon: Weapon) => {
 
 .weapon-table {
   width: 100%;
-  min-width: 1060px;
+  min-width: 900px;
   margin: 0;
   border-collapse: collapse;
   font-family: var(--site-sans);
@@ -402,7 +402,7 @@ const openItem = (weapon: Weapon) => {
 
 .weapon-table th,
 .weapon-table td {
-  padding: 0.4rem 0.45rem;
+  padding: 0.35rem 0.35rem;
   border-bottom: 1px solid var(--site-border);
   text-align: left;
   vertical-align: top;
@@ -441,7 +441,7 @@ const openItem = (weapon: Weapon) => {
 }
 
 .weapon-table .col-name {
-  min-width: 170px;
+  min-width: 145px;
   font-family: var(--site-serif);
   font-size: 13px;
   font-weight: 600;
@@ -497,8 +497,14 @@ const openItem = (weapon: Weapon) => {
 }
 
 .weapon-table .col-effects {
-  min-width: 160px;
+  min-width: 130px;
   color: var(--site-muted);
+}
+
+.weapon-table .wr-dice {
+  padding: 0.02rem 0.2rem;
+  font-size: 0.9em;
+  line-height: 1.2;
 }
 
 .weapon-table .wr-abbr {

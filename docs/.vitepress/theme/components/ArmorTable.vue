@@ -4,6 +4,7 @@ import data from '../../data/armor.json'
 import type { Armor } from '../../schemas/armor'
 import { useItemDrawer } from '../composables/useItemDrawer'
 import EffectText from './EffectText.vue'
+import NoteHint from './NoteHint.vue'
 
 const armor = data.items as Armor[]
 const { open: openDrawer } = useItemDrawer()
@@ -66,7 +67,7 @@ const visible = computed(() => {
     .filter((item) => {
       if (!matchesFilters(item)) return false
       if (!q) return true
-      return normalized([item.name, item.effect].join(' ')).includes(q)
+      return normalized([item.name, item.effect, item.note ?? ''].join(' ')).includes(q)
     })
     .sort((a, b) => {
       if (sort.value === 'price') return a.price - b.price
@@ -132,6 +133,7 @@ const openItem = (item: Armor) => {
       { label: 'Доступность', value: availabilityLabels[item.availability] },
       { label: 'Усиления брони', value: String(item.upgradeSlots) },
       { label: 'Эффект', value: item.effect || '—' },
+      ...(item.note ? [{ label: 'Примечание', value: item.note }] : []),
       { label: 'Сков. движений', value: String(item.encumbrance) },
       { label: 'Вес', value: `${formatWeight(item.weight)} кг` },
       { label: 'Цена', value: `${formatWeight(item.price)} кр.` },
@@ -273,7 +275,17 @@ const openItem = (item: Armor) => {
             </td>
             <td class="col-num">{{ item.upgradeSlots }}</td>
             <td class="col-effects">
-              <EffectText :text="item.effect || '—'" />
+              <EffectText v-if="item.effect" :text="item.effect" />
+              <template v-if="item.note">
+                <span v-if="item.effect">; </span>
+                <NoteHint
+                  text="см. на полях"
+                  :title="item.name"
+                  :definition="item.note"
+                  :source-page="item.sourcePage"
+                />
+              </template>
+              <span v-else-if="!item.effect">—</span>
             </td>
             <td class="col-num">{{ item.encumbrance }}</td>
             <td class="col-num">{{ formatWeight(item.weight) }}</td>

@@ -225,7 +225,7 @@ npm run docs:build # OK
 - ✅ p.141–142: система алхимии — `/alchemy/rules`.
 - ✅ p.143–145: субстанции (68 ингредиентов) — `/alchemy/substances`.
 - ✅ p.146–147: формулы (22 рецепта) — `/alchemy/formulas`.
-- ✅ p.130–140: чертежи (125 позиций) и починка — `/crafting/schematics`.
+- ✅ p.130–140: чертежи (125 позиций) — `/crafting/schematics`; починка и разборка — `/crafting/repair`.
 - ✅ p.256–265: руны, глифы и реликвии — `/crafting/runes`.
 - Компонент `FormulaCard` с чек-листом и SVG-иконками.
 

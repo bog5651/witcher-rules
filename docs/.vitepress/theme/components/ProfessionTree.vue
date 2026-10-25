@@ -2,6 +2,7 @@
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import data from '../../data/profession-trees.json'
 import type { ProfessionTree } from '../../schemas/professionTree'
+import EffectText from './EffectText.vue'
 
 const professions = data.professions as ProfessionTree[]
 const active = ref(professions[0]?.id ?? '')
@@ -99,7 +100,7 @@ onBeforeUnmount(() => {
           {{ profession.definingSkill.name }}
           <span v-if="profession.definingSkill.attribute">({{ profession.definingSkill.attribute }})</span>
         </h3>
-        <p><RulesText :text="profession.definingSkill.description" /></p>
+        <p><EffectText :text="profession.definingSkill.description" /></p>
       </div>
 
       <div class="pt-branches">
@@ -118,7 +119,7 @@ onBeforeUnmount(() => {
                 <span v-if="ability.attribute">({{ ability.attribute }})</span>
               </h4>
             </div>
-            <p><RulesText :text="ability.description" /></p>
+            <p><EffectText :text="ability.description" /></p>
           </article>
         </section>
       </div>
@@ -145,7 +146,7 @@ onBeforeUnmount(() => {
         <section v-if="profession.notes.length" class="pt-notes">
           <h4>На полях</h4>
           <p v-for="note in profession.notes" :key="note.title">
-            <strong>{{ note.title }}.</strong> <RulesText :text="note.text" />
+            <strong>{{ note.title }}.</strong> <EffectText :text="note.text" />
           </p>
         </section>
       </div>

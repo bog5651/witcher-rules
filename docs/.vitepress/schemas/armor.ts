@@ -15,6 +15,7 @@ export const armorSchema = z.object({
   availability: availabilitySchema,
   upgradeSlots: z.number().int().nonnegative(),
   effect: z.string(),
+  note: z.string().min(1).optional(),
   description: z.string().optional(),
   encumbrance: z.number().int().nonnegative(),
   weight: z.number().nonnegative(),

@@ -48,7 +48,6 @@ export default defineConfig({
       {
         text: 'Ещё',
         items: [
-          { text: 'Профессии', link: '/character/professions' },
           { text: 'Ремесло', link: '/crafting/' },
           { text: 'Ведьмаки', link: '/witchers/' },
           { text: 'Ведущему', link: '/gm/' },

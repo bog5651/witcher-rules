@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue'
 import data from '../../data/skills.json'
 import type { Skill } from '../../schemas/skill'
+import EffectText from './EffectText.vue'
 
 const items = data.items as Skill[]
 
@@ -110,7 +111,7 @@ const reset = () => {
                   {{ item.complex ? 'Сложный (2)' : 'Обычный' }}
                 </span>
               </td>
-              <td class="col-summary"><RulesText :text="item.summary" /></td>
+              <td class="col-summary"><EffectText :text="item.summary" /></td>
             </tr>
           </tbody>
         </table>

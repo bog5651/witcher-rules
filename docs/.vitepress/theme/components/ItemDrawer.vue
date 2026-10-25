@@ -119,7 +119,8 @@ onBeforeUnmount(() => {
           <section v-if="descriptionParagraphs.length" class="item-drawer__description">
             <h3>{{ item.descriptionTitle || 'Описание' }}</h3>
             <p v-for="paragraph in descriptionParagraphs" :key="paragraph">
-              <RulesText :text="paragraph" />
+              <EffectText v-if="item.descriptionTitle === 'Эффект'" :text="paragraph" />
+              <RulesText v-else :text="paragraph" />
             </p>
           </section>
 
@@ -190,12 +191,15 @@ onBeforeUnmount(() => {
 }
 
 .item-drawer__close {
+  display: inline-flex;
   flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
   width: 2rem;
   height: 2rem;
   padding: 0;
-  font-family: var(--site-serif);
-  font-size: 1.7rem;
+  font-family: var(--site-sans);
+  font-size: 1.35rem;
   line-height: 1;
   color: var(--site-muted);
   background: transparent;

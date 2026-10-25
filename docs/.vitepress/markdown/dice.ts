@@ -3,6 +3,9 @@ import { DICE_SOURCE } from '../rulesText'
 
 export function diceRollsPlugin(md: MarkdownIt) {
   md.core.ruler.push('dice_rolls', (state) => {
+    const source = String(state.env?.relativePath ?? '').replace(/\\/g, '/')
+    if (source.endsWith('combat/injuries.md')) return
+
     for (const token of state.tokens) {
       if (token.type !== 'inline' || !token.children) continue
 

@@ -41,6 +41,7 @@ import BestiaryClasses from './components/BestiaryClasses.vue'
 import BestiaryCatalog from './components/BestiaryCatalog.vue'
 import RelicCatalog from './components/RelicCatalog.vue'
 import RulesText from './components/RulesText.vue'
+import NoteHint from './components/NoteHint.vue'
 
 export default {
   extends: DefaultTheme,
@@ -69,5 +70,6 @@ export default {
     app.component('BestiaryCatalog', BestiaryCatalog)
     app.component('RelicCatalog', RelicCatalog)
     app.component('RulesText', RulesText)
+    app.component('NoteHint', NoteHint)
   }
 } satisfies Theme

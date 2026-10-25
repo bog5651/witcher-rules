@@ -758,6 +758,19 @@ body {
   gap: 0.75rem;
 }
 
+/* --- inline dice in drawers and tooltips -------------------------- */
+
+.item-drawer code,
+.bestiary-drawer code,
+.term-tooltip code {
+  padding: 0.05em 0.3em;
+  border: 1px solid var(--site-border);
+  border-radius: 3px;
+  background: var(--site-surface-2);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 /* --- wide table pages --------------------------------------------- */
 
 .wide-page .VPDoc .content-container,

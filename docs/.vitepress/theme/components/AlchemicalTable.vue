@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 import data from '../../data/alchemicals.json'
 import type { Alchemical } from '../../schemas/alchemical'
 import { useItemDrawer } from '../composables/useItemDrawer'
+import EffectText from './EffectText.vue'
 
 const items = data.items as Alchemical[]
 const { open: openDrawer } = useItemDrawer()
@@ -191,7 +192,7 @@ const openItem = (item: Alchemical) => {
                 {{ availabilityShort[item.availability] }}
               </span>
             </td>
-            <td class="col-effects"><RulesText :text="item.effect" /></td>
+            <td class="col-effects"><EffectText :text="item.effect" /></td>
             <td class="col-num">{{ formatNumber(item.weight) }}</td>
             <td class="col-num">{{ formatNumber(item.price) }}</td>
           </tr>

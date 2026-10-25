@@ -2,6 +2,7 @@
 import { withBase } from 'vitepress'
 import data from '../../data/bestiary.json'
 import type { BestiaryClass } from '../../schemas/bestiary'
+import EffectText from './EffectText.vue'
 
 const classes = data.classes as BestiaryClass[]
 const classHref = (id: string) => withBase(`/bestiary/monsters?class=${id}`)
@@ -21,7 +22,7 @@ const classHref = (id: string) => withBase(`/bestiary/monsters?class=${id}`)
         <span class="bc-hex" aria-hidden="true" />
       </div>
       <h3>{{ item.name }}</h3>
-      <p><RulesText :text="item.description" /></p>
+      <p><EffectText :text="item.description" /></p>
       <span class="bc-link">Смотреть чудовищ →</span>
     </a>
   </div>

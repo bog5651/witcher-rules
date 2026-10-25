@@ -2,6 +2,7 @@
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import data from '../../data/bestiary.json'
 import type { BestiaryClass, BestiaryEntry } from '../../schemas/bestiary'
+import EffectText from './EffectText.vue'
 
 const props = defineProps<{
   entry: BestiaryEntry
@@ -233,7 +234,7 @@ onBeforeUnmount(() => {
           <h3>Способности</h3>
           <article v-for="ability in variant.abilities" :key="ability.name" class="bestiary-ability">
             <h4>{{ ability.name }}</h4>
-            <p><RulesText :text="ability.description" /></p>
+            <p><EffectText :text="ability.description" /></p>
           </article>
         </section>
 
@@ -253,7 +254,7 @@ onBeforeUnmount(() => {
                 <tr v-for="weapon in variant.weapons" :key="weapon.name">
                   <td>{{ weapon.name }}</td>
                   <td><RulesText :text="weapon.damage" /></td>
-                  <td><RulesText :text="weapon.effect" /></td>
+                  <td><EffectText :text="weapon.effect" /></td>
                   <td>{{ weapon.attackCost }}</td>
                 </tr>
               </tbody>
@@ -276,7 +277,7 @@ onBeforeUnmount(() => {
             <ul class="bestiary-list">
               <li v-for="vulnerability in variant.vulnerabilities" :key="vulnerability.name">
                 <strong>{{ vulnerability.name }}</strong>
-                <span v-if="vulnerability.description"> — <RulesText :text="vulnerability.description" /></span>
+                <span v-if="vulnerability.description"> — <EffectText :text="vulnerability.description" /></span>
               </li>
             </ul>
           </section>
@@ -295,7 +296,7 @@ onBeforeUnmount(() => {
 
         <section v-for="note in entry.notes" :key="note.title" class="bestiary-section bestiary-note">
           <h3>{{ note.title }}</h3>
-          <p><RulesText :text="note.text" /></p>
+          <p><EffectText :text="note.text" /></p>
         </section>
 
         <section v-for="table in entry.extraTables" :key="table.title" class="bestiary-section">
@@ -385,12 +386,15 @@ onBeforeUnmount(() => {
 }
 
 .bestiary-drawer__close {
+  display: inline-flex;
   flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
   width: 2rem;
   height: 2rem;
   padding: 0;
-  font-family: var(--site-serif);
-  font-size: 1.7rem;
+  font-family: var(--site-sans);
+  font-size: 1.35rem;
   line-height: 1;
   color: var(--site-muted);
   background: transparent;

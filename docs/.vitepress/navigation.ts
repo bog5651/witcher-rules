@@ -84,6 +84,7 @@ export const sidebar: DefaultTheme.Sidebar = {
         { text: 'Обзор', link: '/crafting/' },
         { text: 'Правила', link: '/crafting/rules' },
         { text: 'Чертежи', link: '/crafting/schematics' },
+        { text: 'Починка и разборка', link: '/crafting/repair' },
         { text: 'Руны и реликвии', link: '/crafting/runes' }
       ]
     }
