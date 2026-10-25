@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 
+const props = defineProps<{ openFirst?: boolean }>()
+
 interface SectionState {
   id: string
   title: string
@@ -141,6 +143,7 @@ const build = async () => {
 
   sections.value = nextSections
   openStates.value = Object.fromEntries(nextSections.map((section) => [section.id, false]))
+  if (props.openFirst && nextSections[0]) setOpen(nextSections[0].id, true)
   openFromHash()
 }
 

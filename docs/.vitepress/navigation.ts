@@ -49,6 +49,7 @@ export const sidebar: DefaultTheme.Sidebar = {
         },
         { text: 'Ритуалы', link: '/magic/rituals' },
         { text: 'Порча', link: '/magic/hexes' },
+        { text: 'Некротический урон', link: '/magic/necrotic-damage' },
         { text: 'Магические дары', link: '/magic/gifts' },
         { text: 'Места силы', link: '/magic/places-of-power' }
       ]
@@ -152,6 +153,7 @@ export const sidebar: DefaultTheme.Sidebar = {
         { text: 'Земли Старшего Народа', link: '/world/elder-folk' },
         { text: 'Религии', link: '/world/religions' },
         { text: 'Магия на Континенте', link: '/world/magic' },
+        { text: 'Тактические погони', link: '/world/tactical-pursuits' },
         { text: 'Союзы', link: '/world/factions' }
       ]
     }

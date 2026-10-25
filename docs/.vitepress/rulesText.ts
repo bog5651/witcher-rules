@@ -1,4 +1,4 @@
-export const DICE_SOURCE = String.raw`(?<![\p{L}\p{N}])(?:\d+)?d\d+(?:\s*[+\-−/×x]\s*\d+)?(?![\p{L}\p{N}])`
+export const DICE_SOURCE = String.raw`(?<![\p{L}\p{N}])(?:[x×х]\s*)?(?:\d+)?d\d+(?:\s*[+\-−/×x]\s*\d+)?(?![\p{L}\p{N}])`
 
 export interface RulesSegment {
   type: 'text' | 'dice'

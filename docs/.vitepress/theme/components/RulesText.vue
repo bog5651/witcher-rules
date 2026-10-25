@@ -22,6 +22,16 @@ const segments = computed(() => splitRulesText(String(props.text ?? '')))
 }
 
 .wr-dice {
+  display: inline-block;
+  padding: 0.02rem 0.3rem;
+  font-family: var(--site-sans);
+  font-size: 0.92em;
+  font-weight: 600;
+  line-height: 1.2;
+  color: inherit;
   white-space: nowrap;
+  background: var(--site-surface-2);
+  border: 1px solid var(--site-border-strong);
+  border-radius: 4px;
 }
 </style>
