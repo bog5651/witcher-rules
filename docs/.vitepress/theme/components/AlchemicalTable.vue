@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import data from '../../data/alchemicals.json'
-import type { Alchemical } from '../../schemas/alchemical'
+import type { Alchemical, AlchemicalCategory } from '../../schemas/alchemical'
 import { useItemDrawer } from '../composables/useItemDrawer'
 import EffectText from './EffectText.vue'
 
@@ -22,8 +22,27 @@ const availabilityShort = {
   unique: 'У'
 } as const
 
+const categoryLabels: Record<AlchemicalCategory, string> = {
+  composition: 'Состав',
+  'weak-elixir': 'Слабый эликсир',
+  'witcher-elixir': 'Ведьмачий эликсир',
+  oil: 'Масло',
+  decoction: 'Отвар'
+}
+
+const categoryOrder: AlchemicalCategory[] = [
+  'composition',
+  'weak-elixir',
+  'witcher-elixir',
+  'oil',
+  'decoction'
+]
+
+const categoryOf = (item: Alchemical): AlchemicalCategory => item.category ?? 'composition'
+
 const query = ref('')
 const availability = ref('all')
+const category = ref<'all' | AlchemicalCategory>('all')
 const sort = ref<'name' | 'price' | 'weight'>('name')
 const selected = ref<string[]>([])
 
@@ -34,6 +53,7 @@ const visible = computed(() => {
   return items
     .filter((item) => {
       if (availability.value !== 'all' && item.availability !== availability.value) return false
+      if (category.value !== 'all' && categoryOf(item) !== category.value) return false
       if (!q) return true
       return normalized([item.name, item.effect].join(' ')).includes(q)
     })
@@ -74,24 +94,39 @@ const totalPrice = computed(() => selectedItems.value.reduce((sum, item) => sum 
 const reset = () => {
   query.value = ''
   availability.value = 'all'
+  category.value = 'all'
   sort.value = 'name'
 }
 
 const formatNumber = (value: number) => value.toLocaleString('ru-RU')
 
 const openItem = (item: Alchemical) => {
+  const stats = [
+    { label: 'Тип', value: categoryLabels[categoryOf(item)] },
+    { label: 'Доступность', value: availabilityLabels[item.availability] },
+    { label: 'Эффект', value: item.effect }
+  ]
+
+  if (item.duration) stats.push({ label: 'Длительность', value: item.duration })
+  if (item.toxicity) stats.push({ label: 'Токсичность', value: item.toxicity })
+
+  stats.push(
+    { label: 'Вес', value: `${formatNumber(item.weight)} кг` },
+    {
+      label: 'Цена',
+      value: item.priceNote
+        ? `${item.priceNote}: ${formatNumber(item.price)} кр.`
+        : `${formatNumber(item.price)} кр.`
+    }
+  )
+
   openDrawer({
     title: item.name,
-    subtitle: 'Алхимический состав',
+    subtitle: categoryLabels[categoryOf(item)],
     description: item.description,
     sourcePage: item.sourcePage,
     sourceBook: item.sourceBook,
-    stats: [
-      { label: 'Доступность', value: availabilityLabels[item.availability] },
-      { label: 'Эффект', value: item.effect },
-      { label: 'Вес', value: `${formatNumber(item.weight)} кг` },
-      { label: 'Цена', value: `${formatNumber(item.price)} кр.` }
-    ]
+    stats
   })
 }
 </script>
@@ -109,6 +144,16 @@ const openItem = (item: Alchemical) => {
           placeholder="Название или эффект…"
           autocomplete="off"
         />
+      </div>
+
+      <div class="wr-field">
+        <label for="alchemical-category">Тип</label>
+        <select id="alchemical-category" v-model="category" class="wr-select">
+          <option value="all">Все</option>
+          <option v-for="key in categoryOrder" :key="key" :value="key">
+            {{ categoryLabels[key] }}
+          </option>
+        </select>
       </div>
 
       <div class="wr-field">
@@ -151,7 +196,7 @@ const openItem = (item: Alchemical) => {
 
     <p class="alchemical-legend">
       <strong>Дос</strong> — доступность (П/О/Р/У). Составы расходуются за одно применение, если
-      не указано иное.
+      не указано иное. <strong>Токс.</strong> — токсичность эликсиров и отваров.
     </p>
 
     <div v-if="visible.length" class="alchemical-table-wrap">
@@ -167,8 +212,11 @@ const openItem = (item: Alchemical) => {
               />
             </th>
             <th>Название</th>
+            <th>Тип</th>
             <th title="Доступность">Дос</th>
             <th>Эффект</th>
+            <th>Длит.</th>
+            <th title="Токсичность">Токс.</th>
             <th>Вес, кг</th>
             <th>Цена, кр.</th>
           </tr>
@@ -189,12 +237,15 @@ const openItem = (item: Alchemical) => {
               </button>
               <SourceBadge :book="item.sourceBook" :page="item.sourcePage" />
             </td>
+            <td class="col-category">{{ categoryLabels[categoryOf(item)] }}</td>
             <td>
               <span class="wr-abbr" :title="availabilityLabels[item.availability]">
                 {{ availabilityShort[item.availability] }}
               </span>
             </td>
             <td class="col-effects"><EffectText :text="item.effect" /></td>
+            <td class="col-meta">{{ item.duration || '—' }}</td>
+            <td class="col-meta">{{ item.toxicity || '—' }}</td>
             <td class="col-num">{{ formatNumber(item.weight) }}</td>
             <td class="col-num">{{ formatNumber(item.price) }}</td>
           </tr>
@@ -323,6 +374,17 @@ const openItem = (item: Alchemical) => {
 .alchemical-table .col-effects {
   min-width: 430px;
   color: var(--site-muted);
+}
+
+.alchemical-table .col-category,
+.alchemical-table .col-meta {
+  font-size: 11px;
+  color: var(--site-muted);
+  white-space: nowrap;
+}
+
+.alchemical-table .col-category {
+  min-width: 92px;
 }
 
 .alchemical-table .col-num {

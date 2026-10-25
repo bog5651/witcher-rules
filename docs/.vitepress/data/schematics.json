@@ -5564,6 +5564,1675 @@
       "price": 1368,
       "sourcePage": 11,
       "sourceBook": "catalog-armor-v2"
+    },
+    {
+      "id": "solntse-zerrikanii-chertezh",
+      "name": "Солнце Зеррикании",
+      "category": "explosive",
+      "level": "adept",
+      "origin": "common",
+      "dc": 16,
+      "time": "1/2 часа",
+      "components": [
+        {
+          "name": "Эссенция света",
+          "count": 1
+        },
+        {
+          "name": "Речная глина",
+          "count": 2
+        },
+        {
+          "name": "Зерриканская смесь",
+          "count": 1
+        },
+        {
+          "name": "Склеродерм",
+          "count": 1
+        }
+      ],
+      "surcharge": 90,
+      "price": 180,
+      "sourcePage": 8,
+      "sourceBook": "professional-tools"
+    },
+    {
+      "id": "lovets-mechey-chertezh",
+      "name": "Ловец мечей",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 20,
+      "time": "6 часов",
+      "components": [
+        {
+          "name": "Масло из дрейка",
+          "count": 2
+        },
+        {
+          "name": "Речная глина",
+          "count": 6
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 2
+        },
+        {
+          "name": "Кожа",
+          "count": 1
+        },
+        {
+          "name": "Укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "Нитки",
+          "count": 1
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "Третогорская сталь",
+          "count": 2
+        }
+      ],
+      "surcharge": 375,
+      "price": 750,
+      "sourcePage": 9,
+      "sourceBook": "professional-tools"
+    },
+    {
+      "id": "otravlennyy-kogot-garpii-chertezh",
+      "name": "Отравленный коготь гарпии",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 22,
+      "time": "5 часов",
+      "components": [
+        {
+          "name": "Масло из дрейка",
+          "count": 1
+        },
+        {
+          "name": "Экстракт яда",
+          "count": 3
+        },
+        {
+          "name": "Тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "Чернящее масло",
+          "count": 1
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 4
+        }
+      ],
+      "surcharge": 337,
+      "price": 675,
+      "sourcePage": 9,
+      "sourceBook": "professional-tools"
+    },
+    {
+      "id": "set-ohotnika-na-monstrov-chertezh",
+      "name": "Сеть охотника на монстров",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 24,
+      "time": "6 часов",
+      "components": [
+        {
+          "name": "Эфирная смазка",
+          "count": 1
+        },
+        {
+          "name": "Смола",
+          "count": 6
+        },
+        {
+          "name": "Ртутный раствор",
+          "count": 3
+        },
+        {
+          "name": "Сера",
+          "count": 3
+        },
+        {
+          "name": "Нитки",
+          "count": 25
+        },
+        {
+          "name": "Воск",
+          "count": 4
+        }
+      ],
+      "surcharge": 375,
+      "price": 750,
+      "sourcePage": 9,
+      "sourceBook": "professional-tools"
+    },
+    {
+      "id": "skorpio-chertezh",
+      "name": "Скорпио",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 22,
+      "time": "24 часа",
+      "components": [
+        {
+          "name": "Кости животных",
+          "count": 9
+        },
+        {
+          "name": "Масло",
+          "count": 3
+        },
+        {
+          "name": "Тёмное железо",
+          "count": 5
+        },
+        {
+          "name": "Тёмная сталь",
+          "count": 8
+        },
+        {
+          "name": "Укреплённое дерево",
+          "count": 30
+        },
+        {
+          "name": "Смола",
+          "count": 10
+        },
+        {
+          "name": "Укреплённая кожа",
+          "count": 4
+        },
+        {
+          "name": "Огров воск",
+          "count": 8
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 4
+        },
+        {
+          "name": "Нитки",
+          "count": 18
+        },
+        {
+          "name": "Воск",
+          "count": 10
+        }
+      ],
+      "surcharge": 1875,
+      "price": 3750,
+      "sourcePage": 9,
+      "sourceBook": "professional-tools"
+    },
+    {
+      "id": "standartnyy-bolt-chertezh",
+      "name": "Стандартный болт (×5)",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 16,
+      "time": "3 часа",
+      "components": [
+        {
+          "name": "Перья",
+          "count": 6
+        },
+        {
+          "name": "Укреплённое дерево",
+          "count": 6
+        },
+        {
+          "name": "Железо",
+          "count": 2
+        },
+        {
+          "name": "Смола",
+          "count": 2
+        },
+        {
+          "name": "Нитки",
+          "count": 1
+        }
+      ],
+      "surcharge": 187,
+      "price": 375,
+      "sourcePage": 9,
+      "sourceBook": "professional-tools"
+    },
+    {
+      "id": "razrushayushchiy-bolt-chertezh",
+      "name": "Разрушающий болт (×5)",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 17,
+      "time": "3 часа",
+      "components": [
+        {
+          "name": "Тёмное железо",
+          "count": 2
+        },
+        {
+          "name": "Перья",
+          "count": 4
+        },
+        {
+          "name": "Укреплённое дерево",
+          "count": 7
+        },
+        {
+          "name": "Огров воск",
+          "count": 4
+        },
+        {
+          "name": "Нитки",
+          "count": 1
+        }
+      ],
+      "surcharge": 275,
+      "price": 550,
+      "sourcePage": 9,
+      "sourceBook": "professional-tools"
+    },
+    {
+      "id": "broneboynyy-bolt-chertezh",
+      "name": "Бронебойный болт (×5)",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 17,
+      "time": "3 часа",
+      "components": [
+        {
+          "name": "Уголь",
+          "count": 1
+        },
+        {
+          "name": "Перья",
+          "count": 6
+        },
+        {
+          "name": "Сталь",
+          "count": 2
+        },
+        {
+          "name": "Речная глина",
+          "count": 4
+        },
+        {
+          "name": "Нитки",
+          "count": 2
+        },
+        {
+          "name": "Укреплённое дерево",
+          "count": 6
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 1
+        }
+      ],
+      "surcharge": 275,
+      "price": 550,
+      "sourcePage": 9,
+      "sourceBook": "professional-tools"
+    },
+    {
+      "id": "utyazhelennaya-set-chertezh",
+      "name": "Утяжеленная сеть",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 13,
+      "time": "3 часа",
+      "components": [
+        {
+          "name": "Железо",
+          "count": 1
+        },
+        {
+          "name": "Смола",
+          "count": 1
+        },
+        {
+          "name": "Нитки",
+          "count": 20
+        },
+        {
+          "name": "Воск",
+          "count": 1
+        }
+      ],
+      "surcharge": 94,
+      "price": 188,
+      "sourcePage": 9,
+      "sourceBook": "professional-tools"
+    },
+    {
+      "id": "shprits-polevogo-vracha-chertezh",
+      "name": "Шприц полевого врача",
+      "category": "weapon",
+      "level": "adept",
+      "origin": "common",
+      "dc": 18,
+      "time": "6 часов",
+      "components": [
+        {
+          "name": "Масло из дрейка",
+          "count": 2
+        },
+        {
+          "name": "Стекло",
+          "count": 1
+        },
+        {
+          "name": "Укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "Масло",
+          "count": 1
+        },
+        {
+          "name": "Смола",
+          "count": 2
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 3
+        },
+        {
+          "name": "Сталь",
+          "count": 1
+        }
+      ],
+      "surcharge": 262,
+      "price": 525,
+      "sourcePage": 9,
+      "sourceBook": "professional-tools"
+    },
+    {
+      "id": "shchit-iz-cheshui-viverkiny-chertezh",
+      "name": "Щит из чешуи виверны",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 22,
+      "time": "5 часов",
+      "components": [
+        {
+          "name": "Тёмное железо",
+          "count": 1
+        },
+        {
+          "name": "Смола",
+          "count": 3
+        },
+        {
+          "name": "Дубильные травы",
+          "count": 3
+        },
+        {
+          "name": "Нитки",
+          "count": 2
+        },
+        {
+          "name": "Укреплённое дерево",
+          "count": 5
+        },
+        {
+          "name": "Укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "Кожа драконида",
+          "count": 3
+        }
+      ],
+      "surcharge": 375,
+      "price": 750,
+      "sourcePage": 9,
+      "sourceBook": "professional-tools"
+    },
+    {
+      "id": "стальной-меч-школы-медведя-chertezh-shkoly-medvedya",
+      "name": "Стальной меч школы Медведя",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 18,
+      "time": "9 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "Кожа",
+          "count": 2
+        },
+        {
+          "name": "Метеорит",
+          "count": 2
+        },
+        {
+          "name": "Сталь",
+          "count": 3
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 2
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 1
+        },
+        {
+          "name": "Нитки",
+          "count": 1
+        },
+        {
+          "name": "Язык кладбищенской бабы",
+          "count": 1
+        },
+        {
+          "name": "Слюна волколака",
+          "count": 1
+        },
+        {
+          "name": "Собачье сало",
+          "count": 1
+        }
+      ],
+      "surcharge": 656,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 5,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "серебряный-меч-школы-медведя-chertezh-shkoly-medvedya",
+      "name": "Серебряный меч школы Медведя",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 19,
+      "time": "10 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "Кожа",
+          "count": 2
+        },
+        {
+          "name": "Серебро",
+          "count": 4
+        },
+        {
+          "name": "Сталь",
+          "count": 1
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 1
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 1
+        },
+        {
+          "name": "Желудок куролиска",
+          "count": 1
+        },
+        {
+          "name": "Омела",
+          "count": 1
+        }
+      ],
+      "surcharge": 597,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 5,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "арбалет-школы-медведя-chertezh-shkoly-medvedya",
+      "name": "Арбалет школы Медведя",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 17,
+      "time": "8 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "Воск",
+          "count": 2
+        },
+        {
+          "name": "Смола",
+          "count": 2
+        },
+        {
+          "name": "Укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "Голосовые связки сирены",
+          "count": 1
+        },
+        {
+          "name": "Тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 2
+        },
+        {
+          "name": "Огров воск",
+          "count": 2
+        },
+        {
+          "name": "Тёмное железо",
+          "count": 1
+        },
+        {
+          "name": "Кости животных",
+          "count": 2
+        }
+      ],
+      "surcharge": 347,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 5,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "броня-школы-медведя-chertezh-shkoly-medvedya",
+      "name": "Броня школы Медведя",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 22,
+      "time": "25 часов",
+      "components": [
+        {
+          "name": "Укреплённая кожа",
+          "count": 7
+        },
+        {
+          "name": "Тёмная сталь",
+          "count": 2
+        },
+        {
+          "name": "Двойное полотно",
+          "count": 6
+        },
+        {
+          "name": "Кости животных",
+          "count": 4
+        },
+        {
+          "name": "Тёмная сталь",
+          "count": 2
+        },
+        {
+          "name": "Метеорит",
+          "count": 2
+        },
+        {
+          "name": "Нитки",
+          "count": 8
+        },
+        {
+          "name": "Медвежья шкура",
+          "count": 1
+        },
+        {
+          "name": "Кровь гнильца",
+          "count": 1
+        },
+        {
+          "name": "Серебро",
+          "count": 2
+        },
+        {
+          "name": "Кожа",
+          "count": 6
+        },
+        {
+          "name": "Слюна вампира",
+          "count": 2
+        },
+        {
+          "name": "Шёлк",
+          "count": 2
+        },
+        {
+          "name": "Печень тролля",
+          "count": 1
+        },
+        {
+          "name": "Огров воск",
+          "count": 6
+        }
+      ],
+      "surcharge": 1813,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 5,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "стальной-меч-школы-кота-chertezh-shkoly-kota",
+      "name": "Стальной меч школы Кота",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 18,
+      "time": "9 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "Метеорит",
+          "count": 2
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 1
+        },
+        {
+          "name": "Кожа",
+          "count": 2
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "Сталь",
+          "count": 3
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 2
+        },
+        {
+          "name": "Нитки",
+          "count": 1
+        },
+        {
+          "name": "Глаза виверны",
+          "count": 2
+        }
+      ],
+      "surcharge": 656,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 6,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "серебряный-меч-школы-кота-chertezh-shkoly-kota",
+      "name": "Серебряный меч школы Кота",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 19,
+      "time": "10 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "Кожа",
+          "count": 2
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "Сталь",
+          "count": 1
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 1
+        },
+        {
+          "name": "Серебро",
+          "count": 4
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 1
+        },
+        {
+          "name": "Рубиновая пыль",
+          "count": 1
+        }
+      ],
+      "surcharge": 597,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 6,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "арбалет-школы-кота-chertezh-shkoly-kota",
+      "name": "Арбалет школы Кота",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 17,
+      "time": "8 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "Волосы стучака",
+          "count": 2
+        },
+        {
+          "name": "Смола",
+          "count": 2
+        },
+        {
+          "name": "Воск",
+          "count": 2
+        },
+        {
+          "name": "Укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "Огров воск",
+          "count": 2
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 2
+        },
+        {
+          "name": "Тёмное железо",
+          "count": 1
+        },
+        {
+          "name": "Тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "Кости животных",
+          "count": 2
+        }
+      ],
+      "surcharge": 346,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 6,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "броня-школы-кота-chertezh-shkoly-kota",
+      "name": "Броня школы Кота",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 18,
+      "time": "18 часов",
+      "components": [
+        {
+          "name": "Полотно",
+          "count": 2
+        },
+        {
+          "name": "Укреплённая кожа",
+          "count": 3
+        },
+        {
+          "name": "Тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "Тёмное железо",
+          "count": 1
+        },
+        {
+          "name": "Укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "Глаза",
+          "count": 1
+        },
+        {
+          "name": "Костный мозг гуля",
+          "count": 1
+        },
+        {
+          "name": "Нитки",
+          "count": 4
+        },
+        {
+          "name": "Кожа",
+          "count": 3
+        },
+        {
+          "name": "Шёлк",
+          "count": 1
+        },
+        {
+          "name": "Мозг утопца",
+          "count": 1
+        }
+      ],
+      "surcharge": 713,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 6,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "стальной-меч-школы-грифона-chertezh-shkoly-grifona",
+      "name": "Стальной меч школы Грифона",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 18,
+      "time": "9 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "Кожа",
+          "count": 2
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "Сталь",
+          "count": 3
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 2
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 1
+        },
+        {
+          "name": "Нитки",
+          "count": 1
+        },
+        {
+          "name": "Метеорит",
+          "count": 2
+        },
+        {
+          "name": "Яйцо грифона",
+          "count": 1
+        }
+      ],
+      "surcharge": 656,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 6,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "серебряный-меч-школы-грифона-chertezh-shkoly-grifona",
+      "name": "Серебряный меч школы Грифона",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 19,
+      "time": "10 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "Кожа",
+          "count": 2
+        },
+        {
+          "name": "Сталь",
+          "count": 1
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "Серебро",
+          "count": 4
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 2
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 2
+        },
+        {
+          "name": "Перья",
+          "count": 2
+        },
+        {
+          "name": "Пятая эссенция",
+          "count": 1
+        }
+      ],
+      "surcharge": 597,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 6,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "арбалет-школы-грифона-chertezh-shkoly-grifona",
+      "name": "Арбалет школы Грифона",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 17,
+      "time": "8 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "Усики археспоры",
+          "count": 2
+        },
+        {
+          "name": "Воск",
+          "count": 2
+        },
+        {
+          "name": "Тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "Тёмное железо",
+          "count": 1
+        },
+        {
+          "name": "Смола",
+          "count": 2
+        },
+        {
+          "name": "Укреплённая кожа",
+          "count": 1
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 2
+        },
+        {
+          "name": "Огров воск",
+          "count": 1
+        }
+      ],
+      "surcharge": 342,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 6,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "броня-школы-грифона-chertezh-shkoly-grifona",
+      "name": "Броня школы Грифона",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 20,
+      "time": "24 часа",
+      "components": [
+        {
+          "name": "Полотно",
+          "count": 3
+        },
+        {
+          "name": "Укреплённая кожа",
+          "count": 5
+        },
+        {
+          "name": "Серебро",
+          "count": 1
+        },
+        {
+          "name": "Метеорит",
+          "count": 3
+        },
+        {
+          "name": "Кожа",
+          "count": 4
+        },
+        {
+          "name": "Глаза виверны",
+          "count": 2
+        },
+        {
+          "name": "Тёмная сталь",
+          "count": 4
+        },
+        {
+          "name": "Нитки",
+          "count": 5
+        },
+        {
+          "name": "Эссенция света",
+          "count": 1
+        },
+        {
+          "name": "Костный мозг гуля",
+          "count": 2
+        },
+        {
+          "name": "Шёлк",
+          "count": 2
+        },
+        {
+          "name": "Кровь гнильца",
+          "count": 1
+        }
+      ],
+      "surcharge": 1571,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 6,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "стальной-меч-школы-мантикоры-chertezh-shkoly-mantikory",
+      "name": "Стальной меч школы Мантикоры",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 18,
+      "time": "9 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "Кожа",
+          "count": 2
+        },
+        {
+          "name": "Метеорит",
+          "count": 1
+        },
+        {
+          "name": "Сталь",
+          "count": 3
+        },
+        {
+          "name": "Двимерит",
+          "count": 1
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 1
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "Кости животных",
+          "count": 1
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 2
+        },
+        {
+          "name": "Нитки",
+          "count": 1
+        }
+      ],
+      "surcharge": 656,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 7,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "серебряный-меч-школы-мантикоры-chertezh-shkoly-mantikory",
+      "name": "Серебряный меч школы Мантикоры",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 19,
+      "time": "10 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "Кожа",
+          "count": 2
+        },
+        {
+          "name": "Серебро",
+          "count": 3
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 1
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 1
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 1
+        },
+        {
+          "name": "Двимерит",
+          "count": 1
+        },
+        {
+          "name": "Calcium equum",
+          "count": 1
+        }
+      ],
+      "surcharge": 597,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 7,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "щит-школы-мантикоры-chertezh-shkoly-mantikory",
+      "name": "Щит школы Мантикоры",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 20,
+      "time": "8 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 4
+        },
+        {
+          "name": "Укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "Метеорит",
+          "count": 3
+        },
+        {
+          "name": "Серебро",
+          "count": 2
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 2
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 2
+        },
+        {
+          "name": "Речная глина",
+          "count": 6
+        }
+      ],
+      "surcharge": 652,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 7,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "броня-школы-мантикоры-chertezh-shkoly-mantikory",
+      "name": "Броня школы Мантикоры",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 20,
+      "time": "22 часа",
+      "components": [
+        {
+          "name": "Полотно",
+          "count": 3
+        },
+        {
+          "name": "Кожа драконида",
+          "count": 5
+        },
+        {
+          "name": "Коготь накера",
+          "count": 1
+        },
+        {
+          "name": "Ухо кладбищенской бабы",
+          "count": 1
+        },
+        {
+          "name": "Глаза",
+          "count": 1
+        },
+        {
+          "name": "Метеорит",
+          "count": 1
+        },
+        {
+          "name": "Кровь утковола",
+          "count": 1
+        },
+        {
+          "name": "Двимерит",
+          "count": 2
+        },
+        {
+          "name": "Волосы стучака",
+          "count": 1
+        }
+      ],
+      "surcharge": 1052,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 7,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "стальной-меч-школы-змеи-chertezh-shkoly-zmei",
+      "name": "Стальной меч школы Змеи",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 18,
+      "time": "9 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "Метеорит",
+          "count": 2
+        },
+        {
+          "name": "Сталь",
+          "count": 3
+        },
+        {
+          "name": "Кожа",
+          "count": 2
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 1
+        },
+        {
+          "name": "Нитки",
+          "count": 1
+        },
+        {
+          "name": "Экстракт яда",
+          "count": 3
+        },
+        {
+          "name": "Паутинник",
+          "count": 2
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 2
+        }
+      ],
+      "surcharge": 656,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 7,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "серебряный-меч-школы-змеи-chertezh-shkoly-zmei",
+      "name": "Серебряный меч школы Змеи",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 19,
+      "time": "10 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "Серебро",
+          "count": 4
+        },
+        {
+          "name": "Сталь",
+          "count": 1
+        },
+        {
+          "name": "Кожа",
+          "count": 2
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 1
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 1
+        },
+        {
+          "name": "Изумрудная пыль",
+          "count": 2
+        }
+      ],
+      "surcharge": 597,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 7,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "змеиный-клык-chertezh-shkoly-zmei",
+      "name": "Змеиный клык",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 16,
+      "time": "4 часа",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 1
+        },
+        {
+          "name": "Кожа драконида",
+          "count": 1
+        },
+        {
+          "name": "Тёмная сталь",
+          "count": 1
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 1
+        },
+        {
+          "name": "Зубы накера",
+          "count": 1
+        }
+      ],
+      "surcharge": 218,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 7,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "броня-школы-змеи-chertezh-shkoly-zmei",
+      "name": "Броня школы Змеи",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 18,
+      "time": "20 часов",
+      "components": [
+        {
+          "name": "Полотно",
+          "count": 4
+        },
+        {
+          "name": "Укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "Кожа",
+          "count": 3
+        },
+        {
+          "name": "Нитки",
+          "count": 6
+        },
+        {
+          "name": "Кожа драконида",
+          "count": 4
+        },
+        {
+          "name": "Тёмная сталь",
+          "count": 5
+        },
+        {
+          "name": "Чернящее масло",
+          "count": 2
+        }
+      ],
+      "surcharge": 842,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 7,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "стальной-меч-школы-волка-chertezh-shkoly-volka",
+      "name": "Стальной меч школы Волка",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 18,
+      "time": "9 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "Кожа",
+          "count": 2
+        },
+        {
+          "name": "Метеорит",
+          "count": 2
+        },
+        {
+          "name": "Сталь",
+          "count": 3
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "Мозг утковола",
+          "count": 1
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 2
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 1
+        },
+        {
+          "name": "Нитки",
+          "count": 1
+        }
+      ],
+      "surcharge": 656,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 7,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "серебряный-меч-школы-волка-chertezh-shkoly-volka",
+      "name": "Серебряный меч школы Волка",
+      "category": "weapon",
+      "level": "master",
+      "origin": "common",
+      "dc": 19,
+      "time": "10 часов",
+      "components": [
+        {
+          "name": "Укреплённое дерево",
+          "count": 2
+        },
+        {
+          "name": "Сталь",
+          "count": 1
+        },
+        {
+          "name": "Серебро",
+          "count": 4
+        },
+        {
+          "name": "Кожа",
+          "count": 2
+        },
+        {
+          "name": "Точильный порошок",
+          "count": 2
+        },
+        {
+          "name": "Эфирная смазка",
+          "count": 1
+        },
+        {
+          "name": "Травильная кислота",
+          "count": 1
+        },
+        {
+          "name": "Пятая эссенция",
+          "count": 1
+        },
+        {
+          "name": "Аконит",
+          "count": 2
+        }
+      ],
+      "surcharge": 597,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 7,
+      "sourceBook": "witcher-gear"
+    },
+    {
+      "id": "броня-школы-волка-chertezh-shkoly-volka",
+      "name": "Броня школы Волка",
+      "category": "armor",
+      "level": "master",
+      "origin": "common",
+      "dc": 20,
+      "time": "23 часа",
+      "components": [
+        {
+          "name": "Укреплённая кожа",
+          "count": 2
+        },
+        {
+          "name": "Метеорит",
+          "count": 2
+        },
+        {
+          "name": "Кожа",
+          "count": 10
+        },
+        {
+          "name": "Сталь",
+          "count": 2
+        },
+        {
+          "name": "Глаза утковола",
+          "count": 2
+        },
+        {
+          "name": "Нитки",
+          "count": 5
+        },
+        {
+          "name": "Кровь утковола",
+          "count": 1
+        },
+        {
+          "name": "Эссенция призрака",
+          "count": 1
+        },
+        {
+          "name": "Костный мозг гуля",
+          "count": 1
+        },
+        {
+          "name": "Шёлк",
+          "count": 2
+        }
+      ],
+      "surcharge": 1302,
+      "price": 0,
+      "priceNote": "Не продаётся",
+      "sourcePage": 7,
+      "sourceBook": "witcher-gear"
     }
   ]
 }

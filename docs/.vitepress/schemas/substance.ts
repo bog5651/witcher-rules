@@ -1,5 +1,6 @@
 import { z } from 'zod'
 import { availabilitySchema } from './weapon'
+import { sourceBookSchema } from './source'
 
 export const substanceIdSchema = z.enum([
   'vitriol',
@@ -23,7 +24,8 @@ export const substanceIngredientSchema = z.object({
   gatheringDC: z.number().int().nonnegative().nullable(),
   weight: z.number().nonnegative().nullable(),
   price: z.number().int().nonnegative(),
-  sourcePage: z.number().int().positive()
+  sourcePage: z.number().int().positive(),
+  sourceBook: sourceBookSchema
 })
 
 export const substancesFileSchema = z.object({

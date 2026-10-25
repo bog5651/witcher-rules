@@ -12,7 +12,8 @@ const categoryLabels = {
   weapon: 'Оружие',
   armor: 'Броня',
   enchantment: 'Зачарования',
-  upgrade: 'Усиления брони'
+  upgrade: 'Усиления брони',
+  explosive: 'Бомбы и ловушки'
 } as const
 
 const levelLabels = {
@@ -31,7 +32,7 @@ type Category = keyof typeof categoryLabels
 type Level = keyof typeof levelLabels
 type Origin = keyof typeof originLabels
 
-const categoryOrder: Category[] = ['component', 'weapon', 'armor', 'enchantment', 'upgrade']
+const categoryOrder: Category[] = ['component', 'weapon', 'armor', 'enchantment', 'upgrade', 'explosive']
 const levelOrder: Level[] = ['novice', 'adept', 'master', 'grandmaster']
 
 const query = ref('')
@@ -155,6 +156,7 @@ const openItem = (item: Schematic) => {
           <option value="armor">Броня</option>
           <option value="enchantment">Зачарования</option>
           <option value="upgrade">Усиления брони</option>
+          <option value="explosive">Бомбы и ловушки</option>
         </select>
       </div>
 

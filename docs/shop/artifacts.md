@@ -13,5 +13,5 @@ pageClass: wide-page
 <ArtifactCatalog />
 
 ::: info Источник
-Стр. 65 и 69 книги «Alzur's Tome of Magic», версия 1.1. Формулировки сохранены.
+Стр. 65 и 69 книги «Alzur's Tome of Magic», версия 1.1; стр. 116–120 книги «The Witcher: A Tome of Chaos». Формулировки сохранены.
 :::

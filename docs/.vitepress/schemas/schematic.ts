@@ -1,7 +1,14 @@
 import { z } from 'zod'
 import { sourceBookSchema } from './source'
 
-export const schematicCategorySchema = z.enum(['component', 'weapon', 'armor', 'upgrade', 'enchantment'])
+export const schematicCategorySchema = z.enum([
+  'component',
+  'weapon',
+  'armor',
+  'upgrade',
+  'enchantment',
+  'explosive'
+])
 export const schematicLevelSchema = z.enum(['novice', 'adept', 'master', 'grandmaster'])
 export const schematicOriginSchema = z.enum(['common', 'elder'])
 
