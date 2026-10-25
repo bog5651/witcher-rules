@@ -12,6 +12,7 @@ export interface DrawerItem {
   description?: string
   descriptionTitle?: string
   sourcePage?: number
+  sourceBook?: string
 }
 
 const item = ref<DrawerItem | null>(null)

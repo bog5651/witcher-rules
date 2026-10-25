@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { sourceBookSchema } from './source'
 
 export const availabilitySchema = z.enum(['everywhere', 'common', 'rare', 'unique'])
 export const concealmentSchema = z.enum(['tiny', 'small', 'large', 'none'])
@@ -23,7 +24,8 @@ export const weaponSchema = z.object({
   price: z.number().int().nonnegative().nullable(),
   elderfolk: z.boolean(),
   witcher: z.boolean(),
-  sourcePage: z.number().int().positive()
+  sourcePage: z.number().int().positive(),
+  sourceBook: sourceBookSchema
 })
 
 export const weaponsFileSchema = z.object({

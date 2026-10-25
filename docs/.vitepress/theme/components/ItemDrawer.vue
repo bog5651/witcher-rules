@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vitepress'
+import { getBook } from '../../data/books'
 import { useItemDrawer } from '../composables/useItemDrawer'
 import EffectText from './EffectText.vue'
 import RulesText from './RulesText.vue'
@@ -15,6 +16,11 @@ let previousFocus: HTMLElement | null = null
 
 const descriptionParagraphs = computed(() => {
   return item.value?.description?.split(/\n{2,}/).map((part) => part.trim()).filter(Boolean) ?? []
+})
+
+const sourceLine = computed(() => {
+  if (!item.value?.sourcePage) return ''
+  return `Источник: стр. ${item.value.sourcePage} · ${getBook(item.value.sourceBook).title}`
 })
 
 const onKeydown = (event: KeyboardEvent) => {
@@ -124,8 +130,8 @@ onBeforeUnmount(() => {
             </p>
           </section>
 
-          <p v-if="item.sourcePage" class="item-drawer__source">
-            Источник: стр. {{ item.sourcePage }} книги.
+          <p v-if="sourceLine" class="item-drawer__source">
+            {{ sourceLine }}
           </p>
         </aside>
       </div>

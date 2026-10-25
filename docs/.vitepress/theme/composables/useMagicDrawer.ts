@@ -6,6 +6,7 @@ export interface MagicDrawerData {
   stats: DrawerStat[]
   effect: string
   sourcePage: number
+  sourceBook?: string
 }
 
 export function useMagicDrawer() {
@@ -18,7 +19,8 @@ export function useMagicDrawer() {
       stats: data.stats,
       description: data.effect,
       descriptionTitle: 'Эффект',
-      sourcePage: data.sourcePage
+      sourcePage: data.sourcePage,
+      sourceBook: data.sourceBook
     })
   }
 

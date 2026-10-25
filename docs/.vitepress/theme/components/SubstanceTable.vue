@@ -89,6 +89,7 @@ const openItem = (item: SubstanceIngredient) => {
     title: item.name,
     subtitle: `Субстанция: ${substanceLabels[item.substance]}`,
     sourcePage: item.sourcePage,
+    sourceBook: item.sourceBook,
     stats: [
       { label: 'Субстанция', value: substanceLabels[item.substance] },
       { label: 'Доступность', value: availabilityLabels[item.availability] },
@@ -176,6 +177,7 @@ const openItem = (item: SubstanceIngredient) => {
               <button type="button" class="wr-item-link" @click="openItem(item)">
                 {{ item.name }}
               </button>
+              <SourceBadge :book="item.sourceBook" :page="item.sourcePage" />
             </td>
             <td class="col-substance">
               <SubstanceIcon :name="item.substance" :size="20" />

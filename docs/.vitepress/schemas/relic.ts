@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { sourceBookSchema } from './source'
 
 export const relicCategoryIds = [
   'sword',
@@ -49,6 +50,7 @@ export const relicSchema = z
     kind: z.enum(['weapon', 'armor']),
     category: z.enum(relicCategoryIds),
     sourcePage: z.number().int().positive(),
+    sourceBook: sourceBookSchema,
     check: z.string().min(1),
     weapon: relicWeaponSchema.nullable(),
     armor: relicArmorSchema.nullable(),

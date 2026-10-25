@@ -20,9 +20,11 @@ import './custom.css'
 
 import SpellCatalog from './components/SpellCatalog.vue'
 import MagicCatalog from './components/MagicCatalog.vue'
+import MagicGiftCatalog from './components/MagicGiftCatalog.vue'
 import SubstanceIcon from './components/SubstanceIcon.vue'
 import WeaponTable from './components/WeaponTable.vue'
 import ArmorTable from './components/ArmorTable.vue'
+import ArtifactCatalog from './components/ArtifactCatalog.vue'
 import AlchemicalTable from './components/AlchemicalTable.vue'
 import ArmorUpgradeTable from './components/ArmorUpgradeTable.vue'
 import TransportTable from './components/TransportTable.vue'
@@ -42,6 +44,8 @@ import BestiaryCatalog from './components/BestiaryCatalog.vue'
 import RelicCatalog from './components/RelicCatalog.vue'
 import RulesText from './components/RulesText.vue'
 import NoteHint from './components/NoteHint.vue'
+import SourceBadge from './components/SourceBadge.vue'
+import LoreReader from './components/LoreReader.vue'
 
 export default {
   extends: DefaultTheme,
@@ -49,9 +53,11 @@ export default {
   enhanceApp({ app }) {
     app.component('SpellCatalog', SpellCatalog)
     app.component('MagicCatalog', MagicCatalog)
+    app.component('MagicGiftCatalog', MagicGiftCatalog)
     app.component('SubstanceIcon', SubstanceIcon)
     app.component('WeaponTable', WeaponTable)
     app.component('ArmorTable', ArmorTable)
+    app.component('ArtifactCatalog', ArtifactCatalog)
     app.component('AlchemicalTable', AlchemicalTable)
     app.component('ArmorUpgradeTable', ArmorUpgradeTable)
     app.component('TransportTable', TransportTable)
@@ -71,5 +77,7 @@ export default {
     app.component('RelicCatalog', RelicCatalog)
     app.component('RulesText', RulesText)
     app.component('NoteHint', NoteHint)
+    app.component('SourceBadge', SourceBadge)
+    app.component('LoreReader', LoreReader)
   }
 } satisfies Theme

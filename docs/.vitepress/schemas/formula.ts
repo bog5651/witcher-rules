@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { sourceBookSchema } from './source'
 import { substanceIdSchema } from './substance'
 
 export const formulaLevelSchema = z.enum(['novice', 'adept', 'master'])
@@ -17,6 +18,7 @@ export const formulaSchema = z.object({
   price: z.number().int().nonnegative(),
   ingredients: z.array(formulaIngredientSchema).min(1),
   sourcePage: z.number().int().positive(),
+  sourceBook: sourceBookSchema,
   effect: z.string().min(1).optional(),
   description: z.string().min(1).optional()
 })

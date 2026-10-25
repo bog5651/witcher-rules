@@ -1,0 +1,1370 @@
+[
+  {
+    "id": "fakel",
+    "name": "Факел",
+    "category": "Инструменты",
+    "type": "Д",
+    "damageTypes": [
+      "Д"
+    ],
+    "accuracy": -1,
+    "availability": "everywhere",
+    "damage": "1d6",
+    "reliability": 5,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Когда горит, то имеет горение (25%)"
+    ],
+    "concealment": "small",
+    "upgradeSlots": 0,
+    "weight": 0.1,
+    "price": 1,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 3,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "kryuk",
+    "name": "Крюк",
+    "category": "Инструменты",
+    "type": "К",
+    "damageTypes": [
+      "К"
+    ],
+    "accuracy": -2,
+    "availability": "everywhere",
+    "damage": "1d6",
+    "reliability": 5,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Захватное, кровопускающее (15%)"
+    ],
+    "concealment": "small",
+    "upgradeSlots": 0,
+    "weight": 0.1,
+    "price": 5,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 3,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "pastushiy-posokh",
+    "name": "Пастуший посох",
+    "category": "Инструменты",
+    "type": "Д",
+    "damageTypes": [
+      "Д"
+    ],
+    "accuracy": 0,
+    "availability": "everywhere",
+    "damage": "1d6-2",
+    "reliability": 10,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Несмертельное, можно метнуть на Тел × 2 м"
+    ],
+    "concealment": "large",
+    "upgradeSlots": 0,
+    "weight": 1.0,
+    "price": 14,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 3,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "kirka",
+    "name": "Кирка",
+    "category": "Инструменты",
+    "type": "К",
+    "damageTypes": [
+      "К"
+    ],
+    "accuracy": -2,
+    "availability": "everywhere",
+    "damage": "2d6",
+    "reliability": 10,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [],
+    "concealment": "large",
+    "upgradeSlots": 0,
+    "weight": 1.0,
+    "price": 14,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 3,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "lopata",
+    "name": "Лопата",
+    "category": "Инструменты",
+    "type": "Д",
+    "damageTypes": [
+      "Д"
+    ],
+    "accuracy": -2,
+    "availability": "everywhere",
+    "damage": "2d6",
+    "reliability": 15,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [],
+    "concealment": "large",
+    "upgradeSlots": 0,
+    "weight": 1.5,
+    "price": 15,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 3,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "serp",
+    "name": "Серп",
+    "category": "Инструменты",
+    "type": "Р/К",
+    "damageTypes": [
+      "Р",
+      "К"
+    ],
+    "accuracy": 0,
+    "availability": "everywhere",
+    "damage": "1d6+2",
+    "reliability": 10,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Захватное"
+    ],
+    "concealment": "tiny",
+    "upgradeSlots": 0,
+    "weight": 1.0,
+    "price": 76,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 3,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "ledorub",
+    "name": "Ледоруб",
+    "category": "Инструменты",
+    "type": "К",
+    "damageTypes": [
+      "К"
+    ],
+    "accuracy": 0,
+    "availability": "everywhere",
+    "damage": "1d6+2",
+    "reliability": 10,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Захватное, +2 к Атлетике при альпенизме"
+    ],
+    "concealment": "tiny",
+    "upgradeSlots": 0,
+    "weight": 1.0,
+    "price": 77,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 3,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "pyatimetrovaya-tsep",
+    "name": "Пятиметровая цепь",
+    "category": "Инструменты",
+    "type": "К",
+    "damageTypes": [
+      "К"
+    ],
+    "accuracy": -2,
+    "availability": "everywhere",
+    "damage": "2d6+4",
+    "reliability": 15,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [
+      "Длинное, захватное"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 0,
+    "weight": 2.0,
+    "price": 80,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 3,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "korotkiy-posokh",
+    "name": "Короткий посох",
+    "category": "Инструменты",
+    "type": "Д",
+    "damageTypes": [
+      "Д"
+    ],
+    "accuracy": 0,
+    "availability": "everywhere",
+    "damage": "2d6",
+    "reliability": 10,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [
+      "Длинное, несмертельное"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 0,
+    "weight": 3.0,
+    "price": 96,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 3,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "vily",
+    "name": "Вилы",
+    "category": "Инструменты",
+    "type": "К",
+    "damageTypes": [
+      "К"
+    ],
+    "accuracy": -2,
+    "availability": "everywhere",
+    "damage": "2d6+2",
+    "reliability": 15,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [
+      "Кровопускающее (15%)"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 0,
+    "weight": 2.0,
+    "price": 115,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 3,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "utyazhelennaya-set",
+    "name": "Утяжеленная сеть",
+    "category": "Инструменты",
+    "type": "—",
+    "damageTypes": [
+      "—"
+    ],
+    "accuracy": 0,
+    "availability": "everywhere",
+    "damage": "—",
+    "reliability": 5,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [
+      "Опутывающее"
+    ],
+    "concealment": "large",
+    "upgradeSlots": 0,
+    "weight": 4.0,
+    "price": 125,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 3,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "kosa",
+    "name": "Коса",
+    "category": "Инструменты",
+    "type": "Р/К",
+    "damageTypes": [
+      "Р",
+      "К"
+    ],
+    "accuracy": -3,
+    "availability": "everywhere",
+    "damage": "3d6",
+    "reliability": 10,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [
+      "Длинное, захватное"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 0,
+    "weight": 3.5,
+    "price": 126,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 4,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "kocherga",
+    "name": "Кочерга",
+    "category": "Инструменты",
+    "type": "Д/К",
+    "damageTypes": [
+      "Д",
+      "К"
+    ],
+    "accuracy": 0,
+    "availability": "everywhere",
+    "damage": "2d6+2",
+    "reliability": 10,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Если раскалено, то имеет горение (15%)"
+    ],
+    "concealment": "large",
+    "upgradeSlots": 0,
+    "weight": 2.0,
+    "price": 137,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 4,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "knut",
+    "name": "Кнут",
+    "category": "Инструменты",
+    "type": "Р",
+    "damageTypes": [
+      "Р"
+    ],
+    "accuracy": 0,
+    "availability": "common",
+    "damage": "1d6+2",
+    "reliability": 5,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Длинное, захватное"
+    ],
+    "concealment": "small",
+    "upgradeSlots": 0,
+    "weight": 0.5,
+    "price": 152,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 4,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "shprits-polevogo-vracha",
+    "name": "Шприц полевого врача",
+    "category": "Инструменты",
+    "type": "К",
+    "damageTypes": [
+      "К"
+    ],
+    "accuracy": 1,
+    "availability": "rare",
+    "damage": "1d6",
+    "reliability": 5,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Шприц, пробивающее броню"
+    ],
+    "concealment": "tiny",
+    "upgradeSlots": 0,
+    "weight": 0.5,
+    "price": 350,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 4,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "krestyanskiy-molot",
+    "name": "Крестьянский молот",
+    "category": "Инструменты",
+    "type": "Д",
+    "damageTypes": [
+      "Д"
+    ],
+    "accuracy": 0,
+    "availability": "everywhere",
+    "damage": "5d6",
+    "reliability": 5,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [
+      "Разрушающее"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 0,
+    "weight": 3.0,
+    "price": 375,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 4,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "set-okhotnika-na-monstrov",
+    "name": "Сеть охотника на монстров",
+    "category": "Инструменты",
+    "type": "—",
+    "damageTypes": [
+      "—"
+    ],
+    "accuracy": 0,
+    "availability": "unique",
+    "damage": "—",
+    "reliability": 5,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [
+      "Опутывающее, магические путы, можно метнуть на 4 м"
+    ],
+    "concealment": "large",
+    "upgradeSlots": 0,
+    "weight": 4.0,
+    "price": 500,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 4,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "druidskiy-serp",
+    "name": "Друидский серп",
+    "category": "Инструменты",
+    "type": "Р/К",
+    "damageTypes": [
+      "Р",
+      "К"
+    ],
+    "accuracy": 0,
+    "availability": "everywhere",
+    "damage": "3d6",
+    "reliability": 15,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Захватное, кровопускающее (30%)"
+    ],
+    "concealment": "tiny",
+    "upgradeSlots": 0,
+    "weight": 1.0,
+    "price": 540,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 4,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "lamiya",
+    "name": "Ламия",
+    "category": "Инструменты",
+    "type": "Р",
+    "damageTypes": [
+      "Р"
+    ],
+    "accuracy": -1,
+    "availability": "unique",
+    "damage": "3d6+1",
+    "reliability": 5,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Длинное, захватное, кровопускающее (100%)"
+    ],
+    "concealment": "small",
+    "upgradeSlots": 1,
+    "weight": 0.5,
+    "price": 600,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 4,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "daga",
+    "name": "Дага",
+    "category": "Лёгкие клинки",
+    "type": "Р/К",
+    "damageTypes": [
+      "Р",
+      "К"
+    ],
+    "accuracy": 0,
+    "availability": "common",
+    "damage": "2d6",
+    "reliability": 10,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Парирующее"
+    ],
+    "concealment": "small",
+    "upgradeSlots": 1,
+    "weight": 1.0,
+    "price": 350,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 5,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "lovets-mechey",
+    "name": "Ловец мечей",
+    "category": "Лёгкие клинки",
+    "type": "Р/К",
+    "damageTypes": [
+      "Р",
+      "К"
+    ],
+    "accuracy": 0,
+    "availability": "rare",
+    "damage": "2d6",
+    "reliability": 10,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Ловящий лезвия"
+    ],
+    "concealment": "small",
+    "upgradeSlots": 1,
+    "weight": 1.0,
+    "price": 500,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 5,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "krovavyy-kinzhal",
+    "name": "Кровавый кинжал",
+    "category": "Лёгкие клинки",
+    "type": "Р/К",
+    "damageTypes": [
+      "Р",
+      "К"
+    ],
+    "accuracy": 0,
+    "availability": "unique",
+    "damage": "2d6",
+    "reliability": 5,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Кровопускающее (25%)"
+    ],
+    "concealment": "small",
+    "upgradeSlots": 1,
+    "weight": 0.5,
+    "price": null,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 5,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "zmeinyy-klyk",
+    "name": "Змеиный клык",
+    "category": "Лёгкие клинки",
+    "type": "Р/К",
+    "damageTypes": [
+      "Р",
+      "К"
+    ],
+    "accuracy": 1,
+    "availability": "unique",
+    "damage": "2d6+2",
+    "reliability": 10,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Парирующее"
+    ],
+    "concealment": "small",
+    "upgradeSlots": 1,
+    "weight": 0.5,
+    "price": null,
+    "elderfolk": false,
+    "witcher": true,
+    "sourcePage": 5,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "serebryanyy-zmeinyy-klyk",
+    "name": "Серебряный Змеиный клык",
+    "category": "Лёгкие клинки",
+    "type": "Р/К",
+    "damageTypes": [
+      "Р",
+      "К"
+    ],
+    "accuracy": 1,
+    "availability": "unique",
+    "damage": "1d6+2",
+    "reliability": 10,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Парирующее, серебряное (1d6+2)"
+    ],
+    "concealment": "small",
+    "upgradeSlots": 1,
+    "weight": 0.5,
+    "price": null,
+    "elderfolk": false,
+    "witcher": true,
+    "sourcePage": 5,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "zheleznyy-mech",
+    "name": "Железный меч",
+    "category": "Мечи",
+    "type": "Р/К",
+    "damageTypes": [
+      "Р",
+      "К"
+    ],
+    "accuracy": 0,
+    "availability": "everywhere",
+    "damage": "2d6",
+    "reliability": 10,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [],
+    "concealment": "large",
+    "upgradeSlots": 0,
+    "weight": 1.0,
+    "price": 167,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 6,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "schetovod",
+    "name": "Счетовод",
+    "category": "Мечи",
+    "type": "Р/К",
+    "damageTypes": [
+      "Р",
+      "К"
+    ],
+    "accuracy": 0,
+    "availability": "common",
+    "damage": "4d6",
+    "reliability": 15,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [],
+    "concealment": "large",
+    "upgradeSlots": 1,
+    "weight": 1.5,
+    "price": 481,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 6,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "boklerskiy-mech",
+    "name": "Боклерский меч",
+    "category": "Мечи",
+    "type": "Р/К",
+    "damageTypes": [
+      "Р",
+      "К"
+    ],
+    "accuracy": 0,
+    "availability": "unique",
+    "damage": "5d6",
+    "reliability": 10,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Пробивающее броню"
+    ],
+    "concealment": "large",
+    "upgradeSlots": 1,
+    "weight": 1.5,
+    "price": 800,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 6,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "derevyannyy-mech",
+    "name": "Деревянный меч",
+    "category": "Мечи",
+    "type": "Д",
+    "damageTypes": [
+      "Д"
+    ],
+    "accuracy": 0,
+    "availability": "everywhere",
+    "damage": "2d6",
+    "reliability": 10,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [
+      "Несмертельное"
+    ],
+    "concealment": "large",
+    "upgradeSlots": 0,
+    "weight": 1.0,
+    "price": 67,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 8,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "mech-okhotnikov-za-koldunyami",
+    "name": "Меч Охотников за колдуньями",
+    "category": "Мечи",
+    "type": "Р/К",
+    "damageTypes": [
+      "Р",
+      "К"
+    ],
+    "accuracy": 0,
+    "availability": "rare",
+    "damage": "5d6",
+    "reliability": 15,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [
+      "Кровопускающее (25%)"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 1,
+    "weight": 2.0,
+    "price": 679,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 8,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "makhakamskiy-sigill",
+    "name": "Махакамский сигилль",
+    "category": "Мечи",
+    "type": "Р/К",
+    "damageTypes": [
+      "Р",
+      "К"
+    ],
+    "accuracy": 2,
+    "availability": "unique",
+    "damage": "5d6+2",
+    "reliability": 15,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [
+      "Ошеломление (25%)"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 2,
+    "weight": 2.0,
+    "price": 924,
+    "elderfolk": true,
+    "witcher": false,
+    "sourcePage": 8,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "klinok-iz-viroledy",
+    "name": "Клинок из Вироледы",
+    "category": "Мечи",
+    "type": "Р/К",
+    "damageTypes": [
+      "Р",
+      "К"
+    ],
+    "accuracy": 1,
+    "availability": "unique",
+    "damage": "4d6+4",
+    "reliability": 10,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [
+      "Сбалансированное, кровопускающее (30%), отравление (30%)"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 0,
+    "weight": 2.5,
+    "price": 995,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 8,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "flamberg",
+    "name": "Фламберг",
+    "category": "Мечи",
+    "type": "Р/К",
+    "damageTypes": [
+      "Р",
+      "К"
+    ],
+    "accuracy": -1,
+    "availability": "rare",
+    "damage": "6d6",
+    "reliability": 15,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [
+      "Длинное, разрушающее"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 1,
+    "weight": 3.5,
+    "price": 1025,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 8,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "dubinka",
+    "name": "Дубинка",
+    "category": "Дробящее",
+    "type": "Д",
+    "damageTypes": [
+      "Д"
+    ],
+    "accuracy": 0,
+    "availability": "everywhere",
+    "damage": "2d6+2",
+    "reliability": 10,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Несмертельное"
+    ],
+    "concealment": "tiny",
+    "upgradeSlots": 0,
+    "weight": 1.0,
+    "price": 83,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 10,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "nagayka",
+    "name": "Нагайка",
+    "category": "Дробящее",
+    "type": "Д",
+    "damageTypes": [
+      "Д"
+    ],
+    "accuracy": 0,
+    "availability": "everywhere",
+    "damage": "2d6",
+    "reliability": 10,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Несмертельное, +1 к Скор ездового животного"
+    ],
+    "concealment": "tiny",
+    "upgradeSlots": 0,
+    "weight": 1.0,
+    "price": 115,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 10,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "kisten",
+    "name": "Кистень",
+    "category": "Дробящее",
+    "type": "К/Д",
+    "damageTypes": [
+      "К",
+      "Д"
+    ],
+    "accuracy": -1,
+    "availability": "rare",
+    "damage": "4d6+2",
+    "reliability": 10,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Захватное, пробивающее броню"
+    ],
+    "concealment": "large",
+    "upgradeSlots": 1,
+    "weight": 2.0,
+    "price": 562,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 10,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "kavaleriyskiy-molot",
+    "name": "Кавалерийский молот",
+    "category": "Дробящее",
+    "type": "К/Д",
+    "damageTypes": [
+      "К",
+      "Д"
+    ],
+    "accuracy": 0,
+    "availability": "common",
+    "damage": "2d6",
+    "reliability": 10,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Таранящее"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 1,
+    "weight": 2.5,
+    "price": 860,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 10,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "falsharda",
+    "name": "Фальшарда",
+    "category": "Древковое",
+    "type": "К/Р/Д",
+    "damageTypes": [
+      "К",
+      "Р",
+      "Д"
+    ],
+    "accuracy": 0,
+    "availability": "everywhere",
+    "damage": "3d6+2",
+    "reliability": 10,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [
+      "Длинное"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 1,
+    "weight": 1.5,
+    "price": 412,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 11,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "chelovekolov",
+    "name": "Человеколов",
+    "category": "Древковое",
+    "type": "К",
+    "damageTypes": [
+      "К"
+    ],
+    "accuracy": 0,
+    "availability": "rare",
+    "damage": "3d6+3",
+    "reliability": 15,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [
+      "Длинное, захватное"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 0,
+    "weight": 3.0,
+    "price": 463,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 11,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "zatuplennoe-kope",
+    "name": "Затупленное копьё",
+    "category": "Древковое",
+    "type": "Д",
+    "damageTypes": [
+      "Д"
+    ],
+    "accuracy": 0,
+    "availability": "rare",
+    "damage": "2d6",
+    "reliability": 5,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Несмертельное, длинное, таранящее"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 0,
+    "weight": 3.5,
+    "price": 500,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 11,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "boevoe-kope",
+    "name": "Боевое копьё",
+    "category": "Древковое",
+    "type": "К",
+    "damageTypes": [
+      "К"
+    ],
+    "accuracy": 0,
+    "availability": "rare",
+    "damage": "2d6",
+    "reliability": 10,
+    "hands": 1,
+    "range": "Нет",
+    "effects": [
+      "Длинное, таранящее"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 0,
+    "weight": 3.5,
+    "price": 550,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 11,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "alebarda-sekach",
+    "name": "Алебарда-секач",
+    "category": "Древковое",
+    "type": "К/Р/Д",
+    "damageTypes": [
+      "К",
+      "Р",
+      "Д"
+    ],
+    "accuracy": 0,
+    "availability": "rare",
+    "damage": "5d6+2",
+    "reliability": 10,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [
+      "Длинное"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 1,
+    "weight": 3.0,
+    "price": 568,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 11,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "protazan",
+    "name": "Протазан",
+    "category": "Древковое",
+    "type": "К/Р/Д",
+    "damageTypes": [
+      "К",
+      "Р",
+      "Д"
+    ],
+    "accuracy": 1,
+    "availability": "common",
+    "damage": "4d6+2",
+    "reliability": 10,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [
+      "Длинное, кровопускающее (25%)"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 1,
+    "weight": 3.5,
+    "price": 750,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 11,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "elfskiy-sdvoennyy-luk",
+    "name": "Эльфский сдвоенный лук",
+    "category": "Луки",
+    "type": "К",
+    "damageTypes": [
+      "К"
+    ],
+    "accuracy": 1,
+    "availability": "unique",
+    "damage": "5d6",
+    "reliability": 10,
+    "hands": 2,
+    "range": "250 м",
+    "effects": [
+      "Пробивающее броню"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 1,
+    "weight": 2.0,
+    "price": 816,
+    "elderfolk": true,
+    "witcher": false,
+    "sourcePage": 12,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "kovirskiy-laminirovannyy-luk",
+    "name": "Ковирский ламинированный лук",
+    "category": "Луки",
+    "type": "К",
+    "damageTypes": [
+      "К"
+    ],
+    "accuracy": 3,
+    "availability": "unique",
+    "damage": "6d6",
+    "reliability": 10,
+    "hands": 2,
+    "range": "370 м",
+    "effects": [
+      "Пробивающее броню, сбалансированное"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 2,
+    "weight": 1.5,
+    "price": 1371,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 12,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "okhotnichiy-arbalet",
+    "name": "Охотничий арбалет",
+    "category": "Арбалеты",
+    "type": "К",
+    "damageTypes": [
+      "К"
+    ],
+    "accuracy": 2,
+    "availability": "common",
+    "damage": "5d6",
+    "reliability": 10,
+    "hands": 2,
+    "range": "150 м",
+    "effects": [
+      "Медленно перезаряжающееся"
+    ],
+    "concealment": "large",
+    "upgradeSlots": 1,
+    "weight": 3.0,
+    "price": 600,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 13,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "arbalet-shkoly-kota",
+    "name": "Арбалет школы Кота",
+    "category": "Арбалеты",
+    "type": "К",
+    "damageTypes": [
+      "К"
+    ],
+    "accuracy": 1,
+    "availability": "unique",
+    "damage": "2d6+2",
+    "reliability": 5,
+    "hands": 1,
+    "range": "50 м",
+    "effects": [
+      "Медленно перезаряжающееся, сбалансированное"
+    ],
+    "concealment": "large",
+    "upgradeSlots": 1,
+    "weight": 0.5,
+    "price": null,
+    "elderfolk": false,
+    "witcher": true,
+    "sourcePage": 13,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "arbalet-shkoly-grifona",
+    "name": "Арбалет школы Грифона",
+    "category": "Арбалеты",
+    "type": "К",
+    "damageTypes": [
+      "К"
+    ],
+    "accuracy": 1,
+    "availability": "unique",
+    "damage": "2d6+2",
+    "reliability": 5,
+    "hands": 1,
+    "range": "50 м",
+    "effects": [
+      "Медленно перезаряжающееся, улучшенное пробивающее броню"
+    ],
+    "concealment": "large",
+    "upgradeSlots": 1,
+    "weight": 0.5,
+    "price": null,
+    "elderfolk": false,
+    "witcher": true,
+    "sourcePage": 13,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "arbalet-shkoly-medvedya",
+    "name": "Арбалет школы Медведя",
+    "category": "Арбалеты",
+    "type": "К",
+    "damageTypes": [
+      "К"
+    ],
+    "accuracy": 1,
+    "availability": "unique",
+    "damage": "4d6+2",
+    "reliability": 5,
+    "hands": 1,
+    "range": "50 м",
+    "effects": [
+      "Медленно перезаряжающееся"
+    ],
+    "concealment": "large",
+    "upgradeSlots": 1,
+    "weight": 0.5,
+    "price": null,
+    "elderfolk": false,
+    "witcher": true,
+    "sourcePage": 13,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "skorpio",
+    "name": "Скорпио",
+    "category": "Арбалеты",
+    "type": "К",
+    "damageTypes": [
+      "К"
+    ],
+    "accuracy": 0,
+    "availability": "unique",
+    "damage": "10d6",
+    "reliability": 20,
+    "hands": 2,
+    "range": "200 м",
+    "effects": [
+      "Расчетная перезарядка, устанавливаемое"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 0,
+    "weight": 40.0,
+    "price": 2500,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 13,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "otravlennyy-kogot-garpii",
+    "name": "Отравленный коготь гарпии",
+    "category": "Метательное",
+    "type": "К",
+    "damageTypes": [
+      "К"
+    ],
+    "accuracy": 1,
+    "availability": "rare",
+    "damage": "1d6",
+    "reliability": 10,
+    "hands": 1,
+    "range": "Тел × 4 м",
+    "effects": [
+      "Отравление (90%), сбалансированное"
+    ],
+    "concealment": "tiny",
+    "upgradeSlots": 0,
+    "weight": 0.5,
+    "price": 450,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 15,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "svyazyvayushchiy-posokh",
+    "name": "Связывающий посох",
+    "category": "Посохи",
+    "type": "Д",
+    "damageTypes": [
+      "Д"
+    ],
+    "accuracy": 0,
+    "availability": "unique",
+    "damage": "2d6",
+    "reliability": 5,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [
+      "Длинное, фокусирующее (3), улучшенное фокусирующее"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 1,
+    "weight": 2.0,
+    "price": null,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 15,
+    "sourceBook": "catalog-weapons-v2"
+  },
+  {
+    "id": "istinnyy-svyazyvayushchiy-posokh",
+    "name": "Истинный связывающий посох",
+    "category": "Посохи",
+    "type": "Д",
+    "damageTypes": [
+      "Д"
+    ],
+    "accuracy": 0,
+    "availability": "unique",
+    "damage": "2d6",
+    "reliability": 5,
+    "hands": 2,
+    "range": "Нет",
+    "effects": [
+      "Длинное, фокусирующее (3), улучшенное фокусирующее"
+    ],
+    "concealment": "none",
+    "upgradeSlots": 1,
+    "weight": 2.0,
+    "price": null,
+    "elderfolk": false,
+    "witcher": false,
+    "sourcePage": 15,
+    "sourceBook": "catalog-weapons-v2"
+  }
+]

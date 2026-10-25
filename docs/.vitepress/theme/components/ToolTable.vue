@@ -102,6 +102,7 @@ const openItem = (item: Tool) => {
     subtitle: 'Набор инструментов',
     description: item.description,
     sourcePage: item.sourcePage,
+    sourceBook: item.sourceBook,
     stats: [
       { label: 'Доступность', value: availabilityLabels[item.availability] },
       { label: 'Скрытность', value: concealmentLabels[item.concealment] },
@@ -208,6 +209,7 @@ const openItem = (item: Tool) => {
             </td>
             <td class="col-name">
               <button type="button" class="wr-item-link" @click="openItem(item)">{{ item.name }}</button>
+              <SourceBadge :book="item.sourceBook" :page="item.sourcePage" />
             </td>
             <td>
               <span class="wr-abbr" :title="availabilityLabels[item.availability]">

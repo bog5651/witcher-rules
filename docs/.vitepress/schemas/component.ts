@@ -1,5 +1,6 @@
 import { z } from 'zod'
 import { availabilitySchema } from './weapon'
+import { sourceBookSchema } from './source'
 
 export const componentCategorySchema = z.enum(['crafting', 'animal', 'alchemical', 'metal'])
 
@@ -13,7 +14,8 @@ export const componentSchema = z.object({
   gatheringDC: z.number().int().nonnegative().nullable(),
   weight: z.number().nonnegative(),
   price: z.number().int().nonnegative(),
-  sourcePage: z.number().int().positive()
+  sourcePage: z.number().int().positive(),
+  sourceBook: sourceBookSchema
 })
 
 export const componentsFileSchema = z.object({

@@ -115,6 +115,7 @@ const openItem = (item: Schematic) => {
     title: item.name,
     subtitle: `Чертёж · ${categoryLabels[item.category]} · ${levelLabels[item.level]}`,
     sourcePage: item.sourcePage,
+    sourceBook: item.sourceBook,
     stats: [
       { label: 'Категория', value: categoryLabels[item.category] },
       { label: 'Уровень', value: levelLabels[item.level] },
@@ -215,6 +216,7 @@ const openItem = (item: Schematic) => {
                 <button type="button" class="wr-item-link" @click="openItem(item)">
                   {{ item.name }}
                 </button>
+                <SourceBadge :book="item.sourceBook" :page="item.sourcePage" />
               </td>
               <td class="col-num">{{ item.dc }}</td>
               <td class="col-time">{{ item.time }}</td>

@@ -59,6 +59,7 @@ const openItem = (item: Gear) => {
     subtitle: categoryLabels[item.category],
     description: item.description,
     sourcePage: item.sourcePage,
+    sourceBook: item.sourceBook,
     stats: [
       { label: 'Категория', value: categoryLabels[item.category] },
       { label: 'Вес', value: item.weight === null ? '—' : `${formatWeight(item)} кг` },
@@ -117,6 +118,7 @@ const openItem = (item: Gear) => {
                 <button type="button" class="wr-item-link" @click="openItem(item)">
                   {{ item.name }}
                 </button>
+                <SourceBadge :book="item.sourceBook" :page="item.sourcePage" />
               </td>
               <td v-if="section.hasWeight" class="col-num">{{ formatWeight(item) }}</td>
               <td class="col-num">{{ formatPrice(item) }}</td>

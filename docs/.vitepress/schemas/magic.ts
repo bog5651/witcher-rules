@@ -1,7 +1,8 @@
 import { z } from 'zod'
+import { sourceBookSchema } from './source'
 
 export const levelSchema = z.enum(['novice', 'adept', 'master'])
-export const elementSchema = z.enum(['mixed', 'earth', 'air', 'fire', 'water'])
+export const elementSchema = z.enum(['mixed', 'earth', 'air', 'fire', 'water', 'necromancy'])
 export const traditionSchema = z.enum(['druid', 'preacher', 'archpriest'])
 export const dangerSchema = z.enum(['low', 'medium', 'high'])
 
@@ -10,8 +11,12 @@ const base = {
   name: z.string().min(1),
   cost: z.number().int().nonnegative(),
   costVariable: z.boolean(),
+  costText: z.string().optional(),
+  healthCost: z.string().optional(),
+  language: z.enum(['ru', 'en']).optional(),
   effect: z.string().min(1),
-  sourcePage: z.number().int().positive()
+  sourcePage: z.number().int().positive(),
+  sourceBook: sourceBookSchema
 }
 
 export const signSchema = z.object({

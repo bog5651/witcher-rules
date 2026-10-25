@@ -73,6 +73,7 @@ const openVehicle = (item: Vehicle) => {
     subtitle: 'Скакуны и транспорт',
     description: item.description,
     sourcePage: item.sourcePage,
+    sourceBook: item.sourceBook,
     stats: [
       { label: 'Атлетика + Лов', value: item.athletics },
       { label: 'Модификатор управления', value: item.controlModifier },
@@ -90,6 +91,7 @@ const openTack = (item: Tack) => {
     subtitle: `Упряжь · ${categoryLabels[item.category]}`,
     description: item.description,
     sourcePage: item.sourcePage,
+    sourceBook: item.sourceBook,
     stats: [
       { label: 'Категория', value: categoryLabels[item.category] },
       { label: 'Доступность', value: availabilityLabels[item.availability] },
@@ -150,6 +152,7 @@ const openTack = (item: Tack) => {
                 <button type="button" class="wr-item-link" @click="openVehicle(item)">
                   {{ item.name }}
                 </button>
+                <SourceBadge :book="item.sourceBook" :page="item.sourcePage" />
               </td>
               <td class="col-center">{{ item.athletics }}</td>
               <td class="col-center">{{ item.controlModifier }}</td>
@@ -189,6 +192,7 @@ const openTack = (item: Tack) => {
                   <button type="button" class="wr-item-link" @click="openTack(item)">
                     {{ item.name }}
                   </button>
+                  <SourceBadge :book="item.sourceBook" :page="item.sourcePage" />
                 </td>
                 <td>
                   <span class="wr-abbr" :title="availabilityLabels[item.availability]">

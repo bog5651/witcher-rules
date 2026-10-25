@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import data from '../../data/bestiary.json'
+import { getBook } from '../../data/books'
 import type { BestiaryClass, BestiaryEntry } from '../../schemas/bestiary'
 import EffectText from './EffectText.vue'
 
@@ -65,10 +66,11 @@ const difficulty = computed(() => {
   return `${overallLabels[value.overall]} · ${tierLabels[value.tier]}`
 })
 const sourceLabel = computed(() => {
+  const book = getBook(props.entry.sourceBook).title
   if (props.entry.descriptionPage && props.entry.descriptionPage !== props.entry.statPage) {
-    return `Стр. ${props.entry.statPage}–${props.entry.descriptionPage}`
+    return `Стр. ${props.entry.statPage}–${props.entry.descriptionPage} · ${book}`
   }
-  return `Стр. ${props.entry.statPage}`
+  return `Стр. ${props.entry.statPage} · ${book}`
 })
 const sizeRows = computed(() => {
   const size = variant.value.size
@@ -317,7 +319,7 @@ onBeforeUnmount(() => {
           </div>
         </section>
 
-        <p class="bestiary-drawer__source">Источник: {{ sourceLabel }} книги.</p>
+        <p class="bestiary-drawer__source">Источник: {{ sourceLabel }}.</p>
       </aside>
     </div>
   </Teleport>

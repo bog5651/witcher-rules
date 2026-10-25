@@ -6,6 +6,7 @@ const props = defineProps<{
   definition: string
   title?: string
   sourcePage?: number
+  sourceBook?: string
 }>()
 
 const { show, hide } = useTermTooltip()
@@ -14,7 +15,8 @@ const open = (event: Event) => {
   show(event, {
     title: props.title ?? props.text,
     definition: props.definition,
-    sourcePage: props.sourcePage
+    sourcePage: props.sourcePage,
+    sourceBook: props.sourceBook
   })
 }
 </script>

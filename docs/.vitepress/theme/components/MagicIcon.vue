@@ -50,6 +50,18 @@ defineProps<{
       <circle cx="12" cy="12" r="7.5" />
       <path d="m12 5.8 1.7 4.5 4.5 1.7-4.5 1.7-1.7 4.5-1.7-4.5L5.8 12l4.5-1.7L12 5.8Z" />
     </template>
+    <template v-else-if="type === 'necromancy'">
+      <path d="M12 3a7 7 0 0 0-7 7c0 2.4 1.3 4.4 3.2 5.5V19h7.6v-3.5A7 7 0 0 0 19 10a7 7 0 0 0-7-7Z" />
+      <path d="M9 10h.01M15 10h.01M10 14h4" />
+    </template>
+    <template v-else-if="type === 'gift'">
+      <path d="m12 3 1.4 5.1L18.5 9.5l-5.1 1.4L12 16l-1.4-5.1L5.5 9.5l5.1-1.4L12 3Z" />
+      <path d="m18.5 15 .7 2.3 2.3.7-2.3.7-.7 2.3-.7-2.3-2.3-.7 2.3-.7.7-2.3Z" />
+    </template>
+    <template v-else-if="type === 'artifact'">
+      <path d="m12 3 8 5v8l-8 5-8-5V8l8-5Z" />
+      <path d="m12 7 4 2.5v5L12 17l-4-2.5v-5L12 7Z" />
+    </template>
     <template v-else-if="type === 'hex'">
       <path d="M3 12s3.5-5 9-5 9 5 9 5-3.5 5-9 5-9-5-9-5Z" />
       <circle cx="12" cy="12" r="2.5" />

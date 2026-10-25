@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import data from '../../data/weapons.json'
+import { bookList, getBook } from '../../data/books'
 import type { Weapon } from '../../schemas/weapon'
 import { useItemDrawer } from '../composables/useItemDrawer'
 import EffectText from './EffectText.vue'
@@ -41,6 +42,7 @@ const categories = [...new Set(weapons.map((weapon) => weapon.category))]
 const query = ref('')
 const category = ref('all')
 const origin = ref<'all' | 'common' | 'elderfolk' | 'witcher'>('all')
+const book = ref<'all' | string>('all')
 const availability = ref('all')
 const damageType = ref('all')
 const sort = ref<'name' | 'price' | 'weight'>('name')
@@ -53,12 +55,17 @@ const matchesFilters = (weapon: Weapon) => {
   if (origin.value === 'common' && (weapon.elderfolk || weapon.witcher)) return false
   if (origin.value === 'elderfolk' && !weapon.elderfolk) return false
   if (origin.value === 'witcher' && !weapon.witcher) return false
+  if (book.value !== 'all' && getBook(weapon.sourceBook).id !== book.value) return false
   if (availability.value !== 'all' && weapon.availability !== availability.value) return false
   if (damageType.value !== 'all' && !weapon.damageTypes.includes(damageType.value)) return false
   return true
 }
 
 const baseCount = computed(() => weapons.filter(matchesFilters).length)
+
+const booksInData = computed(() =>
+  bookList.filter((item) => weapons.some((weapon) => getBook(weapon.sourceBook).id === item.id))
+)
 
 const visible = computed(() => {
   const q = normalized(query.value.trim())
@@ -112,6 +119,7 @@ const reset = () => {
   query.value = ''
   category.value = 'all'
   origin.value = 'all'
+  book.value = 'all'
   availability.value = 'all'
   damageType.value = 'all'
   sort.value = 'name'
@@ -145,6 +153,7 @@ const openItem = (weapon: Weapon) => {
     subtitle: weapon.category,
     description: weapon.description,
     sourcePage: weapon.sourcePage,
+    sourceBook: weapon.sourceBook,
     stats: [
       { label: 'Тип урона', value: damageTypeText(weapon) },
       { label: 'Точность', value: signed(weapon.accuracy) },
@@ -200,6 +209,16 @@ const openItem = (weapon: Weapon) => {
         </select>
       </div>
 
+      <div v-if="booksInData.length > 1" class="wr-field">
+        <label for="weapon-book">Книга</label>
+        <select id="weapon-book" v-model="book" class="wr-select">
+          <option value="all">Все</option>
+          <option v-for="item in booksInData" :key="item.id" :value="item.id">
+            {{ item.short }} — {{ item.note }}
+          </option>
+        </select>
+      </div>
+
       <div class="wr-field">
         <label for="weapon-availability">Доступность</label>
         <select id="weapon-availability" v-model="availability" class="wr-select">
@@ -252,7 +271,8 @@ const openItem = (weapon: Weapon) => {
     <p class="weapon-legend">
       <strong>Т</strong> — точность, <strong>Дос</strong> — доступность (П/О/Р/У),
       <strong>Н</strong> — надёжность, <strong>Х</strong> — хват, <strong>Ус</strong> — усиления,
-      <strong>Скр</strong> — скрытность (М/Н/К/Н/С).
+      <strong>Скр</strong> — скрытность (М/Н/К/Н/С). Бейдж источника: <strong>ОК</strong> —
+      основная книга, <strong>КО</strong> — каталог оружия.
     </p>
 
     <div v-if="visible.length" class="weapon-table-wrap">
@@ -300,6 +320,7 @@ const openItem = (weapon: Weapon) => {
               <span v-else-if="weapon.witcher" class="weapon-origin weapon-origin--witcher">
                 Ведьмачье
               </span>
+              <SourceBadge :book="weapon.sourceBook" :page="weapon.sourcePage" />
             </td>
             <td>{{ weapon.type }}</td>
             <td class="col-num">{{ signed(weapon.accuracy) }}</td>
@@ -445,6 +466,10 @@ const openItem = (weapon: Weapon) => {
   font-family: var(--site-serif);
   font-size: 13px;
   font-weight: 600;
+}
+
+.weapon-table .col-name :deep(.wr-source) {
+  margin-left: 0.35rem;
 }
 
 .weapon-table .col-name a {

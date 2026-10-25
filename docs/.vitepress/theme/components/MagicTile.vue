@@ -10,6 +10,9 @@ defineProps<{
   tagLabel?: string | null
   tagTitle?: string
   costLabel: string
+  sourceBook?: string
+  sourcePage?: number
+  language?: 'ru' | 'en'
 }>()
 
 defineEmits<{
@@ -39,7 +42,15 @@ defineEmits<{
 
     <span class="magic-tile__name">{{ title }}</span>
 
-    <span class="magic-tile__cost">{{ costLabel }}</span>
+    <span class="magic-tile__bottom">
+      <span class="magic-tile__cost">{{ costLabel }}</span>
+      <span class="magic-tile__flags">
+        <span v-if="language === 'en'" class="magic-tile__lang" title="Оригинальный текст на английском">
+          EN
+        </span>
+        <SourceBadge :book="sourceBook" :page="sourcePage" compact />
+      </span>
+    </span>
   </button>
 </template>
 
@@ -120,6 +131,18 @@ defineEmits<{
   --magic-color: #8a3f3f;
 }
 
+.magic-tile--necromancy {
+  --magic-color: #5e4b67;
+}
+
+.magic-tile--gift {
+  --magic-color: #9a7b3f;
+}
+
+.magic-tile--artifact {
+  --magic-color: #7c6642;
+}
+
 .magic-tile__top {
   display: flex;
   align-items: center;
@@ -184,9 +207,22 @@ defineEmits<{
   overflow-wrap: break-word;
 }
 
-.magic-tile__cost {
+.magic-tile__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
   margin-top: auto;
   padding-top: 0.15rem;
+}
+
+.magic-tile__flags {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.magic-tile__cost {
   font-family: var(--site-sans);
   font-size: 10px;
   font-weight: 600;
@@ -194,6 +230,17 @@ defineEmits<{
   letter-spacing: 0.02em;
   color: var(--site-muted);
   white-space: nowrap;
+}
+
+.magic-tile__lang {
+  padding: 0.05rem 0.22rem;
+  font-family: var(--site-sans);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--site-gold);
+  border: 1px solid color-mix(in srgb, var(--site-gold) 45%, var(--site-border));
+  border-radius: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {

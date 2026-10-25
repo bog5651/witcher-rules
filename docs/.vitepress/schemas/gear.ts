@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { sourceBookSchema } from './source'
 
 export const gearCategorySchema = z.enum([
   'standard',
@@ -17,7 +18,8 @@ export const gearSchema = z.object({
   price: z.number().int().nonnegative().nullable(),
   priceNote: z.string().min(1).optional(),
   description: z.string().optional(),
-  sourcePage: z.number().int().positive()
+  sourcePage: z.number().int().positive(),
+  sourceBook: sourceBookSchema
 })
 
 export const gearFileSchema = z.object({

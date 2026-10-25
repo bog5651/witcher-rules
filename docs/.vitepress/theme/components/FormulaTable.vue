@@ -78,6 +78,7 @@ const openItem = (item: Formula) => {
     subtitle: levelLabels[item.level],
     description: item.description,
     sourcePage: item.sourcePage,
+    sourceBook: item.sourceBook,
     stats: [
       { label: 'Уровень', value: levelLabels[item.level] },
       { label: 'СЛ Алхимии', value: String(item.dc) },
@@ -152,6 +153,7 @@ const openItem = (item: Formula) => {
                 <button type="button" class="wr-item-link" @click="openItem(item)">
                   {{ item.name }}
                 </button>
+                <SourceBadge :book="item.sourceBook" :page="item.sourcePage" />
               </td>
               <td class="col-num">{{ item.dc }}</td>
               <td>{{ item.time }}</td>

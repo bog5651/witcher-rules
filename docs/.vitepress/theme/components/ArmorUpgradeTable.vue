@@ -85,6 +85,7 @@ const openItem = (item: ArmorUpgrade) => {
     subtitle: 'Усиление брони',
     description: item.description,
     sourcePage: item.sourcePage,
+    sourceBook: item.sourceBook,
     stats: [
       { label: 'Эффект', value: item.effect || '—' },
       { label: 'Бонус к прочности', value: `+${item.protectionBonus}` },
@@ -185,6 +186,7 @@ const openItem = (item: ArmorUpgrade) => {
             </td>
             <td class="col-name">
               <button type="button" class="wr-item-link" @click="openItem(item)">{{ item.name }}</button>
+              <SourceBadge :book="item.sourceBook" :page="item.sourcePage" />
             </td>
             <td class="col-effects">
               <EffectText :text="item.effect || '—'" />

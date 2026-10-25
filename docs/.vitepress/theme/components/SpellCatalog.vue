@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import data from '../../data/spells.json'
+import { bookList, getBook } from '../../data/books'
 import type { Spell, SpellElement, SpellLevel } from '../../schemas/spell'
 import MagicTile from './MagicTile.vue'
 import { useMagicDrawer } from '../composables/useMagicDrawer'
@@ -31,7 +32,8 @@ const elementLabels: Record<SpellElement, string> = {
   earth: 'Земля',
   air: 'Воздух',
   fire: 'Огонь',
-  water: 'Вода'
+  water: 'Вода',
+  necromancy: 'Некромантия'
 }
 
 const levelOrder: Record<SpellLevel, number> = {
@@ -46,6 +48,7 @@ const initialElement = props.element ?? 'all'
 const query = ref('')
 const level = ref<'all' | SpellLevel>(initialLevel)
 const element = ref<'all' | SpellElement>(initialElement)
+const book = ref<'all' | string>('all')
 const sort = ref<'name' | 'level' | 'cost'>('level')
 
 const normalized = (value: string) => value.toLocaleLowerCase('ru').replace(/ё/g, 'е')
@@ -54,9 +57,14 @@ const baseCount = computed(() => {
   return spells.filter((spell) => {
     if (level.value !== 'all' && spell.level !== level.value) return false
     if (element.value !== 'all' && spell.element !== element.value) return false
+    if (book.value !== 'all' && getBook(spell.sourceBook).id !== book.value) return false
     return true
   }).length
 })
+
+const booksInData = computed(() =>
+  bookList.filter((item) => spells.some((spell) => getBook(spell.sourceBook).id === item.id))
+)
 
 const visible = computed(() => {
   const q = normalized(query.value.trim())
@@ -64,6 +72,7 @@ const visible = computed(() => {
   const filtered = spells.filter((spell) => {
     if (level.value !== 'all' && spell.level !== level.value) return false
     if (element.value !== 'all' && spell.element !== element.value) return false
+    if (book.value !== 'all' && getBook(spell.sourceBook).id !== book.value) return false
     if (!q) return true
 
     const haystack = normalized(
@@ -83,10 +92,12 @@ const reset = () => {
   query.value = ''
   level.value = initialLevel
   element.value = initialElement
+  book.value = 'all'
   sort.value = 'level'
 }
 
 const costLabel = (spell: Spell) => {
+  if (spell.costText) return spell.costText
   if (spell.costVariable) return 'Вын: меняется'
   return `${spell.cost} Вын`
 }
@@ -101,10 +112,13 @@ const openSpell = (spell: Spell) => {
       { label: 'Затраты', value: costLabel(spell) },
       { label: 'Дистанция', value: spell.range },
       { label: 'Длительность', value: spell.duration },
-      { label: 'Защита', value: spell.defense }
+      { label: 'Защита', value: spell.defense },
+      ...(spell.healthCost ? [{ label: 'Затраты ПЗ', value: spell.healthCost }] : []),
+      ...(spell.language === 'en' ? [{ label: 'Язык', value: 'Английский (оригинал)' }] : [])
     ],
     effect: spell.effect,
-    sourcePage: spell.sourcePage
+    sourcePage: spell.sourcePage,
+    sourceBook: spell.sourceBook
   })
 }
 </script>
@@ -143,6 +157,17 @@ const openSpell = (spell: Spell) => {
           <option value="air">Воздух</option>
           <option value="fire">Огонь</option>
           <option value="water">Вода</option>
+          <option value="necromancy">Некромантия</option>
+        </select>
+      </div>
+
+      <div v-if="booksInData.length > 1" class="wr-field">
+        <label for="spell-book">Книга</label>
+        <select id="spell-book" v-model="book" class="wr-select">
+          <option value="all">Все</option>
+          <option v-for="item in booksInData" :key="item.id" :value="item.id">
+            {{ item.short }} — {{ item.note }}
+          </option>
         </select>
       </div>
 
@@ -174,6 +199,9 @@ const openSpell = (spell: Spell) => {
         :meta-label="elementLabels[spell.element]"
         :tag-label="levelShortLabels[spell.level]"
         :cost-label="costLabel(spell)"
+        :source-book="spell.sourceBook"
+        :source-page="spell.sourcePage"
+        :language="spell.language"
         @open="openSpell(spell)"
       />
     </div>

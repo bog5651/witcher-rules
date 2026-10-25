@@ -4,11 +4,12 @@ import signsData from '../../data/signs.json'
 import invocationsData from '../../data/invocations.json'
 import ritualsData from '../../data/rituals.json'
 import hexesData from '../../data/hexes.json'
+import { bookList, getBook } from '../../data/books'
 import MagicTile from './MagicTile.vue'
 import { useMagicDrawer } from '../composables/useMagicDrawer'
 
 type Level = 'novice' | 'adept' | 'master'
-type Element = 'mixed' | 'earth' | 'air' | 'fire' | 'water'
+type Element = 'mixed' | 'earth' | 'air' | 'fire' | 'water' | 'necromancy'
 type Tradition = 'druid' | 'preacher' | 'archpriest'
 type Danger = 'low' | 'medium' | 'high'
 
@@ -21,6 +22,9 @@ interface MagicItem {
   base?: boolean
   cost: number
   costVariable: boolean
+  costText?: string
+  healthCost?: string
+  language?: 'ru' | 'en'
   effect: string
   range?: string
   duration?: string
@@ -34,6 +38,7 @@ interface MagicItem {
   components?: string
   deity?: string
   sourcePage: number
+  sourceBook?: string
 }
 
 type Dataset = 'signs' | 'invocations' | 'rituals' | 'hexes'
@@ -79,7 +84,8 @@ const elementLabels: Record<Element, string> = {
   earth: 'Земля',
   air: 'Воздух',
   fire: 'Огонь',
-  water: 'Вода'
+  water: 'Вода',
+  necromancy: 'Некромантия'
 }
 
 const traditionLabels: Record<Tradition, string> = {
@@ -118,6 +124,7 @@ const initialTradition = props.tradition ?? 'all'
 const query = ref('')
 const level = ref<'all' | Level>('all')
 const element = ref<'all' | Element>('all')
+const book = ref<'all' | string>('all')
 const tradition = ref<'all' | Tradition>(initialTradition)
 const kind = ref<'all' | 'base' | 'additional'>('all')
 const sort = ref<'name' | 'level' | 'cost'>(hasLevel.value ? 'level' : 'name')
@@ -134,11 +141,16 @@ const baseCount = computed(() => {
   return items.value.filter((item) => {
     if (level.value !== 'all' && item.level !== level.value) return false
     if (element.value !== 'all' && item.element !== element.value) return false
+    if (book.value !== 'all' && getBook(item.sourceBook).id !== book.value) return false
     if (tradition.value !== 'all' && item.tradition !== tradition.value) return false
     if (!matchesBase(item)) return false
     return true
   }).length
 })
+
+const booksInData = computed(() =>
+  bookList.filter((item) => items.value.some((entry) => getBook(entry.sourceBook).id === item.id))
+)
 
 const visible = computed(() => {
   const q = normalized(query.value.trim())
@@ -147,6 +159,7 @@ const visible = computed(() => {
     .filter((item) => {
       if (level.value !== 'all' && item.level !== level.value) return false
       if (element.value !== 'all' && item.element !== element.value) return false
+      if (book.value !== 'all' && getBook(item.sourceBook).id !== book.value) return false
       if (tradition.value !== 'all' && item.tradition !== tradition.value) return false
       if (!matchesBase(item)) return false
       if (!q) return true
@@ -181,12 +194,14 @@ const reset = () => {
   query.value = ''
   level.value = 'all'
   element.value = 'all'
+  book.value = 'all'
   tradition.value = initialTradition
   kind.value = 'all'
   sort.value = hasLevel.value ? 'level' : 'name'
 }
 
 const costLabel = (item: MagicItem) => {
+  if (item.costText) return item.costText
   if (item.costVariable) return 'Вын: меняется'
   return `${item.cost} Вын`
 }
@@ -245,6 +260,8 @@ const openMagicItem = (item: MagicItem) => {
     }
 
     stats.push({ label: 'Затраты', value: costLabel(item) })
+    if (item.healthCost) stats.push({ label: 'Затраты ПЗ', value: item.healthCost })
+    if (item.language === 'en') stats.push({ label: 'Язык', value: 'Английский (оригинал)' })
     if (item.range) stats.push({ label: 'Дистанция', value: item.range })
     if (item.duration) stats.push({ label: 'Длительность', value: item.duration })
     if (item.defense) stats.push({ label: 'Защита', value: item.defense })
@@ -266,7 +283,8 @@ const openMagicItem = (item: MagicItem) => {
     subtitle: subtitleParts.filter(Boolean).join(' · '),
     stats,
     effect: item.effect,
-    sourcePage: item.sourcePage
+    sourcePage: item.sourcePage,
+    sourceBook: item.sourceBook
   })
 }
 </script>
@@ -305,6 +323,17 @@ const openMagicItem = (item: MagicItem) => {
           <option value="air">Воздух</option>
           <option value="fire">Огонь</option>
           <option value="water">Вода</option>
+          <option value="necromancy">Некромантия</option>
+        </select>
+      </div>
+
+      <div v-if="booksInData.length > 1" class="wr-field">
+        <label :for="`magic-book-${dataset}`">Книга</label>
+        <select :id="`magic-book-${dataset}`" v-model="book" class="wr-select">
+          <option value="all">Все</option>
+          <option v-for="item in booksInData" :key="item.id" :value="item.id">
+            {{ item.short }} — {{ item.note }}
+          </option>
         </select>
       </div>
 
@@ -355,6 +384,9 @@ const openMagicItem = (item: MagicItem) => {
         :meta-label="tileMeta(item)"
         :tag-label="tileTag(item)"
         :cost-label="costLabel(item)"
+        :source-book="item.sourceBook"
+        :source-page="item.sourcePage"
+        :language="item.language"
         @open="openMagicItem(item)"
       />
     </div>

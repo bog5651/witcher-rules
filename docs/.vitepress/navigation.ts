@@ -48,6 +48,7 @@ export const sidebar: DefaultTheme.Sidebar = {
         },
         { text: 'Ритуалы', link: '/magic/rituals' },
         { text: 'Порча', link: '/magic/hexes' },
+        { text: 'Магические дары', link: '/magic/gifts' },
         { text: 'Места силы', link: '/magic/places-of-power' }
       ]
     }
@@ -59,6 +60,7 @@ export const sidebar: DefaultTheme.Sidebar = {
         { text: 'Обзор', link: '/shop/' },
         { text: 'Оружие', link: '/shop/weapons' },
         { text: 'Броня', link: '/shop/armor' },
+        { text: 'Магические артефакты', link: '/shop/artifacts' },
         { text: 'Алхимические составы', link: '/shop/alchemy' },
         { text: 'Вещи', link: '/shop/items' },
         { text: 'Компоненты', link: '/shop/components' },
@@ -147,6 +149,7 @@ export const sidebar: DefaultTheme.Sidebar = {
         { text: 'Нильфгаард', link: '/world/nilfgaard' },
         { text: 'Земли Старшего Народа', link: '/world/elder-folk' },
         { text: 'Религии', link: '/world/religions' },
+        { text: 'Магия на Континенте', link: '/world/magic' },
         { text: 'Союзы', link: '/world/factions' }
       ]
     }

@@ -1,5 +1,6 @@
 import { z } from 'zod'
 import { availabilitySchema } from './weapon'
+import { sourceBookSchema } from './source'
 
 export const armorLocationSchema = z.enum(['head', 'torso', 'legs', 'shield', 'body'])
 export const armorWeightClassSchema = z.enum(['light', 'medium', 'heavy'])
@@ -20,8 +21,10 @@ export const armorSchema = z.object({
   encumbrance: z.number().int().nonnegative(),
   weight: z.number().nonnegative(),
   price: z.number().int().nonnegative(),
+  priceNote: z.string().min(1).optional(),
   elderfolk: z.boolean(),
-  sourcePage: z.number().int().positive()
+  sourcePage: z.number().int().positive(),
+  sourceBook: sourceBookSchema
 })
 
 export const armorFileSchema = z.object({

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import data from '../../data/bestiary.json'
+import { bookList, getBook } from '../../data/books'
 import type { BestiaryClass, BestiaryEntry, BestiaryVariant } from '../../schemas/bestiary'
 import BestiaryDrawer from './BestiaryDrawer.vue'
 
@@ -44,6 +45,7 @@ const rows = computed<Row[]>(() =>
 
 const query = ref('')
 const classFilter = ref<'all' | string>('all')
+const book = ref<'all' | string>('all')
 const overall = ref<'all' | 'simple' | 'medium' | 'complex'>('all')
 const tier = ref<'all' | 'ordinary' | 'unremarkable' | 'hard'>('all')
 const sort = ref<'name' | 'difficulty' | 'reward' | 'hp'>('name')
@@ -98,6 +100,7 @@ const visible = computed(() => {
   return rows.value
     .filter((row) => {
       if (classFilter.value !== 'all' && row.entry.classId !== classFilter.value) return false
+      if (book.value !== 'all' && getBook(row.entry.sourceBook).id !== book.value) return false
       if (overall.value !== 'all' && row.entry.difficulty?.overall !== overall.value) return false
       if (tier.value !== 'all' && row.entry.difficulty?.tier !== tier.value) return false
       if (!q) return true
@@ -124,9 +127,14 @@ const visible = computed(() => {
 
 const visibleEntries = computed(() => new Set(visible.value.map((row) => row.entry.id)).size)
 
+const booksInData = computed(() =>
+  bookList.filter((item) => entries.value.some((entry) => getBook(entry.sourceBook).id === item.id))
+)
+
 const reset = () => {
   query.value = ''
   classFilter.value = 'all'
+  book.value = 'all'
   overall.value = 'all'
   tier.value = 'all'
   sort.value = 'name'
@@ -181,6 +189,16 @@ onBeforeUnmount(() => {
         <select :id="`bestiary-class-${dataset}`" v-model="classFilter" class="wr-select">
           <option value="all">Все</option>
           <option v-for="item in classes" :key="item.id" :value="item.id">{{ item.name }}</option>
+        </select>
+      </div>
+
+      <div v-if="booksInData.length > 1" class="wr-field">
+        <label :for="`bestiary-book-${dataset}`">Книга</label>
+        <select :id="`bestiary-book-${dataset}`" v-model="book" class="wr-select">
+          <option value="all">Все</option>
+          <option v-for="item in booksInData" :key="item.id" :value="item.id">
+            {{ item.short }} — {{ item.note }}
+          </option>
         </select>
       </div>
 
@@ -239,7 +257,7 @@ onBeforeUnmount(() => {
             <th scope="col">ПЗ</th>
             <th scope="col">Бег</th>
             <th v-if="hasDifficulty" scope="col">Награда, крон</th>
-            <th scope="col">Стр.</th>
+            <th scope="col">Источник</th>
           </tr>
         </thead>
         <tbody>
@@ -262,7 +280,12 @@ onBeforeUnmount(() => {
             <td>{{ row.variant.derived.hp }}</td>
             <td>{{ row.variant.derived.run }}</td>
             <td v-if="hasDifficulty">{{ row.entry.reward ?? '—' }}</td>
-            <td>{{ row.entry.descriptionPage ?? row.entry.statPage }}</td>
+            <td>
+              <SourceBadge
+                :book="row.entry.sourceBook"
+                :page="row.entry.descriptionPage ?? row.entry.statPage"
+              />
+            </td>
           </tr>
         </tbody>
       </table>

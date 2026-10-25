@@ -1,5 +1,6 @@
 import { z } from 'zod'
 import { availabilitySchema } from './weapon'
+import { sourceBookSchema } from './source'
 
 export const vehicleSchema = z.object({
   id: z.string().min(1),
@@ -11,7 +12,8 @@ export const vehicleSchema = z.object({
   weight: z.number().nonnegative(),
   price: z.number().int().nonnegative(),
   description: z.string().optional(),
-  sourcePage: z.number().int().positive()
+  sourcePage: z.number().int().positive(),
+  sourceBook: sourceBookSchema
 })
 
 export const tackCategorySchema = z.enum(['saddles', 'blinkers', 'saddlebags', 'horse-armor'])
@@ -25,7 +27,8 @@ export const tackSchema = z.object({
   description: z.string().optional(),
   weight: z.number().nonnegative(),
   price: z.number().int().nonnegative(),
-  sourcePage: z.number().int().positive()
+  sourcePage: z.number().int().positive(),
+  sourceBook: sourceBookSchema
 })
 
 export const transportFileSchema = z.object({

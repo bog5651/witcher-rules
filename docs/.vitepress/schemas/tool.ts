@@ -1,5 +1,6 @@
 import { z } from 'zod'
 import { availabilitySchema, concealmentSchema } from './weapon'
+import { sourceBookSchema } from './source'
 
 export const toolSchema = z.object({
   id: z.string().min(1),
@@ -10,7 +11,8 @@ export const toolSchema = z.object({
   concealment: concealmentSchema,
   weight: z.number().nonnegative(),
   price: z.number().int().nonnegative(),
-  sourcePage: z.number().int().positive()
+  sourcePage: z.number().int().positive(),
+  sourceBook: sourceBookSchema
 })
 
 export const toolsFileSchema = z.object({

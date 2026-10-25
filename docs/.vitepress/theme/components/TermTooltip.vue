@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { getBook } from '../../data/books'
 import { useTermTooltip } from '../composables/useTermTooltip'
 
 const { active, hide } = useTermTooltip()
@@ -72,7 +73,9 @@ onBeforeUnmount(() => {
           <RulesText :text="active.definition" />
         </p>
         <p v-if="active.sourcePage" class="term-tooltip__source">
-          Стр. {{ active.sourcePage }} книги.
+          Стр. {{ active.sourcePage }}
+          <template v-if="active.sourceBook"> · {{ getBook(active.sourceBook).title }}</template>
+          <template v-else> книги.</template>
         </p>
       </div>
     </Transition>

@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { sourceBookSchema } from './source'
 
 export const bestiaryClassIds = [
   'humanoids',
@@ -145,6 +146,7 @@ export const bestiaryEntrySchema = z
     id: z.string().min(1),
     name: z.string().min(1),
     classId: z.enum(bestiaryClassIds),
+    sourceBook: sourceBookSchema,
     statPage: z.number().int().positive(),
     descriptionPage: z.number().int().positive().nullable(),
     difficulty: z
@@ -175,8 +177,8 @@ export const bestiaryFileSchema = z
   .object({
     schemaVersion: z.literal(1),
     classes: z.array(bestiaryClassSchema).length(12),
-    monsters: z.array(bestiaryEntrySchema).length(20),
-    animals: z.array(bestiaryEntrySchema).length(8)
+    monsters: z.array(bestiaryEntrySchema).min(20),
+    animals: z.array(bestiaryEntrySchema).min(8)
   })
   .strict()
   .superRefine((data, ctx) => {

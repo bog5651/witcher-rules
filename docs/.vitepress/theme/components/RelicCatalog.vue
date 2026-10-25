@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import data from '../../data/relics.json'
+import { bookList, getBook } from '../../data/books'
 import type { Relic } from '../../schemas/relic'
 import { useItemDrawer } from '../composables/useItemDrawer'
 import EffectText from './EffectText.vue'
@@ -29,6 +30,7 @@ const categoryLabels: Record<string, string> = {
 
 const query = ref('')
 const kind = ref<'all' | 'weapon' | 'armor'>('all')
+const book = ref<'all' | string>('all')
 const sort = ref<'name' | 'weight'>('name')
 
 const normalized = (value: string) => value.toLocaleLowerCase('ru').replace(/ё/g, 'е')
@@ -57,6 +59,7 @@ const visible = computed(() => {
   return relics
     .filter((relic) => {
       if (kind.value !== 'all' && relic.kind !== kind.value) return false
+      if (book.value !== 'all' && getBook(relic.sourceBook).id !== book.value) return false
       if (!q) return true
       return searchText(relic).includes(q)
     })
@@ -70,9 +73,14 @@ const visible = computed(() => {
     })
 })
 
+const booksInData = computed(() =>
+  bookList.filter((item) => relics.some((relic) => getBook(relic.sourceBook).id === item.id))
+)
+
 const reset = () => {
   query.value = ''
   kind.value = 'all'
+  book.value = 'all'
   sort.value = 'name'
 }
 
@@ -121,7 +129,8 @@ const openRelic = (relic: Relic, event?: MouseEvent) => {
     stats,
     description: relic.description.join('\n\n'),
     descriptionTitle: 'История',
-    sourcePage: relic.sourcePage
+    sourcePage: relic.sourcePage,
+    sourceBook: relic.sourceBook
   })
 }
 </script>
@@ -150,6 +159,16 @@ const openRelic = (relic: Relic, event?: MouseEvent) => {
         </select>
       </div>
 
+      <div v-if="booksInData.length > 1" class="wr-field">
+        <label for="relic-book">Книга</label>
+        <select id="relic-book" v-model="book" class="wr-select">
+          <option value="all">Все</option>
+          <option v-for="item in booksInData" :key="item.id" :value="item.id">
+            {{ item.short }} — {{ item.note }}
+          </option>
+        </select>
+      </div>
+
       <div class="wr-field">
         <label for="relic-sort">Сортировка</label>
         <select id="relic-sort" v-model="sort" class="wr-select">
@@ -175,7 +194,7 @@ const openRelic = (relic: Relic, event?: MouseEvent) => {
             <th scope="col">Урон / ПБ</th>
             <th scope="col">Эффект</th>
             <th scope="col">Вес</th>
-            <th scope="col">Стр.</th>
+            <th scope="col">Источник</th>
           </tr>
         </thead>
         <tbody>
@@ -189,7 +208,7 @@ const openRelic = (relic: Relic, event?: MouseEvent) => {
             <td><RulesText :text="damageOrArmor(relic)" /></td>
             <td><EffectText :text="effectSummary(relic)" /></td>
             <td>{{ weight(relic) }}</td>
-            <td>{{ relic.sourcePage }}</td>
+            <td><SourceBadge :book="relic.sourceBook" :page="relic.sourcePage" /></td>
           </tr>
         </tbody>
       </table>

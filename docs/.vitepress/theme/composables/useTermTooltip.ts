@@ -4,6 +4,7 @@ export interface TooltipContent {
   title: string
   definition?: string
   sourcePage?: number
+  sourceBook?: string
 }
 
 export interface TermTooltipState extends TooltipContent {

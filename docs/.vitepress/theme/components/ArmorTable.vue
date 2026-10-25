@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import data from '../../data/armor.json'
+import { bookList, getBook } from '../../data/books'
 import type { Armor } from '../../schemas/armor'
 import { useItemDrawer } from '../composables/useItemDrawer'
 import EffectText from './EffectText.vue'
@@ -43,6 +44,7 @@ const classes = ['light', 'medium', 'heavy'] as const
 const query = ref('')
 const location = ref<'all' | Armor['location']>('all')
 const origin = ref<'all' | 'common' | 'elderfolk'>('all')
+const book = ref<'all' | string>('all')
 const weightClass = ref<'all' | Armor['weightClass']>('all')
 const availability = ref('all')
 const sort = ref<'name' | 'price' | 'weight' | 'protection'>('name')
@@ -54,12 +56,17 @@ const matchesFilters = (item: Armor) => {
   if (location.value !== 'all' && item.location !== location.value) return false
   if (origin.value === 'common' && item.elderfolk) return false
   if (origin.value === 'elderfolk' && !item.elderfolk) return false
+  if (book.value !== 'all' && getBook(item.sourceBook).id !== book.value) return false
   if (weightClass.value !== 'all' && item.weightClass !== weightClass.value) return false
   if (availability.value !== 'all' && item.availability !== availability.value) return false
   return true
 }
 
 const baseCount = computed(() => armor.filter(matchesFilters).length)
+
+const booksInData = computed(() =>
+  bookList.filter((item) => armor.some((entry) => getBook(entry.sourceBook).id === item.id))
+)
 
 const visible = computed(() => {
   const q = normalized(query.value.trim())
@@ -110,6 +117,7 @@ const reset = () => {
   query.value = ''
   location.value = 'all'
   origin.value = 'all'
+  book.value = 'all'
   weightClass.value = 'all'
   availability.value = 'all'
   sort.value = 'name'
@@ -126,6 +134,7 @@ const openItem = (item: Armor) => {
     subtitle: 'Броня и щиты',
     description: item.description,
     sourcePage: item.sourcePage,
+    sourceBook: item.sourceBook,
     stats: [
       { label: 'Часть', value: item.coverage ?? locationLabels[item.location] },
       { label: 'Класс', value: classLabels[item.weightClass] },
@@ -136,7 +145,7 @@ const openItem = (item: Armor) => {
       ...(item.note ? [{ label: 'Примечание', value: item.note }] : []),
       { label: 'Сков. движений', value: String(item.encumbrance) },
       { label: 'Вес', value: `${formatWeight(item.weight)} кг` },
-      { label: 'Цена', value: `${formatWeight(item.price)} кр.` },
+      { label: 'Цена', value: item.priceNote ?? `${formatWeight(item.price)} кр.` },
       { label: 'Происхождение', value: item.elderfolk ? 'Старший Народ' : 'Обычное' }
     ]
   })
@@ -187,6 +196,16 @@ const openItem = (item: Armor) => {
         </select>
       </div>
 
+      <div v-if="booksInData.length > 1" class="wr-field">
+        <label for="armor-book">Книга</label>
+        <select id="armor-book" v-model="book" class="wr-select">
+          <option value="all">Все</option>
+          <option v-for="item in booksInData" :key="item.id" :value="item.id">
+            {{ item.short }} — {{ item.note }}
+          </option>
+        </select>
+      </div>
+
       <div class="wr-field">
         <label for="armor-availability">Доступность</label>
         <select id="armor-availability" v-model="availability" class="wr-select">
@@ -224,7 +243,8 @@ const openItem = (item: Armor) => {
     <p class="armor-legend">
       <strong>ПБ</strong> — прочность брони, <strong>Н</strong> — надёжность щита,
       <strong>Дос</strong> — доступность (П/О/Р/У), <strong>УБ</strong> — усиления брони,
-      <strong>СД</strong> — скованность движений.
+      <strong>СД</strong> — скованность движений. Бейдж источника: <strong>ОК</strong> —
+      основная книга, <strong>КБ</strong> — каталог брони.
     </p>
 
     <div v-if="visible.length" class="armor-table-wrap">
@@ -264,6 +284,7 @@ const openItem = (item: Armor) => {
             <td class="col-name">
               <button type="button" class="wr-item-link" @click="openItem(item)">{{ item.name }}</button>
               <span v-if="item.elderfolk" class="armor-origin">Старший Народ</span>
+              <SourceBadge :book="item.sourceBook" :page="item.sourcePage" />
             </td>
             <td class="col-coverage">{{ item.coverage ?? locationLabels[item.location] }}</td>
             <td>{{ classLabels[item.weightClass] }}</td>
@@ -283,13 +304,16 @@ const openItem = (item: Armor) => {
                   :title="item.name"
                   :definition="item.note"
                   :source-page="item.sourcePage"
+                  :source-book="item.sourceBook"
                 />
               </template>
               <span v-else-if="!item.effect">—</span>
             </td>
             <td class="col-num">{{ item.encumbrance }}</td>
             <td class="col-num">{{ formatWeight(item.weight) }}</td>
-            <td class="col-num">{{ formatWeight(item.price) }}</td>
+            <td class="col-num">
+              {{ item.priceNote ?? formatWeight(item.price) }}
+            </td>
           </tr>
         </tbody>
       </table>
@@ -367,6 +391,10 @@ const openItem = (item: Armor) => {
   font-family: var(--site-serif);
   font-size: 13px;
   font-weight: 600;
+}
+
+.armor-table .col-name :deep(.wr-source) {
+  margin-left: 0.35rem;
 }
 
 .armor-table .col-name a {

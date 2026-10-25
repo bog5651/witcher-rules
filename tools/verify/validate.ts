@@ -26,11 +26,14 @@ import { professionTreesFileSchema } from '../../docs/.vitepress/schemas/profess
 import { professionsFileSchema } from '../../docs/.vitepress/schemas/profession'
 import { bestiaryFileSchema } from '../../docs/.vitepress/schemas/bestiary'
 import { relicsFileSchema } from '../../docs/.vitepress/schemas/relic'
+import { magicGiftsFileSchema } from '../../docs/.vitepress/schemas/magicGift'
+import { artifactsFileSchema } from '../../docs/.vitepress/schemas/artifact'
+import { getBook } from '../../docs/.vitepress/data/books'
 
 const root = fileURLToPath(new URL('../..', import.meta.url))
 const dataDir = join(root, 'docs', '.vitepress', 'data')
 
-type BaseItem = { id: string; name: string; sourcePage: number }
+type BaseItem = { id: string; name: string; sourcePage: number; sourceBook?: string }
 type FileShape = { items?: BaseItem[]; professions?: BaseItem[] }
 
 let failed = false
@@ -64,8 +67,11 @@ function validate(
     if (!options.allowDuplicateNames && names.has(item.name)) {
       errors.push(`повторяющееся название: ${item.name}`)
     }
-    if (item.sourcePage < 1 || item.sourcePage > 337) {
-      errors.push(`sourcePage вне книги: ${item.name} (${item.sourcePage})`)
+    const book = getBook(item.sourceBook)
+    if (item.sourcePage < book.pageStart || item.sourcePage > book.pageEnd) {
+      errors.push(
+        `sourcePage вне книги ${book.short}: ${item.name} (${item.sourcePage}, стр. ${book.pageStart}–${book.pageEnd})`
+      )
     }
     ids.add(item.id)
     names.add(item.name)
@@ -163,11 +169,27 @@ function validateBestiary() {
     if (new Set(entry.variants.map((variant) => variant.name)).size !== entry.variants.length) {
       errors.push(`повторяющиеся варианты: ${entry.name}`)
     }
-    if (entry.statPage < 267 || entry.statPage > 313) {
-      errors.push(`statPage вне бестиария: ${entry.name} (${entry.statPage})`)
+    const book = getBook(entry.sourceBook)
+    if (entry.statPage < book.pageStart || entry.statPage > book.pageEnd) {
+      errors.push(
+        `statPage вне книги ${book.short}: ${entry.name} (${entry.statPage}, стр. ${book.pageStart}–${book.pageEnd})`
+      )
     }
-    if (entry.descriptionPage && (entry.descriptionPage < 267 || entry.descriptionPage > 313)) {
-      errors.push(`descriptionPage вне бестиария: ${entry.name} (${entry.descriptionPage})`)
+    if (
+      entry.descriptionPage &&
+      (entry.descriptionPage < book.pageStart || entry.descriptionPage > book.pageEnd)
+    ) {
+      errors.push(
+        `descriptionPage вне книги ${book.short}: ${entry.name} (${entry.descriptionPage})`
+      )
+    }
+    if (!entry.sourceBook || entry.sourceBook === 'witcher-core') {
+      if (entry.statPage < 267 || entry.statPage > 313) {
+        errors.push(`statPage вне бестиария: ${entry.name} (${entry.statPage})`)
+      }
+      if (entry.descriptionPage && (entry.descriptionPage < 267 || entry.descriptionPage > 313)) {
+        errors.push(`descriptionPage вне бестиария: ${entry.name} (${entry.descriptionPage})`)
+      }
     }
     if (entry.descriptionPage && entry.descriptionPage < entry.statPage) {
       errors.push(`descriptionPage раньше statPage: ${entry.name}`)
@@ -213,7 +235,13 @@ function validateRelics() {
   for (const relic of parsed.data.items) {
     if (ids.has(relic.id)) errors.push(`повторяющийся id: ${relic.id}`)
     if (names.has(relic.name)) errors.push(`повторяющееся название: ${relic.name}`)
-    if (relic.sourcePage < 257 || relic.sourcePage > 265) {
+    const book = getBook(relic.sourceBook)
+    if (relic.sourcePage < book.pageStart || relic.sourcePage > book.pageEnd) {
+      errors.push(
+        `sourcePage вне книги ${book.short}: ${relic.name} (${relic.sourcePage}, стр. ${book.pageStart}–${book.pageEnd})`
+      )
+    }
+    if ((!relic.sourceBook || relic.sourceBook === 'witcher-core') && (relic.sourcePage < 257 || relic.sourcePage > 265)) {
       errors.push(`sourcePage вне раздела реликвий: ${relic.name} (${relic.sourcePage})`)
     }
     ids.add(relic.id)
@@ -253,8 +281,11 @@ function validateTransport() {
   for (const item of items) {
     if (ids.has(item.id)) errors.push(`повторяющийся id: ${item.id}`)
     if (names.has(item.name)) errors.push(`повторяющееся название: ${item.name}`)
-    if (item.sourcePage < 1 || item.sourcePage > 337) {
-      errors.push(`sourcePage вне книги: ${item.name} (${item.sourcePage})`)
+    const book = getBook(item.sourceBook)
+    if (item.sourcePage < book.pageStart || item.sourcePage > book.pageEnd) {
+      errors.push(
+        `sourcePage вне книги ${book.short}: ${item.name} (${item.sourcePage}, стр. ${book.pageStart}–${book.pageEnd})`
+      )
     }
     ids.add(item.id)
     names.add(item.name)
@@ -271,5 +302,85 @@ function validateTransport() {
 }
 
 validateTransport()
+
+function validateMagicGifts() {
+  const raw = JSON.parse(readFileSync(join(dataDir, 'magic-gifts.json'), 'utf8'))
+  const parsed = magicGiftsFileSchema.safeParse(raw)
+
+  if (!parsed.success) {
+    failed = true
+    console.error('magic-gifts.json не прошёл валидацию:')
+    for (const issue of parsed.error.issues) {
+      console.error(`  ${issue.path.join('.')}: ${issue.message}`)
+    }
+    return
+  }
+
+  const ids = new Set<string>()
+  const names = new Set<string>()
+  const errors: string[] = []
+
+  for (const item of parsed.data.items) {
+    if (ids.has(item.id)) errors.push(`повторяющийся id: ${item.id}`)
+    if (names.has(item.name)) errors.push(`повторяющееся название: ${item.name}`)
+    const book = getBook(item.sourceBook)
+    if (item.sourcePage < book.pageStart || item.sourcePage > book.pageEnd) {
+      errors.push(`sourcePage вне книги ${book.short}: ${item.name} (${item.sourcePage})`)
+    }
+    ids.add(item.id)
+    names.add(item.name)
+  }
+
+  if (errors.length) {
+    failed = true
+    console.error('Ошибки в magic-gifts.json:')
+    for (const error of errors) console.error(`  - ${error}`)
+    return
+  }
+
+  console.log(`OK: магические дары — ${parsed.data.items.length}`)
+}
+
+validateMagicGifts()
+
+function validateArtifacts() {
+  const raw = JSON.parse(readFileSync(join(dataDir, 'artifacts.json'), 'utf8'))
+  const parsed = artifactsFileSchema.safeParse(raw)
+
+  if (!parsed.success) {
+    failed = true
+    console.error('artifacts.json не прошёл валидацию:')
+    for (const issue of parsed.error.issues) {
+      console.error(`  ${issue.path.join('.')}: ${issue.message}`)
+    }
+    return
+  }
+
+  const ids = new Set<string>()
+  const names = new Set<string>()
+  const errors: string[] = []
+
+  for (const item of parsed.data.items) {
+    if (ids.has(item.id)) errors.push(`повторяющийся id: ${item.id}`)
+    if (names.has(item.name)) errors.push(`повторяющееся название: ${item.name}`)
+    const book = getBook(item.sourceBook)
+    if (item.sourcePage < book.pageStart || item.sourcePage > book.pageEnd) {
+      errors.push(`sourcePage вне книги ${book.short}: ${item.name} (${item.sourcePage})`)
+    }
+    ids.add(item.id)
+    names.add(item.name)
+  }
+
+  if (errors.length) {
+    failed = true
+    console.error('Ошибки в artifacts.json:')
+    for (const error of errors) console.error(`  - ${error}`)
+    return
+  }
+
+  console.log(`OK: артефакты — ${parsed.data.items.length}`)
+}
+
+validateArtifacts()
 
 if (failed) process.exit(1)
