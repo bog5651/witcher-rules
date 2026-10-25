@@ -152,6 +152,7 @@ export const sidebar: DefaultTheme.Sidebar = {
         { text: 'Нильфгаард', link: '/world/nilfgaard' },
         { text: 'Земли Старшего Народа', link: '/world/elder-folk' },
         { text: 'Религии', link: '/world/religions' },
+        { text: 'Пантеоны', link: '/world/pantheons' },
         { text: 'Магия на Континенте', link: '/world/magic' },
         { text: 'Лей-линии', link: '/world/ley-lines' },
         { text: 'Магические традиции', link: '/world/traditions' },
