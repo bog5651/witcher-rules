@@ -5,17 +5,13 @@ docs/.vitepress/.temp/
 .vercel/
 
 # PDF и тяжёлые производные файлы
-Witcher.pdf
-_artifacts/pdf/pages/
-_artifacts/pdf/witcher_text.txt
-_artifacts/pdf/witcher_layout.txt
-_artifacts/pdf/toc_pages_2_4_layout.txt
-_artifacts/pdf/samples*.txt
-_artifacts/pdf/spells_pages_*.txt
-_artifacts/pdf/index_out.txt
-_artifacts/pdf/tables.txt
-_artifacts/pdf/words73.txt
-_artifacts/samples/
+*.pdf
+books/*.pdf
+_artifacts/books/*/pages/
+_artifacts/books/*/samples/
+_artifacts/books/witcher-core/layout/
+_artifacts/books/witcher-core/assets/
+_artifacts/site/
 _artifacts/web/assets/images/
 
 *.log

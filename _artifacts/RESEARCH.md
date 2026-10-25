@@ -1,6 +1,8 @@
 # Research: извлечение правил из PDF
 
-Дата: 2026-10-23. Источник: `Witcher.pdf` (337 стр., 85.6 МБ, ABBYY FineReader PDF 15, ISBN 978-5-907170-26-1).
+> Этот файл описывает основную книгу. Каталог дополнительных книг и их артефактов — `books/README.md` и `_artifacts/books/<book-id>/notes.md`.
+
+Дата: 2026-10-23. Источник: `books/witcher-core.pdf` (337 стр., 85.6 МБ, ABBYY FineReader PDF 15, ISBN 978-5-907170-26-1).
 
 ## 1. Что внутри PDF
 
@@ -106,7 +108,7 @@
 
 - Извлечено 65 заклинаний: 40 новичка, 14 подмастерья, 11 мастера.
 - У всех заполнены `cost`, `effect`, `range`, `duration`, `defense`, `sourcePage`.
-- Черновик: `_artifacts/pdf/spells_draft.json`; отчёт: `_artifacts/pdf/spells_draft_report.json`; поля: `_artifacts/pdf/spells_fields.txt`.
+- Черновик: `_artifacts/books/witcher-core/drafts/spells_draft.json`; отчёт: `_artifacts/books/witcher-core/drafts/spells_draft_report.json`; поля: `_artifacts/books/witcher-core/drafts/spells_fields.txt`.
 - Рабочая версия для сайта: `docs/.vitepress/data/spells.json`.
 - Исправления при сверке: «Вспышка Деметии Крест» — одна запись (в индексе выглядела как две), `Юм` → `10 м`, варианты OCR имён (`Перо Аютиэнь`, `Гвинт Троэдли`, `Аньядьх`, `Сейриф Хайдь`, `Расступдение вод`) сведены к каноническим названиям.
 
@@ -114,13 +116,22 @@
 
 ```
 _artifacts/
-  pdf/
-    pages/p001.txt … p337.txt   # постраничный текст
-    witcher_text.txt            # весь текст raw
-    witcher_layout.txt          # весь текст layout
-    toc_pages_2_4_layout.txt    # оглавление
-    samples*.txt                # выборки страниц
-    words73.txt                 # координаты слов (пример таблицы)
+  books/
+    witcher-core/
+      pages/p001.txt … p337.txt   # постраничный текст
+      layout/witcher_text.txt     # весь текст raw
+      layout/witcher_layout.txt   # весь текст layout
+      layout/toc_pages_2_4_layout.txt
+      layout/samples*.txt
+      layout/words73.txt
+      drafts/                     # черновики каталогов
+      samples/                    # рендеры страниц
+      assets/                     # экспериментальные иконки
+    catalog-weapons-v2/
+    catalog-armor-v2/
+    alzur-tome-of-magic/
+    magic-gifts-excerpt/
+  site/                           # скриншоты сайта
   web/
     fandom_main_page.json
     fandom_cat_*.json
@@ -128,10 +139,6 @@ _artifacts/
     foundry_template.json
     compendium_readme.md
     sources.md
-  samples/
-    page_73.png, page_87.png, page_102.png, page_130.png,
-    page_142.png, page_145.png, page_146.png, page_158.png,
-    page_161.png, page_175.png
 ```
 
 `_artifacts/` — рабочая папка, не часть сайта. PDF и тяжёлые PNG не коммитить.
