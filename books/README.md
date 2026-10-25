@@ -15,7 +15,7 @@ PDF-файлы лежат в этой папке и **не коммитятся*
 | `unofficial-bestiary` | `unofficial-bestiary.pdf` | «Монстрятник. Неофициальный бестиарий для „Ведьмак НРИ“» | ru | 119 | Неофициальный бестиарий, перевод | Перенесён в бестиарий: 58 чудовищ |
 | `professional-tools` | `professional-tools.pdf` | «Ведьмак. Фургончик Родольфа. Инструменты мастеров» | ru | 9 | Официальное дополнение R. Talsorian Games, 2022 | Алхимия, инструменты, оружие, щиты и чертежи перенесены |
 | `witcher-gear` | `witcher-gear.pdf` | «Ведьмак. Снаряжение Ведьмака» | ru | 7 | Официальное дополнение R. Talsorian Games, 2022 | Оружие и чертежи школ перенесены; броня уже была в «Каталоге брони» |
-| `tome-of-chaos` | `tome-of-chaos.pdf` | «The Witcher: A Tome of Chaos» / «Том Хаоса» | ru | 218 | Официальное дополнение R. Talsorian Games, русский перевод | Заклинания, инвокации, знаки, ритуалы, порчи и магические предметы перенесены; бестиарий и лор — в работе |
+| `tome-of-chaos` | `tome-of-chaos.pdf` | «The Witcher: A Tome of Chaos» / «Том Хаоса» | ru | 218 | Официальное дополнение R. Talsorian Games, русский перевод | Заклинания, инвокации, знаки, ритуалы, порчи, магические предметы, бестиарий и лор перенесены |
 
 Исходные имена: `Witcher.pdf` → `witcher-core.pdf`, `Katalog_oruzhia_ver_2.pdf` → `catalog-weapons-v2.pdf`, `Katalog_broni_ver_2.pdf` → `catalog-armor-v2.pdf`, `Tom_magii_Alzura.pdf` → `alzur-tome-of-magic.pdf`, `Magicheskie_dary.pdf` → `magic-gifts-excerpt.pdf`, `Katalog_alkhimii_ver_2.pdf` → `catalog-alchemy-v2.pdf`, `Monstryatnik.pdf` → `unofficial-bestiary.pdf`, `Prof-e_instrumenty.pdf` → `professional-tools.pdf`, `Snaryazhenie_vedmakov.pdf` → `witcher-gear.pdf`, `Tom_khaosa.pdf` → `tome-of-chaos.pdf`.
 
