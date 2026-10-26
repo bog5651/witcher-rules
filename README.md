@@ -139,6 +139,10 @@ witcher-rules/
 
 `vercel.json` содержит настройки. `sitemap.hostname` и `robots.txt` указывают на `https://witcher-rules.vercel.app`.
 
+### Автодеплой
+
+При пуше в `master` workflow `.github/workflows/deploy.yml` запускает GitHub Actions: ставит зависимости, собирает проект через Vercel CLI и публикует production-деплой. Используются секреты репозитория `VERCEL_TOKEN`, `VERCEL_ORG_ID` и `VERCEL_PROJECT_ID`. Токен действует ограниченное время — при истечении замените `VERCEL_TOKEN` в настройках репозитория.
+
 ### Vercel CLI
 
 ```bash
