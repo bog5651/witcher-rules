@@ -15,7 +15,7 @@
 5. **Не менять `_artifacts/` как источник.** Это рабочая папка с извлечённым текстом. Новые артефакты добавлять, старые не перезаписывать без причины. Артефакты каждой книги лежат отдельно.
 6. **PDF не коммитить.** Все PDF лежат в `books/` и исключены через `.gitignore`.
 7. **Не использовать иллюстрации из книг.** Допустимы только иконки субстанций из Foundry-репозитория с атрибуцией в `_artifacts/web/assets/ICONS.md`.
-8. **`llms.txt` генерируется плагином.** Не создавать статический `docs/public/llms.txt`; файлы `llms.txt` и `llms-full.txt` появляются при сборке через `vitepress-plugin-llms`.
+8. **`llms.txt` генерируется плагином.** Не создавать статический `docs/public/llms.txt`; файлы `llms.txt` и `llms-full.txt` появляются при сборке через `vitepress-plugin-llms`, после чего `tools/llms/enrich.ts` дополняет их данными JSON-каталогов.
 
 ## Структура контента
 
@@ -24,6 +24,8 @@
 - Схемы — Zod в `docs/.vitepress/schemas/*.ts`.
 - Компоненты — `docs/.vitepress/theme/components/*.vue`.
 - Навигация — `docs/.vitepress/navigation.ts`; после добавления страницы обнови сайдбар.
+- Обучение магии живёт на `/magic/learning`, а не в `/magic/rules`.
+- Страницы, которые рендерятся Vue-компонентами, регистрируйте в `tools/llms/enrich.ts`; иначе их Markdown-версия для LLM останется без данных.
 
 ### Формат страницы
 
@@ -68,7 +70,7 @@ description: Краткое описание для поиска и llms.txt
 
 ```bash
 npm run docs:dev      # разработка
-npm run docs:build    # сборка
+npm run docs:build    # сборка и дополнение LLM-версии
 npm run validate      # проверка JSON-каталогов
 npm run check         # validate + build
 npm run scaffold      # создать недостающие страницы из навигации
@@ -83,8 +85,17 @@ npm run scaffold      # создать недостающие страницы �
 - Карта разделов: `_artifacts/RESEARCH.md`.
 - Рендеры основной книги: `_artifacts/books/witcher-core/samples/page_N.png`.
 - Дополнительные книги: `_artifacts/books/<book-id>/pages/` и `samples/`.
-- Скриншоты сайта: `_artifacts/site/`.
 - Для новых страниц при необходимости рендерить через `pypdfium2` (150–200 dpi).
+
+## Скриншоты сайта
+
+- Собирайте скриншоты в `_artifacts/site/` с префиксом `site_`.
+- Перед съёмкой запустите `npm run docs:build` и `npm run docs:preview`.
+- Playwright CLI:
+
+```bash
+npx --yes playwright screenshot --full-page --viewport-size=1440,1100 --wait-for-timeout=2500 http://127.0.0.1:4173/shop/armor _artifacts/site/site_armor.png
+```
 
 ## Стиль
 
@@ -99,12 +110,6 @@ npm run scaffold      # создать недостающие страницы �
 - Внутри рамки таблицы не должно быть пустых полос сверху и снизу: у `table` сбрасывать `margin`, у обёртки не добавлять лишний `padding`.
 - Широкие таблицы — на страницах с `pageClass: wide-page`.
 - Числовые колонки — `font-variant-numeric: tabular-nums`, выравнивание вправо.
-
-## Текущий фокус
-
-Phase 7 завершена: все содержательные разделы дополнительных книг перенесены, включая некротический урон и рассказ «Тактические погони». Дальше — проверка покрытия, UX-улучшения и развитие интерактивных справочников.
-
-Обучение магии должно жить на `/magic/learning`, а не в `/magic/rules`.
 
 ## Ограничения
 

@@ -48,7 +48,7 @@ defineEmits<{
         <span v-if="language === 'en'" class="magic-tile__lang" title="Оригинальный текст на английском">
           EN
         </span>
-        <SourceBadge :book="sourceBook" :page="sourcePage" compact />
+        <SourceBadge :book="sourceBook" :page="sourcePage" compact static />
       </span>
     </span>
   </button>

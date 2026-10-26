@@ -9,6 +9,9 @@ docs/.vitepress/.temp/
 .env.local
 .env.*.local
 
+# Рабочие заметки и handoff
+PLAN.md
+
 # PDF и тяжёлые производные файлы
 *.pdf
 books/*.pdf

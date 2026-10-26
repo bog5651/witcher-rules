@@ -7,8 +7,10 @@ const props = defineProps<{
   book?: string | null
   page?: number | null
   compact?: boolean
+  static?: boolean
 }>()
 
+const tag = computed(() => (props.static ? 'span' : 'button'))
 const meta = computed(() => getBook(props.book))
 const label = computed(() => {
   if (!props.page) return meta.value.short
@@ -32,8 +34,9 @@ const open = (event: Event) => {
 </script>
 
 <template>
-  <button
-    type="button"
+  <component
+    :is="tag"
+    :type="tag === 'button' ? 'button' : undefined"
     class="wr-source"
     :class="{ 'wr-source--external': meta.id !== 'witcher-core', 'wr-source--compact': compact }"
     :title="aria"
@@ -45,7 +48,7 @@ const open = (event: Event) => {
     @click.stop
   >
     {{ label }}
-  </button>
+  </component>
 </template>
 
 <style scoped>
