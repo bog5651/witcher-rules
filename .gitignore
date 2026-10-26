@@ -4,6 +4,11 @@ docs/.vitepress/cache/
 docs/.vitepress/.temp/
 .vercel/
 
+# Локальные переменные окружения и секреты
+.env
+.env.local
+.env.*.local
+
 # PDF и тяжёлые производные файлы
 *.pdf
 books/*.pdf
