@@ -4,12 +4,11 @@ import data from '../../data/professions.json'
 import type { Profession } from '../../schemas/profession'
 import EffectText from './EffectText.vue'
 
-const props = defineProps<{ id: string }>()
+const props = defineProps<{ id: string; hideSkill?: boolean }>()
 
 const professions = data.items as Profession[]
 
 const profile = computed(() => professions.find((item) => item.id === props.id))
-const treeHref = computed(() => `/character/trees?profession=${props.id}`)
 const hasMagic = computed(() => (profile.value?.magicAbilities.length ?? 0) > 0)
 </script>
 
@@ -78,7 +77,7 @@ const hasMagic = computed(() => (profile.value?.magicAbilities.length ?? 0) > 0)
       </section>
     </div>
 
-    <section class="pp-skill">
+    <section v-if="!hideSkill" class="pp-skill">
       <p class="pp-label">Определяющий навык</p>
       <h2>
         {{ profile.definingSkill.name }}
@@ -86,12 +85,6 @@ const hasMagic = computed(() => (profile.value?.magicAbilities.length ?? 0) > 0)
       </h2>
       <p><EffectText :text="profile.definingSkill.description" /></p>
     </section>
-
-    <a class="pp-tree" :href="treeHref" :aria-label="`Древо навыков: ${profile.name}`">
-      <span>Древо навыков</span>
-      <strong>Три ветви и девять способностей</strong>
-      <span class="pp-tree__arrow">Открыть →</span>
-    </a>
   </article>
 
   <div v-else class="wr-empty">Профессия не найдена.</div>
@@ -330,50 +323,6 @@ const hasMagic = computed(() => (profile.value?.magicAbilities.length ?? 0) > 0)
   color: var(--site-muted);
 }
 
-.pp-tree {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-top: 0.65rem;
-  padding: 0.75rem 0.9rem;
-  color: var(--site-ink);
-  font-weight: 400;
-  text-decoration: none;
-  background: var(--site-surface);
-  border: 1px solid var(--site-border);
-  border-radius: 4px;
-}
-
-.pp-tree:hover {
-  color: var(--site-ink);
-  border-color: var(--site-gold);
-}
-
-.pp-tree > span:first-child {
-  font-family: var(--site-sans);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--site-muted);
-}
-
-.pp-tree strong {
-  font-family: var(--site-serif);
-  font-size: 0.95rem;
-}
-
-.pp-tree__arrow {
-  margin-left: auto;
-  font-family: var(--site-sans);
-  font-size: 12px;
-  color: var(--site-blood);
-  white-space: nowrap;
-}
-
-.dark .pp-tree__arrow {
-  color: var(--site-gold);
-}
-
 @media (max-width: 900px) {
   .pp-summary,
   .pp-columns {
@@ -384,15 +333,6 @@ const hasMagic = computed(() => (profile.value?.magicAbilities.length ?? 0) > 0)
 @media (max-width: 600px) {
   .pp-quote {
     padding: 1rem 0.9rem;
-  }
-
-  .pp-tree {
-    flex-wrap: wrap;
-  }
-
-  .pp-tree__arrow {
-    width: 100%;
-    margin-left: 0;
   }
 }
 </style>

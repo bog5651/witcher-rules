@@ -9,14 +9,13 @@ export const sidebar: DefaultTheme.Sidebar = {
         { text: 'Расы', link: '/character/races' },
         { text: 'Жизненный путь', link: '/character/lifepath' },
         { text: 'Жизненный путь мага', link: '/character/lifepath-mage' },
-        { text: 'Профессии', link: '/character/professions' },
+        { text: 'Профессии и древа навыков', link: '/character/professions' },
         { text: 'Параметры', link: '/character/stats' },
         { text: 'Навыки', link: '/character/skills' },
         { text: 'Пороги навыков', link: '/character/skills-thresholds' },
         { text: 'Проверки навыков', link: '/character/checks' },
         { text: 'Развитие', link: '/character/development' },
-        { text: 'Репутация', link: '/character/reputation' },
-        { text: 'Древо навыков', link: '/character/trees' }
+        { text: 'Репутация', link: '/character/reputation' }
       ]
     }
   ],

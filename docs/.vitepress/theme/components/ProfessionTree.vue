@@ -1,164 +1,109 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed } from 'vue'
 import data from '../../data/profession-trees.json'
 import type { ProfessionTree } from '../../schemas/professionTree'
 import EffectText from './EffectText.vue'
 
+const props = defineProps<{ professionId: string }>()
+
 const professions = data.professions as ProfessionTree[]
-const active = ref(professions[0]?.id ?? '')
 const branchColors = ['blue', 'green', 'red'] as const
-
-const selectTab = (id: string) => {
-  active.value = id
-
-  if (typeof window !== 'undefined') {
-    const url = new URL(window.location.href)
-    url.searchParams.set('profession', id)
-    window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
-  }
-}
-
-const syncFromUrl = () => {
-  const requested = new URLSearchParams(window.location.search).get('profession')
-  if (requested && professions.some((profession) => profession.id === requested)) {
-    active.value = requested
-  }
-}
-
-const focusTab = (index: number) => {
-  const profession = professions[index]
-  if (!profession) return
-  selectTab(profession.id)
-  document.getElementById(`pt-tab-${profession.id}`)?.focus()
-}
-
-const onTabKeydown = (event: KeyboardEvent, index: number) => {
-  let next = index
-
-  if (event.key === 'ArrowRight') next = (index + 1) % professions.length
-  else if (event.key === 'ArrowLeft') next = (index - 1 + professions.length) % professions.length
-  else if (event.key === 'Home') next = 0
-  else if (event.key === 'End') next = professions.length - 1
-  else return
-
-  event.preventDefault()
-  focusTab(next)
-}
-
-onMounted(() => {
-  syncFromUrl()
-  window.addEventListener('popstate', syncFromUrl)
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('popstate', syncFromUrl)
-})
+const profession = computed(() =>
+  professions.find((item) => item.id === props.professionId)
+)
 </script>
 
 <template>
-  <div class="profession-tree">
-    <div class="pt-tabs" role="tablist" aria-label="Профессии">
-      <button
-        v-for="(profession, index) in professions"
-        :id="`pt-tab-${profession.id}`"
-        :key="profession.id"
-        type="button"
-        role="tab"
-        class="pt-tab"
-        :class="{ 'pt-tab--active': active === profession.id }"
-        :aria-selected="active === profession.id"
-        :aria-controls="`pt-panel-${profession.id}`"
-        :tabindex="active === profession.id ? 0 : -1"
-        @click="selectTab(profession.id)"
-        @keydown="onTabKeydown($event, index)"
-      >
-        {{ profession.name }}
-      </button>
+  <div v-if="profession" class="profession-tree profession-tree--embedded">
+    <div class="pt-embedded-head">
+      <h3>{{ profession.name }} — древо навыков</h3>
+      <SourceBadge :book="profession.sourceBook" :page="profession.sourcePage" />
     </div>
 
-    <section
-      v-for="profession in professions"
-      v-show="active === profession.id"
-      :id="`pt-panel-${profession.id}`"
-      :key="profession.id"
-      class="pt-panel"
-      role="tabpanel"
-      :aria-labelledby="`pt-tab-${profession.id}`"
-      tabindex="0"
-    >
-      <header class="pt-header">
-        <div>
-          <p class="pt-kicker">Древо навыков</p>
-          <h2>{{ profession.name }}</h2>
-        </div>
-        <span class="pt-source">
-          <SourceBadge :book="profession.sourceBook" :page="profession.sourcePage" />
-        </span>
-      </header>
+    <div class="pt-root">
+      <span class="pt-root__label">Определяющий навык</span>
+      <h3>
+        {{ profession.definingSkill.name }}
+        <span v-if="profession.definingSkill.attribute">({{ profession.definingSkill.attribute }})</span>
+      </h3>
+      <p><EffectText :text="profession.definingSkill.description" /></p>
+    </div>
 
-      <div class="pt-root">
-        <span class="pt-root__label">Определяющий навык</span>
-        <h3>
-          {{ profession.definingSkill.name }}
-          <span v-if="profession.definingSkill.attribute">({{ profession.definingSkill.attribute }})</span>
-        </h3>
-        <p><EffectText :text="profession.definingSkill.description" /></p>
-      </div>
-
-      <div class="pt-branches">
-        <section
-          v-for="(branch, branchIndex) in profession.branches"
-          :key="branch.name"
-          class="pt-branch"
-          :class="`pt-branch--${branchColors[branchIndex]}`"
-        >
-          <h3>{{ branch.name }}</h3>
-          <article v-for="ability in branch.abilities" :key="ability.rank" class="pt-ability">
-            <div class="pt-ability__head">
-              <span class="pt-rank">{{ ability.rank }}</span>
-              <h4>
-                {{ ability.name }}
-                <span v-if="ability.attribute">({{ ability.attribute }})</span>
-              </h4>
-            </div>
-            <p><EffectText :text="ability.description" /></p>
-          </article>
-        </section>
-      </div>
-
-      <div v-if="profession.extras.length || profession.notes.length" class="pt-meta">
-        <section v-for="extra in profession.extras" :key="extra.title" class="pt-extra">
-          <h4>{{ extra.title }}</h4>
-          <div class="pt-extra__table">
-            <table>
-              <thead>
-                <tr>
-                  <th v-for="column in extra.columns" :key="column">{{ column }}</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="(row, rowIndex) in extra.rows" :key="rowIndex">
-                  <td v-for="(cell, cellIndex) in row" :key="cellIndex"><RulesText :text="cell" /></td>
-                </tr>
-              </tbody>
-            </table>
+    <div class="pt-branches">
+      <section
+        v-for="(branch, branchIndex) in profession.branches"
+        :key="branch.name"
+        class="pt-branch"
+        :class="`pt-branch--${branchColors[branchIndex]}`"
+      >
+        <h3>{{ branch.name }}</h3>
+        <article v-for="ability in branch.abilities" :key="ability.rank" class="pt-ability">
+          <div class="pt-ability__head">
+            <span class="pt-rank">{{ ability.rank }}</span>
+            <h4>
+              {{ ability.name }}
+              <span v-if="ability.attribute">({{ ability.attribute }})</span>
+            </h4>
           </div>
-        </section>
+          <p><EffectText :text="ability.description" /></p>
+        </article>
+      </section>
+    </div>
 
-        <section v-if="profession.notes.length" class="pt-notes">
-          <h4>На полях</h4>
-          <p v-for="note in profession.notes" :key="note.title">
-            <strong>{{ note.title }}.</strong> <EffectText :text="note.text" />
-          </p>
-        </section>
-      </div>
-    </section>
+    <div v-if="profession.extras.length || profession.notes.length" class="pt-meta">
+      <section v-for="extra in profession.extras" :key="extra.title" class="pt-extra">
+        <h4>{{ extra.title }}</h4>
+        <div class="pt-extra__table">
+          <table>
+            <thead>
+              <tr>
+                <th v-for="column in extra.columns" :key="column">{{ column }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(row, rowIndex) in extra.rows" :key="rowIndex">
+                <td v-for="(cell, cellIndex) in row" :key="cellIndex"><RulesText :text="cell" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section v-if="profession.notes.length" class="pt-notes">
+        <h4>На полях</h4>
+        <p v-for="note in profession.notes" :key="note.title">
+          <strong>{{ note.title }}.</strong> <EffectText :text="note.text" />
+        </p>
+      </section>
+    </div>
   </div>
+
+  <div v-else class="wr-empty">Древо не найдено.</div>
 </template>
 
 <style scoped>
 .profession-tree {
   margin-top: 1.5rem;
+}
+
+.profession-tree--embedded {
+  margin-top: 1.1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--site-border);
+}
+
+.pt-embedded-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.pt-embedded-head h3 {
+  margin: 0;
+  font-family: var(--site-serif);
+  font-size: 1.15rem;
 }
 
 .pt-tabs {

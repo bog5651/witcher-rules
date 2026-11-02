@@ -3,9 +3,42 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 import data from '../../data/professions.json'
 import type { Profession } from '../../schemas/profession'
 import ProfessionProfile from './ProfessionProfile.vue'
+import ProfessionTree from './ProfessionTree.vue'
 
 const professions = data.items as Profession[]
 const active = ref(professions[0]?.id ?? '')
+
+const scrollToTarget = (url: URL, hasProfession: boolean) => {
+  const hash = url.hash ? decodeURIComponent(url.hash.slice(1)) : ''
+  const target = hash
+    ? document.getElementById(hash)
+    : hasProfession
+      ? document.getElementById('profession-hub')
+      : null
+
+  if (target) {
+    window.setTimeout(() => target.scrollIntoView({ block: 'start' }), 80)
+  }
+}
+
+const syncFromUrl = () => {
+  const url = new URL(window.location.href)
+  const requested = url.searchParams.get('profession')
+
+  if (requested && professions.some((profession) => profession.id === requested)) {
+    active.value = requested
+    scrollToTarget(url, true)
+    return
+  }
+
+  if (requested) {
+    url.searchParams.delete('profession')
+    window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
+  }
+
+  active.value = professions[0]?.id ?? ''
+  scrollToTarget(url, false)
+}
 
 const selectTab = (id: string) => {
   active.value = id
@@ -14,13 +47,6 @@ const selectTab = (id: string) => {
     const url = new URL(window.location.href)
     url.searchParams.set('profession', id)
     window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
-  }
-}
-
-const syncFromUrl = () => {
-  const requested = new URLSearchParams(window.location.search).get('profession')
-  if (requested && professions.some((profession) => profession.id === requested)) {
-    active.value = requested
   }
 }
 
@@ -47,15 +73,17 @@ const onTabKeydown = (event: KeyboardEvent, index: number) => {
 onMounted(() => {
   syncFromUrl()
   window.addEventListener('popstate', syncFromUrl)
+  window.addEventListener('vp:route', syncFromUrl)
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('popstate', syncFromUrl)
+  window.removeEventListener('vp:route', syncFromUrl)
 })
 </script>
 
 <template>
-  <div class="profession-hub">
+  <div id="profession-hub" class="profession-hub">
     <div class="ph-tabs" role="tablist" aria-label="Профессии">
       <button
         v-for="(profession, index) in professions"
@@ -84,7 +112,8 @@ onBeforeUnmount(() => {
       role="tabpanel"
       :aria-labelledby="`ph-tab-${profession.id}`"
     >
-      <ProfessionProfile :id="profession.id" />
+      <ProfessionProfile :id="profession.id" hide-skill />
+      <ProfessionTree :profession-id="profession.id" />
     </section>
   </div>
 </template>

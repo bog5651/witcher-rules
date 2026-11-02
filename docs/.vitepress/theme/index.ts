@@ -52,7 +52,15 @@ import LoreReader from './components/LoreReader.vue'
 export default {
   extends: DefaultTheme,
   Layout,
-  enhanceApp({ app }) {
+  enhanceApp({ app, router }) {
+    const afterRouteChanged = router.onAfterRouteChanged
+    router.onAfterRouteChanged = async (href) => {
+      await afterRouteChanged?.(href)
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new Event('vp:route'))
+      }
+    }
+
     app.component('SpellCatalog', SpellCatalog)
     app.component('MagicCatalog', MagicCatalog)
     app.component('MagicGiftCatalog', MagicGiftCatalog)

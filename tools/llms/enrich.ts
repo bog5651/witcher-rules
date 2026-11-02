@@ -482,8 +482,8 @@ const renderMagicEntry = (item: Dict, kind: string): string => {
   return lines.join('\n')
 }
 
-const renderDetailEntry = (item: Dict): string => {
-  const lines = [`### ${item.name}`, '']
+const renderDetailEntry = (item: Dict, headingSuffix = ''): string => {
+  const lines = [`### ${item.name}${headingSuffix}`, '']
   const skip = new Set(['id', 'name', 'sourcePage', 'sourceBook', 'quoteAuthor'])
   for (const [key, value] of Object.entries(item)) {
     if (skip.has(key) || isEmpty(value)) continue
@@ -617,11 +617,11 @@ const renderMagicPage = (title: string, items: Dict[], kind: string): string =>
     ''
   ].join('\n')
 
-const renderDetailPage = (title: string, items: Dict[]): string =>
+const renderDetailPage = (title: string, items: Dict[], headingSuffix = ''): string =>
   [
     `## ${title}`,
     '',
-    ...items.flatMap((item) => [renderDetailEntry(item), '']),
+    ...items.flatMap((item) => [renderDetailEntry(item, headingSuffix), '']),
     ''
   ].join('\n')
 
@@ -796,8 +796,11 @@ const pages: Record<string, () => string> = {
       'Каталог',
       bestiary.classes.map((item: Dict) => ({ ...item, sourcePage: undefined }))
     ),
-  '/character/professions': () => renderDetailPage('Каталог', professions),
-  '/character/trees': () => renderDetailPage('Каталог', trees),
+  '/character/professions': () =>
+    [
+      renderDetailPage('Профессии', professions),
+      renderDetailPage('Древа навыков', trees, ' — древо навыков')
+    ].join('\n'),
   '/character/skills': () =>
     renderTablePage('Навыки', skills, [
       ['Название', (item) => item.name],
