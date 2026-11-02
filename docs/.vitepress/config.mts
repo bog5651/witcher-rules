@@ -3,6 +3,7 @@ import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 import llmstxt from 'vitepress-plugin-llms'
 import { sidebar } from './navigation'
 import { diceRollsPlugin } from './markdown/dice'
+import { ruleTermsPlugin } from './markdown/ruleTerms'
 
 export default defineConfig({
   lang: 'ru-RU',
@@ -15,6 +16,7 @@ export default defineConfig({
   markdown: {
     config: (md) => {
       diceRollsPlugin(md)
+      ruleTermsPlugin(md)
     },
     emoji: {
       shortcuts: {}

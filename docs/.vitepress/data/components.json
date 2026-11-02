@@ -552,6 +552,58 @@
       "weight": 0.1,
       "price": 30,
       "sourcePage": 129
+    },
+    {
+      "id": "bear-fat",
+      "name": "Медвежий жир",
+      "category": "alchemical",
+      "availability": "everywhere",
+      "where": "Найден на медведях",
+      "quantity": "1d6 единиц",
+      "gatheringDC": null,
+      "weight": 0.5,
+      "price": 90,
+      "sourcePage": 210,
+      "sourceBook": "tome-of-chaos"
+    },
+    {
+      "id": "bear-pelt",
+      "name": "Медвежья шкура",
+      "category": "animal",
+      "availability": "everywhere",
+      "where": "Найден на медведях",
+      "quantity": "1d6/2 единиц",
+      "gatheringDC": null,
+      "weight": 6,
+      "price": 30,
+      "sourcePage": 210,
+      "sourceBook": "tome-of-chaos"
+    },
+    {
+      "id": "stag-horns",
+      "name": "Рога рогатого",
+      "category": "animal",
+      "availability": "rare",
+      "where": "Найден на рогатом",
+      "quantity": "1d6/3 единиц",
+      "gatheringDC": null,
+      "weight": 1,
+      "price": 166,
+      "sourcePage": 210,
+      "sourceBook": "tome-of-chaos"
+    },
+    {
+      "id": "mara-livid-skull",
+      "name": "Череп Мари Львид",
+      "category": "animal",
+      "availability": "unique",
+      "where": "Найден на Мари Львид",
+      "quantity": "1 единица",
+      "gatheringDC": null,
+      "weight": 2,
+      "price": 200,
+      "sourcePage": 210,
+      "sourceBook": "tome-of-chaos"
     }
   ]
 }

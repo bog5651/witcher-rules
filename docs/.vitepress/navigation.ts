@@ -8,9 +8,11 @@ export const sidebar: DefaultTheme.Sidebar = {
         { text: 'Обзор', link: '/character/' },
         { text: 'Расы', link: '/character/races' },
         { text: 'Жизненный путь', link: '/character/lifepath' },
+        { text: 'Жизненный путь мага', link: '/character/lifepath-mage' },
         { text: 'Профессии', link: '/character/professions' },
         { text: 'Параметры', link: '/character/stats' },
         { text: 'Навыки', link: '/character/skills' },
+        { text: 'Пороги навыков', link: '/character/skills-thresholds' },
         { text: 'Проверки навыков', link: '/character/checks' },
         { text: 'Развитие', link: '/character/development' },
         { text: 'Репутация', link: '/character/reputation' },
@@ -48,6 +50,8 @@ export const sidebar: DefaultTheme.Sidebar = {
           ]
         },
         { text: 'Ритуалы', link: '/magic/rituals' },
+        { text: 'Некромантия', link: '/magic/necromancy' },
+        { text: 'Гоэтия', link: '/magic/goetia' },
         { text: 'Порча', link: '/magic/hexes' },
         { text: 'Некротический урон', link: '/magic/necrotic-damage' },
         { text: 'Магические дары', link: '/magic/gifts' },
@@ -64,6 +68,7 @@ export const sidebar: DefaultTheme.Sidebar = {
         { text: 'Бомбы и ловушки', link: '/shop/explosives' },
         { text: 'Броня', link: '/shop/armor' },
         { text: 'Магические артефакты', link: '/shop/artifacts' },
+        { text: 'Инструменты гоэтии', link: '/shop/goetia' },
         { text: 'Алхимические составы', link: '/shop/alchemy' },
         { text: 'Вещи', link: '/shop/items' },
         { text: 'Компоненты', link: '/shop/components' },
@@ -100,6 +105,7 @@ export const sidebar: DefaultTheme.Sidebar = {
       items: [
         { text: 'Обзор', link: '/combat/' },
         { text: 'Правила', link: '/combat/rules' },
+        { text: 'Пример боя', link: '/combat/example' },
         { text: 'Критические ранения', link: '/combat/injuries' },
         { text: 'Эффекты', link: '/combat/effects' },
         { text: 'Магия в бою', link: '/combat/magic' },
@@ -116,6 +122,7 @@ export const sidebar: DefaultTheme.Sidebar = {
         { text: 'Обзор', link: '/bestiary/' },
         { text: 'Классы чудовищ', link: '/bestiary/classes' },
         { text: 'Чудовища', link: '/bestiary/monsters' },
+        { text: 'Трофеи', link: '/bestiary/trophies' },
         { text: 'Животные', link: '/bestiary/animals' }
       ]
     }
@@ -137,9 +144,11 @@ export const sidebar: DefaultTheme.Sidebar = {
       items: [
         { text: 'Обзор', link: '/gm/' },
         { text: 'Проклятия', link: '/gm/curses' },
+        { text: 'Тёмные искусства', link: '/gm/dark-arts' },
         { text: 'Награды', link: '/gm/rewards' },
         { text: 'Ведение кампании', link: '/gm/campaign' },
-        { text: 'Персонажи ведущего', link: '/gm/npcs' }
+        { text: 'Персонажи ведущего', link: '/gm/npcs' },
+        { text: 'Иконические персонажи', link: '/gm/iconic-npcs' }
       ]
     }
   ],

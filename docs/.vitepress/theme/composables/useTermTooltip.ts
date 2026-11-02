@@ -17,10 +17,7 @@ export interface TermTooltipState extends TooltipContent {
 const active = ref<TermTooltipState | null>(null)
 
 export function useTermTooltip() {
-  const show = (event: Event, content: TooltipContent) => {
-    const target = event.currentTarget
-    if (!(target instanceof HTMLElement)) return
-
+  const showAt = (target: HTMLElement, content: TooltipContent) => {
     const rect = target.getBoundingClientRect()
     active.value = {
       ...content,
@@ -31,9 +28,15 @@ export function useTermTooltip() {
     }
   }
 
+  const show = (event: Event, content: TooltipContent) => {
+    const target = event.currentTarget
+    if (!(target instanceof HTMLElement)) return
+    showAt(target, content)
+  }
+
   const hide = () => {
     active.value = null
   }
 
-  return { active, show, hide }
+  return { active, show, showAt, hide }
 }

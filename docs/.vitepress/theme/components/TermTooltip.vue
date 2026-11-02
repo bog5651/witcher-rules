@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { getBook } from '../../data/books'
+import { effectGlossary } from '../effectGlossary'
 import { useTermTooltip } from '../composables/useTermTooltip'
 
-const { active, hide } = useTermTooltip()
+const { active, showAt, hide } = useTermTooltip()
 const mounted = ref(false)
 
 const style = computed(() => {
@@ -40,7 +41,53 @@ const isCompact = computed(
 const onPointerDown = (event: PointerEvent) => {
   const target = event.target
   if (target instanceof Element && target.closest('.wr-term')) return
+  if (target instanceof Element && target.closest('[data-wr-effect]')) return
   hide()
+}
+
+const findAutoTerm = (target: EventTarget | null) => {
+  if (!(target instanceof Element)) return null
+  const element = target.closest<HTMLElement>('[data-wr-effect]')
+  if (!element) return null
+  const entry = effectGlossary.find((item) => item.id === element.dataset.wrEffect)
+  return entry ? { element, entry } : null
+}
+
+const onAutoOver = (event: MouseEvent) => {
+  const found = findAutoTerm(event.target)
+  if (!found) return
+  showAt(found.element, {
+    title: found.entry.term,
+    definition: found.entry.definition,
+    sourcePage: found.entry.sourcePage,
+    sourceBook: found.entry.sourceBook
+  })
+}
+
+const onAutoOut = (event: MouseEvent) => {
+  if (findAutoTerm(event.target)) hide()
+}
+
+const onAutoFocus = (event: FocusEvent) => {
+  const found = findAutoTerm(event.target)
+  if (!found) return
+  showAt(found.element, {
+    title: found.entry.term,
+    definition: found.entry.definition,
+    sourcePage: found.entry.sourcePage,
+    sourceBook: found.entry.sourceBook
+  })
+}
+
+const onAutoClick = (event: MouseEvent) => {
+  const found = findAutoTerm(event.target)
+  if (!found) return
+  showAt(found.element, {
+    title: found.entry.term,
+    definition: found.entry.definition,
+    sourcePage: found.entry.sourcePage,
+    sourceBook: found.entry.sourceBook
+  })
 }
 
 onMounted(() => {
@@ -48,12 +95,22 @@ onMounted(() => {
   window.addEventListener('scroll', hide, true)
   window.addEventListener('resize', hide)
   document.addEventListener('pointerdown', onPointerDown)
+  document.addEventListener('mouseover', onAutoOver)
+  document.addEventListener('mouseout', onAutoOut)
+  document.addEventListener('focusin', onAutoFocus)
+  document.addEventListener('focusout', hide)
+  document.addEventListener('click', onAutoClick)
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', hide, true)
   window.removeEventListener('resize', hide)
   document.removeEventListener('pointerdown', onPointerDown)
+  document.removeEventListener('mouseover', onAutoOver)
+  document.removeEventListener('mouseout', onAutoOut)
+  document.removeEventListener('focusin', onAutoFocus)
+  document.removeEventListener('focusout', hide)
+  document.removeEventListener('click', onAutoClick)
 })
 </script>
 

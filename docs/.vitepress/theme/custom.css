@@ -854,6 +854,29 @@ body {
   white-space: nowrap;
 }
 
+/* --- auto terms and rule links ------------------------------------ */
+
+.wr-term-auto {
+  border-bottom: 1px dotted currentColor;
+  cursor: help;
+}
+
+.wr-term-auto:hover,
+.wr-term-auto:focus-visible {
+  color: var(--site-blood);
+  outline: none;
+}
+
+.dark .wr-term-auto:hover,
+.dark .wr-term-auto:focus-visible {
+  color: var(--site-gold);
+}
+
+.wr-rule-link {
+  text-decoration-style: dotted;
+  text-underline-offset: 0.18em;
+}
+
 /* --- wide table pages --------------------------------------------- */
 
 .wide-page .VPDoc .content-container,
